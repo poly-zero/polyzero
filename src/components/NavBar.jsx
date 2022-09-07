@@ -1,4 +1,4 @@
-import { Navbar, Avatar } from "flowbite-react";
+import { Navbar, Avatar, Dropdown } from "flowbite-react";
 const NavBar = () => {
   return (
     <Navbar rounded={true} border={true}>
@@ -14,20 +14,41 @@ const NavBar = () => {
       <Navbar.Brand href="/">
         <img
           src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-          className="mr-3 h-6 sm:h-9"
+          className="mr-3 h-11 sm:h-9"
           alt="PolyZero Logo"
         />
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+        <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
           PolyZero
         </span>
       </Navbar.Brand>
-      
-      <Avatar
-        img="https://thispersondoesnotexist.com/image"
-        rounded={true}
-        stacked={true}
-        alt="Your profile pic"
-      />
+
+      <div className="flex items-center gap-4">
+        <p>Eiko Yamamoto</p>
+        <Dropdown
+          arrowIcon={false}
+          inline={true}
+          label={
+            <Avatar
+              img="https://thispersondoesnotexist.com/image"
+              rounded={true}
+              alt="Your profile pic"
+            />
+          }
+        >
+          <Dropdown.Header>
+            <span className="block text-sm">Eiko Yamamoto</span>
+            <span className="block text-sm font-medium truncate">
+              eikoyamamoto@polyzero.earth
+            </span>
+          </Dropdown.Header>
+          <Dropdown.Item>Log in</Dropdown.Item>
+          <Dropdown.Item>Register</Dropdown.Item>
+          <Dropdown.Item>Dashboard</Dropdown.Item>
+          <Dropdown.Item>Settings</Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Item>Log out</Dropdown.Item>
+        </Dropdown>
+      </div>
     </Navbar>
   );
 };

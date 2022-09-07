@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -7,15 +8,15 @@ function App() {
       <NavBar />
       <Router>
         <Routes>
-          <Route exact="/" />
-          <Route exact="/login" />
-          <Route exact="/registration" />
-          <Route exact="/footprint" />
-          <Route exact="/results" />
-          <Route exact="/tiers" />
-          <Route exact="/tiers" />
-          <Route exact="/payment" />
-          <Route exact="/confirmation" />
+          <Route exact path="/" />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/registration" />
+          <Route exact path="/footprint" />
+          <Route exact path="/results" />
+          <Route exact path="/tiers" />
+          <Route exact path="/tiers" />
+          <Route exact path="/payment" />
+          <Route exact path="/confirmation" />
         </Routes>
       </Router>
     </div>

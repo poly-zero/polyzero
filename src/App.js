@@ -1,12 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Landing from "./components/Landing";
+// import Login from "./components/Login";
 
 function App() {
   return (
     <div>
-      <button className="bg-blue-500">Submit</button>
+      <Landing />
+      {/* <button className="bg-blue-500">Submit</button> */}
       <Router>
         <Routes>
-          <Route exact="/" />
+          <Route exact="/" element={<Landing />} />
           <Route exact="/login" />
           <Route exact="/registration" />
           <Route exact="/footprint" />

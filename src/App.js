@@ -1,9 +1,7 @@
+import NavBar from "./components/NavBar";
+
 function App() {
-  return (
-    <div>
-     <button className="bg-blue-500">Submit</button>
-    </div>
-  );
+  return <div>App</div>;
 }
 
 export default App;

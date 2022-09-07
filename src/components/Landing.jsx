@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./Landing.css";
 
 const Landing = () => {
   return (
@@ -18,7 +18,7 @@ const Landing = () => {
         {" "}
         <p> This is PolyZero, this is a very good website.</p>
       </div>
-      <button href="/" className="button" type="button">
+      <button href="/" className="AboutPolyZero" type="button">
         Click me{" "}
       </button>
     </div>

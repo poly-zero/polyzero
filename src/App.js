@@ -1,23 +1,22 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Landing from "./components/Landing";
-// import Login from "./components/Login";
+import NavBar from "./components/Navbar";
+import Login from "./components/Login";
 
 function App() {
   return (
     <div>
-      <Landing />
-      {/* <button className="bg-blue-500">Submit</button> */}
+      <NavBar />
       <Router>
         <Routes>
-          <Route exact="/" element={<Landing />} />
-          <Route exact="/login" />
-          <Route exact="/registration" />
-          <Route exact="/footprint" />
-          <Route exact="/results" />
-          <Route exact="/tiers" />
-          <Route exact="/tiers" />
-          <Route exact="/payment" />
-          <Route exact="/confirmation" />
+          <Route exact path="/" />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/registration" />
+          <Route exact path="/footprint" />
+          <Route exact path="/results" />
+          <Route exact path="/tiers" />
+          <Route exact path="/tiers" />
+          <Route exact path="/payment" />
+          <Route exact path="/confirmation" />
         </Routes>
       </Router>
     </div>

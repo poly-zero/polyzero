@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Landing from "./components/Landing";
+import Tiers from "./components/Tiers";
+import NavBar from "./components/NavBar";
 import Footprint from "./pages/Footprint";
-import "./pages/Footprint"
+import "./pages/Footprint";
 
 function App() {
   return (
@@ -11,12 +12,12 @@ function App() {
       <NavBar />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Landing/>} />
+          <Route exact path="/" element={<Landing />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/registration" />
-          <Route exact path="/footprint" element={<Footprint/>}/>
+          <Route exact path="/footprint" element={<Footprint />} />
           <Route exact path="/results" />
-          <Route exact path="/tiers" />
+          <Route exact path="/tiers" element={<Tiers />} />
           <Route exact path="/payment" />
           <Route exact path="/confirmation" />
         </Routes>

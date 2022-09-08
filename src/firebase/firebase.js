@@ -85,6 +85,17 @@ const logInWithEmailAndPassword = async (email, password) => {
   }
 };
 
+const getUserInfo = async (userId) => {
+  try {
+    const q = query(collection(db, "users"), where("uid", "==", userId));
+    const docs = await getDocs(q);
+    return docs;
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
 const sendPasswordReset = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -105,6 +116,7 @@ export {
   registerWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
+  getUserInfo,
   sendPasswordReset,
   logout,
 };

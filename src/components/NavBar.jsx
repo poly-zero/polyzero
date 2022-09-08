@@ -1,5 +1,11 @@
 import { Navbar, Avatar, Dropdown } from "flowbite-react";
+import { logout, auth } from "../firebase/firebase";
+import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 const NavBar = () => {
+  const [user, loading, error] = useAuthState(auth);
+
   return (
     <Navbar rounded={true} border={true}>
       {/* Navigation list container */}
@@ -41,12 +47,23 @@ const NavBar = () => {
               eikoyamamoto@polyzero.earth
             </span>
           </Dropdown.Header>
-          <Dropdown.Item>Log in</Dropdown.Item>
-          <Dropdown.Item>Register</Dropdown.Item>
-          <Dropdown.Item>Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item>Log out</Dropdown.Item>
+          {user ? (
+            <>
+              <Dropdown.Item>Dashboard</Dropdown.Item>
+              <Dropdown.Item>Settings</Dropdown.Item>
+              <Dropdown.Item onClick={() => logout()}>Log out</Dropdown.Item>
+            </>
+          ) : (
+            <>
+              <Dropdown.Item>
+                <Link to="/login">Log in</Link>
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <Link to="/registration">Register</Link>
+              </Dropdown.Item>
+            </>
+          )}
         </Dropdown>
       </div>
     </Navbar>

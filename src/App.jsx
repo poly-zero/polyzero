@@ -16,7 +16,6 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/footprint" element={<Footprint />} />
-          <Route exact path="/results" />
           <Route exact path="/tiers" element={<Tiers />} />
           <Route exact path="/payment" />
           <Route exact path="/confirmation" />

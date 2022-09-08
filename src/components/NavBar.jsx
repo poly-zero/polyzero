@@ -14,7 +14,7 @@ const NavBar = () => {
       <Navbar.Brand href="/">
         <img
           src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-          className="mr-3 h-11 sm:h-9"
+          className="mr-3 h-14"
           alt="PolyZero Logo"
         />
         <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
@@ -23,7 +23,7 @@ const NavBar = () => {
       </Navbar.Brand>
 
       <div className="flex items-center gap-4">
-        <p>Eiko Yamamoto</p>
+        <p className="text-sm">Eiko Yamamoto</p>
         <Dropdown
           arrowIcon={false}
           inline={true}

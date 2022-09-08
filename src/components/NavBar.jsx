@@ -1,4 +1,4 @@
-import { Navbar, Avatar, Dropdown } from "flowbite-react";
+import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
 import { logout, auth } from "../firebase/firebase";
 import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -29,42 +29,45 @@ const NavBar = () => {
       </Navbar.Brand>
 
       <div className="flex items-center gap-4">
-        <p className="text-sm">Eiko Yamamoto</p>
-        <Dropdown
-          arrowIcon={false}
-          inline={true}
-          label={
-            <Avatar
-              img="https://thispersondoesnotexist.com/image"
-              rounded={true}
-              alt="Your profile pic"
-            />
-          }
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">Eiko Yamamoto</span>
-            <span className="block text-sm font-medium truncate">
-              eikoyamamoto@polyzero.earth
-            </span>
-          </Dropdown.Header>
-          <Dropdown.Divider />
-          {user ? (
-            <>
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item onClick={() => logout()}>Log out</Dropdown.Item>
-            </>
-          ) : (
-            <>
-              <Dropdown.Item>
+        {user ? (
+          <>
+            <p className="text-sm">Eiko Yamamoto</p>
+            <Dropdown
+              arrowIcon={false}
+              inline={true}
+              label={
+                <Avatar
+                  img="https://thispersondoesnotexist.com/image"
+                  rounded={true}
+                  alt="Your profile pic"
+                />
+              }
+            >
+              <div>
+                <Dropdown.Header>
+                  <span className="block text-sm">Eiko Yamamoto</span>
+                  <span className="block text-sm font-medium truncate">
+                    eikoyamamoto@polyzero.earth
+                  </span>
+                </Dropdown.Header>
+                <Dropdown.Item>Dashboard</Dropdown.Item>
+                <Dropdown.Item>Settings</Dropdown.Item>
+                <Dropdown.Item onClick={() => logout()}>Log out</Dropdown.Item>
+              </div>
+            </Dropdown>
+          </>
+        ) : (
+          <>
+            <Button.Group>
+              <Button color="gray">
                 <Link to="/login">Log in</Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
+              </Button>
+              <Button color="gray">
                 <Link to="/registration">Register</Link>
-              </Dropdown.Item>
-            </>
-          )}
-        </Dropdown>
+              </Button>
+            </Button.Group>
+          </>
+        )}
       </div>
     </Navbar>
   );

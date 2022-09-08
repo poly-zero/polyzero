@@ -1,4 +1,4 @@
-import { Card, Button, Accordion, Tooltip } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 const FootprintCard = ({
   title,
@@ -21,9 +21,9 @@ const FootprintCard = ({
         imgAlt="Meaningful alt text for an image that is not purely decorative"
         imgSrc="https://media.timeout.com/images/105656638/image.jpg"
       >
-        <h3 className="text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
+        <h2 className="text-4xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
           {title}
-        </h3>
+        </h2>
 
         <div className="flex flex-col gap-2 h-96">
           <h4 className="font-medium">Grocery Store</h4>

@@ -1,7 +1,6 @@
 import FootprintCard from "../components/FootprintCard";
 import { useState, useEffect } from "react";
 import Results from "../components/Results";
-import Carrousel from "../components/Carrousel";
 import { Button } from "flowbite-react";
 
 const Footprint = () => {
@@ -60,7 +59,7 @@ const Footprint = () => {
 
       {/* Footprint cards container */}
       {!result ? (
-        <div className=" flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-full">
+        <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-full">
           {plasticFootprintEstimation.map((card) => {
             return (
               <FootprintCard

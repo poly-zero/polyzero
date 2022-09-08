@@ -1,20 +1,18 @@
-import { Card, Button } from "flowbite-react";
+import { Card } from "flowbite-react";
 
-const FootprintCard = ({ title, description, buttonText }) => {
+const TierCard = ({title, description, buttonText}) => {
   return (
-    <div className="max-w-sm">
+    <div className="">
       <Card
-        imgAlt="Meaningful alt text for an image that is not purely decorative"
+        horizontal={true}
         imgSrc="https://media.timeout.com/images/105656638/image.jpg"
       >
         <h5 className="text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
           {title}
         </h5>
-        <div className="h-40">
           <p className="font-normal text-gray-700 dark:text-gray-400">
             {description}
           </p>
-        </div>
 
         <a
           href="#"
@@ -27,4 +25,4 @@ const FootprintCard = ({ title, description, buttonText }) => {
   );
 };
 
-export default FootprintCard;
+export default TierCard;

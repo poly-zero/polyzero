@@ -49,10 +49,7 @@ const OrderConfirmation = ({ tier }) => {
             <Line />
           </div>
 
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-              Learn more
-            </p>
-            <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white">
+          <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white">
             Learn more
           </h2>
           <div className="flex gap-4"></div>

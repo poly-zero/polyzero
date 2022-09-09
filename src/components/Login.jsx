@@ -11,6 +11,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
@@ -26,6 +27,7 @@ function Login() {
       return;
     }
     if (user) navigate("/");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   return (

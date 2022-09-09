@@ -18,7 +18,11 @@ const Landing = () => {
         {" "}
         <p> This is PolyZero, this is a very good website.</p>
       </div>
-      <button href="/" className="AboutPolyZero" type="button">
+      <button
+        onClick={() => (window.location.href = "/tiers")}
+        className="AboutPolyZero"
+        type="button"
+      >
         Click me{" "}
       </button>
     </div>

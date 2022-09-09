@@ -1,15 +1,20 @@
-import React, { Fragment } from "react";
 import "./Landing.css";
 
 const Landing = () => {
   const plasticConsumption = [
-    "🇯🇵 Japan is the 2nd biggest consumer of disposable plastic"
+    " In Japan, 37 Kilograms Per capita annual single plastic consumption in Japan.",
+    " In Japan 1 Kilogram of plastic equals to 5.6kg- 6kg CO2 over its lifetime.",
+    " Japan is the 2nd biggest consumer of disposable plastic.",
+    " In Japan, the average CO2 from plastic per capita is 207-222kg per annum.",
+    "Single-use plastics, which account for half of the plastic we use each year, have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down."
   ];
-  // const item = plasticConsumption[Math.floor(Math.random() * item.length)];
-  const copyToClipboard = async (i) => {
-    console.log(i);
-    await navigator.clipboard.writeText(i[0]);
-    alert("Copied" + i[0] + "!");
+  const randomFact =
+    plasticConsumption[Math.floor(Math.random() * plasticConsumption.length)];
+
+  const copyToClipboard = async () => {
+    // console.log(i.body);
+    await navigator.clipboard.writeText(randomFact);
+    alert(randomFact);
   };
   return (
     <div>
@@ -28,13 +33,26 @@ const Landing = () => {
         {" "}
         <p>PolyZero, A way to help the planet.</p>
       </div>
-      <button href="/tiers" className="AboutPolyZero" type="button">
+      <button
+        onClick={() => (window.location.href = "/tiers")}
+        className="AboutPolyZero"
+        type="button"
+      >
         Click me{" "}
       </button>
+      <span>
+        <h6>Did you know:</h6>
+        <br />
+        <p className="ml-5">{randomFact}</p>
+      </span>
+
       <article className="Tweet-button" onClick={copyToClipboard}>
         <button>
           <a
-            href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+            href={
+              `https://twitter.com/intent/tweet?text=${randomFact}` +
+              `#PolyZero`
+            }
             class="twitter-share-button"
             data-size="large"
             data-hashtags="kanjifyed"
@@ -48,13 +66,6 @@ const Landing = () => {
             charset="utf-8"
           ></script>
         </button>
-
-        <div>
-          {plasticConsumption.map((i) => {
-            console.log(i);
-            return <p>{i}</p>;
-          })}
-        </div>
       </article>
     </div>
   );

@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Footprint from "./pages/Footprint";
 import Registration from "./components/Registration";
 import "./pages/Footprint";
+import PaymentsForm from "./components/PaymentsForm";
 function App() {
   return (
     <div className="flex flex-col h-screen">
@@ -17,7 +18,7 @@ function App() {
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/footprint" element={<Footprint />} />
           <Route exact path="/tiers" element={<Tiers />} />
-          <Route exact path="/payment" />
+          <Route exact path="/payment" element={<PaymentsForm />} />
           <Route exact path="/confirmation" />
         </Routes>
       </Router>

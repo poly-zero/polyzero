@@ -22,7 +22,7 @@ const NavBar = () => {
     <Navbar rounded={true} border={true}>
       {/* Navigation list container */}
       <Navbar.Collapse>
-        <Navbar.Link href="/navbars" active={true}>
+        <Navbar.Link href="/" active={true}>
           Home
         </Navbar.Link>
         <Navbar.Link href="/navbars">About</Navbar.Link>

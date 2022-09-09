@@ -1,9 +1,36 @@
-import FootprintCard from "./FootprintCard";
 import TierCard from "./TierCard";
 
 const Tiers = () => {
+  const tierCards = [
+    {
+      title: "Supporter",
+      description: "Support for 1 year",
+      cost: "¥518",
+      image:"https://picsum.photos/800"
+    },
+    {
+      title: "Ally",
+      description: "Support for 5 years",
+      cost: "¥2,590",
+      image:"https://picsum.photos/800"
+    },
+    {
+      title: "Defender",
+      description: "Support for 10 years",
+      cost: "¥5180",
+      image:"https://picsum.photos/800"
+    },
+    {
+      title: "Hero",
+      description: "Support for a lifetime",
+      cost: "¥16,576",
+      image:"https://picsum.photos/800"
+    },
+  ];
+  
+
   return (
-    <div className="flex flex-col justify-center items-center mt-8 sm:flex-row">
+    <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10">
       <div className="w-1/2 flex justify-center items-center">
         <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           Want to
@@ -13,27 +40,10 @@ const Tiers = () => {
           </span>
         </h1>
       </div>
-      <div className="flex  w-1/2 flex-col justify-center items-center gap-8">
-        <TierCard
-          title={"Supporter"}
-          description={"Support for 1 year"}
-          buttonText={"Select"}
-        />
-        <TierCard
-          title={"Ally"}
-          description={"Support for 5 years"}
-          buttonText={"Select"}
-        />
-        <TierCard
-          title={"Defender"}
-          description={"Support for 10 years"}
-          buttonText={"Select"}
-        />
-        <TierCard
-          title={"Hero"}
-          description={"Support for a lifetime"}
-          buttonText={"Select"}
-        />
+      <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-11/12">
+        {tierCards.map((tier) => {
+          return <TierCard title={tier.title} description={tier.description} cost={tier.cost} image={tier.image} />;
+        })}
       </div>
     </div>
   );

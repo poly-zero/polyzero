@@ -1,4 +1,3 @@
-import FootprintCard from "./FootprintCard";
 import TierCard from "./TierCard";
 
 const Tiers = () => {

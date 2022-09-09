@@ -1,4 +1,5 @@
 import "./Landing.css";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
   const plasticConsumption = [
@@ -16,6 +17,8 @@ const Landing = () => {
     await navigator.clipboard.writeText(randomFact);
     alert(randomFact);
   };
+  const navigateTo = useNavigate();
+
   return (
     <div>
       <div className="companyName">
@@ -34,7 +37,7 @@ const Landing = () => {
         <p>PolyZero, A way to help the planet.</p>
       </div>
       <button
-        onClick={() => (window.location.href = "/tiers")}
+        onClick={() => navigateTo("/footprint")}
         className="AboutPolyZero"
         type="button"
       >

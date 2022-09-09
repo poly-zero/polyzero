@@ -7,7 +7,7 @@ const Footprint = () => {
   const [result, setResult] = useState("");
   const [change, setChange] = useState(false);
 
-  const results = document.querySelector("#results");
+  // const results = document.querySelector("#results");
 
   const plasticFootprintEstimation = [
     {

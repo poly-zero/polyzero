@@ -12,10 +12,10 @@ const Landing = () => {
           src="https://siwi.org/wp-content/uploads/2021/07/why-water_topics-present-at-launch_rivers2.jpg"
           width="500"
           height="400"
+          alt="river"
         ></img>
       </div>
       <div className="aboutPolyZero">
-        {" "}
         <p> This is PolyZero, this is a very good website.</p>
       </div>
       <button

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, TextInput, Checkbox, Button } from "flowbite-react";
+import { TextInput } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -13,6 +13,12 @@ function Login() {
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+
+  const logIn = (e) => {
+    e.preventDefault();
+    logInWithEmailAndPassword(email, password);
+    if (user) navigate("/");
+  };
 
   useEffect(() => {
     if (loading) {
@@ -30,7 +36,11 @@ function Login() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900">
               LogIn
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form
+              className="space-y-4 md:space-y-6"
+              action="#"
+              onSubmit={logIn}
+            >
               <div>
                 <label
                   for="email"
@@ -70,34 +80,42 @@ function Login() {
               <div className="flex items-center justify-center">
                 <button
                   type="submit"
-                  onClick={() => logInWithEmailAndPassword(email, password)}
                   className="bg-blue-600 items-center border text-white rounded-lg block w-full p-2.5"
                 >
                   Log in
                 </button>
               </div>
-              <div className="flex items-center justify-center">
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?{" "}
-                  <a
-                    href="#"
-                    className="font-medium text-blue hover:underline dark:text-primary-500"
-                  >
-                    Sign up
-                  </a>
-                </p>
-              </div>
-              <div className="flex items-center justify-center">
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  <a
+            </form>
+            <div className="flex items-center justify-center">
+              <button
+                type="button"
+                onClick={registerWithGoogle}
+                className="bg-blue-600 items-center border text-white rounded-lg block w-full p-2.5"
+              >
+                Google
+              </button>
+            </div>
+            <div className="flex items-center justify-center">
+              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                Don't have an account yet?{" "}
+                <Link
+                  to="/registration"
+                  className="font-medium text-blue hover:underline dark:text-primary-500"
+                >
+                  Register
+                </Link>
+              </p>
+            </div>
+            <div className="flex items-center justify-center">
+              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                {/* <a
                     href="#"
                     className="font-medium text-blue hover:underline dark:text-primary-500"
                   >
                     Need a help?
-                  </a>
-                </p>
-              </div>
-            </form>
+                  </a> */}
+              </p>
+            </div>
           </div>
         </div>
       </div>

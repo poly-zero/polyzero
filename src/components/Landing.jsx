@@ -1,7 +1,10 @@
 import React from "react";
 import "./Landing.css";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigateTo = useNavigate();
+
   return (
     <div>
       <div className="companyName">
@@ -19,7 +22,7 @@ const Landing = () => {
         <p> This is PolyZero, this is a very good website.</p>
       </div>
       <button
-        onClick={() => (window.location.href = "/tiers")}
+        onClick={() => navigateTo("/footprint")}
         className="AboutPolyZero"
         type="button"
       >

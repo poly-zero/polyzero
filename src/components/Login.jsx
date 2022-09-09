@@ -21,47 +21,87 @@ function Login() {
     }
     if (user) navigate("/");
   }, [user, loading]);
-  
+
   return (
-    <div>
-      <form className="flex flex-col gap-4">
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="email1" value="Your email" />
+    <>
+      <div className="flex items-center justify-center p-6">
+        <div className="flex items-center justify-center bg-gray-100 rounded-lg shadow dark:border px-4">
+          <div className="p-6 space-y-4 md:space-y-6 flex flex-col items-center justify-center">
+            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900">
+              LogIn
+            </h1>
+            <form className="space-y-4 md:space-y-6" action="#">
+              <div>
+                <label
+                  for="email"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  E-MAIL
+                </label>
+                <TextInput
+                  id="email1"
+                  type="email"
+                  placeholder="email@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required={true}
+                  name="email"
+                  className="bg-gray-50 items-center border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                />
+              </div>
+              <div>
+                <label
+                  for="password"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  PASSWORD
+                </label>
+                <TextInput
+                  id="password1"
+                  type="password"
+                  required={true}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  name="password"
+                  placeholder="••••••••"
+                  className="bg-gray-50 items-center border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                />
+              </div>
+              <div className="flex items-center justify-center">
+                <button
+                  type="submit"
+                  onClick={() => logInWithEmailAndPassword(email, password)}
+                  className="bg-blue-600 items-center border text-white rounded-lg block w-full p-2.5"
+                >
+                  Log in
+                </button>
+              </div>
+              <div className="flex items-center justify-center">
+                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  Don’t have an account yet?{" "}
+                  <a
+                    href="#"
+                    className="font-medium text-blue hover:underline dark:text-primary-500"
+                  >
+                    Sign up
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center justify-center">
+                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  <a
+                    href="#"
+                    className="font-medium text-blue hover:underline dark:text-primary-500"
+                  >
+                    Need a help?
+                  </a>
+                </p>
+              </div>
+            </form>
           </div>
-          <TextInput
-            id="email1"
-            type="email"
-            placeholder="name@flowbite.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required={true}
-          />
         </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="password1" value="Your password" />
-          </div>
-          <TextInput
-            id="password1"
-            type="password"
-            required={true}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="flex items-center gap-2">
-          <Checkbox id="remember" />
-          <Label htmlFor="remember">Remember me</Label>
-        </div>
-        <Button
-          type="submit"
-          onClick={() => logInWithEmailAndPassword(email, password)}
-        >
-          Submit
-        </Button>
-      </form>
-    </div>
+      </div>
+    </>
   );
 }
 

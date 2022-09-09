@@ -40,7 +40,7 @@ const Tiers = () => {
           </span>
         </h1>
       </div>
-      <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-full md:w-11/12">
+      <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-11/12">
         {tierCards.map((tier) => {
           return <TierCard title={tier.title} description={tier.description} cost={tier.cost} image={tier.image} />;
         })}

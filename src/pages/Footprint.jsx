@@ -1,13 +1,15 @@
 import FootprintCard from "../components/FootprintCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Results from "../components/Results";
 import { Button } from "flowbite-react";
+import { useNavigate } from "react-router-dom";
 
 const Footprint = () => {
   const [result, setResult] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [change, setChange] = useState(false);
 
-  // const results = document.querySelector("#results");
+  const navigateTo = useNavigate();
 
   const plasticFootprintEstimation = [
     {
@@ -40,8 +42,6 @@ const Footprint = () => {
         "I often receive a plastic bag and/or disposable utensils at the cash register",
     },
   ];
-
-  useEffect(() => {}, [change]);
 
   return (
     <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10">
@@ -76,7 +76,9 @@ const Footprint = () => {
           })}
         </div>
       ) : (
-        <Button size={"xl"}>Start offsetting</Button>
+        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+          Start offsetting
+        </Button>
       )}
     </div>
   );

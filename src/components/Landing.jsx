@@ -24,66 +24,74 @@ const Landing = () => {
   const navigateTo = useNavigate();
 
   return (
-    <div>
-      <div className="companyName">
-        <p>PolyZero</p>
+    <div className="mt-11">
+      <div className="flex-col   items-center mt-11 align-items ">
+        <div>
+          <img
+            className="flex-col items-center mx-auto"
+            alt="Pictue of river running through jungle"
+            src="https://siwi.org/wp-content/uploads/2021/07/why-water_topics-present-at-launch_rivers2.jpg"
+            width="500"
+            height="400"
+          />
+        </div>
+        <h1 className="  mx-auto  flex justify-center  text-7xl gap-8 mt-11 ">
+          PolyZero
+        </h1>
+        <p className=" mx-auto  flex justify-center  text-1xl gap-8 mt-11">
+          A way to help the planet.
+        </p>
+        <button
+          onClick={() => navigateTo("/footprint")}
+          className=" flex mx-auto bg-orange-400 mb-4 mt-5  rounded p-2  ring-1 ring-black "
+          type="button"
+        >
+          Get started{" "}
+        </button>
       </div>
-      <div className="image">
-        <img
-          alt="Pictue of river running through jungle"
-          src="https://siwi.org/wp-content/uploads/2021/07/why-water_topics-present-at-launch_rivers2.jpg"
-          width="500"
-          height="400"
-        ></img>
-      </div>
-      <div className="aboutPolyZero">
+      <div className="flex-col">
         {" "}
-        <p>PolyZero, A way to help the planet.</p>
-      </div>
-      <button
-        onClick={() => navigateTo("/footprint")}
-        className="AboutPolyZero mb-4"
-        type="button"
-      >
-        Get started{" "}
-      </button>
-
-      <div className="flex gap-4">
-        <h6 className="font-extrabold">Did you know:</h6>
-        <br />
-        <p className="">{randomFact}</p>
-      </div>
-      <div className="flex gap-4">
-        {/* <FaceBook />
-        <Instagram />
-        <Twitter />
-        <LinkedIn />
-        <Line /> */}
-        <article className="flex gap-4" onClick={copyToClipboard}>
-          <button>
-            <a
-              href={
-                `https://twitter.com/intent/tweet?text=${randomFact}` +
-                ` https://polyzero.earth/`
-              }
-              class="twitter-share-button"
-              data-size="large"
-              data-hashtags="kanjifyed"
-              data-show-count="false"
-            >
-              <Twitter />
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=https://polyzero.earth/`}
-              class="twitter-share-button"
-              data-size="large"
-              data-hashtags="kanjifyed"
-              data-show-count="false"
-            >
-              <LinkedIn />
-            </a>
-          </button>
-        </article>
+        <div className="flex gap-4">
+          <h6 className="font-extrabold">Did you know:</h6>
+          <br />
+          <p className="">{randomFact}</p>
+        </div>
+        <div className="flex gap-4">
+          <article onClick={copyToClipboard}>
+            <button className="flex justify-end">
+              <a
+                href={
+                  `https://twitter.com/intent/tweet?text=${randomFact}` +
+                  ` https://polyzero.earth/`
+                }
+                class="twitter-share-button"
+                data-size="large"
+                data-hashtags="kanjifyed"
+                data-show-count="false"
+              >
+                <Twitter />
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://polyzero.earth/`}
+                class="twitter-share-button"
+                data-size="large"
+                data-hashtags="kanjifyed"
+                data-show-count="false"
+              >
+                <LinkedIn />
+              </a>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://polyzero.earth/`}
+                class="twitter-share-button"
+                data-size="large"
+                data-hashtags="kanjifyed"
+                data-show-count="false"
+              >
+                <FaceBook />
+              </a>
+            </button>
+          </article>
+        </div>
       </div>
     </div>
   );

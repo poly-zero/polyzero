@@ -10,7 +10,6 @@ const SideBar = () => {
   const [user, loading, error] = useAuthState(auth);
   const pathName = useLocation().pathname;
 
-
   return (
     <>
       <NavBar
@@ -23,10 +22,13 @@ const SideBar = () => {
         error={error}
         pathName={pathName}
       />
+
+      {/* SideBar Container */}
       <div
         className={`h-screen fixed top-0 md:left-0 ${showSidebar} flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 z-10 py-4 px-6 transition-all duration-300`}
       >
         <div className="flex-col items-stretch min-h-full flex-nowrap px-0 relative">
+          {/* Logo */}
           <a href="/" rel="noreferrer" className="flex mt-2">
             <img
               src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
@@ -39,7 +41,8 @@ const SideBar = () => {
           </a>
           <div className="flex flex-col">
             <hr className="my-4 min-w-full" />
-
+            
+            {/* Beginning of nav list */}
             <ul className="flex-col min-w-full flex list-none">
               <li className="rounded-lg mb-4">
                 <NavLink
@@ -85,7 +88,7 @@ const SideBar = () => {
               </li>
               {!user && (
                 <>
-                  <li className="px-4 rounded-lg mb-2 text-gray-700">
+                  <li className="rounded-lg mb-4">
                     <a
                       href="/login"
                       rel="noreferrer"
@@ -99,8 +102,7 @@ const SideBar = () => {
                       Login
                     </a>
                   </li>
-
-                  <li className="px-4 rounded-lg mb-2 text-gray-700">
+                  <li className="rounded-lg mb-4">
                     <a
                       href="/registration"
                       rel="noreferrer"
@@ -116,7 +118,7 @@ const SideBar = () => {
                   </li>
                 </>
               )}
-              <li className="px-4 rounded-lg mb-2 text-gray-700">
+              <li className="rounded-lg mb-4">
                 <a
                   href="/"
                   rel="noreferrer"

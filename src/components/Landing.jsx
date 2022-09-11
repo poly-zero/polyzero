@@ -1,4 +1,3 @@
-import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";

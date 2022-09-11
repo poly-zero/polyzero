@@ -1,8 +1,8 @@
-import FootprintCard from "../components/FootprintCard";
 import { useState, useEffect } from "react";
-import Results from "../components/Results";
-import { Button } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
+import FootprintCard from "../components/footprint/FootprintCard";
+import Results from "../components/footprint/Results";
+import { Button } from "flowbite-react";
 
 const Footprint = () => {
   const [result, setResult] = useState("");

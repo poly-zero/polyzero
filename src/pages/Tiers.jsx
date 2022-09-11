@@ -1,4 +1,4 @@
-import TierCard from "./TierCard";
+import TierCard from "../components/tiers/TierCard";
 
 const Tiers = ({ setTier }) => {
   const tierCards = [

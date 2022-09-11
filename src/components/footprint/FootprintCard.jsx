@@ -1,4 +1,4 @@
-import { Card, Accordion } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 const FootprintCard = ({
   title,

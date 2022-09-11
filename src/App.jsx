@@ -2,14 +2,15 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Login from "./components/Login";
 import Landing from "./components/Landing";
-import Tiers from "./components/Tiers";
+import Tiers from "./pages/Tiers";
 import NavBar from "./components/NavBar";
 import Footprint from "./pages/Footprint";
 import Registration from "./components/Registration";
 import "./pages/Footprint";
-import PaymentsForm from "./components/PaymentsForm";
+import PaymentsForm from "./pages/PaymentsForm";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import SideBar from "./components/SideBar";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [tier, setTier] = useState({});
@@ -31,6 +32,7 @@ function App() {
               path="/confirmation"
               element={<OrderConfirmation tier={tier} />}
             />
+            <Route exact path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Router>
       </div>

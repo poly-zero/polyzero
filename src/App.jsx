@@ -9,29 +9,32 @@ import Registration from "./components/Registration";
 import "./pages/Footprint";
 import PaymentsForm from "./components/PaymentsForm";
 import OrderConfirmation from "./pages/OrderConfirmation";
+import SideBar from "./components/SideBar";
 
 function App() {
   const [tier, setTier] = useState({});
 
   return (
-    <div className="flex flex-col h-screen">
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<Landing />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/registration" element={<Registration />} />
-          <Route exact path="/footprint" element={<Footprint />} />
-          <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
-          <Route exact path="/payment" element={<PaymentsForm />} />
-          <Route
-            exact
-            path="/confirmation"
-            element={<OrderConfirmation tier={tier} />}
-          />
-        </Routes>
-      </Router>
-    </div>
+    <>
+      <div className="md:ml-64">
+        <Router>
+          <SideBar />
+          <Routes>
+            <Route exact path="/" element={<Landing />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/registration" element={<Registration />} />
+            <Route exact path="/footprint" element={<Footprint />} />
+            <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
+            <Route exact path="/payment" element={<PaymentsForm />} />
+            <Route
+              exact
+              path="/confirmation"
+              element={<OrderConfirmation tier={tier} />}
+            />
+          </Routes>
+        </Router>
+      </div>
+    </>
   );
 }
 

@@ -25,11 +25,11 @@ const Landing = () => {
 
   return (
     <div className="mt-11">
-      <div className="flex-col   items-center mt-11 align-items ">
+      <div className="flex-col items-center mt-11 align-items ">
         <div>
           <img
             className="flex-col items-center mx-auto"
-            alt="Pictue of river running through jungle"
+            alt="Picture of river running through jungle"
             src="https://siwi.org/wp-content/uploads/2021/07/why-water_topics-present-at-launch_rivers2.jpg"
             width="500"
             height="400"

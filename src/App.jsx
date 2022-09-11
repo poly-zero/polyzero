@@ -9,6 +9,7 @@ import Registration from "./components/Registration";
 import "./pages/Footprint";
 import PaymentsForm from "./components/PaymentsForm";
 import OrderConfirmation from "./pages/OrderConfirmation";
+import Resources from "./pages/Resources";
 
 function App() {
   const [tier, setTier] = useState({});
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/footprint" element={<Footprint />} />
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
+          <Route exact path="/resources" element={<Resources />} />
           <Route
             exact
             path="/confirmation"

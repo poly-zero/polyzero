@@ -5,7 +5,12 @@ module.exports = {
     "node_modules/flowbite-react/./**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {}
+    extend: {
+      height: {
+        '85': "21rem",
+        '90': "22rem"
+      },
+    },
   },
-  plugins: [require("flowbite/plugin")]
+  plugins: [require("flowbite/plugin")],
 };

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
+import tierData from "../../data/tier.json";
 import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -8,24 +9,7 @@ import { ReactComponent as Line } from "../../assets/socialMediaIcons/icons8-lin
 
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
-  const results = {
-    "🐕 Plastic Avoider": {
-      plastic: 9.25,
-      co2e: 51.8,
-    },
-    "🐄 Plastic Reducer": {
-      plastic: 27.75,
-      co2e: 155.4,
-    },
-    "🐘 Conscientious Consumer": {
-      plastic: 46.25,
-      co2e: 259,
-    },
-    "🦖 Urban Consumer": {
-      plastic: 9.25,
-      co2e: 414.4,
-    },
-  };
+  const foundTier = tierData.find((tier) => tier.title === storedResult);
 
   function resetResult() {
     localStorage.removeItem("result");
@@ -34,7 +18,7 @@ const Results = ({ setResult, storedResult }) => {
 
   return (
     <div className="flex flex-col gap-8 items-center w-full tracking-normal">
-      {results[storedResult] && (
+      {foundTier && (
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           My
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
@@ -50,23 +34,25 @@ const Results = ({ setResult, storedResult }) => {
               <small className="text-xl font-normal text-gray-500">
                 Plastic consumption
               </small>
-              {results[storedResult].plastic}kg
-              <small className="text-xl font-normal">per year</small>
+              <div>
+                {foundTier.plastic}
+                <span className="text-4xl">kg / year</span>
+              </div>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               At the <strong>{storedResult.slice(2)}</strong> level, we estimate
-              you consume around{" "}
-              <strong>{results[storedResult].plastic}kg</strong> of disposable
-              plastics per year.
+              you consume around <strong>{foundTier.plastic}kg</strong> of
+              disposable plastics per year.
             </p>
           </Card>
           <Card>
             <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl ">
               <small className="text-xl font-normal text-gray-500">
-                Compared to
+                National average
               </small>
-              37kg
-              <small className="text-xl font-normal">per year</small>
+              <div>
+                37<span className="text-4xl">kg / year</span>
+              </div>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               The per capita average annual plastic consumption in
@@ -81,7 +67,11 @@ const Results = ({ setResult, storedResult }) => {
               The amount of plastic will generate at least
             </small>
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-              155.4kg of CO2e
+              {foundTier.carbon}
+              <span className="text-4xl">
+                kg of CO
+                <span className="text-xl">2</span>e
+              </span>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               over the course of its life (production to end-of-life).

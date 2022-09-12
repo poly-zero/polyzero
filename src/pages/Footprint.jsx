@@ -3,10 +3,35 @@ import { useNavigate } from "react-router-dom";
 import FootprintCard from "../components/footprint/FootprintCard";
 import Results from "../components/footprint/Results";
 import { Button } from "flowbite-react";
+import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
+import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
+import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
+import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const Footprint = () => {
   const [result, setResult] = useState("");
-
+  const firstMessage = "I use approx.";
+  let secondMessage;
+  const thirdMessage = "of disposable plastic/year, corresponding to";
+  let forthMessage;
+  const fithMessage =
+    "of CO2e. %0aHow much plastic do you use? %0aEstimated with @PolyZeroApp  https://polyzero.earth";
+  console.log(result);
+  if (result === "🐕 Plastic Avoider") {
+    secondMessage = "9.25KG";
+    forthMessage = "51.8KG";
+  } else if (result === "🐄 Plastic Reducer") {
+    secondMessage = "27.7.KG";
+    forthMessage = "155.4KG";
+  } else if (result === "🐘 Conscientious Consumer") {
+    secondMessage = "46.25KG";
+    forthMessage = "259KG";
+  } else {
+    secondMessage = "90.25KG";
+    forthMessage = "414.4KG";
+  }
+  // https://twitter.com/intent/tweet?text=abc%0adef
   const navigateTo = useNavigate();
 
   const plasticFootprintEstimation = [
@@ -18,7 +43,7 @@ const Footprint = () => {
       petBottles:
         "I very rarely consume bottled drinks from the store or vending machines.",
       disposables:
-        "I make an effort to avoid plastic packaging on the items I choose from the supermarket.",
+        "I make an effort to avoid plastic packaging on the items I choose from the supermarket."
     },
     {
       title: "🐄 Plastic Reducer",
@@ -28,7 +53,7 @@ const Footprint = () => {
         "I rarely eat take-out or delivery meals (1-2 times per month or less).",
       petBottles: "I buy no more than 1-2 drinks in PET bottles per month.",
       disposables:
-        "I carry reusable bags, water bottle/cup, cutlery, straw, etc. to avoid disposables.",
+        "I carry reusable bags, water bottle/cup, cutlery, straw, etc. to avoid disposables."
     },
     {
       title: "🐘 Conscientious Consumer",
@@ -39,7 +64,7 @@ const Footprint = () => {
       petBottles:
         "I drink 1-2 PET bottle drinks per week from vending machines, convenience stores, etc.",
       disposables:
-        "I occasionally recieve plastic bags and/or disposable utensils at stores/restaurants, when I've forgotten to bring my own.",
+        "I occasionally recieve plastic bags and/or disposable utensils at stores/restaurants, when I've forgotten to bring my own."
     },
     {
       title: "🦖 Urban Consumer",
@@ -50,8 +75,8 @@ const Footprint = () => {
       petBottles:
         "I drink 3+ PET bottle drinks per week from vending machines, convenience stores, etc.",
       disposables:
-        "I often receive a plastic bag and/or disposable utensils at the cash register.",
-    },
+        "I often receive a plastic bag and/or disposable utensils at the cash register."
+    }
   ];
 
   return (
@@ -93,8 +118,22 @@ const Footprint = () => {
           <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
             Start offsetting
           </Button>
+          <br />
         </div>
       )}
+      <div className="flex gap-4">
+        <FaceBook />
+        <Instagram />
+        <a
+          href={`https://twitter.com/intent/tweet?text=${firstMessage} +${secondMessage}+${thirdMessage}+${forthMessage}+${fithMessage}`}
+          data-show-count="false"
+          target={"_blank"}
+        >
+          <Twitter />
+        </a>
+        <LinkedIn />
+        <Line />
+      </div>
     </div>
   );
 };

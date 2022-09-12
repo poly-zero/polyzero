@@ -1,5 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Button } from "flowbite-react";
+import { Card, Button } from "flowbite-react";
+import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8-facebook.svg";
+import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
+import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
+import { ReactComponent as Twitter } from "../../assets/socialMediaIcons/icons8-twitter.svg";
+import { ReactComponent as Line } from "../../assets/socialMediaIcons/icons8-line.svg";
 
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
@@ -28,26 +33,87 @@ const Results = ({ setResult, storedResult }) => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center w-1/2 tracking-normal">
+    <div className="flex flex-col gap-8 items-center w-full tracking-normal">
       {results[storedResult] && (
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
-          You consume approximately
+          My
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-            {` ${results[storedResult].plastic} kg `}
-          </span>
-          per year, which amounts to
-          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-            {` ${results[storedResult].co2e} kg of CO2e.`}
+            {" "}
+            Plastic Footprint
           </span>
         </h1>
       )}
-      <div className="flex gap-8">
+      <div className="flex flex-col w-1/2 gap-4">
+        <div className="flex gap-4">
+          <Card>
+            <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+              <small className="text-xl font-normal text-gray-500">
+                Plastic consumption
+              </small>
+              {results[storedResult].plastic}kg
+              <small className="text-xl font-normal">per year</small>
+            </h1>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              At the <strong>{storedResult.slice(2)}</strong> level, we estimate
+              you consume around{" "}
+              <strong>{results[storedResult].plastic}kg</strong> of disposable
+              plastics per year.
+            </p>
+          </Card>
+          <Card>
+            <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl ">
+              <small className="text-xl font-normal text-gray-500">
+                Compared to
+              </small>
+              37kg
+              <small className="text-xl font-normal">per year</small>
+            </h1>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              The per capita average annual plastic consumption in
+              <strong> Japan</strong>.
+            </p>
+          </Card>
+        </div>
+
+        <Card>
+          <div className="flex flex-col gap-2">
+            <small className="text-xl font-normal text-gray-500">
+              The amount of plastic will generate at least
+            </small>
+            <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+              155.4kg of CO2e
+            </h1>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              over the course of its life (production to end-of-life).
+            </p>
+          </div>
+        </Card>
+      </div>
+      <div className="flex flex-wrap gap-2 justify-center w-1/3">
+        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+          Learn how to shrink your plastic habit
+        </Button>
         <Button size={"xl"} onClick={resetResult}>
           Estimate footprint again
         </Button>
         <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-          Start offsetting
+          Off-set the CO2 emissions
         </Button>
+      </div>
+      <div className="w-1/2">
+        <Card>
+          <div className="flex flex-col gap-2">
+            <small className="text-xl font-normal text-gray-500">
+              Share to raise awareness
+            </small>
+          </div>
+          <div class="flex items-center justify-around">
+            <Twitter />
+            <FaceBook />
+            <Instagram />
+            <LinkedIn />
+          </div>
+        </Card>
       </div>
     </div>
   );

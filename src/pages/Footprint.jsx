@@ -56,9 +56,9 @@ const Footprint = ({ result, setResult }) => {
   }, []);
 
   return (
-    <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+    <>
       {!result ? (
-        <>
+        <div className="flex flex-col items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
             What is your <span> </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
@@ -81,11 +81,13 @@ const Footprint = ({ result, setResult }) => {
               );
             })}
           </div>
-        </>
+        </div>
       ) : (
-        <Results setResult={setResult} storedResult={storedResult} />
+        <div className="flex flex-grow bg-slate-100 gap-6 justify-center items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+          <Results setResult={setResult} storedResult={storedResult} />
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

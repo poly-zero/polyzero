@@ -157,7 +157,7 @@ const SideBar = () => {
                   Share
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <div className="grid grid-cols-3">
                   <FaceBook />
                   <Instagram />
@@ -170,7 +170,7 @@ const SideBar = () => {
                   <LinkedIn />
                   <Line />
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

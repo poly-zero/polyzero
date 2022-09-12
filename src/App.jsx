@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div className="md:ml-64">
+      <div className="flex flex-col h-screen md:ml-64">
         <Router>
           <SideBar />
           <Routes>

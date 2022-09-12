@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Label, TextInput, Checkbox, Button } from "flowbite-react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   auth,
   registerWithEmailAndPassword,
@@ -12,6 +12,7 @@ function Registration() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
 
   let navigate = useNavigate();
@@ -25,6 +26,7 @@ function Registration() {
   useEffect(() => {
     if (loading) return;
     if (user) navigate("/");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   return (

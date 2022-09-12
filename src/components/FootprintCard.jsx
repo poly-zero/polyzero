@@ -7,11 +7,9 @@ const FootprintCard = ({
   petBottles,
   disposables,
   setResult,
-  change,
 }) => {
   function getResult() {
     setResult(title);
-    change(true);
   }
 
   return (

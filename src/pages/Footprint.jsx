@@ -1,8 +1,8 @@
-import FootprintCard from "../components/FootprintCard";
-import { useState } from "react";
-import Results from "../components/Results";
-import { Button } from "flowbite-react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import FootprintCard from "../components/footprint/FootprintCard";
+import Results from "../components/footprint/Results";
+import { Button } from "flowbite-react";
 
 const Footprint = () => {
   const [result, setResult] = useState("");
@@ -11,38 +11,51 @@ const Footprint = () => {
 
   const plasticFootprintEstimation = [
     {
-      title: "🐕 Small",
+      title: "🐕 Plastic Avoider",
       grocery:
-        "I grow most of my own vegetables, or primarily buy packaging-free fruits & vegetables",
-      takeOut: "I cook at home most meals, and rarely order take-out",
-      petBottles: "I very rarely use drink vending machines",
+        "I grow most of my own vegetables, or buy packaging-free fruits & vegetables.",
+      takeOut: "I cook most meals at home.",
+      petBottles:
+        "I very rarely consume bottled drinks from the store or vending machines.",
       disposables:
-        "I make an effort to avoid plastic packaging on the items I choose from the supermarket",
+        "I make an effort to avoid plastic packaging on the items I choose from the supermarket.",
     },
     {
-      title: "🐎 Medium",
+      title: "🐄 Plastic Reducer",
       grocery:
         "I try to avoid single-serving sizes and buy bulk-size and minimally packaged products whenever possible.",
-      takeOut: "I order takeout or delivery 1-2 times per month or less. ",
+      takeOut:
+        "I rarely eat take-out or delivery meals (1-2 times per month or less).",
       petBottles: "I buy no more than 1-2 drinks in PET bottles per month.",
       disposables:
         "I carry reusable bags, water bottle/cup, cutlery, straw, etc. to avoid disposables.",
     },
     {
-      title: "🐘 High",
+      title: "🐘 Conscientious Consumer",
       grocery:
-        "I appreciate that my supermarket thoroughly packages foods in plastic for freshness and sanitation",
+        "I try to choose items with less plastic packaging but it's difficult.",
       takeOut:
-        "I order delivery (such as Uber Eats) 1-2 times per week or more",
+        "I order delivery (such as Uber Eats) or take-out meals no more than 1-2 times per week.",
       petBottles:
-        "I drink 1-2 (or more) PET bottle drinks per week from vending machines, convenience stores, etc.",
+        "I drink 1-2 PET bottle drinks per week from vending machines, convenience stores, etc.",
       disposables:
-        "I often receive a plastic bag and/or disposable utensils at the cash register",
+        "I occasionally recieve plastic bags and/or disposable utensils at stores/restaurants, when I've forgotten to bring my own.",
+    },
+    {
+      title: "🦖 Urban Consumer",
+      grocery:
+        "I buy what's available at the supermarket, regardless of whether it's packaged in plastic.",
+      takeOut:
+        "I order delivery (such as Uber Eats) or take-out meals 3 or more times per week.",
+      petBottles:
+        "I drink 3+ PET bottle drinks per week from vending machines, convenience stores, etc.",
+      disposables:
+        "I often receive a plastic bag and/or disposable utensils at the cash register.",
     },
   ];
 
   return (
-    <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10">
+    <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
       {!result ? (
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           What is your <span> </span>
@@ -57,7 +70,7 @@ const Footprint = () => {
 
       {/* Footprint cards container */}
       {!result ? (
-        <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-full">
+        <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-14 md:w-10/12">
           {plasticFootprintEstimation.map((card) => {
             return (
               <FootprintCard
@@ -73,9 +86,14 @@ const Footprint = () => {
           })}
         </div>
       ) : (
-        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-          Start offsetting
-        </Button>
+        <div className="flex gap-8">
+          <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+            Learn more
+          </Button>
+          <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+            Start offsetting
+          </Button>
+        </div>
       )}
     </div>
   );

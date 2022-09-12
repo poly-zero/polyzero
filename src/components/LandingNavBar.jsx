@@ -18,7 +18,11 @@ const LandingNavBar = () => {
           </NavLink>
         </Navbar.Brand>
         <div className="flex md:order-2 gap-2">
-          <Button>Get started</Button>
+          <Button>
+            <NavLink to={"/footprint"} exact={true}>
+              Get started
+            </NavLink>
+          </Button>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>

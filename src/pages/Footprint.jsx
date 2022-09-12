@@ -14,20 +14,21 @@ const Footprint = ({ result, setResult }) => {
   const thirdMessage = "of disposable plastic/year, corresponding to";
   let forthMessage;
   const fithMessage =
-    "of CO2e. %0aHow much plastic do you use? %0aEstimated with @PolyZeroApp  https://polyzero.earth";
+    " of CO2e. %0aHow much plastic do you use? %0aEstimated with @PolyZeroApp ";
+  const sixthMessage = "https://polyzero.earth";
   console.log(result);
   if (result === "🐕 Plastic Avoider") {
-    secondMessage = "9.25KG";
-    forthMessage = "51.8KG";
+    secondMessage = "9.25kg";
+    forthMessage = "51.8kg";
   } else if (result === "🐄 Plastic Reducer") {
-    secondMessage = "27.7.KG";
-    forthMessage = "155.4KG";
+    secondMessage = "27.75kg";
+    forthMessage = "155.4kg";
   } else if (result === "🐘 Conscientious Consumer") {
-    secondMessage = "46.25KG";
-    forthMessage = "259KG";
+    secondMessage = "46.25kg";
+    forthMessage = "259kg";
   } else {
-    secondMessage = "90.25KG";
-    forthMessage = "414.4KG";
+    secondMessage = "74kg";
+    forthMessage = "414.4kg";
   }
 
   const plasticFootprintEstimation = [
@@ -115,9 +116,14 @@ const Footprint = ({ result, setResult }) => {
         <FaceBook />
         <Instagram />
         <a
-          href={`https://twitter.com/intent/tweet?text=${firstMessage} +${secondMessage}+${thirdMessage}+${forthMessage}+${fithMessage}`}
+          href={
+            `https://twitter.com/intent/tweet?text=${firstMessage}+${secondMessage}+${thirdMessage}+${forthMessage}${fithMessage}` +
+            "%0a" +
+            `${sixthMessage}`
+          }
           data-show-count="false"
           target={"_blank"}
+          rel="noreferrer"
         >
           <Twitter />
         </a>

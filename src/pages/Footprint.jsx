@@ -6,9 +6,17 @@ import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-i
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import tier from "../data/tier.json";
 
 const Footprint = ({ result, setResult }) => {
+  // const [data, setData] = useState(null);
+
+  // useEffect(() => {
+  //   setData(tierData.find((element) => element.title === storedResult));
+  // }, [storedResult]);
+  const hashTag = "aveTheEarth";
   const storedResult = localStorage.getItem("result");
+  console.log(storedResult);
   const firstMessage = "I use approx.";
   let secondMessage;
   const thirdMessage = "of disposable plastic/year, corresponding to";
@@ -16,20 +24,18 @@ const Footprint = ({ result, setResult }) => {
   const fithMessage =
     " of CO2e. %0aHow much plastic do you use? %0aEstimated with @PolyZeroApp ";
   const sixthMessage = "https://polyzero.earth";
-  console.log(result);
-  if (result === "🐕 Plastic Avoider") {
-    secondMessage = "9.25kg";
-    forthMessage = "51.8kg";
-  } else if (result === "🐄 Plastic Reducer") {
-    secondMessage = "27.75kg";
-    forthMessage = "155.4kg";
-  } else if (result === "🐘 Conscientious Consumer") {
-    secondMessage = "46.25kg";
-    forthMessage = "259kg";
-  } else {
-    secondMessage = "74kg";
-    forthMessage = "414.4kg";
-  }
+
+  tier.map((val) => {
+    if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    }
+  });
 
   const plasticFootprintEstimation = [
     {
@@ -119,9 +125,13 @@ const Footprint = ({ result, setResult }) => {
         <Instagram />
         <a
           href={
-            `https://twitter.com/intent/tweet?text=${firstMessage}+${secondMessage}+${thirdMessage}+${forthMessage}${fithMessage}` +
+            `https://twitter.com/intent/tweet?text=${firstMessage}+${
+              secondMessage + "kg"
+            }+${thirdMessage}+${forthMessage + "kg"}${fithMessage}` +
             "%0a" +
-            `${sixthMessage}`
+            `${sixthMessage}` +
+            "%0a" +
+            `&hashtags=${hashTag}`
           }
           data-show-count="false"
           target={"_blank"}

@@ -1,4 +1,3 @@
-import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
@@ -28,8 +27,8 @@ const Landing = () => {
       <div className="flex-col items-center mt-11 align-items ">
         <div>
           <img
-            className="flex-col items-center mx-auto  "
-            alt="Pictue of river running through jungle"
+            className="flex-col items-center mx-auto"
+            alt="Picture of river running through jungle"
             src="https://siwi.org/wp-content/uploads/2021/07/why-water_topics-present-at-launch_rivers2.jpg"
             width="500"
             height="400"

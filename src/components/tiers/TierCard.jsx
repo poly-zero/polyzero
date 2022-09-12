@@ -11,7 +11,7 @@ const TierCard = ({ title, description, cost, image, setTier }) => {
       description: description,
       cost: cost,
     });
-    navigateTo("/confirmation");
+    navigateTo("/payment");
   }
 
   return (

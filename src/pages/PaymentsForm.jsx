@@ -1,11 +1,12 @@
-import "./PaymentsForm.css";
 import { useState, Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PaymentsForm = () => {
   const [cvv, setCvv] = useState("");
   const [name, setName] = useState("");
   const [cardNumber, setcardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
+  const navigateTo = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +15,7 @@ const PaymentsForm = () => {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       });
       window.location = "/";
     } catch (error) {
@@ -99,13 +100,19 @@ const PaymentsForm = () => {
               {" "}
               <button
                 className="outline-none pay h-12 bg-blue-500 text-white mb-3 mr-1 hover:bg-orange-700 rounded-lg w-1/2 cursor-pointer transition-all"
-                path="/tiers"
-                onClick={() => (window.location.href = "/tiers")}
+                onClick={() => {
+                  navigateTo("/tiers");
+                }}
               >
                 Back
               </button>{" "}
               <br />
-              <button className="outline-none pay h-12 bg-blue-500 text-white mb-3 hover:bg-orange-700 rounded-lg w-1/2 cursor-pointer transition-all">
+              <button
+                className="outline-none pay h-12 bg-blue-500 text-white mb-3 hover:bg-orange-700 rounded-lg w-1/2 cursor-pointer transition-all"
+                onClick={() => {
+                  navigateTo("/confirmation");
+                }}
+              >
                 Pay
               </button>{" "}
             </div>

@@ -44,7 +44,12 @@ const OrderConfirmation = ({ tier }) => {
           <div className="flex gap-4">
             <FaceBook />
             <Instagram />
-            <Twitter />
+            <a
+              href="https://twitter.com/intent/tweet?text=I offsetted 184kg of C02e"
+              data-show-count="false"
+            >
+              <Twitter />
+            </a>
             <LinkedIn />
             <Line />
           </div>

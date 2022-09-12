@@ -1,0 +1,38 @@
+[
+  {
+    "title": "🐕 Plastic Avoider",
+    "grocery": "I grow most of my own vegetables, or buy packaging-free fruits & vegetables.",
+    "takeOut": "I cook most meals at home.",
+    "petBottles": "I very rarely consume bottled drinks from the store or vending machines.",
+    "disposables": "I make an effort to avoid plastic packaging on the items I choose from the supermarket.",
+    "plastic": 9.25,
+    "carbon": 51.8
+  },
+  {
+    "title": "🐄 Plastic Reducer",
+    "grocery": "I try to avoid single-serving sizes and buy bulk-size and minimally packaged products whenever possible.",
+    "takeOut": "I rarely eat take-out or delivery meals (1-2 times per month or less).",
+    "petBottles": "I buy no more than 1-2 drinks in PET bottles per month.",
+    "disposables": "I carry reusable bags, water bottle/cup, cutlery, straw, etc. to avoid disposables.",
+    "plastic": 27.75,
+    "carbon": 155.4
+  },
+  {
+    "title": "🐘 Conscientious Consumer",
+    "grocery": "I try to choose items with less plastic packaging but it's difficult.",
+    "takeOut": "I order delivery (such as Uber Eats) or take-out meals no more than 1-2 times per week.",
+    "petBottles": "I drink 1-2 PET bottle drinks per week from vending machines, convenience stores, etc.",
+    "disposables": "I occasionally receive plastic bags and/or disposable utensils at stores/restaurants, when I've forgotten to bring my own.",
+    "plastic": 46.25,
+    "carbon": 259
+  },
+  {
+    "title": "🦖 Urban Consumer",
+    "grocery": "I buy what's available at the supermarket, regardless of whether it's packaged in plastic.",
+    "takeOut": "I order delivery (such as Uber Eats) or take-out meals 3 or more times per week.",
+    "petBottles": "I drink 3+ PET bottle drinks per week from vending machines, convenience stores, etc.",
+    "disposables": "I often receive a plastic bag and/or disposable utensils at the cash register.",
+    "plastic": 74,
+    "carbon": 414.4
+  }
+]

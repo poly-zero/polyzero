@@ -2,17 +2,18 @@ import { Card, Label, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const TierCard = ({ title, description, cost, image, setTier }) => {
+const TierCard = ({ title, time, cost, image, setTier }) => {
   const navigateTo = useNavigate();
-  const [age, setAge] = useState(15);
+  const [age, setAge] = useState(title === "Hero" ? 15 : time);
 
   function assignTier() {
     setTier({
-      image: image,
-      title: title,
-      description: description,
-      cost: cost,
+      image,
+      title,
+      time,
+      cost,
     });
+    localStorage.setItem("payment", cost * age);
     navigateTo("/payment");
   }
 
@@ -23,7 +24,9 @@ const TierCard = ({ title, description, cost, image, setTier }) => {
           {title}
         </h2>
         <p className="text-lg font-normal text-gray-700 dark:text-gray-400">
-          {description}
+          {title === "Hero"
+            ? "Support for a lifetime"
+            : `Support for ${time} year`}
         </p>
         {title === "Hero" && (
           <div>
@@ -42,7 +45,7 @@ const TierCard = ({ title, description, cost, image, setTier }) => {
           </div>
         )}
         <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {`￥${title === "Hero" ? cost * age : cost}`}
+          {`￥${cost * age}`}
         </h3>
         <button
           class="inline-flex items-center py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

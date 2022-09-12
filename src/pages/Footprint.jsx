@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import FootprintCard from "../components/footprint/FootprintCard";
 import Results from "../components/footprint/Results";
-import { Button } from "flowbite-react";
 
-const Footprint = ({result, setResult}) => {
-
-  const navigateTo = useNavigate();
-
+const Footprint = ({ result, setResult }) => {
+  const storedResult = localStorage.getItem("result");
   const plasticFootprintEstimation = [
     {
       title: "🐕 Plastic Avoider",
@@ -53,46 +49,41 @@ const Footprint = ({result, setResult}) => {
     },
   ];
 
+  useEffect(() => {
+    if (storedResult) {
+      setResult(storedResult);
+    }
+  }, []);
+
   return (
     <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
       {!result ? (
-        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
-          What is your <span> </span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-            plastic footprint
-          </span>
-          ?
-        </h1>
+        <>
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+            What is your <span> </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+              plastic footprint
+            </span>
+            ?
+          </h1>
+          <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-14 md:w-10/12">
+            {plasticFootprintEstimation.map((card) => {
+              return (
+                <FootprintCard
+                  title={card.title}
+                  grocery={card.grocery}
+                  takeOut={card.takeOut}
+                  petBottles={card.petBottles}
+                  disposables={card.disposables}
+                  buttonText={"Select"}
+                  setResult={setResult}
+                />
+              );
+            })}
+          </div>
+        </>
       ) : (
-        <Results result={result} />
-      )}
-
-      {/* Footprint cards container */}
-      {!result ? (
-        <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-14 md:w-10/12">
-          {plasticFootprintEstimation.map((card) => {
-            return (
-              <FootprintCard
-                title={card.title}
-                grocery={card.grocery}
-                takeOut={card.takeOut}
-                petBottles={card.petBottles}
-                disposables={card.disposables}
-                buttonText={"Select"}
-                setResult={setResult}
-              />
-            );
-          })}
-        </div>
-      ) : (
-        <div className="flex gap-8">
-          <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-            Learn more
-          </Button>
-          <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-            Start offsetting
-          </Button>
-        </div>
+        <Results setResult={setResult} storedResult={storedResult} />
       )}
     </div>
   );

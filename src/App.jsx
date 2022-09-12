@@ -3,7 +3,6 @@ import { useState } from "react";
 import Login from "./components/Login";
 import Landing from "./components/Landing";
 import Tiers from "./pages/Tiers";
-import NavBar from "./components/NavBar";
 import Footprint from "./pages/Footprint";
 import Registration from "./components/Registration";
 import "./pages/Footprint";

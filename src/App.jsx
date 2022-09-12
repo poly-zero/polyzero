@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Login from "./components/Login";
 import Landing from "./components/Landing";
 import Tiers from "./pages/Tiers";

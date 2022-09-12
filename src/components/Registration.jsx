@@ -11,6 +11,7 @@ import {
 function Registration() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmationPassword, setConfirmationPassword] = useState("");
   const [name, setName] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
@@ -19,7 +20,12 @@ function Registration() {
 
   const register = (e) => {
     e.preventDefault();
-    if (!name) alert("Please enter name");
+    if (password !== confirmationPassword) {
+      setPassword("");
+      setConfirmationPassword("");
+      alert("Your Password does not match with your confirmation password")
+      return;
+    }
     registerWithEmailAndPassword(name, email, password);
   };
 
@@ -65,10 +71,10 @@ function Registration() {
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="password1" value="Your password" />
+                <Label htmlFor="password" value="Your password" />
               </div>
               <TextInput
-                id="password1"
+                id="password"
                 type="password"
                 required={true}
                 value={password}
@@ -77,14 +83,14 @@ function Registration() {
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="password1" value="Confirm your password" />
+                <Label htmlFor="confirmationPassword" value="Confirm your password" />
               </div>
               <TextInput
-                id="password1"
+                id="confirmationPassword"
                 type="password"
                 required={true}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={confirmationPassword}
+                onChange={(e) => setConfirmationPassword(e.target.value)}
               />
             </div>
 

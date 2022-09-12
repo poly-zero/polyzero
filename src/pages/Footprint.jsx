@@ -4,8 +4,7 @@ import FootprintCard from "../components/footprint/FootprintCard";
 import Results from "../components/footprint/Results";
 import { Button } from "flowbite-react";
 
-const Footprint = () => {
-  const [result, setResult] = useState("");
+const Footprint = ({result, setResult}) => {
 
   const navigateTo = useNavigate();
 

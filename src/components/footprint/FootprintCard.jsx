@@ -7,11 +7,10 @@ const FootprintCard = ({
   petBottles,
   disposables,
   setResult,
-  change,
 }) => {
-  function getResult() {
+  function assignResult() {
     setResult(title);
-    change(true);
+    localStorage.setItem("result", title);
   }
 
   return (
@@ -20,7 +19,7 @@ const FootprintCard = ({
         horizontal={true}
         imgAlt="Meaningful alt text for an image that is not purely decorative"
         imgSrc="https://media.timeout.com/images/105656638/image.jpg"
-        onClick={getResult}
+        onClick={assignResult}
       >
         <h2 className="text-4xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
           {title}
@@ -57,7 +56,7 @@ const FootprintCard = ({
 
         {/* <button
           className="inline-flex items-center mt-4 py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={getResult}
+          onClick={setResult}
         >
           Select
         </button> */}

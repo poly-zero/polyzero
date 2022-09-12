@@ -1,29 +1,33 @@
 import TierCard from "../components/tiers/TierCard";
 
+const offsetCost = 5000;
+const result = { plastic: 9.25, carbon: 259 };
+const yearOffset = (result.carbon / 1000) * offsetCost;
+
 const Tiers = ({ setTier }) => {
   const tierCards = [
     {
       title: "Supporter",
       description: "Support for 1 year",
-      cost: "¥518",
+      cost: yearOffset,
       image: "https://picsum.photos/800",
     },
     {
       title: "Ally",
       description: "Support for 5 years",
-      cost: "¥2,590",
+      cost: yearOffset * 5,
       image: "https://picsum.photos/800",
     },
     {
       title: "Defender",
       description: "Support for 10 years",
-      cost: "¥5180",
+      cost: yearOffset * 10,
       image: "https://picsum.photos/800",
     },
     {
       title: "Hero",
       description: "Support for a lifetime",
-      cost: "¥16,576",
+      cost: yearOffset,
       image: "https://picsum.photos/800",
     },
   ];

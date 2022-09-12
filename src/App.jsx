@@ -15,6 +15,7 @@ import Resources from "./pages/Resources";
 
 function App() {
   const [tier, setTier] = useState({});
+  const [result, setResult] = useState("");
 
   return (
     <>
@@ -25,7 +26,11 @@ function App() {
             <Route exact path="/" element={<Landing />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/registration" element={<Registration />} />
-            <Route exact path="/footprint" element={<Footprint />} />
+            <Route
+              exact
+              path="/footprint"
+              element={<Footprint result={result} setResult={setResult} />}
+            />
             <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
             <Route exact path="/payment" element={<PaymentsForm />} />
             <Route exact path="/resources" element={<Resources />} />

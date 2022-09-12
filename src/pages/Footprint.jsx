@@ -1,12 +1,11 @@
 import FootprintCard from "../components/FootprintCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Results from "../components/Results";
 import { Button } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
 
 const Footprint = () => {
   const [result, setResult] = useState("");
-  const [change, setChange] = useState(false);
 
   const navigateTo = useNavigate();
 
@@ -69,7 +68,6 @@ const Footprint = () => {
                 disposables={card.disposables}
                 buttonText={"Select"}
                 setResult={setResult}
-                change={setChange}
               />
             );
           })}

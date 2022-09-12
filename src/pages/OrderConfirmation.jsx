@@ -6,6 +6,21 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const OrderConfirmation = ({ tier }) => {
+  const firstMessage = "I just became a @PolyZeroApp Climate";
+  let secondMessage;
+  if (tier.title === "Supporter") {
+    secondMessage = "Supporter";
+  } else if (tier.title === "Ally") {
+    secondMessage = "Ally";
+  } else if (tier.title === "Defender") {
+    secondMessage = "Defender";
+  } else {
+    secondMessage = "Champion";
+  }
+  const thirdMessage =
+    "by off-setting the CO2e footprint of my annual plastic consumption! %0aEstimate and off-set your plastic usage at https://polyzero.earth";
+
+  console.log(tier);
   return (
     <div className="flex flex-col flex-grow items-center justify-center">
       <div className="flex flex-col items-center w-1/2">
@@ -45,8 +60,8 @@ const OrderConfirmation = ({ tier }) => {
             <FaceBook />
             <Instagram />
             <a
-              href="https://twitter.com/intent/tweet?text=I offsetted 184kg of C02e"
-              data-show-count="false"
+              href={`https://twitter.com/intent/tweet?text=${firstMessage} ${secondMessage} ${thirdMessage}`}
+              target="_blank"
             >
               <Twitter />
             </a>

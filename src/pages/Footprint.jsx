@@ -9,8 +9,14 @@ import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.s
 import tier from "../data/tier.json";
 
 const Footprint = ({ result, setResult }) => {
-  const hashTag = "savetheearth";
+  // const [data, setData] = useState(null);
+
+  // useEffect(() => {
+  //   setData(tierData.find((element) => element.title === storedResult));
+  // }, [storedResult]);
+  const hashTag = "aveTheEarth";
   const storedResult = localStorage.getItem("result");
+  console.log(storedResult);
   const firstMessage = "I use approx.";
   let secondMessage;
   const thirdMessage = "of disposable plastic/year, corresponding to";
@@ -20,18 +26,14 @@ const Footprint = ({ result, setResult }) => {
   const sixthMessage = "https://polyzero.earth";
 
   tier.map((val) => {
-    if (val.title === "🐕 Plastic Avoider") {
-      (secondMessage = val.plastic + "kg") &&
-        (forthMessage = val.carbon + "kg");
-    } else if (val.title === "🐄 Plastic Reducer") {
-      (secondMessage = val.plastic + "kg") &&
-        (forthMessage = val.carbon + "kg");
-    } else if (val.title === "🐘 Conscientious Consumer") {
-      (secondMessage = val.plastic + "kg") &&
-        (forthMessage = val.carbon + "kg");
-    } else if (val.title === "🦖 Urban Consumer") {
-      (secondMessage = val.plastic + "kg") &&
-        (forthMessage = val.carbon + "kg");
+    if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
     }
   });
 
@@ -121,7 +123,9 @@ const Footprint = ({ result, setResult }) => {
         <Instagram />
         <a
           href={
-            `https://twitter.com/intent/tweet?text=${firstMessage}+${secondMessage}+${thirdMessage}+${forthMessage}${fithMessage}` +
+            `https://twitter.com/intent/tweet?text=${firstMessage}+${
+              secondMessage + "kg"
+            }+${thirdMessage}+${forthMessage + "kg"}${fithMessage}` +
             "%0a" +
             `${sixthMessage}` +
             "%0a" +

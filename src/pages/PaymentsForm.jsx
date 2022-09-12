@@ -2,6 +2,8 @@ import { useState, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PaymentsForm = () => {
+  const storedPayment = localStorage.getItem("payment");
+
   const [cvv, setCvv] = useState("");
   const [name, setName] = useState("");
   const [cardNumber, setcardNumber] = useState("");
@@ -94,7 +96,7 @@ const PaymentsForm = () => {
               </div>
             </div>
             <p className="text-lg text-center mt-4 text-gray-600 font-semibold">
-              Payment amount:¥1298
+              Payment amount:¥{storedPayment}
             </p>
             <div className="flex justify-center mt-4">
               {" "}

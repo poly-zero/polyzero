@@ -6,8 +6,10 @@ import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-i
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import tier from "../data/tier.json";
 
 const Footprint = ({ result, setResult }) => {
+  const hashTag = "savetheearth";
   const storedResult = localStorage.getItem("result");
   const firstMessage = "I use approx.";
   let secondMessage;
@@ -16,20 +18,22 @@ const Footprint = ({ result, setResult }) => {
   const fithMessage =
     " of CO2e. %0aHow much plastic do you use? %0aEstimated with @PolyZeroApp ";
   const sixthMessage = "https://polyzero.earth";
-  console.log(result);
-  if (result === "🐕 Plastic Avoider") {
-    secondMessage = "9.25kg";
-    forthMessage = "51.8kg";
-  } else if (result === "🐄 Plastic Reducer") {
-    secondMessage = "27.75kg";
-    forthMessage = "155.4kg";
-  } else if (result === "🐘 Conscientious Consumer") {
-    secondMessage = "46.25kg";
-    forthMessage = "259kg";
-  } else {
-    secondMessage = "74kg";
-    forthMessage = "414.4kg";
-  }
+
+  tier.map((val) => {
+    if (val.title === "🐕 Plastic Avoider") {
+      (secondMessage = val.plastic + "kg") &&
+        (forthMessage = val.carbon + "kg");
+    } else if (val.title === "🐄 Plastic Reducer") {
+      (secondMessage = val.plastic + "kg") &&
+        (forthMessage = val.carbon + "kg");
+    } else if (val.title === "🐘 Conscientious Consumer") {
+      (secondMessage = val.plastic + "kg") &&
+        (forthMessage = val.carbon + "kg");
+    } else if (val.title === "🦖 Urban Consumer") {
+      (secondMessage = val.plastic + "kg") &&
+        (forthMessage = val.carbon + "kg");
+    }
+  });
 
   const plasticFootprintEstimation = [
     {
@@ -119,7 +123,9 @@ const Footprint = ({ result, setResult }) => {
           href={
             `https://twitter.com/intent/tweet?text=${firstMessage}+${secondMessage}+${thirdMessage}+${forthMessage}${fithMessage}` +
             "%0a" +
-            `${sixthMessage}`
+            `${sixthMessage}` +
+            "%0a" +
+            `&hashtags=${hashTag}`
           }
           data-show-count="false"
           target={"_blank"}

@@ -6,6 +6,8 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const OrderConfirmation = ({ tier }) => {
+  const hi = "hello, this is twitter";
+  const hello = "and this is a new line";
   return (
     <div className="flex flex-col flex-grow items-center justify-center">
       <div className="flex flex-col items-center w-1/2">
@@ -45,7 +47,7 @@ const OrderConfirmation = ({ tier }) => {
             <FaceBook />
             <Instagram />
             <a
-              href="https://twitter.com/intent/tweet?text=I offsetted 184kg of C02e"
+              href={`https://twitter.com/intent/tweet?text=${hi}%0a${hello}`}
               data-show-count="false"
             >
               <Twitter />

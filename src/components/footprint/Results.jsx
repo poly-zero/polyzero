@@ -5,11 +5,30 @@ import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../../assets/socialMediaIcons/icons8-twitter.svg";
-import { ReactComponent as Line } from "../../assets/socialMediaIcons/icons8-line.svg";
 
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
   const foundTier = tierData.find((tier) => tier.title === storedResult);
+  const hashTag = "SaveTheEarth";
+  const firstMessage = "I use approx.";
+  let secondMessage;
+  const thirdMessage = "of disposable plastic/year, corresponding to";
+  let forthMessage;
+  const fifthMessage =
+    " of CO2e. %0aHow much plastic do you use? %0aEstimated with @PolyZeroApp ";
+  const sixthMessage = "https://polyzero.earth";
+
+  tierData.map((val) => {
+    if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    } else if (val.title === storedResult) {
+      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+    }
+  });
 
   function resetResult() {
     localStorage.removeItem("result");
@@ -64,23 +83,23 @@ const Results = ({ setResult, storedResult }) => {
         <Card>
           <div className="flex flex-col gap-2">
             <small className="text-xl font-normal text-gray-500">
-              The amount of plastic will generate at least
+              This amount of plastic will generate at least
             </small>
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
               {foundTier.carbon}
               <span className="text-4xl">
-                kg of CO
+                kg CO
                 <span className="text-xl">2</span>e
               </span>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              over the course of its life (production to end-of-life).
+              emissions over the course of its life (production to end-of-life).
             </p>
           </div>
         </Card>
       </div>
       <div className="flex flex-wrap gap-2 justify-center w-1/3">
-        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+        <Button size={"xl"} onClick={() => navigateTo("/resources")}>
           Learn how to shrink your plastic habit
         </Button>
         <Button size={"xl"} onClick={resetResult}>
@@ -92,15 +111,30 @@ const Results = ({ setResult, storedResult }) => {
       </div>
       <div className="w-1/2">
         <Card>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col items-center gap-2">
             <small className="text-xl font-normal text-gray-500">
               Share to raise awareness
             </small>
           </div>
-          <div class="flex items-center justify-around">
-            <Twitter />
+          <div className="flex justify-center gap-14">
             <FaceBook />
             <Instagram />
+            <a
+              href={
+                `https://twitter.com/intent/tweet?text=${firstMessage}+${
+                  secondMessage + "kg"
+                }+${thirdMessage}+${forthMessage + "kg"}${fifthMessage}` +
+                "%0a" +
+                `${sixthMessage}` +
+                "%0a" +
+                `&hashtags=${hashTag}`
+              }
+              data-show-count="false"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <Twitter />
+            </a>
             <LinkedIn />
           </div>
         </Card>

@@ -3,6 +3,7 @@ import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-li
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 // import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+import LandingNavBar from "./LandingNavBar";
 // import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const Landing = () => {
@@ -11,7 +12,7 @@ const Landing = () => {
     " In Japan 1 Kilogram of plastic equals to 5.6kg- 6kg CO2 over its lifetime.",
     " Japan is the 2nd biggest consumer of disposable plastic.",
     " In Japan, the average CO2 from plastic per capita is 207-222kg per annum.",
-    " Single-use plastics, which account for half of the plastic we use each year, have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down."
+    " Single-use plastics, which account for half of the plastic we use each year, have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down.",
   ];
 
   const randomFact =
@@ -23,8 +24,9 @@ const Landing = () => {
   const navigateTo = useNavigate();
 
   return (
-    <div className="mt-11">
-      <div className="flex-col items-center mt-11 align-items ">
+    <div className="h-screen md:-ml-64">
+      <LandingNavBar />
+      <div className=" bg-slate-50 flex-col items-center mt-11 align-items ">
         <div>
           <img
             className="flex-col items-center mx-auto"

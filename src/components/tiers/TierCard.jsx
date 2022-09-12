@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const TierCard = ({ title, description, cost, image, setTier }) => {
   const navigateTo = useNavigate();
-  const [age, setAge] = useState(11);
+  const [age, setAge] = useState(15);
 
   function assignTier() {
     setTier({
@@ -34,7 +34,7 @@ const TierCard = ({ title, description, cost, image, setTier }) => {
               id="age1"
               type="number"
               placeholder="Your age"
-              min={11}
+              min={15}
               value={age}
               onChange={(e) => setAge(e.target.value)}
               required={true}

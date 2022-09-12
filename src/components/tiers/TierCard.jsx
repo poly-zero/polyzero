@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const TierCard = ({ title, time, cost, image, setTier }) => {
   const navigateTo = useNavigate();
-  const [age, setAge] = useState(title === "Hero" ? 15 : time);
+  const [age, setAge] = useState(title === "Champion" ? 15 : time);
 
   function assignTier() {
     setTier({
@@ -24,11 +24,11 @@ const TierCard = ({ title, time, cost, image, setTier }) => {
           {title}
         </h2>
         <p className="text-lg font-normal text-gray-700 dark:text-gray-400">
-          {title === "Hero"
+          {title === "Champion"
             ? "Support for a lifetime"
             : `Support for ${time} year`}
         </p>
-        {title === "Hero" && (
+        {title === "Champion" && (
           <div>
             <div className="mb-2 block">
               <Label htmlFor="age1" value="Enter your age" />

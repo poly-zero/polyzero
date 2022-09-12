@@ -4,7 +4,6 @@ import { logout, auth, getUserInfo } from "../firebase/firebase";
 import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-<<<<<<< HEAD
 const NavBar = ({
   showSideBar,
   setShowSidebar,
@@ -15,13 +14,6 @@ const NavBar = ({
   loading,
   error,
 }) => {
-=======
-const NavBar = () => {
-  const [userInfo, setUserInfo] = useState(null);
-  // eslint-disable-next-line no-unused-vars
-  const [user, loading, error] = useAuthState(auth);
-
->>>>>>> main
   useEffect(() => {
     if (loading) return;
     if (user && !userInfo)

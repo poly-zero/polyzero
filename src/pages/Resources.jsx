@@ -5,7 +5,7 @@ const Resources = () => {
   const navigateTo = useNavigate();
   return (
     <Fragment>
-      <div>
+      <div className="bg./images/plastic-background.png)">
         <div className=" flex justify-center m-10  items-center mx-10 mt-10 rounded-lg bg-slate-200 px-20 py-8 gap-24  ">
           <ul className=" flex flex-col text-center space-y-4 mt-4 font-semibold ">
             {" "}

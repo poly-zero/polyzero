@@ -20,22 +20,24 @@ const Dashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
-  console.log(userInfo);
-
   return (
-    <div className="max-w-sm">
-      <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {userInfo.email}
-        </h5>
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {userInfo.name}
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Footprint: {userInfo.footprint} CO2e
-        </p>
-      </Card>
-    </div>
+    <>
+      {userInfo && (
+        <div className="max-w-sm">
+          <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {userInfo.email}
+            </h5>
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {userInfo.name}
+            </h5>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              Footprint: {userInfo.footprint} CO2e
+            </p>
+          </Card>
+        </div>
+      )}
+    </>
   );
 };
 

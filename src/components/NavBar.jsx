@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 const NavBar = () => {
   const [userInfo, setUserInfo] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {

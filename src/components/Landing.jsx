@@ -3,7 +3,9 @@ import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-li
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 // import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+import { ReactComponent as Quote } from "../assets/quotation.svg";
 import LandingNavBar from "./LandingNavBar";
+import { Button } from "flowbite-react";
 // import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const Landing = () => {
@@ -26,29 +28,32 @@ const Landing = () => {
   return (
     <div className="h-screen md:-ml-64">
       <LandingNavBar />
-      <div className=" bg-slate-50 flex-col items-center mt-11 align-items ">
-        <div>
-          <img
-            className="flex-col items-center mx-auto"
-            alt="Picture of river running through jungle"
-            src="https://siwi.org/wp-content/uploads/2021/07/why-water_topics-present-at-launch_rivers2.jpg"
-            width="500"
-            height="400"
-          />
-        </div>
-        <h1 className="  mx-auto  flex justify-center  text-7xl gap-8 mt-11 ">
-          PolyZero
-        </h1>
-        <p className=" mx-auto  flex justify-center  text-1xl gap-8 mt-11">
-          A better way to help the planet.
-        </p>
-        <button
-          onClick={() => navigateTo("/footprint")}
-          className=" flex mx-auto mt-5  items-center py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-          type="button"
-        >
-          Get started{" "}
-        </button>
+      <div className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4">
+        <figure class="flex flex-col items-center max-w-screen-md text-center">
+          <Quote />
+          <blockquote>
+            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">
+              "Single-use plastics… have an average useful life of 12 to 15
+              minutes and yet can take up to 500 years to break down."
+            </p>
+          </blockquote>
+          <figcaption class="flex justify-center items-center my-6 space-x-3">
+            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+              <cite class="pr-3 font-medium text-gray-900 dark:text-white">
+                Life Out of Plastic
+              </cite>
+              <cite class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
+                LOOP
+              </cite>
+            </div>
+          </figcaption>
+          <Button
+            href="https://www.iberdrola.com/sustainability/how-to-reduce-plastic-use"
+            target="_blank"
+          >
+            Learn more
+          </Button>
+        </figure>
       </div>
       <div className="flex-col ">
         {" "}

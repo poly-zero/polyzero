@@ -8,8 +8,9 @@ import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-i
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import { Progress } from "flowbite-react";
 
-const SideBar = () => {
+const SideBar = ({ result }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
   const [userInfo, setUserInfo] = useState(null);
   const [user, loading, error] = useAuthState(auth);
@@ -17,6 +18,24 @@ const SideBar = () => {
 
   return (
     <>
+      <div className="">
+        <Progress
+          progress={
+            !result
+              ? 0
+              : pathName === "/footprint"
+              ? 25
+              : pathName === "/tiers"
+              ? 50
+              : pathName === "/payment"
+              ? 75
+              : pathName === "/confirmation"
+              ? 100
+              : 0
+          }
+          size="sm"
+        />
+      </div>
       <NavBar
         showSidebar={showSidebar}
         setShowSidebar={setShowSidebar}
@@ -37,10 +56,10 @@ const SideBar = () => {
           <button
             className=" float-right md:hidden"
             onClick={() => setShowSidebar("-left-64")}
-            >
+          >
             X
           </button>
-            {/* Logo */}
+          {/* Logo */}
           <NavLink to="/" exact={true} className="flex mt-2">
             <img
               src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
@@ -51,26 +70,12 @@ const SideBar = () => {
               PolyZero
             </span>
           </NavLink>
-          
+
           <div className="flex flex-col">
             <hr className="my-4 min-w-full" />
 
             {/* Beginning of nav list */}
             <ul className="flex-col min-w-full flex list-none">
-              <li className="rounded-lg mb-4">
-                <NavLink
-                  to="/"
-                  exact={true}
-                  className={
-                    pathName === "/"
-                      ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
-                      : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
-                  }
-                >
-                  {/* <Icon name="dashboard" size="2xl" /> */}
-                  Home
-                </NavLink>
-              </li>
               <li className="rounded-lg mb-4">
                 <NavLink
                   to="/footprint"
@@ -85,66 +90,48 @@ const SideBar = () => {
                   Footprint Calculator
                 </NavLink>
               </li>
-              <li className="rounded-lg mb-4">
-                <NavLink
-                  to="/tiers"
-                  exact
-                  className={
-                    pathName === "/tiers"
-                      ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
-                      : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
-                  }
-                >
-                  {/* <Icon name="dashboard" size="2xl" /> */}
-                  Tiers
-                </NavLink>
-              </li>
-              {!user && (
+              {result && (
+                <li className="rounded-lg mb-4">
+                  <NavLink
+                    to="/tiers"
+                    exact
+                    className={
+                      pathName === "/tiers"
+                        ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
+                        : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
+                    }
+                  >
+                    {/* <Icon name="dashboard" size="2xl" /> */}
+                    Tiers
+                  </NavLink>
+                </li>
+              )}
+              {user && (
                 <>
                   <li className="rounded-lg mb-4">
                     <NavLink
-                      to="/login"
+                      to="/dashboard"
                       exact
                       className={
-                        pathName === "/login"
+                        pathName === "/dashboard"
                           ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
                           : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
                       }
                     >
                       {/* <Icon name="dashboard" size="2xl" /> */}
-                      Log in
+                      Dashboard
                     </NavLink>
                   </li>
                   <li className="rounded-lg mb-4">
-                    <NavLink
-                      to="/registration"
-                      exact
-                      className={
-                        pathName === "/registration"
-                          ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
-                          : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
-                      }
+                    <button
+                      className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
+                      onClick={logout}
                     >
-                      {/* <Icon name="dashboard" size="2xl" /> */}
-                      Register
-                    </NavLink>
+                      Log out
+                    </button>
                   </li>
                 </>
               )}
-              <li className="rounded-lg mb-4">
-                <NavLink
-                  to="/dashboard"
-                  exact
-                  className={
-                    pathName === "/dashboard"
-                      ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
-                      : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
-                  }
-                >
-                  {/* <Icon name="dashboard" size="2xl" /> */}
-                  Dashboard
-                </NavLink>
-              </li>
             </ul>
 
             <ul className="flex-col min-w-full flex list-none absolute bottom-0">
@@ -157,7 +144,7 @@ const SideBar = () => {
                   Share
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <div className="grid grid-cols-3">
                   <FaceBook />
                   <Instagram />
@@ -170,7 +157,7 @@ const SideBar = () => {
                   <LinkedIn />
                   <Line />
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

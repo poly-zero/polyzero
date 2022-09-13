@@ -21,33 +21,33 @@ const FootprintCard = ({
         imgSrc="https://media.timeout.com/images/105656638/image.jpg"
         onClick={assignResult}
       >
-        <h2 className="text-4xl font-bold tracking-tight text-center text-gray-900 dark:text-white">
+        <h2 className="text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white md:text-2xl">
           {title}
         </h2>
 
-        <div className="flex flex-col gap-2 h-85">
+        <div className="flex flex-col gap-2 h-45 md:h-85">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <h4 className="font-medium">Grocery Store</h4>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
+              <h4 className="text-sm font-medium md:text-base">Grocery Store</h4>
+              <p className="text-xs font-normal leading-6 text-gray-700 dark:text-gray-400 md:text-md">
                 {grocery}
               </p>
             </div>
             <div>
-              <h4 className="font-medium">Take-out</h4>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
+              <h4 className="text-sm font-medium md:text-base">Take-out</h4>
+              <p className="text-xs font-normal leading-6 text-gray-700 dark:text-gray-400 md:text-md">
                 {takeOut}
               </p>
             </div>
             <div>
-              <h4 className="font-medium">PET bottles</h4>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
+              <h4 className="text-sm font-medium md:text-base">PET bottles</h4>
+              <p className="text-xs font-normal leading-6 text-gray-700 dark:text-gray-400 md:text-md">
                 {petBottles}
               </p>
             </div>
             <div>
-              <h4 className="font-medium">Disposables</h4>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
+              <h4 className="text-sm font-medium md:text-base">Disposables</h4>
+              <p className="text-xs font-normal leading-6 text-gray-700 dark:text-gray-400 md:text-md">
                 {disposables}
               </p>
             </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Label, TextInput, Checkbox, Button } from "flowbite-react";
+import { Label, TextInput, Button } from "flowbite-react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import {

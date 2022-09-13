@@ -30,7 +30,7 @@ const Tiers = ({ setTier }) => {
       image: "https://picsum.photos/800",
     },
     {
-      title: "Hero",
+      title: "Champion",
       time: 15,
       image: "https://picsum.photos/800",
     },

@@ -10,14 +10,14 @@ import { ReactComponent as Twitter } from "../../assets/socialMediaIcons/icons8-
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
   const foundTier = tierData.find((tier) => tier.title === storedResult);
-  let secondMessage;
-  let forthMessage;
+  let secondMessage = foundTier.plastic;
+  let forthMessage = foundTier.carbon;
 
-  tierData.map((val) => {
-    if (val.title === storedResult) {
-      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-    }
-  });
+  // tierData.map((val) => {
+  //   if (val.title === storedResult) {
+  //     return (secondMessage = val.plastic) && (forthMessage = val.carbon);
+  //   }
+  // });
 
   function resetResult() {
     localStorage.removeItem("result");

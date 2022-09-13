@@ -31,12 +31,7 @@ const OrderConfirmation = ({ tier }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
-  let secondMessage;
-  tierData.map((val) => {
-    if (val.title === foundTier.title) {
-      return (secondMessage = foundTier.title);
-    }
-  });
+  let secondMessage = foundTier.title;
 
   return (
     <div className="flex flex-col flex-grow items-center justify-center">

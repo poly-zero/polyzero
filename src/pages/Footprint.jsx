@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import FootprintCard from "../components/footprint/FootprintCard";
 import Results from "../components/footprint/Results";
 import footprintData from "../data/tier.json";
-import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
-import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
-import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
-import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+// import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
+// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
+// import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
+// import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+// import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const Footprint = ({ result, setResult }) => {
   // const [data, setData] = useState(null);
@@ -20,6 +20,7 @@ const Footprint = ({ result, setResult }) => {
     if (storedResult) {
       setResult(storedResult);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

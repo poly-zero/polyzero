@@ -59,7 +59,7 @@ const OrderConfirmation = ({ tier }) => {
               Support for {storedTime} year
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{storedPayment}
+              ￥{storedPayment * storedTime}
             </h5>
           </Card>
         </div>

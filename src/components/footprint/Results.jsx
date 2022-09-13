@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
 import tierData from "../../data/tier.json";
+import messagesTwitter from "../../data/variable.json";
 import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -9,23 +10,11 @@ import { ReactComponent as Twitter } from "../../assets/socialMediaIcons/icons8-
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
   const foundTier = tierData.find((tier) => tier.title === storedResult);
-  const hashTag = "SaveTheEarth";
-  const firstMessage = "I use approx.";
   let secondMessage;
-  const thirdMessage = "of disposable plastic/year, corresponding to";
   let forthMessage;
-  const fifthMessage =
-    " of CO2e. %0aHow much plastic do you use? %0aEstimated with @PolyZeroApp ";
-  const sixthMessage = "https://polyzero.earth";
 
   tierData.map((val) => {
     if (val.title === storedResult) {
-      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-    } else if (val.title === storedResult) {
-      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-    } else if (val.title === storedResult) {
-      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-    } else if (val.title === storedResult) {
       return (secondMessage = val.plastic) && (forthMessage = val.carbon);
     }
   });
@@ -110,13 +99,13 @@ const Results = ({ setResult, storedResult }) => {
             <Instagram />
             <a
               href={
-                `https://twitter.com/intent/tweet?text=${firstMessage}+${
-                  secondMessage + "kg"
-                }+${thirdMessage}+${forthMessage + "kg"}${fifthMessage}` +
+                `https://twitter.com/intent/tweet?text=${
+                  messagesTwitter[0].Q1
+                }+${secondMessage + "kg"}+${messagesTwitter[0].Q3}+${
+                  forthMessage + "kg"
+                }${messagesTwitter[0].Q5}` +
                 "%0a" +
-                `${sixthMessage}` +
-                "%0a" +
-                `&hashtags=${hashTag}`
+                `${messagesTwitter[0].Q6}`
               }
               data-show-count="false"
               target={"_blank"}
@@ -139,7 +128,6 @@ const Results = ({ setResult, storedResult }) => {
           Re-do Footprint Estimate
         </Button>
       </div>
-
     </div>
   );
 };

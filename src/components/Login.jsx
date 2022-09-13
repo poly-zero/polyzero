@@ -11,13 +11,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
   const logIn = (e) => {
     e.preventDefault();
     logInWithEmailAndPassword(email, password);
-    if (user) navigate("/");
+    if (user) navigate("/footprint");
   };
 
   useEffect(() => {
@@ -49,7 +50,7 @@ function Login() {
                   E-MAIL
                 </label>
                 <TextInput
-                  id="email1"
+                  id="email"
                   type="email"
                   placeholder="email@email.com"
                   value={email}
@@ -67,7 +68,7 @@ function Login() {
                   PASSWORD
                 </label>
                 <TextInput
-                  id="password1"
+                  id="password"
                   type="password"
                   required={true}
                   value={password}
@@ -104,16 +105,6 @@ function Login() {
                 >
                   Register
                 </Link>
-              </p>
-            </div>
-            <div className="flex items-center justify-center">
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                {/* <a
-                    href="#"
-                    className="font-medium text-blue hover:underline dark:text-primary-500"
-                  >
-                    Need a help?
-                  </a> */}
               </p>
             </div>
           </div>

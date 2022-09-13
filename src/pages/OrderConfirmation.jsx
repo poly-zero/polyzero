@@ -3,6 +3,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { Card } from "flowbite-react";
+import messagesTwitter from "../data/variable.json";
+import tierData from "../data/tier.json";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -11,6 +13,7 @@ import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.s
 
 const OrderConfirmation = ({ tier }) => {
   const storedResult = localStorage.getItem("result");
+  const foundTier = tierData.find((tier) => tier.title === storedResult);
 
   const storedPayment = localStorage.getItem("payment");
   const storedTitle = localStorage.getItem("title");
@@ -28,19 +31,12 @@ const OrderConfirmation = ({ tier }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
-  const firstMessage = "I just became a @PolyZeroApp Climate";
   let secondMessage;
-  if (tier.title === storedResult) {
-    return (secondMessage = storedResult);
-  } else if (tier.title === storedResult) {
-    return (secondMessage = storedResult);
-  } else if (tier.title === storedResult) {
-    return (secondMessage = storedResult);
-  } else {
-    secondMessage = storedResult;
-  }
-  const thirdMessage =
-    "by off-setting the CO2e footprint of my annual plastic consumption! %0ahttps://polyzero.earth ";
+  tierData.map((val) => {
+    if (val.title === foundTier.title) {
+      return (secondMessage = foundTier.title);
+    }
+  });
 
   return (
     <div className="flex flex-col flex-grow items-center justify-center">
@@ -80,8 +76,8 @@ const OrderConfirmation = ({ tier }) => {
             <FaceBook />
             <Instagram />
             <a
+              href={`https://twitter.com/intent/tweet?text=${messagesTwitter[0].Q7} ${secondMessage} ${messagesTwitter[0].Q8}`}
               rel="noreferrer"
-              href={`https://twitter.com/intent/tweet?text=${firstMessage} ${secondMessage} ${thirdMessage}`}
               target="_blank"
             >
               <Twitter />

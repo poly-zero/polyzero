@@ -9,11 +9,11 @@ const OrderConfirmation = ({ tier }) => {
   const firstMessage = "I just became a @PolyZeroApp Climate";
   let secondMessage;
   if (tier.title === "Supporter") {
-    secondMessage = "Supporter";
+    return (secondMessage = "Supporter");
   } else if (tier.title === "Ally") {
-    secondMessage = "Ally";
+    return (secondMessage = "Ally");
   } else if (tier.title === "Defender") {
-    secondMessage = "Defender";
+    return (secondMessage = "Defender");
   } else {
     secondMessage = "Champion";
   }

@@ -14,7 +14,7 @@ const FootprintCard = ({
   }
 
   return (
-    <div className="max-w-screen-md transition ease-out duration-300 hover:-translate-y-1 hover:scale-105">
+    <div className="max-w-screen-md transition ease-out duration-300 hover:-translate-y-1 hover:scale-105 cursor-pointer">
       <Card
         horizontal={true}
         imgAlt="Meaningful alt text for an image that is not purely decorative"

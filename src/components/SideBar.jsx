@@ -60,7 +60,7 @@ const SideBar = ({ result }) => {
             X
           </button>
           {/* Logo */}
-          <NavLink to="/" exact={true} className="flex mt-2">
+          <NavLink to="/" exact="true" className="flex mt-2">
             <img
               src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
               className="mr-3 h-14"
@@ -79,7 +79,7 @@ const SideBar = ({ result }) => {
               <li className="rounded-lg mb-4">
                 <NavLink
                   to="/footprint"
-                  exact
+                  exact="true"
                   className={
                     pathName === "/footprint"
                       ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
@@ -94,7 +94,7 @@ const SideBar = ({ result }) => {
                 <li className="rounded-lg mb-4">
                   <NavLink
                     to="/tiers"
-                    exact
+                    exact="true"
                     className={
                       pathName === "/tiers"
                         ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
@@ -111,7 +111,7 @@ const SideBar = ({ result }) => {
                   <li className="rounded-lg mb-4">
                     <NavLink
                       to="/dashboard"
-                      exact
+                      exact="true"
                       className={
                         pathName === "/dashboard"
                           ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"

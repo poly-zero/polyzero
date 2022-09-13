@@ -5,8 +5,8 @@ const LandingNavBar = () => {
   return (
     <nav className="">
       <Navbar fluid={true} rounded={true} border={true}>
-        <Navbar.Brand>
-          <NavLink to="/" exact={true} className="flex mt-2">
+        <Navbar.Brand href="/">
+          <div className="flex mt-2">
             <img
               src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
               className="mt-1 ml-2 mr-3 h-14"
@@ -15,11 +15,11 @@ const LandingNavBar = () => {
             <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
               PolyZero
             </span>
-          </NavLink>
+          </div>
         </Navbar.Brand>
         <div className="flex md:order-2 gap-2">
           <Button>
-            <NavLink to={"/footprint"} exact={true}>
+            <NavLink to={"/footprint"} exact={"true"}>
               Get started
             </NavLink>
           </Button>

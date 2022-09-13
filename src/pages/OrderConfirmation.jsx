@@ -31,7 +31,6 @@ const OrderConfirmation = ({ tier }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
-  const firstMessage = "I just became a @PolyZeroApp Climate";
   let secondMessage;
   tierData.map((val) => {
     if (val.title === foundTier.title) {

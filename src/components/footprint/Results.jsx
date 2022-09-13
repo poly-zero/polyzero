@@ -16,12 +16,6 @@ const Results = ({ setResult, storedResult }) => {
   tierData.map((val) => {
     if (val.title === storedResult) {
       return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-    } else if (val.title === storedResult) {
-      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-    } else if (val.title === storedResult) {
-      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-    } else if (val.title === storedResult) {
-      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
     }
   });
 

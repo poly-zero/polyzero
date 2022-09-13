@@ -25,7 +25,7 @@ function Login() {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/");
+    if (user) navigate("/footprint");
   }, [user, loading]);
 
   return (

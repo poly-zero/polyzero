@@ -23,7 +23,7 @@ function Registration() {
     if (password !== confirmationPassword) {
       setPassword("");
       setConfirmationPassword("");
-      alert("Your Password does not match with your confirmation password")
+      alert("Your Password does not match with your confirmation password");
       return;
     }
     registerWithEmailAndPassword(name, email, password);
@@ -31,7 +31,7 @@ function Registration() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/");
+    if (user) navigate("/footprint");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
@@ -83,7 +83,10 @@ function Registration() {
             </div>
             <div>
               <div className="mb-2 block">
-                <Label htmlFor="confirmationPassword" value="Confirm your password" />
+                <Label
+                  htmlFor="confirmationPassword"
+                  value="Confirm your password"
+                />
               </div>
               <TextInput
                 id="confirmationPassword"

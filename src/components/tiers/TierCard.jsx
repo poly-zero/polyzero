@@ -2,7 +2,7 @@ import { Card, Label, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const TierCard = ({ title, time, cost, image, setTier }) => {
+const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
   const navigateTo = useNavigate();
   const [age, setAge] = useState(title === "Champion" ? 15 : time);
 
@@ -10,11 +10,13 @@ const TierCard = ({ title, time, cost, image, setTier }) => {
     setTier({
       image,
       title,
+      tonnes,
       time,
       cost,
     });
     localStorage.setItem("payment", cost);
     localStorage.setItem("title", title);
+    localStorage.setItem("tonnes", tonnes);
     localStorage.setItem("time", age);
 
     navigateTo("/payment");
@@ -28,25 +30,29 @@ const TierCard = ({ title, time, cost, image, setTier }) => {
         </h2>
         <p className="text-lg font-normal text-gray-700 dark:text-gray-400">
           {title === "Champion"
-            ? "Support for a lifetime"
-            : `Support for ${time} year`}
+            ? "Offset for a lifetime"
+            : `Offset for ${time} year(s)`}
         </p>
         {title === "Champion" && (
           <div>
             <div className="mb-2 block">
-              <Label htmlFor="age1" value="Enter your age" />
+              <Label htmlFor="age1" value="Enter number of years" />
             </div>
             <TextInput
               id="age1"
               type="number"
-              placeholder="Your age"
+              placeholder="Number of years to offset"
               min={15}
+              max={100}
               value={age}
               onChange={(e) => setAge(e.target.value)}
               required={true}
             />
           </div>
         )}
+        <p className="text-lg font-bold text-gray-700 dark:text-gray-400">
+        {`Total CO2: ${(tonnes * age).toFixed(2)} tonnes`}
+        </p>
         <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {`￥${cost * age}`}
         </h3>

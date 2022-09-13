@@ -20,7 +20,7 @@ const Footprint = ({ result, setResult }) => {
     if (storedResult) {
       setResult(storedResult);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -33,11 +33,13 @@ const Footprint = ({ result, setResult }) => {
               plastic footprint
             </span>
           </h1>
-          Select the lifestyle below that comes closest to describing your consumption habits.
+          Select the lifestyle below that comes closest to describing your
+          consumption habits.
           <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-9 md:w-10/12">
             {footprintData.map((card) => {
               return (
                 <FootprintCard
+                  key={card.title}
                   title={card.title}
                   grocery={card.grocery}
                   takeOut={card.takeOut}

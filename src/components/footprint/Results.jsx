@@ -48,7 +48,7 @@ const Results = ({ setResult, storedResult }) => {
               </div>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              At the <strong>{storedResult.slice(2)}</strong> level, we estimate
+              At the <strong>{storedResult}</strong> level, we estimate
               you consume around <strong>{foundTier.plastic}kg</strong> of
               disposable plastics per year.
             </p>

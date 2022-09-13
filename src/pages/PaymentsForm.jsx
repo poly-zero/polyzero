@@ -18,7 +18,7 @@ const PaymentsForm = () => {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+        body: JSON.stringify(body)
       });
       window.location = "/";
     } catch (error) {
@@ -28,9 +28,9 @@ const PaymentsForm = () => {
 
   return (
     <Fragment>
-      <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center mt-10">
+      <h1 classNameName="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center mt-10">
         Want to
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+        <span classNameName="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
           save the planet?
         </span>
       </h1>
@@ -96,7 +96,7 @@ const PaymentsForm = () => {
             </p>
             <div className="flex justify-center mt-4">
               <button
-                className="outline-none pay h-12 bg-blue-500 text-white mb-3 mr-1 hover:bg-orange-700 rounded-lg w-1/2 cursor-pointer transition-all"
+                className="outline-none pay h-12 bg-blue-600 text-white mb-3 mr-1 hover:bg-blue-700 rounded-lg w-1/2 cursor-pointer transition-all"
                 onClick={() => {
                   navigateTo("/tiers");
                 }}
@@ -105,7 +105,7 @@ const PaymentsForm = () => {
               </button>
               <br />
               <button
-                className="outline-none pay h-12 bg-blue-500 text-white mb-3 hover:bg-orange-700 rounded-lg w-1/2 cursor-pointer transition-all"
+                className="outline-none pay h-12 bg-blue-600 text-white mb-3 hover:bg-blue-700 rounded-lg w-1/2 cursor-pointer transition-all"
                 onClick={() => {
                   navigateTo("/confirmation");
                 }}

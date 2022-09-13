@@ -3,7 +3,10 @@ import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-li
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 // import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+import LandingNavBar from "../components/landing/LandingNavBar";
+import { Button } from "flowbite-react";
 // import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import BlockQuote from "../components/landing/BlockQuote";
 
 const Landing = () => {
   const plasticConsumption = [
@@ -11,7 +14,7 @@ const Landing = () => {
     " In Japan 1 Kilogram of plastic equals to 5.6kg- 6kg CO2 over its lifetime.",
     " Japan is the 2nd biggest consumer of disposable plastic.",
     " In Japan, the average CO2 from plastic per capita is 207-222kg per annum.",
-    " Single-use plastics, which account for half of the plastic we use each year, have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down."
+    " Single-use plastics, which account for half of the plastic we use each year, have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down.",
   ];
 
   const randomFact =
@@ -23,32 +26,22 @@ const Landing = () => {
   const navigateTo = useNavigate();
 
   return (
-    <div className="mt-11">
-      <div className="flex-col items-center mt-11 align-items ">
-        <div>
-          <img
-            className="flex-col items-center mx-auto"
-            alt="Picture of river running through jungle"
-            src="https://siwi.org/wp-content/uploads/2021/07/why-water_topics-present-at-launch_rivers2.jpg"
-            width="500"
-            height="400"
-          />
-        </div>
-        <h1 className="  mx-auto  flex justify-center  text-7xl gap-8 mt-11 ">
-          PolyZero
-        </h1>
-        <p className=" mx-auto  flex justify-center  text-1xl gap-8 mt-11">
-          A better way to help the planet.
-        </p>
-        <button
-          onClick={() => navigateTo("/footprint")}
-          className=" flex mx-auto mt-5  items-center py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-          type="button"
-        >
-          Get started{" "}
-        </button>
+    <div className="h-screen md:-ml-64">
+      <LandingNavBar />
+      <div className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4">
+        <BlockQuote
+          quote={
+            "Single-use plastics… have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down."
+          }
+          article={"Life Out of Plastic"}
+          author={"LOOP"}
+          link={
+            "https://www.iberdrola.com/sustainability/how-to-reduce-plastic-use"
+          }
+          buttonText={"Learn more"}
+        />
       </div>
-      <div className="flex-col ">
+      {/* <div className="flex-col">
         {" "}
         <div class=" flex flex-col justify-center items-center">
           <h1 className="text-2xl mb-7 mt-7 underline font-light">
@@ -65,7 +58,7 @@ const Landing = () => {
         type="button"
       >
         Learn more{" "}
-      </button>
+      </button> */}
     </div>
   );
 };

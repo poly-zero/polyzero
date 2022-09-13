@@ -20,13 +20,13 @@ const Results = ({ setResult, storedResult }) => {
 
   tierData.map((val) => {
     if (val.title === storedResult) {
-      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
     } else if (val.title === storedResult) {
-      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
     } else if (val.title === storedResult) {
-      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
     } else if (val.title === storedResult) {
-      (secondMessage = val.plastic) && (forthMessage = val.carbon);
+      return (secondMessage = val.plastic) && (forthMessage = val.carbon);
     }
   });
 
@@ -74,7 +74,7 @@ const Results = ({ setResult, storedResult }) => {
               </div>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              The per capita average annual plastic consumption in
+              per capita average annual plastic consumption in
               <strong> Japan</strong>.
             </p>
           </Card>
@@ -98,22 +98,11 @@ const Results = ({ setResult, storedResult }) => {
           </div>
         </Card>
       </div>
-      <div className="flex flex-wrap gap-2 justify-center w-1/3">
-        <Button size={"xl"} onClick={() => navigateTo("/resources")}>
-          Learn how to shrink your plastic habit
-        </Button>
-        <Button size={"xl"} onClick={resetResult}>
-          Estimate footprint again
-        </Button>
-        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-          Off-set the CO2 emissions
-        </Button>
-      </div>
       <div className="w-1/2">
         <Card>
           <div className="flex flex-col items-center gap-2">
             <small className="text-xl font-normal text-gray-500">
-              Share to raise awareness
+              Share your results and help raise awareness!
             </small>
           </div>
           <div className="flex justify-center gap-14">
@@ -139,6 +128,18 @@ const Results = ({ setResult, storedResult }) => {
           </div>
         </Card>
       </div>
+      <div className="flex flex-wrap gap-2 justify-center w-1/3">
+        <Button size={"xl"} onClick={() => navigateTo("/resources")}>
+          Shrink your plastic habit
+        </Button>
+        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+          Off-set your CO2 emissions
+        </Button>
+        <Button size={"xl"} onClick={resetResult}>
+          Re-do Footprint Estimate
+        </Button>
+      </div>
+
     </div>
   );
 };

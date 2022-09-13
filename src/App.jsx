@@ -1,12 +1,7 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Login from "./components/Login";
-import Landing from "./components/Landing";
+import Landing from "./pages/Landing";
 import Tiers from "./pages/Tiers";
 import Footprint from "./pages/Footprint";
 import Registration from "./components/Registration";

@@ -1,12 +1,10 @@
 import { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Resources = () => {
-  const navigateTo = useNavigate();
   return (
     <Fragment>
-      <div className="bg./images/plastic-background.png)">
-        <div className=" flex justify-center m-10  items-center mx-10 mt-10 rounded-lg bg-slate-200 px-20 py-8 gap-24  ">
+      <div>
+        <div className=" flex justify-center m-10  items-center mt-10 rounded-lg bg-slate-200">
           <ul className=" flex flex-col text-center space-y-4 mt-4 font-semibold ">
             {" "}
             <li className=" items-center px-10 py-8">
@@ -37,14 +35,14 @@ const Resources = () => {
               <br />
               <a
                 href="https://www.unep.org/ietc/ja/node/53"
-                className="text-blue-600 hover:text-blue-800 text-center font-light mr-3 underline"
+                className="text-blue-600 hover:text-blue-800 text-center font-light  underline"
               >
                 Learn more{" "}
               </a>
             </li>
           </ul>
         </div>
-        <div className=" flex justify-center items-center m-10 mx-10 mt-3  rounded-lg bg-slate-200 px-20 py-8 gap-24 ">
+        <div className=" flex justify-center items-center m-10  mt-3  rounded-lg bg-slate-200">
           <ul className=" flex flex-col    text-center space-y-4 font-semibold">
             <li className="items-center px-10 py-8 gap-24">
               "The carbon footprint of just five plastic bags is 1kg of CO2e."

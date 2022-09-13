@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'md': ".9rem"
+      },
       height: {
         '85': "21rem",
         '90': "22rem"

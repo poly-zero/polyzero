@@ -18,7 +18,7 @@ const OrderConfirmation = ({ tier }) => {
     secondMessage = "Champion";
   }
   const thirdMessage =
-    "by off-setting the CO2e footprint of my annual plastic consumption! %0aEstimate and off-set your plastic usage at https://polyzero.earth ";
+    "by off-setting the CO2e footprint of my annual plastic consumption! %0ahttps://polyzero.earth ";
 
   console.log(tier);
   return (
@@ -26,7 +26,7 @@ const OrderConfirmation = ({ tier }) => {
       <div className="flex flex-col items-center w-1/2">
         <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           Thank you for supporting,
-          <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             {" "}
             Zach
           </span>

@@ -1,33 +1,37 @@
+import { useEffect, useState } from "react";
 import TierCard from "../components/tiers/TierCard";
+import tierData from "../data/tier.json";
 
 const offsetCost = 5000;
-const result = { plastic: 9.25, carbon: 259 };
-const yearOffset = (result.carbon / 1000) * offsetCost;
 
 const Tiers = ({ setTier }) => {
+  const storedResult = localStorage.getItem("result");
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    setData(tierData.find((element) => element.title === storedResult));
+  }, [storedResult]);
+
   const tierCards = [
     {
       title: "Supporter",
-      description: "Support for 1 year",
-      cost: yearOffset,
+      time: 1,
       image: "https://picsum.photos/800",
     },
     {
       title: "Ally",
-      description: "Support for 5 years",
-      cost: yearOffset * 5,
+      time: 5,
       image: "https://picsum.photos/800",
     },
     {
       title: "Defender",
-      description: "Support for 10 years",
-      cost: yearOffset * 10,
+      time: 10,
       image: "https://picsum.photos/800",
     },
     {
-      title: "Hero",
-      description: "Support for a lifetime",
-      cost: yearOffset,
+      title: "Champion",
+      time: 15,
       image: "https://picsum.photos/800",
     },
   ];
@@ -35,26 +39,27 @@ const Tiers = ({ setTier }) => {
   return (
     <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10">
       <div className="w-1/2 flex justify-center items-center">
-        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           Want to
-          <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-            {" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             save the planet?
           </span>
         </h1>
       </div>
       <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-11/12">
-        {tierCards.map((tier) => {
-          return (
-            <TierCard
-              title={tier.title}
-              description={tier.description}
-              cost={tier.cost}
-              image={tier.image}
-              setTier={setTier}
-            />
-          );
-        })}
+        {data &&
+          tierCards.map((tier) => {
+            return (
+              <TierCard
+                key={tier.title}
+                title={tier.title}
+                time={tier.time}
+                cost={(data.carbon / 1000) * offsetCost}
+                image={tier.image}
+                setTier={setTier}
+              />
+            );
+          })}
       </div>
     </div>
   );

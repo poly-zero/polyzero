@@ -2,6 +2,8 @@ import { useState, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PaymentsForm = () => {
+  const storedPayment = localStorage.getItem("payment");
+
   const [cvv, setCvv] = useState("");
   const [name, setName] = useState("");
   const [cardNumber, setcardNumber] = useState("");
@@ -25,9 +27,9 @@ const PaymentsForm = () => {
 
   return (
     <Fragment>
-      <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center mt-10">
+      <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center mt-10">
         Want to
-        <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
           {" "}
           save the planet?
         </span>
@@ -94,7 +96,7 @@ const PaymentsForm = () => {
               </div>
             </div>
             <p className="text-lg text-center mt-4 text-gray-600 font-semibold">
-              Payment amount:¥1298
+              Payment amount:¥{storedPayment}
             </p>
             <div className="flex justify-center mt-4">
               {" "}

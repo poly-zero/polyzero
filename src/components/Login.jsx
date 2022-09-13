@@ -14,13 +14,14 @@ import { ReactComponent as Google } from "../assets/loginIcons/google.svg";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
   const logIn = (e) => {
     e.preventDefault();
     logInWithEmailAndPassword(email, password);
-    if (user) navigate("/");
+    if (user) navigate("/footprint");
   };
 
   useEffect(() => {
@@ -80,7 +81,7 @@ function Login() {
                   Email
                 </label>
                 <input
-                  id="email1"
+                  id="email"
                   type="email"
                   className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-primary-600 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                   placeholder="Email"
@@ -101,6 +102,7 @@ function Login() {
                   Password
                 </label>
                 <input
+                  id="password"
                   type="password"
                   className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-primary-600 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
                   placeholder="Password"

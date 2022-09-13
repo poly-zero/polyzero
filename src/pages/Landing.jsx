@@ -35,7 +35,7 @@ const Landing = () => {
           }
           article={"Life Out of Plastic"}
           author={"LOOP"}
-          link={
+          sourceLink={
             "https://www.iberdrola.com/sustainability/how-to-reduce-plastic-use"
           }
           buttonText={"Learn more"}

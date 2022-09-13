@@ -1,7 +1,7 @@
 import { Button } from "flowbite-react";
 import { ReactComponent as Quote } from "../../assets/quotation.svg";
 
-const BlockQuote = ({ quote, article, author, link, buttonText }) => {
+const BlockQuote = ({ quote, article, author, sourceLink, buttonText }) => {
   return (
     <figure className="flex flex-col items-center max-w-screen-md text-center">
       <Quote />
@@ -20,7 +20,7 @@ const BlockQuote = ({ quote, article, author, link, buttonText }) => {
           </cite>
         </div>
       </figcaption>
-      <Button href="{link}" target="_blank">
+      <Button href={sourceLink} target="_blank">
         {buttonText}
       </Button>
     </figure>

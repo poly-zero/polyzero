@@ -49,7 +49,7 @@ function Login() {
                   E-MAIL
                 </label>
                 <TextInput
-                  id="email1"
+                  id="email"
                   type="email"
                   placeholder="email@email.com"
                   value={email}
@@ -67,7 +67,7 @@ function Login() {
                   PASSWORD
                 </label>
                 <TextInput
-                  id="password1"
+                  id="password"
                   type="password"
                   required={true}
                   value={password}
@@ -104,16 +104,6 @@ function Login() {
                 >
                   Register
                 </Link>
-              </p>
-            </div>
-            <div className="flex items-center justify-center">
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                {/* <a
-                    href="#"
-                    className="font-medium text-blue hover:underline dark:text-primary-500"
-                  >
-                    Need a help?
-                  </a> */}
               </p>
             </div>
           </div>

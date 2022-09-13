@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
-import { logout, auth, getUserInfo } from "../firebase/firebase";
+import { logout, auth } from "../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
-import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
-import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
-import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+// import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
+// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
+// import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
+// import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+// import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 import { Progress } from "flowbite-react";
 
 const SideBar = ({ result }) => {

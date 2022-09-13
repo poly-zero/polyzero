@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, TextInput } from "flowbite-react";
+import { Card } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -30,6 +30,7 @@ function Login() {
       return;
     }
     if (user) navigate("/footprint");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   return (
@@ -72,7 +73,7 @@ function Login() {
             </div>
           </div>
           <div className="flex-auto p-6">
-            <form role="form text-left" action="#" onSubmit={logIn}>
+            <form action="#" onSubmit={logIn}>
               <div className="mb-4">
                 <label
                   htmlFor="email"

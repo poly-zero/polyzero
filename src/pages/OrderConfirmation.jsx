@@ -6,21 +6,22 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const OrderConfirmation = ({ tier }) => {
+  const storedResult = localStorage.getItem("result");
+
   const firstMessage = "I just became a @PolyZeroApp Climate";
   let secondMessage;
-  if (tier.title === "Supporter") {
-    return (secondMessage = "Supporter");
-  } else if (tier.title === "Ally") {
-    return (secondMessage = "Ally");
-  } else if (tier.title === "Defender") {
-    return (secondMessage = "Defender");
+  if (tier.title === storedResult) {
+    return (secondMessage = storedResult);
+  } else if (tier.title === storedResult) {
+    return (secondMessage = storedResult);
+  } else if (tier.title === storedResult) {
+    return (secondMessage = storedResult);
   } else {
-    secondMessage = "Champion";
+    secondMessage = storedResult;
   }
   const thirdMessage =
     "by off-setting the CO2e footprint of my annual plastic consumption! %0ahttps://polyzero.earth ";
 
-  console.log(tier);
   return (
     <div className="flex flex-col flex-grow items-center justify-center">
       <div className="flex flex-col items-center w-1/2">

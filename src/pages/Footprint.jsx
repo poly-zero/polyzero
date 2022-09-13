@@ -27,12 +27,12 @@ const Footprint = ({ result, setResult }) => {
       {!result ? (
         <div className="flex flex-col items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
-            What is your <span> </span>
+            Estimate your <span> </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
               plastic footprint
             </span>
-            ?
           </h1>
+          Select the lifestyle below that comes closest to describing your consumption habits.
           <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-9 md:w-10/12">
             {footprintData.map((card) => {
               return (

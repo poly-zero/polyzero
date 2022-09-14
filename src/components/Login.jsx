@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, TextInput } from "flowbite-react";
+import { Card } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -17,19 +17,20 @@ function Login() {
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+  const storedPayment = localStorage.getItem("payment");
 
   const logIn = (e) => {
     e.preventDefault();
     logInWithEmailAndPassword(email, password);
-    if (user) navigate("/footprint");
   };
 
   useEffect(() => {
     if (loading) {
-      // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/footprint");
+    if (user && storedPayment) navigate("/payment");
+    else if (user) navigate("/footprint");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   return (
@@ -72,7 +73,7 @@ function Login() {
             </div>
           </div>
           <div className="flex-auto p-6">
-            <form role="form text-left" action="#" onSubmit={logIn}>
+            <form action="#" onSubmit={logIn}>
               <div className="mb-4">
                 <label
                   htmlFor="email"

@@ -6,6 +6,7 @@ import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../../assets/socialMediaIcons/icons8-twitter.svg";
+import { useCountUp } from "use-count-up";
 
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
@@ -13,16 +14,16 @@ const Results = ({ setResult, storedResult }) => {
   let secondMessage = foundTier.plastic;
   let forthMessage = foundTier.carbon;
 
-  // tierData.map((val) => {
-  //   if (val.title === storedResult) {
-  //     return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-  //   }
-  // });
-
   function resetResult() {
     localStorage.removeItem("result");
     setResult("");
   }
+
+  const { value } = useCountUp({
+    isCounting: true,
+    end: foundTier.carbon,
+    duration: 2
+  });
 
   return (
     <div className="flex flex-col gap-4 items-center w-full tracking-normal">
@@ -43,7 +44,7 @@ const Results = ({ setResult, storedResult }) => {
                 Plastic consumption
               </small>
               <div>
-                {foundTier.plastic}
+                {secondMessage}
                 <span className="text-4xl">kg / year</span>
               </div>
             </h1>
@@ -75,7 +76,8 @@ const Results = ({ setResult, storedResult }) => {
               This amount of plastic will generate at least
             </small>
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-              {foundTier.carbon}
+              {value}
+
               <span className="text-4xl">
                 kg CO
                 <span className="text-xl">2</span>e

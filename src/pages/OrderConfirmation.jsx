@@ -13,9 +13,9 @@ import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.s
 
 const OrderConfirmation = ({ tier }) => {
   const storedResult = localStorage.getItem("result");
-  const foundTier = tierData.find((tier) => tier.title === storedResult);
 
   const storedPayment = localStorage.getItem("payment");
+  const storedTonnes = localStorage.getItem("tonnes");
   const storedTitle = localStorage.getItem("title");
   const storedTime = localStorage.getItem("time");
   const navigate = useNavigate();
@@ -31,21 +31,22 @@ const OrderConfirmation = ({ tier }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
-  let secondMessage = foundTier.title;
+  let secondMessage = storedTitle;
 
   return (
     <div className="flex flex-col flex-grow items-center justify-center">
       <div className="flex flex-col items-center w-1/2">
         <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
-          Thank you for supporting,
+          Well done,&nbsp;
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             {user && user.displayName}
           </span>
-          !
+          ! 
         </h1>
-        <p className="w-1/2 my-8 text-xl font-normal text-center text-gray-500 dark:text-gray-400">
-          Here at PolyZero we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+        <p className=" my-8 text-xl font-normal text-center text-gray-500 dark:text-gray-400">
+          You took the time to learn about your plastic footprint and its effect on the environment.<br />
+          Then you took it one step further and offset the CO2 emissions from the plastic you consume.<br />
+          Now help us raise awareness by sharing your good deed with the world.
         </p>
       </div>
 
@@ -56,16 +57,17 @@ const OrderConfirmation = ({ tier }) => {
               {storedTitle}
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Support for {storedTime} year
+              You offset <b>{storedTonnes} tonnes</b> of CO2e<br />
+             or <b>{storedTime} year(s)</b> worth of plastic
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{storedPayment}
+              ￥{storedPayment * storedTime}
             </h5>
           </Card>
         </div>
         <div className="flex flex-col items-center w-1/2">
           <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white">
-            Share what you did:
+            Share what you've done
           </h2>
           <div className="flex gap-4">
             <FaceBook />
@@ -81,9 +83,6 @@ const OrderConfirmation = ({ tier }) => {
             <Line />
           </div>
 
-          <h2 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-white">
-            Learn more
-          </h2>
           <div className="flex gap-4"></div>
         </div>
       </div>

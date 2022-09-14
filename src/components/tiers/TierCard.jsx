@@ -16,7 +16,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     });
     localStorage.setItem("payment", cost);
     localStorage.setItem("title", title);
-    localStorage.setItem("tonnes", tonnes);
+    localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
     localStorage.setItem("time", age);
 
     navigateTo("/payment");

@@ -11,6 +11,7 @@ import { useCountUp } from "use-count-up";
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
   const foundTier = tierData.find((tier) => tier.title === storedResult);
+  const nationalAverage = 37;
   let secondMessage = foundTier.plastic;
   let forthMessage = foundTier.carbon;
 
@@ -19,11 +20,15 @@ const Results = ({ setResult, storedResult }) => {
     setResult("");
   }
 
-  const { value } = useCountUp({
-    isCounting: true,
-    end: foundTier.carbon,
-    duration: 2
-  });
+  function useCounter(data) {
+    const { value } = useCountUp({
+      isCounting: true,
+      end: data,
+      duration: 2,
+    });
+
+    return value;
+  }
 
   return (
     <div className="flex flex-col gap-4 items-center w-full tracking-normal my-4">
@@ -43,15 +48,15 @@ const Results = ({ setResult, storedResult }) => {
               <small className="text-base md:text-xl font-normal text-gray-500">
                 Plastic consumption
               </small>
-              <div className="text-4xl md:text-6xl">
-                {secondMessage}
-                <span className="text-xl md:text-xl md:text-4xl">kg / year</span>
+              <div>
+                {useCounter(foundTier.plastic)}
+                <span className="text-4xl">kg / year</span>
               </div>
             </h1>
             <p className="text-xs md:text-base font-normal text-gray-700 dark:text-gray-400">
               At the <strong>{storedResult}</strong> level, we estimate you
-              consume around <strong>{foundTier.plastic}kg</strong> of
-              disposable plastics per year.
+              consume around <strong>{useCounter(foundTier.plastic)}kg</strong>{" "}
+              of disposable plastics per year.
             </p>
           </Card>
           <Card>
@@ -60,7 +65,8 @@ const Results = ({ setResult, storedResult }) => {
                 National average
               </small>
               <div className="text-4xl md:text-6xl">
-                37<span className="text-xl md:text-4xl">kg / year</span>
+                {useCounter(nationalAverage)}
+                <span className="text-xl md:text-4xl">kg / year</span>
               </div>
             </h1>
             <p className="text-xs md:text-base font-normal text-gray-700 dark:text-gray-400">
@@ -76,7 +82,7 @@ const Results = ({ setResult, storedResult }) => {
               This amount of plastic will generate at least
             </small>
             <h1 className="mb-4 font-extrabold text-gray-900 dark:text-white text-4xl md:text-6xl">
-              {value}
+              {useCounter(foundTier.carbon)}
 
               <span className="text-xl md:text-4xl">
                 kg CO

@@ -28,7 +28,7 @@ function Login() {
     if (loading) {
       return;
     }
-    if (user && storedPayment) navigate("/confirmation");
+    if (user && storedPayment) navigate("/payment");
     else if (user) navigate("/footprint");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);

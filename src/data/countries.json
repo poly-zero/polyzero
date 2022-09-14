@@ -1,507 +1,708 @@
-[
-  {
-    "Rank": 1,
-    "Country": "Singapore",
-    "NationalAvgKg": 76
-  },
-  {
-    "Rank": 2,
-    "Country": "Australia",
-    "NationalAvgKg": 59
-  },
-  {
-    "Rank": 3,
-    "Country": "Oman",
-    "NationalAvgKg": 56
-  },
-  {
-    "Rank": 4,
-    "Country": "Netherlands",
-    "NationalAvgKg": 55
-  },
-  {
-    "Rank": 5,
-    "Country": "Belgium",
-    "NationalAvgKg": 55
-  },
-  {
-    "Rank": 6,
-    "Country": "Israel",
-    "NationalAvgKg": 55
-  },
-  {
-    "Rank": 7,
-    "Country": "Hong Kong",
-    "NationalAvgKg": 55
-  },
-  {
-    "Rank": 8,
-    "Country": "Switzerland",
-    "NationalAvgKg": 53
-  },
-  {
-    "Rank": 9,
-    "Country": "United States",
-    "NationalAvgKg": 53
-  },
-  {
-    "Rank": 10,
-    "Country": "United Arab Emirates",
-    "NationalAvgKg": 52
-  },
-  {
-    "Rank": 11,
-    "Country": "Chile",
-    "NationalAvgKg": 51
-  },
-  {
-    "Rank": 12,
-    "Country": "South Korea",
-    "NationalAvgKg": 44
-  },
-  {
-    "Rank": 13,
-    "Country": "United Kingdom",
-    "NationalAvgKg": 44
-  },
-  {
-    "Rank": 14,
-    "Country": "Kuwait",
-    "NationalAvgKg": 40
-  },
-  {
-    "Rank": 15,
-    "Country": "New Zealand",
-    "NationalAvgKg": 39
-  },
-  {
-    "Rank": 16,
-    "Country": "Ireland ",
-    "NationalAvgKg": 39
-  },
-  {
-    "Rank": 17,
-    "Country": "Finland",
-    "NationalAvgKg": 38
-  },
-  {
-    "Rank": 18,
-    "Country": "Japan",
-    "NationalAvgKg": 37
-  },
-  {
-    "Rank": 19,
-    "Country": "France",
-    "NationalAvgKg": 36
-  },
-  {
-    "Rank": 20,
-    "Country": "Slovenia",
-    "NationalAvgKg": 35
-  },
-  {
-    "Rank": 21,
-    "Country": "Saudi Arabia",
-    "NationalAvgKg": 35
-  },
-  {
-    "Rank": 22,
-    "Country": "Czech Republic",
-    "NationalAvgKg": 35
-  },
-  {
-    "Rank": 23,
-    "Country": "Spain",
-    "NationalAvgKg": 34
-  },
-  {
-    "Rank": 24,
-    "Country": "Canada",
-    "NationalAvgKg": 34
-  },
-  {
-    "Rank": 25,
-    "Country": "Denmark",
-    "NationalAvgKg": 33
-  },
-  {
-    "Rank": 26,
-    "Country": "Sweden",
-    "NationalAvgKg": 32
-  },
-  {
-    "Rank": 27,
-    "Country": "Austria",
-    "NationalAvgKg": 32
-  },
-  {
-    "Rank": 28,
-    "Country": "Norway",
-    "NationalAvgKg": 27
-  },
-  {
-    "Rank": 29,
-    "Country": "Uruguay",
-    "NationalAvgKg": 25
-  },
-  {
-    "Rank": 30,
-    "Country": "Portugal",
-    "NationalAvgKg": 25
-  },
-  {
-    "Rank": 31,
-    "Country": "Italy",
-    "NationalAvgKg": 23
-  },
-  {
-    "Rank": 32,
-    "Country": "Poland",
-    "NationalAvgKg": 23
-  },
-  {
-    "Rank": 33,
-    "Country": "Greece",
-    "NationalAvgKg": 23
-  },
-  {
-    "Rank": 34,
-    "Country": "Costa Rica",
-    "NationalAvgKg": 23
-  },
-  {
-    "Rank": 35,
-    "Country": "Germany",
-    "NationalAvgKg": 22
-  },
-  {
-    "Rank": 36,
-    "Country": "Latvia",
-    "NationalAvgKg": 22
-  },
-  {
-    "Rank": 37,
-    "Country": "Croatia",
-    "NationalAvgKg": 21
-  },
-  {
-    "Rank": 38,
-    "Country": "Slovakia",
-    "NationalAvgKg": 21
-  },
-  {
-    "Rank": 39,
-    "Country": "Lithuania",
-    "NationalAvgKg": 21
-  },
-  {
-    "Rank": 40,
-    "Country": "Hungary",
-    "NationalAvgKg": 20
-  },
-  {
-    "Rank": 41,
-    "Country": "Qatar",
-    "NationalAvgKg": 20
-  },
-  {
-    "Rank": 42,
-    "Country": "Vietnam",
-    "NationalAvgKg": 20
-  },
-  {
-    "Rank": 43,
-    "Country": "El Salvador",
-    "NationalAvgKg": 19
-  },
-  {
-    "Rank": 44,
-    "Country": "Thailand",
-    "NationalAvgKg": 18
-  },
-  {
-    "Rank": 45,
-    "Country": "CHina",
-    "NationalAvgKg": 18
-  },
-  {
-    "Rank": 46,
-    "Country": "Lebanon",
-    "NationalAvgKg": 17
-  },
-  {
-    "Rank": 47,
-    "Country": "Belarus",
-    "NationalAvgKg": 17
-  },
-  {
-    "Rank": 48,
-    "Country": "Mexico",
-    "NationalAvgKg": 17
-  },
-  {
-    "Rank": 49,
-    "Country": "Taiwan",
-    "NationalAvgKg": 17
-  },
-  {
-    "Rank": 50,
-    "Country": "Russian Federation",
-    "NationalAvgKg": 16
-  },
-  {
-    "Rank": 51,
-    "Country": "Malaysia",
-    "NationalAvgKg": 16
-  },
-  {
-    "Rank": 52,
-    "Country": "Trinidad and Tobago",
-    "NationalAvgKg": 15
-  },
-  {
-    "Rank": 53,
-    "Country": "Turkey",
-    "NationalAvgKg": 15
-  },
-  {
-    "Rank": 54,
-    "Country": "Peru",
-    "NationalAvgKg": 15
-  },
-  {
-    "Rank": 55,
-    "Country": "Romania",
-    "NationalAvgKg": 15
-  },
-  {
-    "Rank": 56,
-    "Country": "Panama",
-    "NationalAvgKg": 15
-  },
-  {
-    "Rank": 57,
-    "Country": "Argentina",
-    "NationalAvgKg": 15
-  },
-  {
-    "Rank": 58,
-    "Country": "Brazil",
-    "NationalAvgKg": 13
-  },
-  {
-    "Rank": 59,
-    "Country": "South Africa",
-    "NationalAvgKg": 13
-  },
-  {
-    "Rank": 60,
-    "Country": "Iran",
-    "NationalAvgKg": 13
-  },
-  {
-    "Rank": 61,
-    "Country": "Georgia",
-    "NationalAvgKg": 12
-  },
-  {
-    "Rank": 62,
-    "Country": "Paraguay",
-    "NationalAvgKg": 12
-  },
-  {
-    "Rank": 63,
-    "Country": "Bahrain",
-    "NationalAvgKg": 12
-  },
-  {
-    "Rank": 64,
-    "Country": "Bulgaria",
-    "NationalAvgKg": 12
-  },
-  {
-    "Rank": 65,
-    "Country": "Serbia",
-    "NationalAvgKg": 12
-  },
-  {
-    "Rank": 66,
-    "Country": "Morocco",
-    "NationalAvgKg": 11
-  },
-  {
-    "Rank": 67,
-    "Country": "Cyprus",
-    "NationalAvgKg": 11
-  },
-  {
-    "Rank": 68,
-    "Country": "Colombia",
-    "NationalAvgKg": 11
-  },
-  {
-    "Rank": 69,
-    "Country": "Dominican Republic",
-    "NationalAvgKg": 10
-  },
-  {
-    "Rank": 70,
-    "Country": "Mauritius",
-    "NationalAvgKg": 10
-  },
-  {
-    "Rank": 71,
-    "Country": "Estonia",
-    "NationalAvgKg": 10
-  },
-  {
-    "Rank": 72,
-    "Country": "Ukraine",
-    "NationalAvgKg": 10
-  },
-  {
-    "Rank": 73,
-    "Country": "Philippines",
-    "NationalAvgKg": 9
-  },
-  {
-    "Rank": 74,
-    "Country": "Algeria",
-    "NationalAvgKg": 9
-  },
-  {
-    "Rank": 75,
-    "Country": "Tunisia",
-    "NationalAvgKg": 9
-  },
-  {
-    "Rank": 76,
-    "Country": "Egypt",
-    "NationalAvgKg": 9
-  },
-  {
-    "Rank": 77,
-    "Country": "Kazakhstan",
-    "NationalAvgKg": 9
-  },
-  {
-    "Rank": 78,
-    "Country": "Ecuador",
-    "NationalAvgKg": 9
-  },
-  {
-    "Rank": 79,
-    "Country": "Indonesia",
-    "NationalAvgKg": 9
-  },
-  {
-    "Rank": 80,
-    "Country": "Guatemala",
-    "NationalAvgKg": 8
-  },
-  {
-    "Rank": 81,
-    "Country": "Turkmenistan",
-    "NationalAvgKg": 8
-  },
-  {
-    "Rank": 82,
-    "Country": "Bosnia and Herzegovina",
-    "NationalAvgKg": 8
-  },
-  {
-    "Rank": 83,
-    "Country": "Iraq",
-    "NationalAvgKg": 7
-  },
-  {
-    "Rank": 84,
-    "Country": "Ghana",
-    "NationalAvgKg": 7
-  },
-  {
-    "Rank": 85,
-    "Country": "Jordan",
-    "NationalAvgKg": 7
-  },
-  {
-    "Rank": 86,
-    "Country": "Libya",
-    "NationalAvgKg": 6
-  },
-  {
-    "Rank": 87,
-    "Country": "Azerbaijan",
-    "NationalAvgKg": 5
-  },
-  {
-    "Rank": 88,
-    "Country": "Honduras",
-    "NationalAvgKg": 5
-  },
-  {
-    "Rank": 89,
-    "Country": "Myanmar",
-    "NationalAvgKg": 5
-  },
-  {
-    "Rank": 90,
-    "Country": "Cambodia",
-    "NationalAvgKg": 5
-  },
-  {
-    "Rank": 91,
-    "Country": "Kenya",
-    "NationalAvgKg": 5
-  },
-  {
-    "Rank": 92,
-    "Country": "Uzbekistan",
-    "NationalAvgKg": 5
-  },
-  {
-    "Rank": 93,
-    "Country": "Mongolia",
-    "NationalAvgKg": 4
-  },
-  {
-    "Rank": 94,
-    "Country": "India",
-    "NationalAvgKg": 4
-  },
-  {
-    "Rank": 95,
-    "Country": "Code d'Ivoire",
-    "NationalAvgKg": 4
-  },
-  {
-    "Rank": 96,
-    "Country": "Sri Lanka",
-    "NationalAvgKg": 4
-  },
-  {
-    "Rank": 97,
-    "Country": "Pakistan",
-    "NationalAvgKg": 4
-  },
-  {
-    "Rank": 98,
-    "Country": "Nigeria",
-    "NationalAvgKg": 4
-  },
-  {
-    "Rank": 99,
-    "Country": "Venezuela",
-    "NationalAvgKg": 3
-  },
-  {
-    "Rank": 100,
-    "Country": "Kyrgystan",
-    "NationalAvgKg": 3
-  },
-  {
-    "Rank": 101,
-    "Country": "Togo",
-    "NationalAvgKg": 3
-  }
+[{
+  "Rank": 1,
+  "Country": "Singapore",
+  "NationalAvgKg": 76,
+  "label": "Singapore",
+  "value": 76
+},
+{
+  "Rank": 2,
+  "Country": "Australia",
+  "NationalAvgKg": 59,
+  "label": "Australia",
+  "value": 59
+},
+{
+  "Rank": 3,
+  "Country": "Oman",
+  "NationalAvgKg": 56,
+  "label": "Oman",
+  "value": 56
+},
+{
+  "Rank": 4,
+  "Country": "Netherlands",
+  "NationalAvgKg": 55,
+  "label": "Netherlands",
+  "value": 55
+},
+{
+  "Rank": 5,
+  "Country": "Belgium",
+  "NationalAvgKg": 55,
+  "label": "Belgium",
+  "value": 55
+},
+{
+  "Rank": 6,
+  "Country": "Israel",
+  "NationalAvgKg": 55,
+  "label": "Israel",
+  "value": 55
+},
+{
+  "Rank": 7,
+  "Country": "Hong Kong",
+  "NationalAvgKg": 55,
+  "label": "Hong Kong",
+  "value": 55
+},
+{
+  "Rank": 8,
+  "Country": "Switzerland",
+  "NationalAvgKg": 53,
+  "label": "Switzerland",
+  "value": 53
+},
+{
+  "Rank": 9,
+  "Country": "United States",
+  "NationalAvgKg": 53,
+  "label": "United States",
+  "value": 53
+},
+{
+  "Rank": 10,
+  "Country": "United Arab Emirates",
+  "NationalAvgKg": 52,
+  "label": "United Arab Emirates",
+  "value": 52
+},
+{
+  "Rank": 11,
+  "Country": "Chile",
+  "NationalAvgKg": 51,
+  "label": "Chile",
+  "value": 51
+},
+{
+  "Rank": 12,
+  "Country": "South Korea",
+  "NationalAvgKg": 44,
+  "label": "South Korea",
+  "value": 44
+},
+{
+  "Rank": 13,
+  "Country": "United Kingdom",
+  "NationalAvgKg": 44,
+  "label": "United Kingdom",
+  "value": 44
+},
+{
+  "Rank": 14,
+  "Country": "Kuwait",
+  "NationalAvgKg": 40,
+  "label": "Kuwait",
+  "value": 40
+},
+{
+  "Rank": 15,
+  "Country": "New Zealand",
+  "NationalAvgKg": 39,
+  "label": "New Zealand",
+  "value": 39
+},
+{
+  "Rank": 16,
+  "Country": "Ireland ",
+  "NationalAvgKg": 39,
+  "label": "Ireland ",
+  "value": 39
+},
+{
+  "Rank": 17,
+  "Country": "Finland",
+  "NationalAvgKg": 38,
+  "label": "Finland",
+  "value": 38
+},
+{
+  "Rank": 18,
+  "Country": "Japan",
+  "NationalAvgKg": 37,
+  "label": "Japan",
+  "value": 37
+},
+{
+  "Rank": 19,
+  "Country": "France",
+  "NationalAvgKg": 36,
+  "label": "France",
+  "value": 36
+},
+{
+  "Rank": 20,
+  "Country": "Slovenia",
+  "NationalAvgKg": 35,
+  "label": "Slovenia",
+  "value": 35
+},
+{
+  "Rank": 21,
+  "Country": "Saudi Arabia",
+  "NationalAvgKg": 35,
+  "label": "Saudi Arabia",
+  "value": 35
+},
+{
+  "Rank": 22,
+  "Country": "Czech Republic",
+  "NationalAvgKg": 35,
+  "label": "Czech Republic",
+  "value": 35
+},
+{
+  "Rank": 23,
+  "Country": "Spain",
+  "NationalAvgKg": 34,
+  "label": "Spain",
+  "value": 34
+},
+{
+  "Rank": 24,
+  "Country": "Canada",
+  "NationalAvgKg": 34,
+  "label": "Canada",
+  "value": 34
+},
+{
+  "Rank": 25,
+  "Country": "Denmark",
+  "NationalAvgKg": 33,
+  "label": "Denmark",
+  "value": 33
+},
+{
+  "Rank": 26,
+  "Country": "Sweden",
+  "NationalAvgKg": 32,
+  "label": "Sweden",
+  "value": 32
+},
+{
+  "Rank": 27,
+  "Country": "Austria",
+  "NationalAvgKg": 32,
+  "label": "Austria",
+  "value": 32
+},
+{
+  "Rank": 28,
+  "Country": "Norway",
+  "NationalAvgKg": 27,
+  "label": "Norway",
+  "value": 27
+},
+{
+  "Rank": 29,
+  "Country": "Uruguay",
+  "NationalAvgKg": 25,
+  "label": "Uruguay",
+  "value": 25
+},
+{
+  "Rank": 30,
+  "Country": "Portugal",
+  "NationalAvgKg": 25,
+  "label": "Portugal",
+  "value": 25
+},
+{
+  "Rank": 31,
+  "Country": "Italy",
+  "NationalAvgKg": 23,
+  "label": "Italy",
+  "value": 23
+},
+{
+  "Rank": 32,
+  "Country": "Poland",
+  "NationalAvgKg": 23,
+  "label": "Poland",
+  "value": 23
+},
+{
+  "Rank": 33,
+  "Country": "Greece",
+  "NationalAvgKg": 23,
+  "label": "Greece",
+  "value": 23
+},
+{
+  "Rank": 34,
+  "Country": "Costa Rica",
+  "NationalAvgKg": 23,
+  "label": "Costa Rica",
+  "value": 23
+},
+{
+  "Rank": 35,
+  "Country": "Germany",
+  "NationalAvgKg": 22,
+  "label": "Germany",
+  "value": 22
+},
+{
+  "Rank": 36,
+  "Country": "Latvia",
+  "NationalAvgKg": 22,
+  "label": "Latvia",
+  "value": 22
+},
+{
+  "Rank": 37,
+  "Country": "Croatia",
+  "NationalAvgKg": 21,
+  "label": "Croatia",
+  "value": 21
+},
+{
+  "Rank": 38,
+  "Country": "Slovakia",
+  "NationalAvgKg": 21,
+  "label": "Slovakia",
+  "value": 21
+},
+{
+  "Rank": 39,
+  "Country": "Lithuania",
+  "NationalAvgKg": 21,
+  "label": "Lithuania",
+  "value": 21
+},
+{
+  "Rank": 40,
+  "Country": "Hungary",
+  "NationalAvgKg": 20,
+  "label": "Hungary",
+  "value": 20
+},
+{
+  "Rank": 41,
+  "Country": "Qatar",
+  "NationalAvgKg": 20,
+  "label": "Qatar",
+  "value": 20
+},
+{
+  "Rank": 42,
+  "Country": "Vietnam",
+  "NationalAvgKg": 20,
+  "label": "Vietnam",
+  "value": 20
+},
+{
+  "Rank": 43,
+  "Country": "El Salvador",
+  "NationalAvgKg": 19,
+  "label": "El Salvador",
+  "value": 19
+},
+{
+  "Rank": 44,
+  "Country": "Thailand",
+  "NationalAvgKg": 18,
+  "label": "Thailand",
+  "value": 18
+},
+{
+  "Rank": 45,
+  "Country": "CHina",
+  "NationalAvgKg": 18,
+  "label": "CHina",
+  "value": 18
+},
+{
+  "Rank": 46,
+  "Country": "Lebanon",
+  "NationalAvgKg": 17,
+  "label": "Lebanon",
+  "value": 17
+},
+{
+  "Rank": 47,
+  "Country": "Belarus",
+  "NationalAvgKg": 17,
+  "label": "Belarus",
+  "value": 17
+},
+{
+  "Rank": 48,
+  "Country": "Mexico",
+  "NationalAvgKg": 17,
+  "label": "Mexico",
+  "value": 17
+},
+{
+  "Rank": 49,
+  "Country": "Taiwan",
+  "NationalAvgKg": 17,
+  "label": "Taiwan",
+  "value": 17
+},
+{
+  "Rank": 50,
+  "Country": "Russian Federation",
+  "NationalAvgKg": 16,
+  "label": "Russian Federation",
+  "value": 16
+},
+{
+  "Rank": 51,
+  "Country": "Malaysia",
+  "NationalAvgKg": 16,
+  "label": "Malaysia",
+  "value": 16
+},
+{
+  "Rank": 52,
+  "Country": "Trinidad and Tobago",
+  "NationalAvgKg": 15,
+  "label": "Trinidad and Tobago",
+  "value": 15
+},
+{
+  "Rank": 53,
+  "Country": "Turkey",
+  "NationalAvgKg": 15,
+  "label": "Turkey",
+  "value": 15
+},
+{
+  "Rank": 54,
+  "Country": "Peru",
+  "NationalAvgKg": 15,
+  "label": "Peru",
+  "value": 15
+},
+{
+  "Rank": 55,
+  "Country": "Romania",
+  "NationalAvgKg": 15,
+  "label": "Romania",
+  "value": 15
+},
+{
+  "Rank": 56,
+  "Country": "Panama",
+  "NationalAvgKg": 15,
+  "label": "Panama",
+  "value": 15
+},
+{
+  "Rank": 57,
+  "Country": "Argentina",
+  "NationalAvgKg": 15,
+  "label": "Argentina",
+  "value": 15
+},
+{
+  "Rank": 58,
+  "Country": "Brazil",
+  "NationalAvgKg": 13,
+  "label": "Brazil",
+  "value": 13
+},
+{
+  "Rank": 59,
+  "Country": "South Africa",
+  "NationalAvgKg": 13,
+  "label": "South Africa",
+  "value": 13
+},
+{
+  "Rank": 60,
+  "Country": "Iran",
+  "NationalAvgKg": 13,
+  "label": "Iran",
+  "value": 13
+},
+{
+  "Rank": 61,
+  "Country": "Georgia",
+  "NationalAvgKg": 12,
+  "label": "Georgia",
+  "value": 12
+},
+{
+  "Rank": 62,
+  "Country": "Paraguay",
+  "NationalAvgKg": 12,
+  "label": "Paraguay",
+  "value": 12
+},
+{
+  "Rank": 63,
+  "Country": "Bahrain",
+  "NationalAvgKg": 12,
+  "label": "Bahrain",
+  "value": 12
+},
+{
+  "Rank": 64,
+  "Country": "Bulgaria",
+  "NationalAvgKg": 12,
+  "label": "Bulgaria",
+  "value": 12
+},
+{
+  "Rank": 65,
+  "Country": "Serbia",
+  "NationalAvgKg": 12,
+  "label": "Serbia",
+  "value": 12
+},
+{
+  "Rank": 66,
+  "Country": "Morocco",
+  "NationalAvgKg": 11,
+  "label": "Morocco",
+  "value": 11
+},
+{
+  "Rank": 67,
+  "Country": "Cyprus",
+  "NationalAvgKg": 11,
+  "label": "Cyprus",
+  "value": 11
+},
+{
+  "Rank": 68,
+  "Country": "Colombia",
+  "NationalAvgKg": 11,
+  "label": "Colombia",
+  "value": 11
+},
+{
+  "Rank": 69,
+  "Country": "Dominican Republic",
+  "NationalAvgKg": 10,
+  "label": "Dominican Republic",
+  "value": 10
+},
+{
+  "Rank": 70,
+  "Country": "Mauritius",
+  "NationalAvgKg": 10,
+  "label": "Mauritius",
+  "value": 10
+},
+{
+  "Rank": 71,
+  "Country": "Estonia",
+  "NationalAvgKg": 10,
+  "label": "Estonia",
+  "value": 10
+},
+{
+  "Rank": 72,
+  "Country": "Ukraine",
+  "NationalAvgKg": 10,
+  "label": "Ukraine",
+  "value": 10
+},
+{
+  "Rank": 73,
+  "Country": "Philippines",
+  "NationalAvgKg": 9,
+  "label": "Philippines",
+  "value": 9
+},
+{
+  "Rank": 74,
+  "Country": "Algeria",
+  "NationalAvgKg": 9,
+  "label": "Algeria",
+  "value": 9
+},
+{
+  "Rank": 75,
+  "Country": "Tunisia",
+  "NationalAvgKg": 9,
+  "label": "Tunisia",
+  "value": 9
+},
+{
+  "Rank": 76,
+  "Country": "Egypt",
+  "NationalAvgKg": 9,
+  "label": "Egypt",
+  "value": 9
+},
+{
+  "Rank": 77,
+  "Country": "Kazakhstan",
+  "NationalAvgKg": 9,
+  "label": "Kazakhstan",
+  "value": 9
+},
+{
+  "Rank": 78,
+  "Country": "Ecuador",
+  "NationalAvgKg": 9,
+  "label": "Ecuador",
+  "value": 9
+},
+{
+  "Rank": 79,
+  "Country": "Indonesia",
+  "NationalAvgKg": 9,
+  "label": "Indonesia",
+  "value": 9
+},
+{
+  "Rank": 80,
+  "Country": "Guatemala",
+  "NationalAvgKg": 8,
+  "label": "Guatemala",
+  "value": 8
+},
+{
+  "Rank": 81,
+  "Country": "Turkmenistan",
+  "NationalAvgKg": 8,
+  "label": "Turkmenistan",
+  "value": 8
+},
+{
+  "Rank": 82,
+  "Country": "Bosnia and Herzegovina",
+  "NationalAvgKg": 8,
+  "label": "Bosnia and Herzegovina",
+  "value": 8
+},
+{
+  "Rank": 83,
+  "Country": "Iraq",
+  "NationalAvgKg": 7,
+  "label": "Iraq",
+  "value": 7
+},
+{
+  "Rank": 84,
+  "Country": "Ghana",
+  "NationalAvgKg": 7,
+  "label": "Ghana",
+  "value": 7
+},
+{
+  "Rank": 85,
+  "Country": "Jordan",
+  "NationalAvgKg": 7,
+  "label": "Jordan",
+  "value": 7
+},
+{
+  "Rank": 86,
+  "Country": "Libya",
+  "NationalAvgKg": 6,
+  "label": "Libya",
+  "value": 6
+},
+{
+  "Rank": 87,
+  "Country": "Azerbaijan",
+  "NationalAvgKg": 5,
+  "label": "Azerbaijan",
+  "value": 5
+},
+{
+  "Rank": 88,
+  "Country": "Honduras",
+  "NationalAvgKg": 5,
+  "label": "Honduras",
+  "value": 5
+},
+{
+  "Rank": 89,
+  "Country": "Myanmar",
+  "NationalAvgKg": 5,
+  "label": "Myanmar",
+  "value": 5
+},
+{
+  "Rank": 90,
+  "Country": "Cambodia",
+  "NationalAvgKg": 5,
+  "label": "Cambodia",
+  "value": 5
+},
+{
+  "Rank": 91,
+  "Country": "Kenya",
+  "NationalAvgKg": 5,
+  "label": "Kenya",
+  "value": 5
+},
+{
+  "Rank": 92,
+  "Country": "Uzbekistan",
+  "NationalAvgKg": 5,
+  "label": "Uzbekistan",
+  "value": 5
+},
+{
+  "Rank": 93,
+  "Country": "Mongolia",
+  "NationalAvgKg": 4,
+  "label": "Mongolia",
+  "value": 4
+},
+{
+  "Rank": 94,
+  "Country": "India",
+  "NationalAvgKg": 4,
+  "label": "India",
+  "value": 4
+},
+{
+  "Rank": 95,
+  "Country": "Code d'Ivoire",
+  "NationalAvgKg": 4,
+  "label": "Code d'Ivoire",
+  "value": 4
+},
+{
+  "Rank": 96,
+  "Country": "Sri Lanka",
+  "NationalAvgKg": 4,
+  "label": "Sri Lanka",
+  "value": 4
+},
+{
+  "Rank": 97,
+  "Country": "Pakistan",
+  "NationalAvgKg": 4,
+  "label": "Pakistan",
+  "value": 4
+},
+{
+  "Rank": 98,
+  "Country": "Nigeria",
+  "NationalAvgKg": 4,
+  "label": "Nigeria",
+  "value": 4
+},
+{
+  "Rank": 99,
+  "Country": "Venezuela",
+  "NationalAvgKg": 3,
+  "label": "Venezuela",
+  "value": 3
+},
+{
+  "Rank": 100,
+  "Country": "Kyrgystan",
+  "NationalAvgKg": 3,
+  "label": "Kyrgystan",
+  "value": 3
+},
+{
+  "Rank": 101,
+  "Country": "Togo",
+  "NationalAvgKg": 3,
+  "label": "Togo",
+  "value": 3
+}
 ]

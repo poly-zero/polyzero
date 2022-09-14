@@ -13,7 +13,6 @@ import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.s
 
 const OrderConfirmation = ({ tier }) => {
   const storedResult = localStorage.getItem("result");
-  const foundTier = tierData.find((tier) => tier.title === storedResult);
 
   const storedPayment = localStorage.getItem("payment");
   const storedTitle = localStorage.getItem("title");
@@ -31,7 +30,7 @@ const OrderConfirmation = ({ tier }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
-  let secondMessage = foundTier.title;
+  let secondMessage = storedTitle;
 
   return (
     <div className="flex flex-col flex-grow items-center justify-center">

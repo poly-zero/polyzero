@@ -1,86 +1,63 @@
-import FootprintCard from "../components/FootprintCard";
-import { useState } from "react";
-import Results from "../components/Results";
-import { Button } from "flowbite-react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import FootprintCard from "../components/footprint/FootprintCard";
+import Results from "../components/footprint/Results";
+import footprintData from "../data/tier.json";
+// import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
+// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
+// import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
+// import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+// import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
-const Footprint = () => {
-  const [result, setResult] = useState("");
-  // eslint-disable-next-line no-unused-vars
-  const [change, setChange] = useState(false);
+const Footprint = ({ result, setResult }) => {
+  // const [data, setData] = useState(null);
 
-  const navigateTo = useNavigate();
+  // useEffect(() => {
+  //   setData(tierData.find((element) => element.title === storedResult));
+  // }, [storedResult]);
+  const storedResult = localStorage.getItem("result");
 
-  const plasticFootprintEstimation = [
-    {
-      title: "🐕 Small",
-      grocery:
-        "I grow most of my own vegetables, or primarily buy packaging-free fruits & vegetables",
-      takeOut: "I cook at home most meals, and rarely order take-out",
-      petBottles: "I very rarely use drink vending machines",
-      disposables:
-        "I make an effort to avoid plastic packaging on the items I choose from the supermarket",
-    },
-    {
-      title: "🐎 Medium",
-      grocery:
-        "I try to avoid single-serving sizes and buy bulk-size and minimally packaged products whenever possible.",
-      takeOut: "I order takeout or delivery 1-2 times per month or less. ",
-      petBottles: "I buy no more than 1-2 drinks in PET bottles per month.",
-      disposables:
-        "I carry reusable bags, water bottle/cup, cutlery, straw, etc. to avoid disposables.",
-    },
-    {
-      title: "🐘 High",
-      grocery:
-        "I appreciate that my supermarket thoroughly packages foods in plastic for freshness and sanitation",
-      takeOut:
-        "I order delivery (such as Uber Eats) 1-2 times per week or more",
-      petBottles:
-        "I drink 1-2 (or more) PET bottle drinks per week from vending machines, convenience stores, etc.",
-      disposables:
-        "I often receive a plastic bag and/or disposable utensils at the cash register",
-    },
-  ];
+  useEffect(() => {
+    if (storedResult) {
+      setResult(storedResult);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10">
+    <>
       {!result ? (
-        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
-          What is your <span> </span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-            plastic footprint
-          </span>
-          ?
-        </h1>
-      ) : (
-        <Results result={result} />
-      )}
-
-      {/* Footprint cards container */}
-      {!result ? (
-        <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-full">
-          {plasticFootprintEstimation.map((card) => {
-            return (
-              <FootprintCard
-                title={card.title}
-                grocery={card.grocery}
-                takeOut={card.takeOut}
-                petBottles={card.petBottles}
-                disposables={card.disposables}
-                buttonText={"Select"}
-                setResult={setResult}
-                change={setChange}
-              />
-            );
-          })}
+        <div className="flex flex-col items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+            Estimate your <span> </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+              plastic footprint
+            </span>
+          </h1>
+          Select the lifestyle below that comes closest to describing your
+          consumption habits.
+          <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-9 md:w-10/12">
+            {footprintData.map((card) => {
+              return (
+                <FootprintCard
+                  key={card.title}
+                  title={card.title}
+                  grocery={card.grocery}
+                  takeOut={card.takeOut}
+                  petBottles={card.petBottles}
+                  disposables={card.disposables}
+                  buttonText={"Select"}
+                  setResult={setResult}
+                />
+              );
+            })}
+          </div>
         </div>
       ) : (
-        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-          Start offsetting
-        </Button>
+        <div className="flex flex-grow bg-slate-100 gap-6 justify-center items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+          <Results setResult={setResult} storedResult={storedResult} />
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

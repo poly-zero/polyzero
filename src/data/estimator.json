@@ -1,0 +1,86 @@
+[
+  {
+    "category": "grocery",
+    "answer": [
+      {
+        "text": "I grow most of my own vegetables, or buy packaging-free fruits & vegetables at farmers markets.",
+        "value": 1
+      },
+      {
+        "text": "I try to avoid single-serving sizes and buy bulk-size and minimally packaged products whenever possible.",
+        "value": 2
+      },
+      {
+        "text": "I try to choose items with less plastic packaging but it's not always easy.",
+        "value": 3
+      },
+      {
+        "text": "I buy what's available at the supermarket, without worrying too much about how it's packaged.",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "category": "takeOut",
+    "answer": [
+      {
+        "text": "I cook nearly all meals at home.",
+        "value": 1
+      },
+      {
+        "text": "I very rarely eat take-out or delivery (1-2 times per month or less). ",
+        "value": 2
+      },
+      {
+        "text": "I eat delivery or take-out meals no more than a couple times per week.",
+        "value": 3
+      },
+      {
+        "text": "I order delivery (such as Uber Eats) or take-out meals 3 or more times per week.",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "category": "petBottles",
+    "answer": [
+      {
+        "text": "I very rarely consume bottled drinks from the store or vending machines.",
+        "value": 1
+      },
+      {
+        "text": "I buy no more than 1-2 drinks in PET bottles per month.",
+        "value": 2
+      },
+      {
+        "text": "I drink no more than 1-2 PET bottle drinks per week from vending machines, convenience stores, etc.",
+        "value": 3
+      },
+      {
+        "text": "I drink 3+ PET bottle drinks per week from vending machines, convenience stores, etc.",
+        "value": 4
+      }
+    ]
+  },
+  {
+    "category": "disposables",
+    "answer": [
+      {
+        "text": "I avoid plastic packaging on the items I buy from the supermarket.",
+        "value": 1
+      },
+      {
+        "text": "I carry reusable bags, water bottle/cup, cutlery, straw, etc. to avoid disposables.",
+        "value": 2
+      },
+      {
+        "text": "I occasionally receive plastic bags and/or disposable utensils at stores/restaurants, when I've forgotten to bring my own.",
+        "value": 3
+      },
+      {
+        "text": "I often receive a plastic bag and/or disposable utensils at the cash register.",
+        "value": 4
+      }
+    ]
+  }
+]

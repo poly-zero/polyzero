@@ -8,6 +8,10 @@ import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-i
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import { ReactComponent as FootPrint } from "../assets/navIcons/carbon-footprint.svg";
+import { ReactComponent as Tiers } from "../assets/navIcons/tiers.svg";
+import { ReactComponent as Dashboard } from "../assets/navIcons/dashboard.svg";
+import { ReactComponent as Logout } from "../assets/navIcons/logout.svg";
 import { Progress } from "flowbite-react";
 
 const SideBar = ({ result }) => {
@@ -87,7 +91,8 @@ const SideBar = ({ result }) => {
                   }
                 >
                   {/* <Icon name="dashboard" size="2xl" /> */}
-                  Footprint Calculator
+                  <FootPrint />
+                  Footprint Estimator
                 </NavLink>
               </li>
               {result && (
@@ -102,6 +107,7 @@ const SideBar = ({ result }) => {
                     }
                   >
                     {/* <Icon name="dashboard" size="2xl" /> */}
+                    <Tiers />
                     Tiers
                   </NavLink>
                 </li>
@@ -119,6 +125,7 @@ const SideBar = ({ result }) => {
                       }
                     >
                       {/* <Icon name="dashboard" size="2xl" /> */}
+                      <Dashboard />
                       Dashboard
                     </NavLink>
                   </li>
@@ -127,6 +134,7 @@ const SideBar = ({ result }) => {
                       className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
                       onClick={logout}
                     >
+                      <Logout />
                       Log out
                     </button>
                   </li>
@@ -135,7 +143,7 @@ const SideBar = ({ result }) => {
             </ul>
 
             <ul className="flex-col min-w-full flex list-none absolute bottom-0">
-              <li className="bg-gradient-to-tr from-purple-500 to-purple-700 px-4 rounded-lg text-white">
+              {/* <li className="bg-gradient-to-tr from-purple-500 to-purple-700 px-4 rounded-lg text-white">
                 <a
                   href="/"
                   rel="noreferrer"
@@ -143,7 +151,7 @@ const SideBar = ({ result }) => {
                 >
                   Share
                 </a>
-              </li>
+              </li> */}
               {/* <li>
                 <div className="grid grid-cols-3">
                   <FaceBook />

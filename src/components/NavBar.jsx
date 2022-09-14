@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
 import { logout, getUserInfo } from "../firebase/firebase";
 import { Link } from "react-router-dom";
+import { ReactComponent as Menu } from "../assets/navIcons/menu.svg";
 
 const NavBar = ({
   setShowSidebar,
@@ -37,7 +38,7 @@ const NavBar = ({
             type="button"
             onClick={() => setShowSidebar("left-0")}
           >
-            Menu
+            <Menu />
           </button>
 
           <div className="flex items-center gap-4">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TextInput } from "flowbite-react";
+import { Card } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
@@ -7,17 +7,21 @@ import {
   registerWithGoogle,
 } from "../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { ReactComponent as FaceBook } from "../assets/loginIcons/facebook.svg";
+import { ReactComponent as Apple } from "../assets/loginIcons/apple.svg";
+import { ReactComponent as Google } from "../assets/loginIcons/google.svg";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
   const logIn = (e) => {
     e.preventDefault();
     logInWithEmailAndPassword(email, password);
-    if (user) navigate("/");
+    if (user) navigate("/footprint");
   };
 
   useEffect(() => {
@@ -25,101 +29,113 @@ function Login() {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/");
+    if (user) navigate("/footprint");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   return (
-    <>
-      <div className="flex items-center justify-center p-6">
-        <div className="flex items-center justify-center bg-gray-100 rounded-lg shadow dark:border px-4">
-          <div className="p-6 space-y-4 md:space-y-6 flex flex-col items-center justify-center">
-            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900">
-              LogIn
-            </h1>
-            <form
-              className="space-y-4 md:space-y-6"
-              action="#"
-              onSubmit={logIn}
-            >
-              <div>
+    <div className="flex items-center justify-center p-6">
+      <Card>
+        <div className="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+          <div className="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
+            <h5>Log in with</h5>
+          </div>
+          <div className="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
+            <div className="w-3/12 max-w-full px-1 ml-auto flex-0">
+              <button
+                className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
+                onClick={registerWithGoogle}
+              >
+                <FaceBook />
+              </button>
+            </div>
+            <div className="w-3/12 max-w-full px-1 flex-0">
+              <button
+                className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
+                onClick={registerWithGoogle}
+              >
+                <Apple />
+              </button>
+            </div>
+            <div className="w-3/12 max-w-full px-1 mr-auto flex-0">
+              <button
+                type="button"
+                className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
+                onClick={registerWithGoogle}
+              >
+                <Google />
+              </button>
+            </div>
+            <div className="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
+              <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">
+                or
+              </p>
+            </div>
+          </div>
+          <div className="flex-auto p-6">
+            <form action="#" onSubmit={logIn}>
+              <div className="mb-4">
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  E-MAIL
+                  Email
                 </label>
-                <TextInput
-                  id="email1"
+                <input
+                  id="email"
                   type="email"
-                  placeholder="email@email.com"
+                  className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-primary-600 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                  placeholder="Email"
+                  aria-label="Email"
+                  name="email"
+                  aria-describedby="email-addon"
+                  aria-required
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required={true}
-                  name="email"
-                  className="bg-gray-50 items-center border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                 />
               </div>
-              <div>
+              <div className="mb-4">
                 <label
                   htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  PASSWORD
+                  Password
                 </label>
-                <TextInput
-                  id="password1"
+                <input
+                  id="password"
                   type="password"
-                  required={true}
+                  className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-primary-600 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                  placeholder="Password"
+                  aria-label="Password"
+                  name="password"
+                  aria-describedby="password-addon"
+                  aria-required
+                  required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  name="password"
-                  placeholder="••••••••"
-                  className="bg-gray-50 items-center border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                 />
               </div>
-              <div className="flex items-center justify-center">
+
+              <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-600 items-center border text-white rounded-lg block w-full p-2.5"
+                  className="w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white transition-all border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-xs text-sm ease-in shadow-md bg-blue-600 hover:border-blue-800 hover:bg-blue-800 hover:text-white"
                 >
                   Log in
                 </button>
               </div>
-            </form>
-            <div className="flex items-center justify-center">
-              <button
-                type="button"
-                onClick={registerWithGoogle}
-                className="bg-blue-600 items-center border text-white rounded-lg block w-full p-2.5"
-              >
-                Google
-              </button>
-            </div>
-            <div className="flex items-center justify-center">
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don't have an account yet?{" "}
-                <Link
-                  to="/registration"
-                  className="font-medium text-blue hover:underline dark:text-primary-500"
-                >
+              <p className="mt-4 mb-0 leading-normal text-sm text-center">
+                Don't have an count yet?{" "}
+                <Link to="/registration" className="font-bold text-slate-700">
                   Register
                 </Link>
               </p>
-            </div>
-            <div className="flex items-center justify-center">
-              <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                {/* <a
-                    href="#"
-                    className="font-medium text-blue hover:underline dark:text-primary-500"
-                  >
-                    Need a help?
-                  </a> */}
-              </p>
-            </div>
+            </form>
           </div>
         </div>
-      </div>
-    </>
+      </Card>
+    </div>
   );
 }
 

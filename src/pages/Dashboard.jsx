@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { logout, auth, getUserInfo } from "../firebase/firebase";
+import { auth, getUserInfo } from "../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Card } from "flowbite-react";
 import { useNavigate } from "react-router";
 
 const Dashboard = () => {
   const [userInfo, setUserInfo] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 

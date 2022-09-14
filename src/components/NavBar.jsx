@@ -1,18 +1,15 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
-import { logout, auth, getUserInfo } from "../firebase/firebase";
+import { logout, getUserInfo } from "../firebase/firebase";
 import { Link } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 const NavBar = ({
-  showSideBar,
   setShowSidebar,
   pathName,
   userInfo,
   setUserInfo,
   user,
   loading,
-  error,
 }) => {
   useEffect(() => {
     if (loading) return;
@@ -23,7 +20,6 @@ const NavBar = ({
     else if (!user) setUserInfo(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
-
   return (
     <nav className="py-6 px-3">
       <div className="container max-w-full mx-auto items-center justify-between md:px-8">
@@ -43,17 +39,6 @@ const NavBar = ({
           >
             Menu
           </button>
-          {/* Logo container */}
-          {/* <Navbar.Brand href="/">
-            <img
-              src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mr-3 h-14"
-              alt="PolyZero Logo"
-            />
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-              PolyZero
-            </span>
-          </Navbar.Brand> */}
 
           <div className="flex items-center gap-4">
             {user ? (
@@ -64,7 +49,7 @@ const NavBar = ({
                   inline={true}
                   label={
                     <Avatar
-                      img="https://thispersondoesnotexist.com/image"
+                      img={user.photoURL ? user.photoURL : false}
                       rounded={true}
                       alt="Your profile pic"
                     />

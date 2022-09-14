@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import FootprintCard from "../components/footprint/FootprintCard";
 import Results from "../components/footprint/Results";
 import footprintData from "../data/tier.json";
-import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
-import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
-import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
-import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+// import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
+// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
+// import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
+// import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+// import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const Footprint = ({ result, setResult }) => {
   // const [data, setData] = useState(null);
@@ -20,6 +20,7 @@ const Footprint = ({ result, setResult }) => {
     if (storedResult) {
       setResult(storedResult);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -32,11 +33,13 @@ const Footprint = ({ result, setResult }) => {
               plastic footprint
             </span>
           </h1>
-          Select the lifestyle below that comes closest to describing your consumption habits.
+          Select the lifestyle below that comes closest to describing your
+          consumption habits.
           <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-9 md:w-10/12">
             {footprintData.map((card) => {
               return (
                 <FootprintCard
+                  key={card.title}
                   title={card.title}
                   grocery={card.grocery}
                   takeOut={card.takeOut}

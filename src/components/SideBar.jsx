@@ -8,6 +8,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 // import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 // import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 // import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import { ReactComponent as Footprint } from "../assets/navIcons/carbon-footprint.svg";
+import { ReactComponent as Tiers } from "../assets/navIcons/tiers.svg";
+import { ReactComponent as Dashboard } from "../assets/navIcons/dashboard.svg";
+import { ReactComponent as Logout } from "../assets/navIcons/logout.svg";
 import { Progress } from "flowbite-react";
 
 const SideBar = ({ result }) => {
@@ -87,7 +91,7 @@ const SideBar = ({ result }) => {
                   }
                 >
                   {/* <Icon name="dashboard" size="2xl" /> */}
-                  <FootPrint />
+                  <Footprint />
                   Footprint Estimator
                 </NavLink>
               </li>

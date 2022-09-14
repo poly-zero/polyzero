@@ -25,7 +25,7 @@ const Results = ({ setResult, storedResult }) => {
   }
 
   return (
-    <div className="flex flex-col gap-8 items-center w-full tracking-normal">
+    <div className="flex flex-col gap-4 items-center w-full tracking-normal">
       {foundTier && (
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           My
@@ -48,8 +48,8 @@ const Results = ({ setResult, storedResult }) => {
               </div>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              At the <strong>{storedResult}</strong> level, we estimate
-              you consume around <strong>{foundTier.plastic}kg</strong> of
+              At the <strong>{storedResult}</strong> level, we estimate you
+              consume around <strong>{foundTier.plastic}kg</strong> of
               disposable plastics per year.
             </p>
           </Card>
@@ -64,7 +64,7 @@ const Results = ({ setResult, storedResult }) => {
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               per capita average annual plastic consumption in
-              <strong> Japan</strong>.
+              <strong> 🇯🇵 Japan</strong>.
             </p>
           </Card>
         </div>
@@ -94,7 +94,7 @@ const Results = ({ setResult, storedResult }) => {
               Share your results and help raise awareness!
             </small>
           </div>
-          <div className="flex justify-center gap-14">
+          <div className="flex justify-center gap-4 -my-2">
             <FaceBook />
             <Instagram />
             <a
@@ -110,23 +110,24 @@ const Results = ({ setResult, storedResult }) => {
               data-show-count="false"
               target={"_blank"}
               rel="noreferrer"
+              className=""
             >
               <Twitter />
             </a>
             <LinkedIn />
           </div>
+          <div className="flex flex-wrap gap-2 justify-center">
+            <Button size={"xl"} onClick={() => navigateTo("/resources")}>
+              Shrink your plastic habit
+            </Button>
+            <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+              Off-set your CO2 emissions
+            </Button>
+            <Button size={"xl"} onClick={resetResult}>
+              Re-do Footprint Estimate
+            </Button>
+          </div>
         </Card>
-      </div>
-      <div className="flex flex-wrap gap-2 justify-center w-1/3">
-        <Button size={"xl"} onClick={() => navigateTo("/resources")}>
-          Shrink your plastic habit
-        </Button>
-        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-          Off-set your CO2 emissions
-        </Button>
-        <Button size={"xl"} onClick={resetResult}>
-          Re-do Footprint Estimate
-        </Button>
       </div>
     </div>
   );

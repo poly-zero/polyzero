@@ -18,18 +18,12 @@ const Results = ({ setResult, storedResult }) => {
     localStorage.removeItem("result");
     setResult("");
   }
-  const { value1 } = useCountUp({
-    isCounting: true,
-    end: 30,
-    duration: 2
-  });
 
   const { value } = useCountUp({
     isCounting: true,
     end: foundTier.carbon,
     duration: 2
   });
-  console.log(value);
 
   return (
     <div className="flex flex-col gap-8 items-center w-full tracking-normal">

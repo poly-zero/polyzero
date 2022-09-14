@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "flowbite-react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   auth,
   registerWithEmailAndPassword,

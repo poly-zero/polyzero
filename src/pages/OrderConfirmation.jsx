@@ -4,7 +4,6 @@ import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { Card } from "flowbite-react";
 import messagesTwitter from "../data/variable.json";
-import tierData from "../data/tier.json";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -12,8 +11,6 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const OrderConfirmation = ({ tier }) => {
-  const storedResult = localStorage.getItem("result");
-
   const storedPayment = localStorage.getItem("payment");
   const storedTonnes = localStorage.getItem("tonnes");
   const storedTitle = localStorage.getItem("title");
@@ -41,11 +38,15 @@ const OrderConfirmation = ({ tier }) => {
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             {user && user.displayName}
           </span>
-          ! 
+          !
         </h1>
         <p className=" my-8 text-xl font-normal text-center text-gray-500 dark:text-gray-400">
-          You took the time to learn about your plastic footprint and its effect on the environment.<br />
-          Then you took it one step further and offset the CO2 emissions from the plastic you consume.<br />
+          You took the time to learn about your plastic footprint and its effect
+          on the environment.
+          <br />
+          Then you took it one step further and offset the CO2 emissions from
+          the plastic you consume.
+          <br />
           Now help us raise awareness by sharing your good deed with the world.
         </p>
       </div>
@@ -57,8 +58,9 @@ const OrderConfirmation = ({ tier }) => {
               {storedTitle}
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              You offset <b>{storedTonnes} tonnes</b> of CO2e<br />
-             or <b>{storedTime} year(s)</b> worth of plastic
+              You offset <b>{storedTonnes} tonnes</b> of CO2e
+              <br />
+              or <b>{storedTime} year(s)</b> worth of plastic
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               ￥{storedPayment * storedTime}

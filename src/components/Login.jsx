@@ -17,19 +17,19 @@ function Login() {
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+  const storedPayment = localStorage.getItem("payment");
 
   const logIn = (e) => {
     e.preventDefault();
     logInWithEmailAndPassword(email, password);
-    if (user) navigate("/footprint");
   };
 
   useEffect(() => {
     if (loading) {
-      // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/footprint");
+    if (user && storedPayment) navigate("/payment");
+    else if (user) navigate("/footprint");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 

@@ -16,7 +16,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     });
     localStorage.setItem("payment", cost);
     localStorage.setItem("title", title);
-    localStorage.setItem("tonnes", tonnes);
+    localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
     localStorage.setItem("time", age);
 
     navigateTo("/payment");
@@ -50,18 +50,28 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
             />
           </div>
         )}
-        <p className="text-lg font-bold text-gray-700 dark:text-gray-400">
-        {`Total CO2: ${(tonnes * age).toFixed(2)} tonnes`}
-        </p>
-        <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {`￥${cost * age}`}
-        </h3>
-        <button
-          className="inline-flex items-center py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={assignTier}
-        >
-          Select
-        </button>
+        {age >= time ? (
+          <>
+            <p className="text-lg font-bold text-gray-700 dark:text-gray-400">
+              {`Total CO2: ${(tonnes * age).toFixed(2)} tonnes`}
+            </p>
+            <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {`￥${cost * age}`}
+            </h3>
+            <button
+              className="inline-flex items-center py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              onClick={assignTier}
+            >
+              Select
+            </button>
+          </>
+        ) : (
+          <>
+            <p className="text-lg font-bold text-gray-700 dark:text-gray-400">
+              Please enter a number of year equal or above 15.
+            </p>
+          </>
+        )}
       </Card>
     </div>
   );

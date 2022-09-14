@@ -6,6 +6,7 @@ import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../../assets/socialMediaIcons/icons8-twitter.svg";
+import { useCountUp } from "use-count-up";
 
 const Results = ({ setResult, storedResult }) => {
   const navigateTo = useNavigate();
@@ -13,19 +14,19 @@ const Results = ({ setResult, storedResult }) => {
   let secondMessage = foundTier.plastic;
   let forthMessage = foundTier.carbon;
 
-  // tierData.map((val) => {
-  //   if (val.title === storedResult) {
-  //     return (secondMessage = val.plastic) && (forthMessage = val.carbon);
-  //   }
-  // });
-
   function resetResult() {
     localStorage.removeItem("result");
     setResult("");
   }
 
+  const { value } = useCountUp({
+    isCounting: true,
+    end: foundTier.carbon,
+    duration: 2
+  });
+
   return (
-    <div className="flex flex-col gap-8 items-center w-full tracking-normal">
+    <div className="flex flex-col gap-4 items-center w-full tracking-normal">
       {foundTier && (
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           My
@@ -43,13 +44,13 @@ const Results = ({ setResult, storedResult }) => {
                 Plastic consumption
               </small>
               <div>
-                {foundTier.plastic}
+                {secondMessage}
                 <span className="text-4xl">kg / year</span>
               </div>
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              At the <strong>{storedResult.slice(2)}</strong> level, we estimate
-              you consume around <strong>{foundTier.plastic}kg</strong> of
+              At the <strong>{storedResult}</strong> level, we estimate you
+              consume around <strong>{foundTier.plastic}kg</strong> of
               disposable plastics per year.
             </p>
           </Card>
@@ -64,7 +65,7 @@ const Results = ({ setResult, storedResult }) => {
             </h1>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               per capita average annual plastic consumption in
-              <strong> Japan</strong>.
+              <strong> 🇯🇵 Japan</strong>.
             </p>
           </Card>
         </div>
@@ -75,7 +76,8 @@ const Results = ({ setResult, storedResult }) => {
               This amount of plastic will generate at least
             </small>
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-              {foundTier.carbon}
+              {value}
+
               <span className="text-4xl">
                 kg CO
                 <span className="text-xl">2</span>e
@@ -94,7 +96,7 @@ const Results = ({ setResult, storedResult }) => {
               Share your results and help raise awareness!
             </small>
           </div>
-          <div className="flex justify-center gap-14">
+          <div className="flex justify-center gap-4 -my-2">
             <FaceBook />
             <Instagram />
             <a
@@ -110,23 +112,24 @@ const Results = ({ setResult, storedResult }) => {
               data-show-count="false"
               target={"_blank"}
               rel="noreferrer"
+              className=""
             >
               <Twitter />
             </a>
             <LinkedIn />
           </div>
+          <div className="flex flex-wrap gap-2 justify-center">
+            <Button size={"xl"} onClick={() => navigateTo("/resources")}>
+              Shrink your plastic habit
+            </Button>
+            <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
+              Off-set your CO2 emissions
+            </Button>
+            <Button size={"xl"} onClick={resetResult}>
+              Re-do Footprint Estimate
+            </Button>
+          </div>
         </Card>
-      </div>
-      <div className="flex flex-wrap gap-2 justify-center w-1/3">
-        <Button size={"xl"} onClick={() => navigateTo("/resources")}>
-          Shrink your plastic habit
-        </Button>
-        <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-          Off-set your CO2 emissions
-        </Button>
-        <Button size={"xl"} onClick={resetResult}>
-          Re-do Footprint Estimate
-        </Button>
       </div>
     </div>
   );

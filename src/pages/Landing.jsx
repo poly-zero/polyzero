@@ -8,7 +8,7 @@ const Landing = () => {
     <div className="h-screen md:-ml-64">
       <LandingNavBar />
       <div className="flex flex-col items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+        <h1 className="my-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           Facts about&nbsp;
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             Disposable Plastics
@@ -82,28 +82,31 @@ const Landing = () => {
           buttonText={"Read More"}
         />
       </div>
-      <button name="about">
+      <a name="about" className="w-full h-3/4 bg-slate-50">
         <div className="flex flex-col text-center justify-center items-center p-14 h-3/4">
           <div className="flex flex-col gap-4 w-full md:w-1/3">
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
               About
             </h1>
-            <p className="text-center text-gray-500">
-              PolyZero was created to raise awareness about the impact of the
-              single-use plastics we consume every day. Our Plastic Footprint
-              Estimator approximates the volume of disposable plastics you use
-              per year, based on country of residence and lifestyle.
-            </p>
-            <p className="text-center text-gray-500">
-              Reducing our plastic consumption is the most important step we can
-              take, but for those who wish to do more, the app also estimates
-              the CO2 emissions associated with your plastic footprint and
-              allows you to purchase CO2 off-sets to reduce your impact.
-            </p>
+            <div className="flex flex-col md:flex-row gap-4">
+              <p className="text-center text-gray-500">
+                PolyZero was created to raise awareness about the impact of the
+                single-use plastics we consume every day. Our Plastic Footprint
+                Estimator approximates the volume of disposable plastics you use
+                per year, based on country of residence and lifestyle.
+              </p>
+              <p className="text-center text-gray-500">
+                Reducing our plastic consumption is the most important step we
+                can take, but for those who wish to do more, the app also
+                estimates the CO2 emissions associated with your plastic
+                footprint and allows you to purchase CO2 off-sets to reduce your
+                impact.
+              </p>
+            </div>
           </div>
         </div>
-      </button>
-      <button name="contact">
+      </a>
+      <a name="contact" className="w-full h-3/4 bg-slate-50">
         <div className="bg-slate-50 flex flex-col text-center justify-center items-center p-14 h-3/4">
           <div className="flex flex-col justify-center items-center gap-4 w-full md:w-1/3">
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
@@ -137,7 +140,7 @@ const Landing = () => {
             contact@polyzero.org
           </div>
         </div>
-      </button>
+      </a>
     </div>
   );
 };

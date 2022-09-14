@@ -82,7 +82,7 @@ const Landing = () => {
           buttonText={"Read More"}
         />
       </div>
-      <a name="about">
+      <button name="about">
         <div className="flex flex-col text-center justify-center items-center p-14 h-3/4">
           <div className="flex flex-col gap-4 w-full md:w-1/3">
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
@@ -102,8 +102,8 @@ const Landing = () => {
             </p>
           </div>
         </div>
-      </a>
-      <a name="contact">
+      </button>
+      <button name="contact">
         <div className="bg-slate-50 flex flex-col text-center justify-center items-center p-14 h-3/4">
           <div className="flex flex-col justify-center items-center gap-4 w-full md:w-1/3">
             <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
@@ -114,10 +114,18 @@ const Landing = () => {
               collaborators, and open-source contributors. Please reach out!
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://twitter.com/PolyZeroApp" target="_blank">
+              <a
+                href="https://twitter.com/PolyZeroApp"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Twitter />
               </a>
-              <a href="https://github.com/poly-zero/polyzero" target="_blank">
+              <a
+                href="https://github.com/poly-zero/polyzero"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   className="w-12"
                   src="https://cdn.onlinewebfonts.com/svg/img_44605.png"
@@ -126,10 +134,10 @@ const Landing = () => {
               </a>
             </div>
             <Mail />
-              contact@polyzero.org
+            contact@polyzero.org
           </div>
         </div>
-      </a>
+      </button>
     </div>
   );
 };

@@ -12,11 +12,13 @@ import SideBar from "./components/SideBar";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import TipsToReduce from "./pages/TipsToReduce";
+import Country from "./pages/Country";
 
 function App() {
   const [tier, setTier] = useState({});
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(null);
   const location = useLocation();
+  console.log(result);
 
   return (
     <>
@@ -26,6 +28,11 @@ function App() {
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/registration" element={<Registration />} />
+          <Route
+            exact
+            path="/country"
+            element={<Country result={result} setResult={setResult} />}
+          />
           <Route
             exact
             path="/footprint"

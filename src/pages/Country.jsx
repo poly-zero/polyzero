@@ -11,8 +11,14 @@ import {
 import { IconButton } from "@material-tailwind/react";
 
 const Country = ({ result, setResult }) => {
-  const [selected, setSelected] = useState(countries[44]);
+  const [selectedCountry, setSelectedCountry] = useState(countries[44]);
   const [query, setQuery] = useState("");
+
+  const storeCountry = () => {
+    setResult({
+      country: selectedCountry,
+    });
+  };
 
   const filteredCountries =
     query === ""
@@ -38,7 +44,7 @@ const Country = ({ result, setResult }) => {
       </p>
 
       <div className="flex flex-row w-3/4 z-50 md:w-1/4 gap-2 justify-center items-center">
-        <Combobox value={selected} onChange={setSelected}>
+        <Combobox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative w-full">
             <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md sm:text-sm">
               <Combobox.Input
@@ -46,7 +52,7 @@ const Country = ({ result, setResult }) => {
                 // What is displayed in input box after selection
                 displayValue={(country) => (!country ? "" : country.name)}
                 onChange={(event) => setQuery(event.target.value)}
-                onClick={() => setSelected("")}
+                onClick={() => setSelectedCountry("")}
               />
               <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                 <ChevronDoubleDownIcon
@@ -78,16 +84,16 @@ const Country = ({ result, setResult }) => {
                       }
                       value={country}
                     >
-                      {({ selected, active }) => (
+                      {({ selectedCountry, active }) => (
                         <>
                           <span
                             className={`block truncate ${
-                              selected ? "font-medium" : "font-normal"
+                              selectedCountry ? "font-medium" : "font-normal"
                             }`}
                           >
                             {country.name}
                           </span>
-                          {selected ? (
+                          {selectedCountry ? (
                             <span
                               className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
                                 active ? "text-white" : "text-teal-600"
@@ -107,7 +113,7 @@ const Country = ({ result, setResult }) => {
         </Combobox>
         <Link to={""} className="">
           <div className="w-full shadow-lg">
-            <Button  className="flex justify-center z-0">
+            <Button className="flex justify-center z-0" onClick={storeCountry}>
               <ChevronRightIcon className="h-5 w-5 text-white" />
             </Button>
           </div>

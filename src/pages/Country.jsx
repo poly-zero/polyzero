@@ -8,7 +8,7 @@ import {
   ChevronDoubleDownIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
-import { IconButton } from "@material-tailwind/react";
+import Header from "../components/Header";
 
 const Country = ({ setResult }) => {
   const [selectedCountry, setSelectedCountry] = useState(countries[44]);
@@ -32,23 +32,20 @@ const Country = ({ setResult }) => {
 
   return (
     <div className="bg-slate-100 flex flex-col flex-grow items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-      <h1 className="mt-16 mb-4 text-5xl font-extrabold text-gray-900 dark:text-white md:mt-0 md:text-5xl lg:text-6xl text-center">
-        Confirm your<span> </span>
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-          country of residence
-        </span>
-      </h1>
-      <p className="w-3/4 text-md mb-4 md:text-center md:text-base md:mb-0">
-        This information will be used to determine the national per capita
-        average of plastic consumption (kg) in your country
-      </p>
+      <Header
+        text={"Confirm your"}
+        highlightedText={"country of residence"}
+        caption={
+          "This information will be used to determine the national per capita average of plastic consumption (kg) in your country"
+        }
+      />
 
       <div className="flex flex-row w-3/4 z-50 md:w-1/4 gap-2 justify-center items-center">
         <Combobox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative w-full">
             <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md sm:text-sm">
               <Combobox.Input
-                className="w-full border-none py-2.5 pl-3 pr-10 text-xl leading-5 text-gray-900 focus:ring-0"
+                className="w-full border-none py-2.5 pl-3 pr-10 text-xl leading-5 text-gray-700 focus:ring-0"
                 // What is displayed in input box after selection
                 displayValue={(country) => (!country ? "" : country.name)}
                 onChange={(event) => setQuery(event.target.value)}

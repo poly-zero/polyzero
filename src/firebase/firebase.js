@@ -18,7 +18,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,12 +32,12 @@ const firebaseConfig = {
   appId: "1:63330640151:web:0677a82628cba788d91752",
   measurementId: "G-5M2J27JMXQ",
 };
-const analytics = getAnalytics(app);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const analytics = getAnalytics(app);
 
 const googleProvider = new GoogleAuthProvider();
 const registerWithGoogle = async () => {
@@ -84,6 +84,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    createLog("login", { method: "local" });
   } catch (err) {
     console.error(err);
     alert(err.message);
@@ -113,6 +114,10 @@ const sendPasswordReset = async (email) => {
 
 const logout = () => {
   signOut(auth);
+};
+
+const createLog = (type, parameters) => {
+  logEvent(analytics, type, parameters);
 };
 
 export {

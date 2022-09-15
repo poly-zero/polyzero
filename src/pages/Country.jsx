@@ -11,7 +11,7 @@ import {
 import { IconButton } from "@material-tailwind/react";
 
 const Country = ({ result, setResult }) => {
-  const [selected, setSelected] = useState(countries[0].Country);
+  const [selected, setSelected] = useState(countries[44]);
   const [query, setQuery] = useState("");
 
   const filteredCountries =
@@ -46,6 +46,7 @@ const Country = ({ result, setResult }) => {
                 // What is displayed in input box after selection
                 displayValue={(country) => (!country ? "" : country.name)}
                 onChange={(event) => setQuery(event.target.value)}
+                onClick={() => setSelected("")}
               />
               <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                 <ChevronDoubleDownIcon

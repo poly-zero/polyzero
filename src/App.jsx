@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Login from "./components/Login";
 import Landing from "./pages/Landing";
 import Tiers from "./pages/Tiers";
@@ -12,11 +12,19 @@ import SideBar from "./components/SideBar";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import TipsToReduce from "./pages/TipsToReduce";
+import { pageTracking } from "./analytics/tracking";
+import Country from "./pages/Country";
+import Groceries from "./pages/Groceries";
 
 function App() {
   const [tier, setTier] = useState({});
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(null);
   const location = useLocation();
+  console.log(result);
+
+  useEffect(() => {
+    pageTracking(location);
+  }, [location]);
 
   return (
     <>
@@ -30,6 +38,16 @@ function App() {
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/registration" element={<Registration />} />
+          <Route
+            exact
+            path="/country"
+            element={<Country setResult={setResult} />}
+          />
+          <Route
+            exact
+            path="/groceries"
+            element={<Groceries setResult={setResult} />}
+          />
           <Route
             exact
             path="/footprint"

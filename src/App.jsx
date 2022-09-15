@@ -13,6 +13,7 @@ import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import TipsToReduce from "./pages/TipsToReduce";
 import Country from "./pages/Country";
+import Groceries from "./pages/Groceries";
 
 function App() {
   const [tier, setTier] = useState({});
@@ -31,7 +32,12 @@ function App() {
           <Route
             exact
             path="/country"
-            element={<Country result={result} setResult={setResult} />}
+            element={<Country setResult={setResult} />}
+          />
+          <Route
+            exact
+            path="/groceries"
+            element={<Groceries setResult={setResult} />}
           />
           <Route
             exact

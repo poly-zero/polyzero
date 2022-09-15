@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import { Combobox, Transition } from "@headlessui/react";
 import countries from "../data/countries.json";
@@ -10,7 +10,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { IconButton } from "@material-tailwind/react";
 
-const Country = ({ result, setResult }) => {
+const Country = ({ setResult }) => {
   const [selectedCountry, setSelectedCountry] = useState(countries[44]);
   const [query, setQuery] = useState("");
 
@@ -111,7 +111,7 @@ const Country = ({ result, setResult }) => {
             </Transition>
           </div>
         </Combobox>
-        <Link to={""} className="">
+        <Link to={"/groceries"}>
           <div className="w-full shadow-lg">
             <Button className="flex justify-center z-0" onClick={storeCountry}>
               <ChevronRightIcon className="h-5 w-5 text-white" />

@@ -21,8 +21,12 @@ function App() {
   return (
     <>
       <div className="flex flex-col h-screen md:ml-64">
-        {location.pathname === "/" ? null : <SideBar result={result} />}
+        {location.pathname === "/" || "/resources" ? null : (
+          <SideBar result={result} />
+        )}
+
         <Routes>
+          <Route exact path="/resources" element={<Resources />} />
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/registration" element={<Registration />} />
@@ -33,7 +37,6 @@ function App() {
           />
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
-          <Route exact path="/resources" element={<Resources />} />
           <Route exact path="/tips" element={<TipsToReduce />} />
           <Route
             exact

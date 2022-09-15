@@ -12,11 +12,14 @@ import SideBar from "./components/SideBar";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import TipsToReduce from "./pages/TipsToReduce";
+import usePageTracking from "./analytics/tracking";
 
 function App() {
   const [tier, setTier] = useState({});
   const [result, setResult] = useState("");
   const location = useLocation();
+
+  usePageTracking();
 
   return (
     <>

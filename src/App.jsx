@@ -11,6 +11,7 @@ import OrderConfirmation from "./pages/OrderConfirmation";
 import SideBar from "./components/SideBar";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
+import TipsToReduce from "./pages/TipsToReduce";
 
 function App() {
   const [tier, setTier] = useState({});
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
           <Route exact path="/resources" element={<Resources />} />
+          <Route exact path="/tips" element={<TipsToReduce />} />
           <Route
             exact
             path="/confirmation"

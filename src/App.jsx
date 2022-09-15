@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Login from "./components/Login";
 import Landing from "./pages/Landing";
 import Tiers from "./pages/Tiers";
@@ -12,6 +12,7 @@ import SideBar from "./components/SideBar";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import TipsToReduce from "./pages/TipsToReduce";
+import { pageTracking } from "./analytics/tracking";
 import Country from "./pages/Country";
 import Groceries from "./pages/Groceries";
 
@@ -20,6 +21,10 @@ function App() {
   const [result, setResult] = useState(null);
   const location = useLocation();
   console.log(result);
+
+  useEffect(() => {
+    pageTracking(location);
+  }, [location]);
 
   return (
     <>

@@ -14,6 +14,8 @@ const NavBar = ({
 }) => {
   const navigate = useNavigate();
 
+  console.log(user);
+
   useEffect(() => {
     if (loading) return;
     if (user && !userInfo)

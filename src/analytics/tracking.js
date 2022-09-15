@@ -15,4 +15,14 @@ const usePageTracking = () => {
   }, [location]);
 };
 
-export default usePageTracking;
+const useLoginTracking = (method) => {
+  useEffect(() => {
+    ReactGA.initialize("G-5M2J27JMXQ");
+    ReactGA.event({
+      name: "login",
+      params: { method },
+    });
+  }, [method]);
+};
+
+export { usePageTracking, useLoginTracking };

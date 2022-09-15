@@ -12,7 +12,7 @@ import SideBar from "./components/SideBar";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import TipsToReduce from "./pages/TipsToReduce";
-import usePageTracking from "./analytics/tracking";
+import { usePageTracking } from "./analytics/tracking";
 
 function App() {
   const [tier, setTier] = useState({});

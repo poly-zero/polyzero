@@ -18,7 +18,6 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
 import { loginTracking } from "../analytics/tracking";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries

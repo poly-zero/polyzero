@@ -18,6 +18,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,7 +30,9 @@ const firebaseConfig = {
   storageBucket: "polyzero-37efc.appspot.com",
   messagingSenderId: "63330640151",
   appId: "1:63330640151:web:0677a82628cba788d91752",
+  measurementId: "G-5M2J27JMXQ",
 };
+const analytics = getAnalytics(app);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

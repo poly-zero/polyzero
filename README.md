@@ -30,7 +30,7 @@ The polyzero backend was built uysing Google Firebase.
 # OpenSource Contributions
 
 PolyZero is a passion project built by a group of volunteers. It's far from perfect and needs the involvement of others to survive.
-If you're interested in becoming a contributor, reach out to the team at [contact@polyzero.org](contact@polyzero.org).
+If you're interested in becoming a contributor, grab an open issue, fix it and submit a Pull Request. If you have something in mind that's not in the Issues list, please reach out to the team at [contact@polyzero.org](contact@polyzero.org).
 
 # Contact
 

@@ -12,10 +12,7 @@ const pageTracking = (location) => {
 
 const loginTracking = (method) => {
   ReactGA.initialize("G-5M2J27JMXQ");
-  ReactGA.event({
-    name: "login",
-    params: { method },
-  });
+  ReactGA.event("login", { method });
 };
 
 export { pageTracking, loginTracking };

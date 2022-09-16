@@ -85,7 +85,7 @@ const SideBar = ({ result }) => {
                   to="/footprint"
                   exact="true"
                   className={
-                    pathName === "/footprint"
+                    pathName === "/wizard"
                       ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
                       : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
                   }

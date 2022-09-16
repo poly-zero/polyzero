@@ -13,8 +13,8 @@ import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 import TipsToReduce from "./pages/TipsToReduce";
 import { pageTracking } from "./analytics/tracking";
-import Country from "./pages/Country";
-import Groceries from "./pages/Groceries";
+import FootprintWizard from "./pages/FootprintWizard";
+import Results from "./pages/Results";
 
 function App() {
   const [tier, setTier] = useState({});
@@ -36,19 +36,15 @@ function App() {
           <Route exact path="/registration" element={<Registration />} />
           <Route
             exact
-            path="/country"
-            element={<Country setResult={setResult} />}
+            path="/wizard"
+            element={<FootprintWizard setResult={setResult} />}
           />
           <Route
             exact
-            path="/groceries"
-            element={<Groceries setResult={setResult} />}
+            path="/results"
+            element={<Results result={result} setResult={setResult} />}
           />
-          <Route
-            exact
-            path="/footprint"
-            element={<Footprint result={result} setResult={setResult} />}
-          />
+
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
           <Route exact path="/resources" element={<Resources />} />

@@ -124,7 +124,7 @@ const Results = ({ setResult, storedResult }) => {
             </a>
 
             <a
-              class="share-linkedin"
+              className="share-linkedin"
               href="https://www.linkedin.com/shareArticle?mini=true&url=https://polyzero.earth  
               "
             >

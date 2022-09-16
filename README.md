@@ -20,17 +20,18 @@ Other required libraries include:
 - [@heroicons/react](https://heroicons.com/)
 - [react-use-wizard](https://github.com/devrnt/react-use-wizard)
 
-To run the frontend components locally, clone this repo, then run `npm install` from within the repo folder to install the above components. Note: If you don't have `npm` installed, you'll need to do that first.
+To run the frontend components locally, clone this repo, then run `npm install` from within the repo folder to install the above components. 
+Note: If you don't have `npm` installed, you'll need to do that first.
 
 ## Back end
 
 The polyzero backend was built uysing Google Firebase.
 
-## OpenSource Contributions
+# OpenSource Contributions
 
 PolyZero is a passion project built by a group of volunteers. It's far from perfect and needs the involvement of others to survive.
 If you're interested in becoming a contributor, reach out to the team at [contact@polyzero.org](contact@polyzero.org).
 
-## Contact
+# Contact
 
 PolyZero is on Twitter at: [https://twitter.com/polyzeroapp](https://twitter.com/polyzeroapp)

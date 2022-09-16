@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
 import { logout, getUserInfo } from "../firebase/firebase";
-import { useNavigate } from "react-router-dom";
-import { ReactComponent as Menu } from "../assets/navIcons/menu.svg";
+import { Link } from "react-router-dom";
 
 const NavBar = ({
   setShowSidebar,
@@ -12,10 +11,7 @@ const NavBar = ({
   user,
   loading,
 }) => {
-  const navigate = useNavigate();
-
-  console.log(user);
-
+  
   useEffect(() => {
     if (loading) return;
     if (user && !userInfo)
@@ -42,7 +38,7 @@ const NavBar = ({
             type="button"
             onClick={() => setShowSidebar("left-0")}
           >
-            <Menu />
+            Menu
           </button>
 
           <div className="flex items-center gap-4">
@@ -78,14 +74,11 @@ const NavBar = ({
             ) : (
               <>
                 <Button.Group>
-                  <Button color="gray" onClick={() => navigate("/login")}>
-                    Log in
+                  <Button color="gray">
+                    <Link to="/login">Log in</Link>
                   </Button>
-                  <Button
-                    color="gray"
-                    onClick={() => navigate("/registration")}
-                  >
-                    Register
+                  <Button color="gray">
+                    <Link to="/registration">Register</Link>
                   </Button>
                 </Button.Group>
               </>

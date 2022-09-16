@@ -24,7 +24,7 @@ const Results = ({ setResult, storedResult }) => {
     const { value } = useCountUp({
       isCounting: true,
       end: data,
-      duration: 2,
+      duration: 2
     });
 
     return value;
@@ -122,7 +122,14 @@ const Results = ({ setResult, storedResult }) => {
             >
               <Twitter />
             </a>
-            <LinkedIn />
+
+            <a
+              className="share-linkedin"
+              href="https://www.linkedin.com/shareArticle?mini=true&url=https://polyzero.earth  
+              "
+            >
+              <LinkedIn />
+            </a>
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
             <Button size={"xl"} onClick={() => navigateTo("/resources")}>

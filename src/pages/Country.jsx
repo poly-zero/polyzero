@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import { Combobox, Transition } from "@headlessui/react";
 import countries from "../data/countries.json";
@@ -8,11 +8,17 @@ import {
   ChevronDoubleDownIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
-import { IconButton } from "@material-tailwind/react";
+import Header from "../components/Header";
 
-const Country = ({ result, setResult }) => {
-  const [selected, setSelected] = useState(countries[0].Country);
+const Country = ({ setResult }) => {
+  const [selectedCountry, setSelectedCountry] = useState(countries[44]);
   const [query, setQuery] = useState("");
+
+  const storeCountry = () => {
+    setResult({
+      country: selectedCountry,
+    });
+  };
 
   const filteredCountries =
     query === ""
@@ -26,26 +32,24 @@ const Country = ({ result, setResult }) => {
 
   return (
     <div className="bg-slate-100 flex flex-col flex-grow items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-      <h1 className="mt-16 mb-4 text-5xl font-extrabold text-gray-900 dark:text-white md:mt-0 md:text-5xl lg:text-6xl text-center">
-        Confirm your<span> </span>
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-          country of residence
-        </span>
-      </h1>
-      <p className="w-3/4 text-md mb-4 md:text-center md:text-base md:mb-0">
-        This information will be used to determine the national per capita
-        average of plastic consumption (kg) in your country
-      </p>
+      <Header
+        text={"Confirm your"}
+        highlightedText={"country of residence"}
+        caption={
+          "This information will be used to determine the national per capita average of plastic consumption (kg) in your country"
+        }
+      />
 
       <div className="flex flex-row w-3/4 z-50 md:w-1/4 gap-2 justify-center items-center">
-        <Combobox value={selected} onChange={setSelected}>
+        <Combobox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative w-full">
             <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md sm:text-sm">
               <Combobox.Input
-                className="w-full border-none py-2.5 pl-3 pr-10 text-xl leading-5 text-gray-900 focus:ring-0"
+                className="w-full border-none py-2.5 pl-3 pr-10 text-xl leading-5 text-gray-700 focus:ring-0"
                 // What is displayed in input box after selection
                 displayValue={(country) => (!country ? "" : country.name)}
                 onChange={(event) => setQuery(event.target.value)}
+                onClick={() => setSelectedCountry("")}
               />
               <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                 <ChevronDoubleDownIcon
@@ -77,16 +81,16 @@ const Country = ({ result, setResult }) => {
                       }
                       value={country}
                     >
-                      {({ selected, active }) => (
+                      {({ selectedCountry, active }) => (
                         <>
                           <span
                             className={`block truncate ${
-                              selected ? "font-medium" : "font-normal"
+                              selectedCountry ? "font-medium" : "font-normal"
                             }`}
                           >
                             {country.name}
                           </span>
-                          {selected ? (
+                          {selectedCountry ? (
                             <span
                               className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
                                 active ? "text-white" : "text-teal-600"
@@ -104,9 +108,9 @@ const Country = ({ result, setResult }) => {
             </Transition>
           </div>
         </Combobox>
-        <Link to={""} className="">
+        <Link to={"/groceries"}>
           <div className="w-full shadow-lg">
-            <Button  className="flex justify-center z-0">
+            <Button className="flex justify-center z-0" onClick={storeCountry}>
               <ChevronRightIcon className="h-5 w-5 text-white" />
             </Button>
           </div>

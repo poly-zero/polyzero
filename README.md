@@ -1,7 +1,26 @@
 ![PolyZero](/public/images/polyzero-logo.png)
 
-PolyZero enables consumers to calculate the CO2 footprint of all the single-use plastics they consume in their daily life, and then to off-set the emitted CO2. Find out more at [polyzero.earth](https://polyzero.earth)
+PolyZero is a web-app created to help consumers estimate the single-use plastics they consume in a year plus the CO2 footprint emitted from those plastics. 
+The goal of our app is to raise awareness and provide advice and tools for reducing your plastic footprint. Beyond that, we provide a simple mechanism to purchase CO2 off-sets in order to reduce the climate impact of the plastics that consumers are unable to eliminate from our lives.
 
-# PolyZero Server 
+Find out more about this project at [polyzero.earth](https://polyzero.earth)
 
-The polyzero project is divided into client and server components. This GitHub project contains the server-side source code and deployable artifacts.
+# Front End
+
+The polyzero project has a frontend built in [React.js](https://reactjs.org/) leveraging [Tailwind.css](https://tailwindcss.com/) for presentation.
+Other required libraries include:
+
+- material-tailwind
+- @headlessui/react
+- @heroicons/react
+- react-use-wizard
+
+To run the frontend components locally, clone this repo, then run `npm install` to install these components. *If you don't have `npm` installed, you'll need to do that first.
+
+# Back end
+
+The polyzero backend was built uysing Google Firebase.
+
+# OpenSource Contributions
+
+PolyZero is a project built by a group of volunteers. If you're interested in becoming a contributor, reach out at [contact@polyzero.org](contact@polyzero.org).  

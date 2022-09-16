@@ -20,7 +20,6 @@ function App() {
   const [tier, setTier] = useState({});
   const [result, setResult] = useState(null);
   const location = useLocation();
-  console.log(result);
 
   useEffect(() => {
     pageTracking(location);
@@ -29,7 +28,8 @@ function App() {
   return (
     <>
       <div className="flex flex-col h-screen md:ml-64">
-        {location.pathname === "/" || "/resources" ? null : (
+        {location.pathname === "/" ||
+        location.pathname === "/resources" ? null : (
           <SideBar result={result} />
         )}
 

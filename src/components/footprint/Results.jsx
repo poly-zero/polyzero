@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
 import tierData from "../../data/tier.json";
 import messagesTwitter from "../../data/variable.json";
-import { FacebookShareButton } from "next-share";
+import { FacebookShareButton, LinkedinShareButton } from "next-share";
 import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -129,14 +129,11 @@ const Results = ({ setResult, storedResult }) => {
             >
               <Twitter />
             </a>
-
-            <a
-              className="share-linkedin"
-              href="https://www.linkedin.com/shareArticle?mini=true&url=https://polyzero.earth  
-              "
+            <LinkedinShareButton
+              url={"https://www.polyzero.earth"}
             >
               <LinkedIn />
-            </a>
+            </LinkedinShareButton>
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
             <Button size={"xl"} onClick={() => navigateTo("/resources")}>

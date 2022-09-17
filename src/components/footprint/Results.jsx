@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
 import tierData from "../../data/tier.json";
 import messagesTwitter from "../../data/variable.json";
+import { FacebookShareButton } from "next-share";
 import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -24,7 +25,7 @@ const Results = ({ setResult, storedResult }) => {
     const { value } = useCountUp({
       isCounting: true,
       end: data,
-      duration: 2
+      duration: 2,
     });
 
     return value;
@@ -103,7 +104,13 @@ const Results = ({ setResult, storedResult }) => {
             </small>
           </div>
           <div className="flex justify-center gap-4 -my-2">
-            <FaceBook />
+            {/*  */}
+            <FacebookShareButton
+              url={"https://www.polyzero.earth"}
+              hashtag={"#polyzero"}
+            >
+              <FaceBook />
+            </FacebookShareButton>
             <Instagram />
             <a
               href={

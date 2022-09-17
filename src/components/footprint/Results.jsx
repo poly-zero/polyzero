@@ -2,7 +2,11 @@ import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
 import tierData from "../../data/tier.json";
 import messagesTwitter from "../../data/variable.json";
-import { FacebookShareButton, LinkedinShareButton } from "next-share";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+} from "next-share";
 import { ReactComponent as FaceBook } from "../../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -112,7 +116,7 @@ const Results = ({ setResult, storedResult }) => {
               <FaceBook />
             </FacebookShareButton>
             <Instagram />
-            <a
+            {/* <a
               href={
                 `https://twitter.com/intent/tweet?text=${
                   messagesTwitter[0].Q1
@@ -126,12 +130,16 @@ const Results = ({ setResult, storedResult }) => {
               target={"_blank"}
               rel="noreferrer"
               className=""
+            > */}
+            <TwitterShareButton
+              url={"https://www.polyzero.earth"}
+              title={`I use approx ${secondMessage}kg of disposable plastic/year, corresponding to ${forthMessage}kg of CO2e. %0aHow much plastic do you use? Estimated with`}
+              hashtags={["PolyZeroApp"]}
             >
               <Twitter />
-            </a>
-            <LinkedinShareButton
-              url={"https://www.polyzero.earth"}
-            >
+            </TwitterShareButton>
+            {/* </a> */}
+            <LinkedinShareButton url={"https://www.polyzero.earth"}>
               <LinkedIn />
             </LinkedinShareButton>
           </div>

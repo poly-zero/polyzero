@@ -84,7 +84,7 @@ const OrderConfirmation = ({ tier }) => {
               or <b>{storedTime} year(s)</b> worth of plastic
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{storedPayment * storedTime}
+              ￥{(storedPayment * storedTime).toLocaleString('ja-JP')}
             </h5>
           </Card>
         </div>

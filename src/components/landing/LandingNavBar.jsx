@@ -29,6 +29,7 @@ const LandingNavBar = () => {
           <Navbar.Link href="#about">About</Navbar.Link>
           <Navbar.Link href="/tips">Reduce Plastic</Navbar.Link>
           <Navbar.Link href="/resources">Further Reading</Navbar.Link>
+          <Navbar.Link href="#Team">Team</Navbar.Link>
           <Navbar.Link href="#contact">Contact</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>

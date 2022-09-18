@@ -2,6 +2,7 @@ import LandingNavBar from "../components/landing/LandingNavBar";
 import BlockQuote from "../components/landing/BlockQuote";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Mail } from "../assets/images/mail.svg";
+import { Avatar } from "flowbite-react";
 
 const Landing = () => {
   return (
@@ -107,8 +108,80 @@ const Landing = () => {
         </div>
       </div>
       <div
-        id="contact"
+        id="Team"
         className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4"
+      >
+        <div className="flex flex-col justify-center gap-4 w-full md:w-1/2">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            The Team
+          </h1>
+          <div className="flex flex-wrap gap-2">
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/62789620?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Kim Ly</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  kim@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/101638795?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Daiki Uema</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  daiki@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/73273137?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Joshua Haley</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  josh@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/73625660?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Felipe Machado</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  felipe@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/4993321?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Zach Brown</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  zach@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+          </div>
+        </div>
+      </div>
+      <div
+        id="contact"
+        className="flex flex-col justify-center items-center p-14 h-3/4"
       >
         <div className="flex flex-col justify-center  gap-4 w-full md:w-1/3">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">

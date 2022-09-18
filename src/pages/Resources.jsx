@@ -5,7 +5,7 @@ import { Button } from "flowbite-react";
 const Resources = () => {
   const scrollTop = () => {
     window.scrollTo({
-      top: 100,
+      top: 0,
       behavior: "smooth"
     });
   };
@@ -24,7 +24,7 @@ const Resources = () => {
     });
   };
 
-  const scrolllastPage = () => {
+  const scrollEndPage = () => {
     window.scrollTo({
       top: 2500,
       behavior: "smooth"
@@ -33,8 +33,9 @@ const Resources = () => {
   return (
     <Fragment>
       <div className="h-screen md:-ml-64 ">
-        <LandingNavBar />
         <div>
+          <LandingNavBar />
+
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
             Re
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
@@ -46,8 +47,9 @@ const Resources = () => {
             impact on our environment, climate, and health.
           </h2>
         </div>
+
         <br />
-        <div className="flex flex-row space-x-4 text-center justify-center ">
+        <div className="flex flex-row space-x-4 text-center justify-center  px-3">
           <Button onClick={scrollTop}>Plastic and Co2</Button>
           <Button onClick={scrollMiddle} id="single">
             Single-Use Plastic Production
@@ -55,8 +57,9 @@ const Resources = () => {
           <Button onClick={scrollBottom}>
             Impacts of Plastic on Human Health
           </Button>
-          <Button onClick={scrolllastPage}>Region-specific Data</Button>
+          <Button onClick={scrollEndPage}>Region-specific Data</Button>
         </div>
+
         <div className="flex col justify-center  text-center p-11 ">
           <div className=" flex  px-11  border justify-center w-3/5 ">
             <div class="justify-center">
@@ -65,25 +68,25 @@ const Resources = () => {
                 <strong>
                   Center for International Environmental Law (CIEL){" "}
                 </strong>
-                <span
+                <a
                   className="text-blue-600 hover:text-blue-800 text-center font-light underline "
-                  href="(https://www.ciel.org/)"
+                  href="https://www.ciel.org/"
                 >
                   <br />
                   Learn more
-                </span>{" "}
+                </a>{" "}
               </p>
               <p>
                 {" "}
                 The below is excerpted from the CIEL report entitled “Plastic &
                 Climate: The Hidden Costs of a Plastic Planet”{" "}
               </p>
-              <span
+              <a
                 className="text-blue-600 hover:text-blue-800 font-light underline "
-                href="(https://www.ciel.org/)"
+                href="https://www.ciel.org/project-update/plastic-climate-the-hidden-costs-of-a-plastic-planet/"
               >
                 Learn more
-              </span>{" "}
+              </a>{" "}
               <div>
                 <p>
                   The plastic pollution crisis overwhelming our oceans is also a
@@ -148,14 +151,14 @@ const Resources = () => {
                   New York Times - Here Is Who’s Behind the Global Surge in
                   Single-Use Plastic
                 </strong>
-                <span
+                <a
                   className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                   href="https://www.nytimes.com/2021/05/18/climate/single-use-plastic.html
                     "
                 >
                   <br />
                   Learn more
-                </span>{" "}
+                </a>{" "}
               </p>
               <br />
               <p>
@@ -164,12 +167,12 @@ const Resources = () => {
                   Inside Climate News - Plastics: The New Coal in Appalachia?
                 </strong>
               </p>
-              <span
+              <a
                 className="text-blue-600 hover:text-blue-800 font-light underline "
                 href="https://insideclimatenews.org/news/25022019/plastics-hub-appalachian-fracking-ethane-cracker-climate-change-health-ohio-river/"
               >
                 Learn more
-              </span>{" "}
+              </a>{" "}
               <div>
                 <br />
                 <p>
@@ -196,18 +199,15 @@ const Resources = () => {
                 <br />
                 <p>
                   {" "}
-                  <strong>
-                    New York Times - Here Is Who’s Behind the Global Surge in
-                    Single-Use Plastic
-                  </strong>
-                  <span
+                  <strong>The Source of Plastic Waste</strong>
+                  <a
                     className="text-blue-600 hover:text-blue-800 text-center font-light underline "
-                    href="https://www.nytimes.com/2021/05/18/climate/single-use-plastic.html
+                    href="https://sourceofplasticwaste.org/
                     "
                   >
                     <br />
                     Learn more
-                  </span>{" "}
+                  </a>{" "}
                   <br />
                   “A small number of institutional asset managers and global
                   banks are providing billions of dollars to companies that
@@ -217,14 +217,14 @@ const Resources = () => {
                 </p>
                 <p>
                   <br /> <strong>Minderoo - Plastic Waste Makers Index</strong>
-                  <span
+                  <a
                     className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                     href="https://www.minderoo.org/plastic-waste-makers-index/findings/executive-summary/
                     "
                   >
                     <br />
                     Learn more
-                  </span>{" "}
+                  </a>{" "}
                 </p>
                 <br />
               </div>
@@ -253,7 +253,7 @@ const Resources = () => {
                   World Wildlife Federation - No Plastic in Nature: Assessing
                   Plastic Ingestion from Nature to People
                 </strong>
-                <span
+                <a
                   className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                   href="https://wwfint.awsassets.panda.org/downloads/plastic_ingestion_web_spreads.pdf
 
@@ -261,7 +261,7 @@ const Resources = () => {
                 >
                   <br />
                   Learn more
-                </span>{" "}
+                </a>{" "}
               </p>
               <br />
 
@@ -285,13 +285,13 @@ const Resources = () => {
 
                 <p>
                   {" "}
-                  <span
+                  <a
                     className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                     href="https://www.minderoo.org/plastics-and-human-health/
                     "
                   >
                     Learn more
-                  </span>{" "}
+                  </a>{" "}
                   <br />
                 </p>
                 <p>
@@ -340,7 +340,7 @@ const Resources = () => {
                   Plastic Atlas Asia: Facts and figures about the world of
                   synthetic polymers 2021
                 </strong>
-                <span
+                <a
                   className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                   href="https://hk.boell.org/sites/default/files/2021-04/042921-Plastic%20Atlas%20Asia%202021%20-%20web.pdf
 
@@ -348,7 +348,7 @@ const Resources = () => {
                 >
                   <br />
                   Learn more{" "}
-                </span>{" "}
+                </a>{" "}
               </p>
 
               <div>
@@ -362,20 +362,20 @@ const Resources = () => {
 
                 <p>
                   {" "}
-                  <span
+                  <a
                     className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                     href="https://hk.boell.org/en/2022/05/30/plastic-atlas-japan-special-edition-closer-look-japans-plastic-waste-management
                     "
                   >
                     Learn more{" "}
-                  </span>{" "}
+                  </a>{" "}
                 </p>
                 <br />
                 <p>
                   <strong>
                     What You (Probably) Didn’t Know About Plastic in Japan
                   </strong>
-                  <span
+                  <a
                     className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                     href="https://www.tsunagulocal.com/en/47587/
 
@@ -383,12 +383,12 @@ const Resources = () => {
                   >
                     <br />
                     Learn more{" "}
-                  </span>{" "}
+                  </a>{" "}
                 </p>
                 <br />
                 <p>
                   <strong>WWF: Single-Use Plastics in Singapore</strong>
-                  <span
+                  <a
                     className="text-blue-600 hover:text-blue-800 text-center font-light underline "
                     href="https://www.wwf.sg/plastics/
 
@@ -396,12 +396,15 @@ const Resources = () => {
                   >
                     <br />
                     Learn more{" "}
-                  </span>{" "}
+                  </a>{" "}
                 </p>
                 <br />
               </div>
             </div>
           </div>
+        </div>
+        <div className="fixed bottom-2 right-2">
+          <Button onClick={scrollTop}>Back to top</Button>
         </div>
       </div>
     </Fragment>

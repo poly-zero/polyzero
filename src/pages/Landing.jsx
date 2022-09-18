@@ -2,6 +2,7 @@ import LandingNavBar from "../components/landing/LandingNavBar";
 import BlockQuote from "../components/landing/BlockQuote";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Mail } from "../assets/images/mail.svg";
+import { ReactComponent as Coffee } from "../assets/images/coffee.svg";
 import { Avatar } from "flowbite-react";
 
 const Landing = () => {
@@ -111,11 +112,11 @@ const Landing = () => {
         id="Team"
         className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4"
       >
-        <div className="flex flex-col justify-center gap-4 w-full md:w-1/2">
+        <div className="flex flex-col justify-center gap-4 w-full md:w-2/5">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
             The Team
           </h1>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap place-content-evenly gap-2">
             <Avatar
               img="https://avatars.githubusercontent.com/u/62789620?v=4"
               rounded={true}
@@ -191,6 +192,16 @@ const Landing = () => {
             We are volunteer-run and are actively looking for sponsors,
             collaborators, and open-source contributors. Please reach out!
           </p>
+          <div className="flex place-content-center gap-4">
+            <a
+              href="https://www.buymeacoffee.com/polyzeroteam"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Coffee />
+            </a>
+            <p className="text-center">Buy us a coffee</p>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="https://twitter.com/PolyZeroApp"

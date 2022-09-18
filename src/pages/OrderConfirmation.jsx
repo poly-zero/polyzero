@@ -3,7 +3,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { Card } from "flowbite-react";
-import messagesTwitter from "../data/variable.json";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  LineShareButton,
+} from "next-share";
+// import messagesTwitter from "../data/variable.json";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -28,7 +34,7 @@ const OrderConfirmation = ({ tier }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
-  let secondMessage = storedTitle;
+  // let secondMessage = storedTitle;
 
   return (
     <div className="flex flex-grow items-center justify-center">
@@ -59,17 +65,39 @@ const OrderConfirmation = ({ tier }) => {
               world.
             </h2>
             <div className="flex gap-4">
-              <FaceBook />
+              <FacebookShareButton
+                url={"https://www.polyzero.earth"}
+                hashtag={"#polyzero"}
+              >
+                <FaceBook />
+              </FacebookShareButton>
               <Instagram />
-              <a
+              {/* <a
                 href={`https://twitter.com/intent/tweet?text=${messagesTwitter[0].Q7} ${secondMessage} ${messagesTwitter[0].Q8}`}
                 rel="noreferrer"
                 target="_blank"
               >
                 <Twitter />
-              </a>
-              <LinkedIn />
-              <Line />
+              </a> */}
+              <TwitterShareButton
+                url={"https://www.polyzero.earth"}
+                title={
+                  "I just became a @PolyZeroApp Climate Champion by off-setting the CO2e footprint of my annual plastic consumption! "
+                }
+                hashtags={["PolyZeroApp"]}
+              >
+                <Twitter />
+              </TwitterShareButton>
+              <LinkedinShareButton url={"https://www.polyzero.earth"}>
+                <LinkedIn />
+              </LinkedinShareButton>
+              <LineShareButton
+                title={
+                  "I just became a PolyZeroApp Climate Champion by off-setting the CO2e footprint of my annual plastic consumption! https://www.polyzero.earth"
+                }
+              >
+                <Line />
+              </LineShareButton>
             </div>
           </div>
         </div>
@@ -84,7 +112,7 @@ const OrderConfirmation = ({ tier }) => {
               or <b>{storedTime} year(s)</b> worth of plastic
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{(storedPayment * storedTime).toLocaleString('ja-JP')}
+              ￥{(storedPayment * storedTime).toLocaleString("ja-JP")}
             </h5>
           </Card>
         </div>

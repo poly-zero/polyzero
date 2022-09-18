@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
 import tierData from "../../data/tier.json";
-import messagesTwitter from "../../data/variable.json";
+// import messagesTwitter from "../../data/variable.json";
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -130,7 +130,8 @@ const Results = ({ setResult, storedResult }) => {
               target={"_blank"}
               rel="noreferrer"
               className=""
-            > */}
+            > 
+             </a> */}
             <TwitterShareButton
               url={"https://www.polyzero.earth"}
               title={`I use approx ${secondMessage}kg of disposable plastic/year, corresponding to ${forthMessage}kg of CO2e. %0aHow much plastic do you use? Estimated with`}
@@ -138,7 +139,6 @@ const Results = ({ setResult, storedResult }) => {
             >
               <Twitter />
             </TwitterShareButton>
-            {/* </a> */}
             <LinkedinShareButton url={"https://www.polyzero.earth"}>
               <LinkedIn />
             </LinkedinShareButton>

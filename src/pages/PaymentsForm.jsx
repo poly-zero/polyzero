@@ -92,7 +92,7 @@ const PaymentsForm = () => {
               </div>
             </div>
             <p className="text-lg text-center mt-4 text-gray-600 font-semibold">
-              Payment amount:¥{storedPayment * storedTime}
+              Payment amount: ¥{(storedPayment * storedTime).toLocaleString('ja-JP')}
             </p>
             <div className="flex justify-center mt-4">
               <button

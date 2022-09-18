@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
 import tierData from "../data/tier.json";
-import messagesTwitter from "../data/variable.json";
+// import messagesTwitter from "../data/variable.json";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+} from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -32,7 +37,7 @@ const Results = ({ setResult, storedResult }) => {
     const { value } = useCountUp({
       isCounting: true,
       end: data,
-      duration: 2
+      duration: 2,
     });
 
     return value;
@@ -111,9 +116,15 @@ const Results = ({ setResult, storedResult }) => {
             </small>
           </div>
           <div className="flex justify-center gap-4 -my-2">
-            <FaceBook />
+            {/*  */}
+            <FacebookShareButton
+              url={"https://www.polyzero.earth"}
+              hashtag={"#polyzero"}
+            >
+              <FaceBook />
+            </FacebookShareButton>
             <Instagram />
-            <a
+            {/* <a
               href={
                 `https://twitter.com/intent/tweet?text=${
                   messagesTwitter[0].Q1
@@ -127,17 +138,18 @@ const Results = ({ setResult, storedResult }) => {
               target={"_blank"}
               rel="noreferrer"
               className=""
+            > 
+             </a> */}
+            <TwitterShareButton
+              url={"https://www.polyzero.earth"}
+              title={`I use approx ${secondMessage}kg of disposable plastic/year, corresponding to ${forthMessage}kg of CO2e. %0aHow much plastic do you use? Estimated with`}
+              hashtags={["PolyZeroApp"]}
             >
               <Twitter />
-            </a>
-
-            <a
-              className="share-linkedin"
-              href="https://www.linkedin.com/shareArticle?mini=true&url=https://polyzero.earth  
-              "
-            >
+            </TwitterShareButton>
+            <LinkedinShareButton url={"https://www.polyzero.earth"}>
               <LinkedIn />
-            </a>
+            </LinkedinShareButton>
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
             <Button size={"xl"} onClick={() => navigateTo("/resources")}>

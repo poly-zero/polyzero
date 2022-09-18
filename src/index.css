@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+#btn-back-to-top {
+  position: fixed;
+  display: none;
+}

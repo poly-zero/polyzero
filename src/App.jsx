@@ -15,7 +15,7 @@ import TipsToReduce from "./pages/TipsToReduce";
 import { pageTracking } from "./analytics/tracking";
 import Country from "./pages/Country";
 import Groceries from "./pages/Groceries";
-
+import Top from "./components/Top";
 function App() {
   const [tier, setTier] = useState({});
   const [result, setResult] = useState(null);
@@ -32,7 +32,7 @@ function App() {
         location.pathname === "/resources" ? null : (
           <SideBar result={result} />
         )}
-
+        <Top />
         <Routes>
           <Route exact path="/resources" element={<Resources />} />
           <Route exact path="/" element={<Landing />} />

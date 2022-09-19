@@ -63,7 +63,7 @@ const Results = ({ result, setResult }) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("result", JSON.stringify(footprint));
+    localStorage.setItem("tiers", JSON.stringify(footprint));
   }, [footprint]);
 
   function resetFootprint() {

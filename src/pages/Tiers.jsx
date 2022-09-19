@@ -5,7 +5,7 @@ import tierData from "../data/tier.json";
 const offsetCost = 5000;
 
 const Tiers = ({ setTier }) => {
-  const storedResult = JSON.parse(localStorage.getItem("result"));
+  const storedResult = JSON.parse(localStorage.getItem("tiers"));
 
   const [data, setData] = useState(null);
 

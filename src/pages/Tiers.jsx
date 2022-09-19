@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import TierCard from "../components/tiers/TierCard";
-import tierData from "../data/tier.json";
-
-const offsetCost = 5000;
 
 const Tiers = ({ setTier }) => {
+  const offsetCost = 5000;
   const storedResult = JSON.parse(localStorage.getItem("tiers"));
-
   const [data, setData] = useState(null);
 
   useEffect(() => {

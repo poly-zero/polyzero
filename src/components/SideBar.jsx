@@ -8,11 +8,11 @@ import { useAuthState } from "react-firebase-hooks/auth";
 // import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 // import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 // import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import { ReactComponent as Footprint } from "../assets/navIcons/carbon-footprint.svg";
 import { ReactComponent as Tiers } from "../assets/navIcons/tiers.svg";
 import { ReactComponent as Dashboard } from "../assets/navIcons/dashboard.svg";
 import { ReactComponent as Logout } from "../assets/navIcons/logout.svg";
 import { Progress } from "flowbite-react";
-import FootprintWizard from "../pages/FootprintWizard";
 
 const SideBar = ({ result }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
@@ -82,16 +82,16 @@ const SideBar = ({ result }) => {
             <ul className="flex-col min-w-full flex list-none">
               <li className="rounded-lg mb-4">
                 <NavLink
-                  to="/wizard"
+                  to="/footprint"
                   exact="true"
                   className={
-                    pathName === "/wizard"
+                    pathName === "/footprint"
                       ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
                       : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
                   }
                 >
                   {/* <Icon name="dashboard" size="2xl" /> */}
-                  <FootprintWizard />
+                  <Footprint />
                   Footprint Estimator
                 </NavLink>
               </li>

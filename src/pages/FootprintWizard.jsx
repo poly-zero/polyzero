@@ -27,13 +27,6 @@ const FootprintWizard = ({ result, setResult }) => {
       ...result,
       footprintResult: final,
     });
-    await localStorage.setItem("footprint", JSON.stringify(result));
-    console.log(
-      "RESULT",
-      result,
-      "LOCAL",
-      JSON.parse(localStorage.getItem("footprint"))
-    );
     await navigateTo("/results");
   }
 

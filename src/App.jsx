@@ -23,7 +23,8 @@ function App() {
 
   useEffect(() => {
     pageTracking(location);
-    console.log(result);
+    localStorage.setItem("footprint", JSON.stringify(result));
+    console.log("RESULT:", result, "LOCAL:", localStorage.footprint);
   }, [location, result]);
 
   return (

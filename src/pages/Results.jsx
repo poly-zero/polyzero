@@ -15,60 +15,59 @@ import { useCountUp } from "use-count-up";
 import { useEffect, useState } from "react";
 
 const Results = ({ result, setResult }) => {
-  const [footprint, setFootprint] = useState({});
-  const storedFootprint = JSON.parse(localStorage.getItem("footprint"));
+  const footprintData = JSON.parse(localStorage.getItem("footprint"));
+  const perCapitaAverage = footprintData.country.avgKg;
+  const country = footprintData.country.name;
+
+  const [footprint, setFootprint] = useState(footprintData);
   const navigateTo = useNavigate();
   // const foundTier = tierData.find((tier) => tier.title === storedResult);
-  // const nationalAverage = 37;
-  // let secondMessage = footprint.plastic;
+  // let secondMessage = footprint.plastic.toFixed(2);
   // let forthMessage = footprint.carbon;
-  const perCapitaAverage = storedFootprint.country.avgKg;
   // let secondMessage = foundTier.plastic;
   // let forthMessage = foundTier.carbon;
 
+  function rounder(number) {
+    return Number(number.toFixed(2));
+  }
+
   useEffect(() => {
     const co2ePerPlasticKg = 5.6;
-    // if (storedFootprint) {
-    //   setResult(storedFootprint);
-    // }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    if (storedFootprint.footprintResult > 4)
+
+    if (footprintData) {
+      setFootprint(footprintData);
+    }
+
+    if (footprint.footprintResult > 4)
       setFootprint({
         title: "🛍 Urban Consumer",
-        plastic: perCapitaAverage * 2,
-        carbon: perCapitaAverage * 2 * co2ePerPlasticKg,
+        plastic: rounder(perCapitaAverage * 2),
+        carbon: rounder(perCapitaAverage * 2 * co2ePerPlasticKg),
       });
-    else if (
-      storedFootprint.footprintResult > 0 &&
-      storedFootprint.footprintResult <= 4
-    )
+    else if (footprint.footprintResult >= 0 && footprint.footprintResult <= 4)
       setFootprint({
         title: "🛒 Conscientious Consumer",
-        plastic: perCapitaAverage * 1.25,
-        carbon: perCapitaAverage * 1.25 * co2ePerPlasticKg,
+        plastic: rounder(perCapitaAverage * 1.25),
+        carbon: rounder(perCapitaAverage * 1.25 * co2ePerPlasticKg),
       });
-    else if (
-      storedFootprint.footprintResult > -4 &&
-      storedFootprint.footprintResult <= 0
-    )
+    else if (footprint.footprintResult >= -4 && footprint.footprintResult < 0)
       setFootprint({
         title: "🥬 Plastic Reducer",
-        plastic: perCapitaAverage * 0.75,
-        carbon: perCapitaAverage * 0.75 * co2ePerPlasticKg,
+        plastic: rounder(perCapitaAverage * 0.75),
+        carbon: rounder(perCapitaAverage * 0.75 * co2ePerPlasticKg),
       });
-    else if (storedFootprint.footprintResult < -4)
+    else if (footprint.footprintResult < -4)
       setFootprint({
         title: "👩🏻‍🌾 Plastic Avoider",
-        plastic: perCapitaAverage * 0.25,
-        carbon: perCapitaAverage * 0.25 * co2ePerPlasticKg,
+        plastic: rounder(perCapitaAverage * 0.25),
+        carbon: rounder(perCapitaAverage * 0.25 * co2ePerPlasticKg),
       });
     else console.log("SOMETHING WENT WRONG");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function resetFootprint() {
     localStorage.removeItem("footprint");
-    setResult(null)
-    setFootprint(null);
     navigateTo("/wizard");
   }
 
@@ -83,7 +82,7 @@ const Results = ({ result, setResult }) => {
   }
 
   return (
-    <div className="flex flex-col gap-4 items-center w-full tracking-normal my-4">
+    <div className="flex flex-col flex-grow gap-4 items-center w-full tracking-normal bg-slate-100">
       <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
         My
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
@@ -121,7 +120,7 @@ const Results = ({ result, setResult }) => {
             </h1>
             <p className="text-xs md:text-base font-normal text-gray-700 dark:text-gray-400">
               per capita average annual plastic consumption in
-              <strong>{storedFootprint.country.name}</strong>.
+              <strong>&nbsp;{country}</strong>.
             </p>
           </Card>
         </div>

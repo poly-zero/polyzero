@@ -11,7 +11,6 @@ import {
 const Country = ({ result, setResult, useWizard }) => {
   const [selectedCountry, setSelectedCountry] = useState(countries[44]);
   const [query, setQuery] = useState("");
-  console.log("Country:", selectedCountry);
 
   const storeCountry = () => {
     setResult({

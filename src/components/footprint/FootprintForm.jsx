@@ -16,7 +16,7 @@ const FootprintForm = ({
         return (
           <Radio
             id={element.value}
-            name={element.value}
+            name={"value"}
             label={element.answer}
             value={element.value}
             onChange={(event) => setFunction(Number(event.target.value))}

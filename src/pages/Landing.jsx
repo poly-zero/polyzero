@@ -2,6 +2,8 @@ import LandingNavBar from "../components/landing/LandingNavBar";
 import BlockQuote from "../components/landing/BlockQuote";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Mail } from "../assets/images/mail.svg";
+import { ReactComponent as Coffee } from "../assets/images/coffee.svg";
+import { Avatar } from "flowbite-react";
 
 const Landing = () => {
   return (
@@ -26,6 +28,22 @@ const Landing = () => {
             buttonText={"Learn more"}
           />
         </div>
+      </div>
+      <div className="text-right">
+        Photo by{" "}
+        <a
+          className="underline"
+          href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >
+          FLY:D
+        </a>{" "}
+        on{" "}
+        <a
+          className="underline"
+          href="https://unsplash.com/s/photos/plastic-straws?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >
+          Unsplash
+        </a>
       </div>
       <div className="flex flex-col justify-center items-center md:p-14 h-3/4">
         <BlockQuote
@@ -107,8 +125,80 @@ const Landing = () => {
         </div>
       </div>
       <div
-        id="contact"
+        id="Team"
         className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4"
+      >
+        <div className="flex flex-col justify-center gap-4 w-full md:w-2/5">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            The Team
+          </h1>
+          <div className="flex flex-wrap place-content-evenly gap-2">
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/62789620?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Kim Ly</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  kim@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/101638795?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Daiki Uema</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  daiki@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/73273137?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Joshua Haley</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  josh@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/73625660?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Felipe Machado</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  felipe@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/4993321?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Zach Brown</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  zach@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+          </div>
+        </div>
+      </div>
+      <div
+        id="contact"
+        className="flex flex-col justify-center items-center p-14 h-3/4"
       >
         <div className="flex flex-col justify-center  gap-4 w-full md:w-1/3">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -118,6 +208,16 @@ const Landing = () => {
             We are volunteer-run and are actively looking for sponsors,
             collaborators, and open-source contributors. Please reach out!
           </p>
+          <div className="flex place-content-center gap-4">
+            <a
+              href="https://www.buymeacoffee.com/polyzeroteam"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Coffee />
+            </a>
+            <p className="text-center">Buy us a coffee</p>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="https://twitter.com/PolyZeroApp"

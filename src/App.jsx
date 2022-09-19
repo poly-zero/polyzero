@@ -15,7 +15,7 @@ import TipsToReduce from "./pages/TipsToReduce";
 import { pageTracking } from "./analytics/tracking";
 import FootprintWizard from "./pages/FootprintWizard";
 import Results from "./pages/Results";
-
+import Top from "./components/Top";
 function App() {
   const [tier, setTier] = useState({});
   const [result, setResult] = useState(null);
@@ -33,7 +33,7 @@ function App() {
         location.pathname === "/resources" ? null : (
           <SideBar result={result} />
         )}
-
+        <Top />
         <Routes>
           <Route exact path="/resources" element={<Resources />} />
           <Route exact path="/" element={<Landing />} />

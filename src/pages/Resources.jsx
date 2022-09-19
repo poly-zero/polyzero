@@ -62,7 +62,7 @@ const Resources = () => {
 
         <div className="flex col justify-center  text-center p-11 ">
           <div className=" flex  px-11  border justify-center w-3/5 ">
-            <div class="justify-center">
+            <div className="justify-center">
               <h4 className="underline underline-offset-1">Plastic and CO2</h4>
               <p>
                 <strong>
@@ -142,7 +142,7 @@ const Resources = () => {
         {/* 2nd col */}
         <div className="flex col justify-center  text-center p-11  ">
           <div className=" flex  px-11  border justify-center w-3/5 ">
-            <div class="justify-center ">
+            <div className="justify-center ">
               <h4 className="underline underline-offset-1">
                 Single-Use Plastic Production
               </h4>
@@ -234,7 +234,7 @@ const Resources = () => {
         {/* 3rd col */}
         <div className="flex col justify-center  text-center p-11  ">
           <div className=" flex  px-11  border justify-center w-3/5 ">
-            <div class="justify-center ">
+            <div className="justify-center ">
               <h4 className="underline underline-offset-1">
                 Impacts of Plastic on Human Health
               </h4>
@@ -333,7 +333,7 @@ const Resources = () => {
         </div>
         <div className="flex col justify-center  text-center p-11  ">
           <div className=" flex  px-11  border justify-center w-3/5 ">
-            <div class="justify-center ">
+            <div className="justify-center ">
               <h4 className="underline underline-offset-1">Region-specific</h4>
               <p>
                 <strong>
@@ -402,9 +402,6 @@ const Resources = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="fixed bottom-2 right-2">
-          <Button onClick={scrollTop}>Back to top</Button>
         </div>
       </div>
     </Fragment>

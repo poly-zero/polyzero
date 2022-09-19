@@ -23,7 +23,8 @@ function App() {
 
   useEffect(() => {
     pageTracking(location);
-  }, [location]);
+    console.log(result);
+  }, [location, result]);
 
   return (
     <>
@@ -41,7 +42,7 @@ function App() {
           <Route
             exact
             path="/wizard"
-            element={<FootprintWizard setResult={setResult} />}
+            element={<FootprintWizard result={result} setResult={setResult} />}
           />
           <Route
             exact

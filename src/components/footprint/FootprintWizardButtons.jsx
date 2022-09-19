@@ -1,9 +1,11 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { Button } from "@material-tailwind/react";
-import { useNavigate } from "react-router-dom";
 
-const FootprintWizardButtons = ({ useWizard, storeFunction }) => {
-  const navigateTo = useNavigate();
+const FootprintWizardButtons = ({
+  useWizard,
+  storeFunction,
+  footprintResult,
+}) => {
   const {
     isLastStep,
     isFirstStep,
@@ -12,7 +14,6 @@ const FootprintWizardButtons = ({ useWizard, storeFunction }) => {
     previousStep,
     nextStep,
   } = useWizard();
-  console.log(activeStep, stepCount);
 
   return (
     <div className="w-1/4 flex justify-center gap-4 mt-4">
@@ -60,8 +61,10 @@ const FootprintWizardButtons = ({ useWizard, storeFunction }) => {
           </Button>
           <Button
             className="w-1/2 shadow-lg flex justify-center"
+            type="submit"
+            value={footprintResult}
             onClick={() => {
-              navigateTo("/results");
+              storeFunction();
             }}
           >
             Submit

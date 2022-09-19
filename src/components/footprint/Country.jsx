@@ -1,21 +1,21 @@
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
 import Header from "../Header";
 import countries from "../../data/countries.json";
 import FootprintWizardButtons from "./FootprintWizardButtons";
-import { Button } from "@material-tailwind/react";
 import { Combobox, Transition } from "@headlessui/react";
 import {
   CheckCircleIcon,
   ChevronDoubleDownIcon,
 } from "@heroicons/react/24/solid";
 
-const Country = ({ setResult, useWizard }) => {
+const Country = ({ result, setResult, useWizard }) => {
   const [selectedCountry, setSelectedCountry] = useState(countries[44]);
   const [query, setQuery] = useState("");
+  console.log("Country:", selectedCountry);
 
   const storeCountry = () => {
     setResult({
+      ...result,
       country: selectedCountry,
     });
   };

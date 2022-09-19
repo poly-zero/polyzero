@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Supporter",
+    "time": 1,
+    "image": "https://picsum.photos/800"
+  },
+  {
+    "title": "Ally",
+    "time": 5,
+    "image": "https://picsum.photos/800"
+  },
+  {
+    "title": "Defender",
+    "time": 10,
+    "image": "https://picsum.photos/800"
+  },
+  {
+    "title": "Champion",
+    "time": 15,
+    "image": "https://picsum.photos/800"
+  }
+]

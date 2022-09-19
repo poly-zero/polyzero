@@ -34,10 +34,6 @@ const Results = ({ result, setResult }) => {
   useEffect(() => {
     const co2ePerPlasticKg = 5.6;
 
-    if (footprintData) {
-      setFootprint(footprintData);
-    }
-
     if (footprint.footprintResult > 4)
       setFootprint({
         title: "🛍 Urban Consumer",
@@ -65,6 +61,10 @@ const Results = ({ result, setResult }) => {
     else console.log("SOMETHING WENT WRONG");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("result", JSON.stringify(footprint));
+  }, [footprint]);
 
   function resetFootprint() {
     localStorage.removeItem("footprint");

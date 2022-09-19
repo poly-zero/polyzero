@@ -29,6 +29,22 @@ const Landing = () => {
           />
         </div>
       </div>
+      <div className="text-right">
+        Photo by{" "}
+        <a
+          className="underline"
+          href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >
+          FLY:D
+        </a>{" "}
+        on{" "}
+        <a
+          className="underline"
+          href="https://unsplash.com/s/photos/plastic-straws?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >
+          Unsplash
+        </a>
+      </div>
       <div className="flex flex-col justify-center items-center md:p-14 h-3/4">
         <BlockQuote
           quote={

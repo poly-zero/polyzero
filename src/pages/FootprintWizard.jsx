@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Country from "../components/footprint/Country";
 import OnlineShopping from "../components/footprint/OnlineShopping";
 import PetBottles from "../components/footprint/PetBottles";
@@ -8,8 +9,17 @@ import { useNavigate } from "react-router-dom";
 
 const FootprintWizard = ({ result, setResult }) => {
   const navigateTo = useNavigate();
+  const storedFootprint = JSON.parse(localStorage.getItem("footprint"));
 
-  async function calculateResults(object) {
+  useEffect(() => {
+    if (storedFootprint) {
+      setResult(storedFootprint);
+      navigateTo("/results");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function calculateResults(object) {
     let footprint = 0;
     for (const key in object) {
       if (key !== "country") {
@@ -19,14 +29,16 @@ const FootprintWizard = ({ result, setResult }) => {
     return footprint;
   }
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    const final = await calculateResults(result);
-    await setResult({
+    const final = calculateResults(result);
+    const finalResult = {
       ...result,
       footprintResult: final,
-    });
-    await navigateTo("/results");
+    };
+    localStorage.setItem("footprint", JSON.stringify(finalResult));
+    setResult(finalResult);
+    navigateTo("/results");
   }
 
   return (

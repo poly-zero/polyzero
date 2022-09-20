@@ -18,6 +18,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+import { loginTracking } from "../analytics/tracking";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,6 +30,7 @@ const firebaseConfig = {
   storageBucket: "polyzero-37efc.appspot.com",
   messagingSenderId: "63330640151",
   appId: "1:63330640151:web:0677a82628cba788d91752",
+  measurementId: "G-5M2J27JMXQ",
 };
 
 // Initialize Firebase
@@ -39,6 +41,7 @@ const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 const registerWithGoogle = async () => {
   try {
+    loginTracking("google");
     const res = await signInWithPopup(auth, googleProvider);
     const user = res.user;
     const q = query(collection(db, "users"), where("uid", "==", user.uid));
@@ -81,6 +84,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    loginTracking("local");
   } catch (err) {
     console.error(err);
     alert(err.message);

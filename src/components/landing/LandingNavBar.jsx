@@ -20,16 +20,17 @@ const LandingNavBar = () => {
         <div className="flex md:order-2 gap-2">
           <Button>
             <NavLink to={"/footprint"} exact={"true"}>
-              Get started
+              Estimate my plastic footprint
             </NavLink>
           </Button>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link href="/about">About</Navbar.Link>
-          <Navbar.Link href="/">Reduce Plastic</Navbar.Link>
+          <Navbar.Link href="#about">About</Navbar.Link>
+          <Navbar.Link href="/tips">Reduce Plastic</Navbar.Link>
           <Navbar.Link href="/resources">Further Reading</Navbar.Link>
-          <Navbar.Link href="/">Contact</Navbar.Link>
+          <Navbar.Link href="#Team">Team</Navbar.Link>
+          <Navbar.Link href="#contact">Contact</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </nav>

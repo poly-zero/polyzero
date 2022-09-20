@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Label, TextInput, Button, Card } from "flowbite-react";
+import { Card } from "flowbite-react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   auth,
   registerWithEmailAndPassword,
@@ -78,8 +78,8 @@ function Registration() {
             </div>
           </div>
           <div className="flex-auto p-6">
-            <form role="form text-left" action="#" onSubmit={register}>
-            <div className="mb-4">
+            <form action="#" onSubmit={register}>
+              <div className="mb-4">
                 <label
                   htmlFor="user1"
                   className="ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -174,11 +174,10 @@ function Registration() {
                   className="mt-1 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700"
                   htmlFor="terms"
                 >
-                  {" "}
-                  I agree the{" "}
-                  <Link to="javascript:;" className="font-bold text-slate-700">
+                  I agree the
+                  <Link to="/" className="font-bold text-slate-700">
                     Terms and Conditions
-                  </Link>{" "}
+                  </Link>
                 </label>
               </div>
               <div className="text-center">

@@ -1,64 +1,249 @@
-import { useNavigate } from "react-router-dom";
-import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
-import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
-import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import LandingNavBar from "../components/landing/LandingNavBar";
-import { Button } from "flowbite-react";
-// import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 import BlockQuote from "../components/landing/BlockQuote";
+import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+import { ReactComponent as Mail } from "../assets/images/mail.svg";
+import { ReactComponent as Coffee } from "../assets/images/coffee.svg";
+import { Avatar } from "flowbite-react";
 
 const Landing = () => {
-  const plasticConsumption = [
-    " In Japan, 37 Kilograms Per capita annual single plastic consumption in Japan.",
-    " In Japan 1 Kilogram of plastic equals to 5.6kg- 6kg CO2 over its lifetime.",
-    " Japan is the 2nd biggest consumer of disposable plastic.",
-    " In Japan, the average CO2 from plastic per capita is 207-222kg per annum.",
-    " Single-use plastics, which account for half of the plastic we use each year, have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down.",
-  ];
-
-  const randomFact =
-    plasticConsumption[Math.floor(Math.random() * plasticConsumption.length)];
-
-  const copyToClipboard = async () => {
-    await navigator.clipboard.writeText(randomFact);
-  };
-  const navigateTo = useNavigate();
-
   return (
     <div className="h-screen md:-ml-64">
       <LandingNavBar />
+      <div className="flex flex-col items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+        <h1 className="my-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+          Facts about&nbsp;
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+            Disposable Plastics
+          </span>
+        </h1>
+      </div>
+      <div className="bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-14 h-3/4">
+        <div className="flex justify-center p-8 rounded-xl bg-white">
+          <BlockQuote
+            quote={
+              "Single-use plastics… have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down."
+            }
+            article={"Life Out of Plastic (LOOP)"}
+            sourceLink={"http://loop.pe/"}
+            buttonText={"Learn more"}
+          />
+        </div>
+      </div>
+      <div className="text-right">
+        Photo by{" "}
+        <a
+          className="underline"
+          href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >
+          FLY:D
+        </a>{" "}
+        on{" "}
+        <a
+          className="underline"
+          href="https://unsplash.com/s/photos/plastic-straws?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >
+          Unsplash
+        </a>
+      </div>
+      <div className="flex flex-col justify-center items-center md:p-14 h-3/4">
+        <BlockQuote
+          quote={
+            "Plastic is one of the most persistent pollutants on Earth. It's made to last - and it does, often for 400 years or more. And at every step in its lifecycle, even long after it has been discarded, plastic creates greenhouse gas emissions that are contributing to the warming of our world."
+          }
+          article={"Plastic waste and climate change - what's the connection?"}
+          author={"World Wildlife Federation"}
+          sourceLink={
+            "https://www.wwf.org.au/news/blogs/plastic-waste-and-climate-change-whats-the-connection"
+          }
+          buttonText={"Read the Article"}
+        />
+      </div>
       <div className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4">
         <BlockQuote
           quote={
-            "Single-use plastics… have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down."
+            "The average American uses and throws away 110 pounds, or roughly 50 kilograms, of single-use plastic every year."
           }
-          article={"Life Out of Plastic"}
-          author={"LOOP"}
+          article={
+            "Here Is Who’s Behind the Global Surge in Single-Use Plastic"
+          }
+          author={"New York Times"}
           sourceLink={
-            "https://www.iberdrola.com/sustainability/how-to-reduce-plastic-use"
+            "https://www.nytimes.com/2021/05/18/climate/single-use-plastic.html"
           }
-          buttonText={"Learn more"}
+          buttonText={"Read the Article"}
         />
       </div>
-      {/* <div className="flex-col">
-        {" "}
-        <div class=" flex flex-col justify-center items-center">
-          <h1 className="text-2xl mb-7 mt-7 underline font-light">
-            Did you know
+      <div className="flex flex-col justify-center items-center p-14 h-3/4">
+        <BlockQuote
+          quote={
+            "when 1kg virgin fossil-based plastic product comes onto the market, it has already caused at least 2.9kg of greenhouse gas emissions. Moreover, the same product will cause a further 2.7kg of emissions when it is discarded and if it is incinerated."
+          }
+          article={"European Environment Agency WMGE Report 3/2021"}
+          sourceLink={
+            "https://www.eionet.europa.eu/etcs/etc-wmge/products/etc-wmge-reports/greenhouse-gas-emissions-and-natural-capital-implications-of-plastics-including-biobased-plastics"
+          }
+          buttonText={"See the Full Report"}
+        />
+      </div>
+      <div className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4">
+        <BlockQuote
+          quote={
+            "Just 5 plastic bags can generate the equivalent of 1kg of CO2e."
+          }
+          article={
+            "Plastic bags and plastic bottles – CO2 emissions during their lifetime"
+          }
+          author={"Time for Change"}
+          sourceLink={
+            "https://timeforchange.org/plastic-bags-and-plastic-bottles-co2-emissions-during-their-lifetime/"
+          }
+          buttonText={"Read More"}
+        />
+      </div>
+      <div
+        id="about"
+        className="flex flex-col justify-center items-center p-14 h-3/4"
+      >
+        <div className="flex flex-col gap-4 w-full md:w-2/5">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text">
+            About
           </h1>
-        </div>
-        <div className="flex flex-col justify-center items-center text-center font-bold mt-2 ">
-          <div className="max-w-xs">{randomFact}</div>
+          <div className="flex flex-col gap-14">
+            <p className="text-gray-500">
+              PolyZero was created to raise awareness about the impact of the
+              single-use plastics we consume every day. Our Plastic Footprint
+              Estimator approximates the volume of disposable plastics you use
+              per year, based on country of residence and lifestyle.
+            </p>
+            <p className="text-gray-500">
+              Reducing our plastic consumption is the most important step we can
+              take, but for those who wish to do more, the app also estimates
+              the CO2 emissions associated with your plastic footprint and
+              allows you to purchase CO2 off-sets to reduce your impact.
+            </p>
+          </div>
         </div>
       </div>
-      <button
-        onClick={() => navigateTo("/resources")}
-        className=" flex mx-auto items-center mb-3 mt-9 py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        type="button"
+      <div
+        id="Team"
+        className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4"
       >
-        Learn more{" "}
-      </button> */}
+        <div className="flex flex-col justify-center gap-4 w-full md:w-2/5">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            The Team
+          </h1>
+          <div className="flex flex-wrap place-content-evenly gap-2">
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/62789620?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Kim Ly</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  kim@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/101638795?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Daiki Uema</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  daiki@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/73273137?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Joshua Haley</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  josh@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/73625660?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Felipe Machado</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  felipe@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+            <Avatar
+              img="https://avatars.githubusercontent.com/u/4993321?v=4"
+              rounded={true}
+              size="lg"
+            >
+              <div className="space-y-1 font-medium dark:text-white">
+                <div>Zach Brown</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">
+                  zach@polyzero.org
+                </div>
+              </div>
+            </Avatar>
+          </div>
+        </div>
+      </div>
+      <div
+        id="contact"
+        className="flex flex-col justify-center items-center p-14 h-3/4"
+      >
+        <div className="flex flex-col justify-center  gap-4 w-full md:w-1/3">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            Contact Us
+          </h1>
+          <p className="text-gray-500">
+            We are volunteer-run and are actively looking for sponsors,
+            collaborators, and open-source contributors. Please reach out!
+          </p>
+          <div className="flex place-content-center gap-4">
+            <a
+              href="https://www.buymeacoffee.com/polyzeroteam"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Coffee />
+            </a>
+            <p className="text-center">Buy us a coffee</p>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://twitter.com/PolyZeroApp"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Twitter />
+            </a>
+            <a
+              href="https://github.com/poly-zero/polyzero"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="w-12"
+                src="https://cdn.onlinewebfonts.com/svg/img_44605.png"
+                alt="Github logo link"
+              />
+            </a>
+            <div className="m-auto flex gap-4">
+              <Mail />
+              contact@polyzero.org
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

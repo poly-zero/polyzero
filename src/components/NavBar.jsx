@@ -11,6 +11,7 @@ const NavBar = ({
   user,
   loading,
 }) => {
+  
   useEffect(() => {
     if (loading) return;
     if (user && !userInfo)

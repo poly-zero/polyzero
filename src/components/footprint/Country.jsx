@@ -39,7 +39,7 @@ const Country = ({ result, setResult, useWizard }) => {
         }
       />
 
-      <div className="flex flex-col w-3/4 z-50 md:w-1/4 gap-2 justify-center items-center">
+      <div className="flex flex-col w-3/4 z-40 md:w-1/4 gap-2 justify-center items-center">
         <Combobox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative w-full">
             <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md sm:text-sm">

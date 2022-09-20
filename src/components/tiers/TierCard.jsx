@@ -1,6 +1,7 @@
 import { Card, Label, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { saveTierData } from "../../firebase/firebase";
 
 const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
   const navigateTo = useNavigate();
@@ -14,6 +15,9 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
       time,
       cost,
     });
+    const storedTier = localStorage.getItem("tiers");
+    saveTierData(JSON.parse(storedTier));
+
     localStorage.setItem("payment", cost);
     localStorage.setItem("title", title);
     localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
@@ -56,7 +60,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
               {`Total CO2: ${(tonnes * age).toFixed(2)} tonnes`}
             </p>
             <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {`￥${(cost * age).toLocaleString('ja-JP')}`}
+              {`￥${(cost * age).toLocaleString("ja-JP")}`}
             </h3>
             <button
               className="inline-flex items-center py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

@@ -1,10 +1,9 @@
-import { NavLink, Link } from "react-router-dom";
-import { Navbar } from "flowbite-react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { ReactComponent as Footprint } from "../../assets/navIcons/carbon-footprint.svg";
-import { Button } from "@material-tailwind/react";
+import { NavLink } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
+import { Navbar } from "flowbite-react";
+import { useEffect, useState } from "react";
+import { Button } from "@material-tailwind/react";
+import { ReactComponent as Footprint } from "../../assets/navIcons/carbon-footprint.svg";
 
 const LandingNavBar = () => {
   const [mobile, setMobile] = useState(false);

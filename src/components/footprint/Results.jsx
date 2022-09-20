@@ -80,7 +80,6 @@ const Results = ({ setResult, storedResult }) => {
             </p>
           </Card>
         </div>
-
         <Card>
           <div className="flex flex-col gap-2">
             <small className="text-base md:text-xl font-normal text-gray-500">

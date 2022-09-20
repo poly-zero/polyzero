@@ -124,6 +124,14 @@ const saveFootprintData = async (data) => {
   }
 };
 
+const saveTierData = async (data) => {
+  try {
+    await addDoc(collection(db, "tier_data"), data);
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
 export {
   auth,
   db,
@@ -134,4 +142,5 @@ export {
   sendPasswordReset,
   logout,
   saveFootprintData,
+  saveTierData,
 };

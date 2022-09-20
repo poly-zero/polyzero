@@ -1,9 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Navbar } from "flowbite-react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { ReactComponent as Footprint } from "../../assets/navIcons/carbon-footprint.svg";
 import { Button } from "@material-tailwind/react";
+import { NavHashLink } from "react-router-hash-link";
 
 const LandingNavBar = () => {
   const [mobile, setMobile] = useState(false);
@@ -35,11 +36,17 @@ const LandingNavBar = () => {
           </Button>
         </div>
         <Navbar.Collapse>
-          <Navbar.Link href="#about"><p className="text-base">About</p></Navbar.Link>
-          <Navbar.Link href="/tips"><p className="text-base">Reduce Plastic</p></Navbar.Link>
-          <Navbar.Link href="/resources"><p className="text-base">Further Reading</p></Navbar.Link>
-          <Navbar.Link href="#Team"><p className="text-base">Team</p></Navbar.Link>
-          <Navbar.Link href="#contact"><p className="text-base">Contact</p></Navbar.Link>
+          <Navbar.Link>
+            <NavHashLink to="/#about"><p className="text-base">About</p></NavHashLink>
+          </Navbar.Link>
+          <Navbar.Link>
+            <NavHashLink to="/tips"><p className="text-base">Reduce Plastic</p></NavHashLink>
+          </Navbar.Link>
+          <Navbar.Link>
+            <NavHashLink to="/resources"><p className="text-base">Further Reading</p></NavHashLink>
+          </Navbar.Link>
+          <NavHashLink to="/#team"><p className="text-base">Team</p></NavHashLink>
+          <NavHashLink to="/#contact"><p className="text-base">Contact</p></NavHashLink>
         </Navbar.Collapse>
       </Navbar>
     </nav>

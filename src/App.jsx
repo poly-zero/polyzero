@@ -16,6 +16,7 @@ import SideBar from "./components/SideBar";
 import Top from "./components/Top";
 import ConditionalRedirect from "./components/ConditionalRedirect";
 import { pageTracking } from "./analytics/tracking";
+import Contribution from "./pages/Contribution";
 function App() {
   const [tier, setTier] = useState({});
   const [result, setResult] = useState(null);
@@ -54,6 +55,7 @@ function App() {
           />
 
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
+          <Route exact path="/contribution" element={<Contribution />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
           <Route exact path="/tips" element={<TipsToReduce />} />
           <Route

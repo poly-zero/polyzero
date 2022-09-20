@@ -81,7 +81,7 @@ const Landing = () => {
         </div>
       </div>
       <div
-        id="Team"
+        id="team"
         className="bg-slate-200 flex flex-col justify-center items-center p-14 h-3/4 snap-center"
       >
         <div className="flex flex-col justify-center gap-4 w-full md:w-2/5">

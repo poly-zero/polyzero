@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Card, Button } from "flowbite-react";
-import tierData from "../data/tier.json";
+// import tierData from "../data/tier.json";
 // import messagesTwitter from "../data/variable.json";
 import {
   FacebookShareButton,
@@ -15,12 +15,12 @@ import { useCountUp } from "use-count-up";
 import { useEffect, useState } from "react";
 
 const Results = ({ result, setResult }) => {
-  const footprintData = JSON.parse(localStorage.getItem("footprint"));
-  const perCapitaAverage = footprintData.country.avgKg;
-  const country = footprintData.country.name;
-
-  const [footprint, setFootprint] = useState(footprintData);
   const navigateTo = useNavigate();
+
+  const perCapitaAverage = result.country.avgKg || 0;
+  const country = result.country.name || "";
+
+  const [footprint, setFootprint] = useState(result);
   // const foundTier = tierData.find((tier) => tier.title === storedResult);
   // let secondMessage = footprint.plastic.toFixed(2);
   // let forthMessage = footprint.carbon;
@@ -67,8 +67,9 @@ const Results = ({ result, setResult }) => {
   }, [footprint]);
 
   function resetFootprint() {
-    setResult(null)
+    setResult(null);
     localStorage.removeItem("tiers");
+    localStorage.removeItem("footprint");
     navigateTo("/wizard");
   }
 

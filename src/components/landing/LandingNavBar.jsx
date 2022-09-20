@@ -35,17 +35,21 @@ const LandingNavBar = () => {
           </Button>
         </div>
         <Navbar.Collapse>
-          <Navbar.Link>
-            <NavHashLink to="/#about"><p className="text-base">About</p></NavHashLink>
-          </Navbar.Link>
-          <Navbar.Link>
-            <NavHashLink to="/tips"><p className="text-base">Reduce Plastic</p></NavHashLink>
-          </Navbar.Link>
-          <Navbar.Link>
-            <NavHashLink to="/resources"><p className="text-base">Further Reading</p></NavHashLink>
-          </Navbar.Link>
-          <NavHashLink to="/#team"><p className="text-base">Team</p></NavHashLink>
-          <NavHashLink to="/#contact"><p className="text-base">Contact</p></NavHashLink>
+          <NavHashLink to="/#about">
+            <p className="text-base">About</p>
+          </NavHashLink>
+          <NavHashLink to="/tips">
+            <p className="text-base">Reduce Plastic</p>
+          </NavHashLink>
+          <NavHashLink to="/resources">
+            <p className="text-base">Further Reading</p>
+          </NavHashLink>
+          <NavHashLink to="/#team">
+            <p className="text-base">Team</p>
+          </NavHashLink>
+          <NavHashLink to="/#contact">
+            <p className="text-base">Contact</p>
+          </NavHashLink>
         </Navbar.Collapse>
       </Navbar>
     </nav>

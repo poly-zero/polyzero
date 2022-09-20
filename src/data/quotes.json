@@ -1,0 +1,37 @@
+[
+  {
+    "quote": "Single-use plastics… have an average useful life of 12 to 15 minutes and yet can take up to 500 years to break down.",
+    "article": "Life Out of Plastic (LOOP)",
+    "sourceLink": "http://loop.pe/",
+    "author": "",
+    "buttonText": "Learn more"
+  },
+  {
+    "quote": "Plastic is one of the most persistent pollutants on Earth. It's made to last - and it does, often for 400 years or more. And at every step in its lifecycle, even long after it has been discarded, plastic creates greenhouse gas emissions that are contributing to the warming of our world.",
+    "article": "Plastic waste and climate change - what's the connection?",
+    "sourceLink": "https://www.wwf.org.au/news/blogs/plastic-waste-and-climate-change-whats-the-connection",
+    "author": "World Wildlife Federation",
+    "buttonText": "Read the Article"
+  },
+  {
+    "quote": "The average American uses and throws away 110 pounds, or roughly 50 kilograms, of single-use plastic every year.",
+    "article": "Here Is Who’s Behind the Global Surge in Single-Use Plastic",
+    "sourceLink": "https://www.nytimes.com/2021/05/18/climate/single-use-plastic.html",
+    "author": "New York Times",
+    "buttonText": "Read the Article"
+  },
+  {
+    "quote": "When 1kg virgin fossil-based plastic product comes onto the market, it has already caused at least 2.9kg of greenhouse gas emissions. Moreover, the same product will cause a further 2.7kg of emissions when it is discarded and if it is incinerated.",
+    "article": "European Environment Agency WMGE Report 3/2021",
+    "sourceLink": "https://www.eionet.europa.eu/etcs/etc-wmge/products/etc-wmge-reports/greenhouse-gas-emissions-and-natural-capital-implications-of-plastics-including-biobased-plastics",
+    "author": "",
+    "buttonText": "See the Full Report"
+  },
+  {
+    "quote": "Just 5 plastic bags can generate the equivalent of 1kg of CO2e.",
+    "article": "Plastic bags and plastic bottles – CO2 emissions during their lifetime",
+    "sourceLink": "https://timeforchange.org/plastic-bags-and-plastic-bottles-co2-emissions-during-their-lifetime/",
+    "author": "Time for Change",
+    "buttonText": "Read more"
+  }
+]

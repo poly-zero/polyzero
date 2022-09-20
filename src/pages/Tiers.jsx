@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import TierCard from "../components/tiers/TierCard";
-import tierData from "../data/tier.json";
+// import tierData from "../data/tier.json";
 import tierCardData from "../data/tierCards.json";
 
 const Tiers = ({ setTier }) => {
   const offsetCost = 5000;
-  const storedResult = JSON.parse(localStorage.getItem("tiers"));
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    const storedResult = JSON.parse(localStorage.getItem("tiers"));
     setData(storedResult);
-  }, [storedResult]);
+  }, []);
 
   return (
     <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-6">

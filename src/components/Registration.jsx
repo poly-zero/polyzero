@@ -7,8 +7,6 @@ import {
   registerWithEmailAndPassword,
   registerWithGoogle,
 } from "../firebase/firebase";
-import { ReactComponent as FaceBook } from "../assets/loginIcons/facebook.svg";
-import { ReactComponent as Apple } from "../assets/loginIcons/apple.svg";
 import { ReactComponent as Google } from "../assets/loginIcons/google.svg";
 
 function Registration() {
@@ -18,6 +16,7 @@ function Registration() {
   const [name, setName] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
+  const storedPayment = localStorage.getItem("payment");
 
   let navigate = useNavigate();
 
@@ -34,7 +33,8 @@ function Registration() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/footprint");
+    if (user && storedPayment) navigate("/payment");
+    if (user) navigate("/wizard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
@@ -46,31 +46,13 @@ function Registration() {
             <h5>Register with</h5>
           </div>
           <div className="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
-            <div className="w-3/12 max-w-full px-1 ml-auto flex-0">
-              <button
-                className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
-                onClick={registerWithGoogle}
-              >
-                <FaceBook />
-              </button>
-            </div>
-            <div className="w-3/12 max-w-full px-1 flex-0">
-              <button
-                className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
-                onClick={registerWithGoogle}
-              >
-                <Apple />
-              </button>
-            </div>
-            <div className="w-3/12 max-w-full px-1 mr-auto flex-0">
-              <button
-                type="button"
-                className="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
-                onClick={registerWithGoogle}
-              >
-                <Google />
-              </button>
-            </div>
+            <button
+              type="button"
+              className="inline-block px-3 py-3 mb-4 m-auto font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
+              onClick={registerWithGoogle}
+            >
+              <Google />
+            </button>
             <div className="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
               <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">
                 or

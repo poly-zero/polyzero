@@ -14,14 +14,13 @@ const FootprintWizard = ({ result, setResult }) => {
     for (const key in object) {
       if (key !== "country") {
         footprint += object[key];
-        console.log("FOOTPRINT ITERATION", footprint);
       }
     }
-    console.log("BEFORE RETURNING", footprint);
     return footprint;
   }
 
-  async function handleSubmit() {
+  async function handleSubmit(event) {
+    event.preventDefault();
     const final = await calculateResults(result);
     await setResult({
       ...result,

@@ -6,8 +6,6 @@ const FootprintForm = ({
   useWizard,
   storeFunction,
   setFunction,
-  result,
-  setResult,
   footprintResult,
 }) => {
   return (
@@ -15,6 +13,7 @@ const FootprintForm = ({
       {answers.map((element) => {
         return (
           <Radio
+            key={element.value}
             id={element.value}
             name={"value"}
             label={element.answer}

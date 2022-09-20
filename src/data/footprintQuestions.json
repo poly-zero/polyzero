@@ -2,26 +2,26 @@
   {
     "category": "Groceries",
     "prompt": "Items from the grocery store can be excessively packaged in plastics. \nPlease select the statement below that most closely describes your Grocery Shopping habits:",
-    "questions": [
+    "answers": [
       {
         "answerID": 1,
         "answer": "I grow most of my own vegetables, or buy packaging-free fruits & vegetables at farmers markets.",
-        "points": -2
+        "value": -2
       },
       {
         "answerID": 2,
         "answer": "I avoid single-serving sizes and buy bulk-size and minimally packaged products.",
-        "points": -1
+        "value": -1
       },
       {
         "answerID": 3,
         "answer": "I try to choose items with less plastic packaging but it's not always easy.",
-        "points": 1
+        "value": 1
       },
       {
         "answerID": 4,
         "answer": "I buy what's available at the supermarket, regardless of how it's packaged.",
-        "points": 2
+        "value": 2
       }
     ]
   },
@@ -29,26 +29,26 @@
   {
     "category": "Online shopping",
     "prompt": "Packing materials often include polystyrene and other plastics (ex. shrink-wrap, bubble-wrap) \nPlease select the statement below that most closely describes your Online Shopping habits.",
-    "questions": [
+    "answers": [
       {
         "answerID": 1,
         "answer": "I very rarely shop online. ",
-        "points": -2
+        "value": -2
       },
       {
         "answerID": 2,
         "answer": "I receive packages from online retailers (ex. Amazon) 1-2 times per month.",
-        "points": -1
+        "value": -1
       },
       {
         "answerID": 3,
         "answer": "I receive packages from online retailers (such as Amazon) 1-2 times per week.",
-        "points": 1
+        "value": 1
       },
       {
         "answerID": 4,
         "answer": "I receive packages from online retailers (ex. Amazon) 3 or more times per week.",
-        "points": 2
+        "value": 2
       }
     ]
   },
@@ -56,26 +56,26 @@
   {
     "category": "PET bottles",
     "prompt": "Even when they're recycled, PET bottles have a huge CO2 footprint. \nPlease select the statement below that most closely describes your use of PET bottles.",
-    "questions": [
+    "answers": [
       {
         "answerID": 1,
         "answer": "I avoid bottled drinks packaged in PET bottles.",
-        "points": -2
+        "value": -2
       },
       {
         "answerID": 2,
         "answer": "I drink no more than 1-2 drinks in PET bottles per month.",
-        "points": -1
+        "value": -1
       },
       {
         "answerID": 3,
         "answer": "I drink 1-2 PET bottle drinks per week.",
-        "points": 1
+        "value": 1
       },
       {
         "answerID": 4,
         "answer": "I frequently (3+ times per week) drink bottled water and other beverages packaged in PET bottles.",
-        "points": 2
+        "value": 2
       }
     ]
   },
@@ -83,26 +83,26 @@
   {
     "category": "Take-out",
     "prompt": "More than half of trash comes from single-use plastic packaging such as disposable food containers. \nPlease select the statement below that most closely describes your use of Plastic Food Containers & Utensils.",
-    "questions": [
+    "answers": [
       {
         "answerID": 1,
         "answer": "I cook nearly all meals at home.",
-        "points": -2
+        "value": -2
       },
       {
         "answerID": 2,
         "answer": "I always carry reusable bags, water bottle/cup, cutlery, straw, etc. to avoid disposables.",
-        "points": -1
+        "value": -1
       },
       {
         "answerID": 3,
         "answer": "I eat delivery (such as Uber Eats) or take-out meals less than 1-2 times per week.",
-        "points": 1
+        "value": 1
       },
       {
         "answerID": 4,
         "answer": "I eat delivery (such as Uber Eats) or take-out meals 3 or more times per week.",
-        "points": 2
+        "value": 2
       }
     ]
   }

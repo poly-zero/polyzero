@@ -2,21 +2,21 @@
   {
     "title": "Supporter",
     "time": 1,
-    "image": "https://picsum.photos/800"
+    "image": "https://picsum.photos/id/110/800"
   },
   {
     "title": "Ally",
     "time": 5,
-    "image": "https://picsum.photos/800"
+    "image": "https://picsum.photos/id/955/800"
   },
   {
     "title": "Defender",
     "time": 10,
-    "image": "https://picsum.photos/800"
+    "image": "https://picsum.photos/id/28/800"
   },
   {
     "title": "Champion",
     "time": 15,
-    "image": "https://picsum.photos/800"
+    "image": "https://picsum.photos/id/507/800"
   }
 ]

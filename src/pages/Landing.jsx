@@ -9,11 +9,11 @@ import quotes from "../data/quotes.json";
 
 const Landing = () => {
   return (
-    <div className="relative h-screen md:-ml-64 snap-y snap-mandatory overflow-x-hidden snap-center">
+    <div className="relative h-screen md:-ml-64 snap-y snap-mandatory overflow-x-hidden ">
       <LandingNavBar />
-      <div className="bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-14 h-4/6 md:h-4/5">
+      <div className="bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-14 h-4/6 md:h-4/5 snap-end">
         <Card className="flex flex-col justify-center items-center md:w-3/4 h-full bg-slate-50">
-          <h1 className="mt-8 text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+          <h1 className="mt-8 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
             Facts about&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
               Disposable Plastics

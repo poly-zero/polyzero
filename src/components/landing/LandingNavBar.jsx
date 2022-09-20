@@ -1,5 +1,6 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Navbar, Button } from "flowbite-react";
+import { NavHashLink } from "react-router-hash-link";
 
 const LandingNavBar = () => {
   return (
@@ -26,11 +27,17 @@ const LandingNavBar = () => {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link href="#about">About</Navbar.Link>
-          <Navbar.Link href="/tips">Reduce Plastic</Navbar.Link>
-          <Navbar.Link href="/resources">Further Reading</Navbar.Link>
-          <Navbar.Link href="#Team">Team</Navbar.Link>
-          <Navbar.Link href="#contact">Contact</Navbar.Link>
+          <Navbar.Link>
+            <NavHashLink to="/#about">About</NavHashLink>
+          </Navbar.Link>
+          <Navbar.Link>
+            <NavHashLink to="/tips">Reduce Plastic</NavHashLink>
+          </Navbar.Link>
+          <Navbar.Link>
+            <NavHashLink to="/resources">Further Reading</NavHashLink>
+          </Navbar.Link>
+          <NavHashLink to="/#team">Team</NavHashLink>
+          <NavHashLink to="/#contact">Contact</NavHashLink>
         </Navbar.Collapse>
       </Navbar>
     </nav>

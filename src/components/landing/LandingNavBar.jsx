@@ -9,10 +9,10 @@ const LandingNavBar = () => {
           <div className="flex mt-2">
             <img
               src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mt-1 ml-2 mr-3 h-14"
+              className="mt-1 ml-2 mr-3 h-8 md:h-14"
               alt="PolyZero Logo"
             />
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            <span className="self-center whitespace-nowrap text-xl md:text-2xl font-semibold dark:text-white">
               PolyZero
             </span>
           </div>

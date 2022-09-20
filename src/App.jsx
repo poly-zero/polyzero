@@ -1,21 +1,21 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Login from "./components/Login";
 import Landing from "./pages/Landing";
 import Tiers from "./pages/Tiers";
-import Footprint from "./pages/Footprint";
-import Registration from "./components/Registration";
-import "./pages/Footprint";
-import PaymentsForm from "./pages/PaymentsForm";
-import OrderConfirmation from "./pages/OrderConfirmation";
-import SideBar from "./components/SideBar";
 import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
+// import Footprint from "./pages/Footprint";
 import TipsToReduce from "./pages/TipsToReduce";
-import { pageTracking } from "./analytics/tracking";
+import PaymentsForm from "./pages/PaymentsForm";
+import OrderConfirmation from "./pages/OrderConfirmation";
 import FootprintWizard from "./pages/FootprintWizard";
 import Results from "./pages/Results";
+import Login from "./components/Login";
+import Registration from "./components/Registration";
+import SideBar from "./components/SideBar";
 import Top from "./components/Top";
+import ConditionalRedirect from "./components/ConditionalRedirect";
+import { pageTracking } from "./analytics/tracking";
 function App() {
   const [tier, setTier] = useState({});
   const [result, setResult] = useState(null);
@@ -23,14 +23,7 @@ function App() {
 
   useEffect(() => {
     pageTracking(location);
-    localStorage.setItem("footprint", JSON.stringify(result));
-    console.log(
-      "RESULT:",
-      result,
-      "LOCAL:",
-      JSON.parse(localStorage.footprint)
-    );
-  }, [location, result]);
+  }, [location]);
 
   return (
     <>
@@ -53,7 +46,11 @@ function App() {
           <Route
             exact
             path="/results"
-            element={<Results result={result} setResult={setResult} />}
+            element={
+              <ConditionalRedirect isSet={result}>
+                <Results result={result} setResult={setResult} />
+              </ConditionalRedirect>
+            }
           />
 
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />

@@ -17,8 +17,8 @@ import { useEffect, useState } from "react";
 const Results = ({ result, setResult }) => {
   const navigateTo = useNavigate();
 
-  const perCapitaAverage = result.country.avgKg || 0;
-  const country = result.country.name || "";
+  const perCapitaAverage = result.country.avgKg;
+  const country = result.country.name;
 
   const [footprint, setFootprint] = useState(result);
   // const foundTier = tierData.find((tier) => tier.title === storedResult);

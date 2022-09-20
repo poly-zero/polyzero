@@ -9,7 +9,7 @@ import quotes from "../data/quotes.json";
 
 const Landing = () => {
   return (
-    <div className="relative h-screen md:-ml-64">
+    <div className="relative h-screen md:-ml-64 snap-y snap-mandatory overflow-x-hidden snap-center">
       <LandingNavBar />
       <div className="bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-14 h-4/6 md:h-4/5">
         <Card className="flex flex-col justify-center items-center md:w-3/4 h-full bg-slate-50">
@@ -57,7 +57,7 @@ const Landing = () => {
 
       <div
         id="about"
-        className="flex flex-col justify-center items-center p-14 h-3/4"
+        className="flex flex-col justify-center items-center p-14 h-3/4 snap-center"
       >
         <div className="flex flex-col gap-4 w-full md:w-2/5">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text">
@@ -81,7 +81,7 @@ const Landing = () => {
       </div>
       <div
         id="Team"
-        className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4"
+        className="bg-slate-50 flex flex-col justify-center items-center p-14 h-3/4 snap-center"
       >
         <div className="flex flex-col justify-center gap-4 w-full md:w-2/5">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -153,7 +153,7 @@ const Landing = () => {
       </div>
       <div
         id="contact"
-        className="flex flex-col justify-center items-center p-14 h-3/4"
+        className="flex flex-col justify-center items-center p-14 h-3/4 snap-center"
       >
         <div className="flex flex-col justify-center  gap-4 w-full md:w-1/3">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">

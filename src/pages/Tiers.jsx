@@ -3,8 +3,6 @@ import TierCard from "../components/tiers/TierCard";
 import tierData from "../data/tier.json";
 import tierCardData from "../data/tierCards.json";
 
-const offsetCost = 5000;
-
 const Tiers = ({ setTier }) => {
   const offsetCost = 5000;
   const storedResult = JSON.parse(localStorage.getItem("tiers"));

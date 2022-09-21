@@ -5,7 +5,9 @@ import Header from "../Header";
 import FootprintForm from "./FootprintForm";
 
 const PetBottles = ({ useWizard, result, setResult }) => {
-  const [petBottlesHabit, setPetBottlesHabit] = useState(null);
+  const [petBottlesHabit, setPetBottlesHabit] = useState(
+    result && result.petBottles ? result.petBottles : null
+  );
   const petBottlesData = footprintQuestions.find(
     (element) => element.category === "PET bottles"
   );
@@ -32,6 +34,9 @@ const PetBottles = ({ useWizard, result, setResult }) => {
             result={result.petBottles}
             storeFunction={storePetBottlesHabit}
             setFunction={setPetBottlesHabit}
+            selectedValue={
+              result && result.petBottles ? result.petBottles : null
+            }
           />
         </CardBody>
       </Card>

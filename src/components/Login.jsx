@@ -32,7 +32,7 @@ function Login() {
   }, [user, loading]);
 
   return (
-    <div className="flex items-center justify-center p-6">
+    <div className="flex flex-grow items-center justify-center p-6">
       <Card>
         <div className="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
           <div className="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">

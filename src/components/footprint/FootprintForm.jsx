@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Radio } from "@material-tailwind/react";
 import FootprintWizardButtons from "./FootprintWizardButtons";
 
@@ -7,7 +8,14 @@ const FootprintForm = ({
   storeFunction,
   setFunction,
   footprintResult,
+  selectedValue,
 }) => {
+  const [selected, setSelected] = useState(false);
+  const handleRadioSelect = (value) => {
+    setFunction(Number(value));
+    setSelected(true);
+  };
+
   return (
     <div className="flex flex-col">
       {answers.map((element) => {
@@ -18,7 +26,8 @@ const FootprintForm = ({
             name={"value"}
             label={element.answer}
             value={element.value}
-            onChange={(event) => setFunction(Number(event.target.value))}
+            onChange={(event) => handleRadioSelect(event.target.value)}
+            defaultChecked={selectedValue === element.value ? true : false}
           />
         );
       })}
@@ -27,6 +36,7 @@ const FootprintForm = ({
           useWizard={useWizard}
           storeFunction={storeFunction}
           footprintResult={footprintResult}
+          selected={selected}
         />
       </div>
     </div>

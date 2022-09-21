@@ -6,6 +6,7 @@ import TakeOut from "../components/footprint/TakeOut";
 import Groceries from "../components/footprint/Groceries";
 import { Wizard, useWizard } from "react-use-wizard";
 import { useNavigate } from "react-router-dom";
+import { saveFootprintData } from "../firebase/firebase";
 
 const FootprintWizard = ({ result, setResult }) => {
   const navigateTo = useNavigate();
@@ -37,6 +38,7 @@ const FootprintWizard = ({ result, setResult }) => {
       footprintResult: final,
     };
     localStorage.setItem("footprint", JSON.stringify(finalResult));
+    saveFootprintData(finalResult);
     setResult(finalResult);
     navigateTo("/results");
   }

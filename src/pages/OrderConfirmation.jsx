@@ -9,7 +9,6 @@ import {
   TwitterShareButton,
   LineShareButton,
 } from "next-share";
-// import messagesTwitter from "../data/variable.json";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -21,6 +20,7 @@ const OrderConfirmation = ({ tier }) => {
   const storedTonnes = localStorage.getItem("tonnes");
   const storedTitle = localStorage.getItem("title");
   const storedTime = localStorage.getItem("time");
+
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
@@ -72,18 +72,13 @@ const OrderConfirmation = ({ tier }) => {
                 <FaceBook />
               </FacebookShareButton>
               <Instagram />
-              {/* <a
-                href={`https://twitter.com/intent/tweet?text=${messagesTwitter[0].Q7} ${secondMessage} ${messagesTwitter[0].Q8}`}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <Twitter />
-              </a> */}
               <TwitterShareButton
                 url={"https://www.polyzero.earth"}
-                title={
-                  "I just became a @PolyZeroApp Climate Champion by off-setting the CO2e footprint of my annual plastic consumption! "
-                }
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
+                  storedTime <= 10
+                    ? `${storedTime} years of my plastic consumption!`
+                    : "a life time of my annual plastic consumption!"
+                } `}
                 hashtags={["PolyZeroApp"]}
               >
                 <Twitter />

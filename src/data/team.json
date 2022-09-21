@@ -12,7 +12,7 @@
     "avatar": "https://avatars.githubusercontent.com/u/73625660?v=4",
     "email": "felipe@polyzero.org",
     "github": "https://github.com/felipemfm",
-    "twitter": "",
+    "twitter": false,
     "linkedIn": "https://www.linkedin.com/in/felipemfm/"
   },
   {
@@ -20,7 +20,7 @@
     "avatar": "https://avatars.githubusercontent.com/u/62789620?v=4",
     "email": "kim@polyzero.org",
     "github": "https://github.com/kimly888",
-    "twitter": "",
+    "twitter": false,
     "linkedIn": "https://www.linkedin.com/in/kimly888/"
   },
   {
@@ -28,7 +28,7 @@
     "avatar": "https://avatars.githubusercontent.com/u/101638795?v=4",
     "email": "daiki@polyzero.org",
     "github": "https://github.com/cskejivic",
-    "twitter": "",
+    "twitter": false,
     "linkedIn": "https://www.linkedin.com/in/daiki-uema-63a508245/"
   },
   {
@@ -36,7 +36,7 @@
     "avatar": "https://avatars.githubusercontent.com/u/73273137?v=4",
     "email": "josh@polyzero.org",
     "github": "https://github.com/91Pudge",
-    "twitter": "",
-    "linkedIn": ""
+    "twitter": false,
+    "linkedIn": false
   }
 ]

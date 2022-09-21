@@ -10,8 +10,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 // import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 import { ReactComponent as Footprint } from "../assets/navIcons/carbon-footprint.svg";
 import { ReactComponent as Tiers } from "../assets/navIcons/tiers.svg";
-import { ReactComponent as Dashboard } from "../assets/navIcons/dashboard.svg";
-import { ReactComponent as Logout } from "../assets/navIcons/logout.svg";
 import { Progress, Dropdown, Avatar, Button } from "flowbite-react";
 
 const SideBar = ({ result }) => {

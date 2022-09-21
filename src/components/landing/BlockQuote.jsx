@@ -1,4 +1,3 @@
-import { Button } from "flowbite-react";
 import { ReactComponent as Quote } from "../../assets/quotation.svg";
 
 const BlockQuote = ({ quote, article, author, sourceLink }) => {

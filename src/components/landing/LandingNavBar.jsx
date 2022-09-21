@@ -28,7 +28,7 @@ const LandingNavBar = () => {
           </div>
         </Navbar.Brand>
         <div className="flex md:order-2 gap-2">
-          <Button className="capitalize text-base">
+          <Button className="capitalize text-base hover:bg-blue-600 focus:ring-4 dark:bg-blue-600 dark:hover:bg-blue-700">
             <NavLink to={"/wizard"} exact={"true"}>
               {mobile ? <Footprint /> : "Estimate my plastic footprint"}
             </NavLink>

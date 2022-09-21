@@ -9,7 +9,9 @@ import {
 } from "@heroicons/react/24/solid";
 
 const Country = ({ result, setResult, useWizard }) => {
-  const [selectedCountry, setSelectedCountry] = useState(countries[44]);
+  const [selectedCountry, setSelectedCountry] = useState(
+    result && result.country ? result.country : countries[44]
+  );
   const [query, setQuery] = useState("");
 
   const storeCountry = () => {
@@ -39,7 +41,7 @@ const Country = ({ result, setResult, useWizard }) => {
         }
       />
 
-      <div className="flex flex-col w-3/4 z-50 md:w-1/4 gap-2 justify-center items-center">
+      <div className="flex flex-col w-3/4 z-40 md:w-1/4 gap-2 justify-center items-center">
         <Combobox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative w-full">
             <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md sm:text-sm">
@@ -107,10 +109,14 @@ const Country = ({ result, setResult, useWizard }) => {
             </Transition>
           </div>
         </Combobox>
-        <FootprintWizardButtons
-          useWizard={useWizard}
-          storeFunction={storeCountry}
-        />
+        {selectedCountry ? (
+          <FootprintWizardButtons
+            useWizard={useWizard}
+            storeFunction={storeCountry}
+          />
+        ) : (
+          <p>Please, select a Country</p>
+        )}
       </div>
     </div>
   );

@@ -5,7 +5,9 @@ import Header from "../Header";
 import FootprintForm from "./FootprintForm";
 
 const TakeOut = ({ useWizard, result, setResult }) => {
-  const [takeOutHabit, setTakeOutHabit] = useState(null);
+  const [takeOutHabit, setTakeOutHabit] = useState(
+    result && result.takeOut ? result.takeOut : null
+  );
   const takeOutData = footprintQuestions.find(
     (element) => element.category === "Take-out"
   );
@@ -33,6 +35,7 @@ const TakeOut = ({ useWizard, result, setResult }) => {
             footprintResult={result}
             storeFunction={storeTakeOutHabit}
             setFunction={setTakeOutHabit}
+            selectedValue={result && result.takeOut ? result.takeOut : null}
           />
         </CardBody>
       </Card>

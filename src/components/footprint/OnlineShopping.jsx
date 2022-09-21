@@ -5,7 +5,9 @@ import Header from "../Header";
 import FootprintForm from "./FootprintForm";
 
 const OnlineShopping = ({ useWizard, result, setResult }) => {
-  const [onlineShoppingHabit, setOnlineShoppingHabit] = useState(null);
+  const [onlineShoppingHabit, setOnlineShoppingHabit] = useState(
+    result && result.onlineShopping ? result.grocery : null
+  );
   const onlineShoppingData = footprintQuestions.find(
     (element) => element.category === "Online shopping"
   );
@@ -32,6 +34,9 @@ const OnlineShopping = ({ useWizard, result, setResult }) => {
             result={result.onlineShopping}
             storeFunction={storeOnlineShoppingHabit}
             setFunction={setOnlineShoppingHabit}
+            selectedValue={
+              result && result.onlineShopping ? result.onlineShopping : null
+            }
           />
         </CardBody>
       </Card>

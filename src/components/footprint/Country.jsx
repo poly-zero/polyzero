@@ -9,7 +9,9 @@ import {
 } from "@heroicons/react/24/solid";
 
 const Country = ({ result, setResult, useWizard }) => {
-  const [selectedCountry, setSelectedCountry] = useState(countries[44]);
+  const [selectedCountry, setSelectedCountry] = useState(
+    result && result.country ? result.country : countries[44]
+  );
   const [query, setQuery] = useState("");
 
   const storeCountry = () => {
@@ -107,10 +109,14 @@ const Country = ({ result, setResult, useWizard }) => {
             </Transition>
           </div>
         </Combobox>
-        <FootprintWizardButtons
-          useWizard={useWizard}
-          storeFunction={storeCountry}
-        />
+        {selectedCountry ? (
+          <FootprintWizardButtons
+            useWizard={useWizard}
+            storeFunction={storeCountry}
+          />
+        ) : (
+          <p>Please, select a Country</p>
+        )}
       </div>
     </div>
   );

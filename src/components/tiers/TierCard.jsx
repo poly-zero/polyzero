@@ -1,5 +1,5 @@
 import { Label, TextInput } from "flowbite-react";
-import { Button, Card, CardBody, Input } from "@material-tailwind/react";
+import { Button, Card, CardBody } from "@material-tailwind/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveTierData } from "../../firebase/firebase";

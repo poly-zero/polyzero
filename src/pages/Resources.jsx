@@ -1,4 +1,4 @@
-import { Fragment, useRef } from "react";
+import { Fragment } from "react";
 import LandingNavBar from "../components/landing/LandingNavBar";
 import { Button } from "flowbite-react";
 

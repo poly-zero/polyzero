@@ -109,10 +109,14 @@ const Country = ({ result, setResult, useWizard }) => {
             </Transition>
           </div>
         </Combobox>
-        <FootprintWizardButtons
-          useWizard={useWizard}
-          storeFunction={storeCountry}
-        />
+        {selectedCountry ? (
+          <FootprintWizardButtons
+            useWizard={useWizard}
+            storeFunction={storeCountry}
+          />
+        ) : (
+          <p>Please, select a Country</p>
+        )}
       </div>
     </div>
   );

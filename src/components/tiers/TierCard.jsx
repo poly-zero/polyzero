@@ -1,11 +1,14 @@
 import { Card, Label, TextInput } from "flowbite-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveTierData } from "../../firebase/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, getStripeApi } from "../../firebase/firebase";
 
 const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
   const [age, setAge] = useState(title === "Champion" ? 15 : time);
+  const [user, loading, error] = useAuthState(auth);
 
   function assignTier() {
     setTier({
@@ -23,7 +26,19 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
     localStorage.setItem("time", age);
 
-    navigateTo("/payment");
+    if (user) {
+      getStripeApi({
+        cost: cost, 
+        title: title, 
+        image: image, 
+        time: time,
+        age: age
+      });
+    }
+
+    if (!user) navigate("/login");
+
+    //navigateTo("/payment");
   }
 
   return (

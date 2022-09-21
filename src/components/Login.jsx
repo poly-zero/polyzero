@@ -26,7 +26,7 @@ function Login() {
     if (loading) {
       return;
     }
-    if (user && storedPayment) navigate("/payment");
+    if (user && storedPayment) navigate("/tiers");
     else if (user) navigate("/wizard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);

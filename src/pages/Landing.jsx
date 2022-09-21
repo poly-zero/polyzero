@@ -5,10 +5,11 @@ import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-li
 import { ReactComponent as Mail } from "../assets/images/mail.svg";
 import { ReactComponent as Coffee } from "../assets/images/coffee.svg";
 import { Carousel } from "flowbite-react";
-import { Card, Avatar } from "@material-tailwind/react";
+import { Card, Avatar, Button } from "@material-tailwind/react";
 import quotes from "../data/quotes.json";
 import teamMembers from "../data/team.json";
 import Header from "../components/Header";
+import { NavLink } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -75,6 +76,11 @@ const Landing = () => {
               the CO2 emissions associated with your plastic footprint and
               allows you to purchase CO2 off-sets to reduce your impact.
             </p>
+            <NavLink to={"/wizard"} exact={"true"}>
+              <Button className="text-base capitalize">
+                Estimate my plastic footprint
+              </Button>
+            </NavLink>
           </div>
         </article>
       </section>
@@ -162,7 +168,7 @@ const Landing = () => {
             We are volunteer-run and are actively looking for sponsors,
             collaborators, and open-source contributors. Please reach out!
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://twitter.com/PolyZeroApp"
               target="_blank"
@@ -181,7 +187,7 @@ const Landing = () => {
                 alt="Github logo link"
               />
             </a>
-            <div className="flex gap-4 m-auto">
+            <div className="flex gap-4 lg:m-auto">
               <Mail />
               contact@polyzero.org
             </div>

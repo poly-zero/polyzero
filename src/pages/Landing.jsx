@@ -150,6 +150,16 @@ const Landing = () => {
               </div>
             </Avatar>
           </div>
+          <div className="flex place-content-center gap-4 p-5 m-5">
+            <a
+              href="https://www.buymeacoffee.com/polyzeroteam"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Coffee />
+            </a>
+            <p className="text-center">Buy us a coffee</p>
+          </div>
         </div>
       </div>
       <div
@@ -164,16 +174,6 @@ const Landing = () => {
             We are volunteer-run and are actively looking for sponsors,
             collaborators, and open-source contributors. Please reach out!
           </p>
-          <div className="flex place-content-center gap-4">
-            <a
-              href="https://www.buymeacoffee.com/polyzeroteam"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Coffee />
-            </a>
-            <p className="text-center">Buy us a coffee</p>
-          </div>
           <div className="flex items-center gap-4">
             <a
               href="https://twitter.com/PolyZeroApp"

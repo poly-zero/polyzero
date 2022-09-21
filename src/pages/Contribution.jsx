@@ -9,7 +9,7 @@ const Contribution = () => {
       <Header
         text={"Where your"}
         highlightedText={"money goes"}
-        caption={"Some description here"}
+        caption={"FAQs about our carbon credit fullfillment process"}
       />
       <section className="flex flex-col gap-8 w-1/2">
         {contributionArticles.map((article) => {

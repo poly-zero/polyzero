@@ -5,12 +5,11 @@ const FootprintWizardButtons = ({
   useWizard,
   storeFunction,
   footprintResult,
+  selected,
 }) => {
   const {
     isLastStep,
     isFirstStep,
-    activeStep,
-    stepCount,
     previousStep,
     nextStep,
   } = useWizard();
@@ -45,6 +44,7 @@ const FootprintWizardButtons = ({
               nextStep();
               storeFunction();
             }}
+            disabled={!selected}
           >
             <ChevronRightIcon className="h-5 w-5 text-white" />
           </Button>
@@ -66,6 +66,7 @@ const FootprintWizardButtons = ({
             onClick={() => {
               storeFunction();
             }}
+            disabled={!selected}
           >
             Submit
           </Button>

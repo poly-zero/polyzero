@@ -12,7 +12,7 @@ const Landing = () => {
     <div className="relative h-screen md:-ml-64 snap-y snap-mandatory">
       <LandingNavBar />
       <div className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-4/6 md:h-4/5 snap-end">
-        <Card className="z-10 flex flex-col justify-center items-center md:w-3/4 h-3/4 md:h-full bg-clip-padding bg-opacity-80 border border-gray-200">
+        <Card className="z-10 flex flex-col justify-center items-center md:w-3/4 h-3/4 md:h-full bg-clip-padding bg-opacity-70 border border-gray-200">
           <h1 className="mt-8 text-2xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl text-center">
             Facts about&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">

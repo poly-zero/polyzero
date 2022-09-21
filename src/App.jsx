@@ -30,7 +30,8 @@ function App() {
     <>
       <div className="flex flex-col h-screen md:ml-64">
         {location.pathname === "/" ||
-        location.pathname === "/resources" ? null : (
+        location.pathname === "/resources" ||
+        location.pathname === "/tips" ? null : (
           <SideBar result={result} />
         )}
         <Top />
@@ -57,12 +58,12 @@ function App() {
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
           <Route exact path="/contribution" element={<Contribution />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
-          <Route exact path="/tips" element={<TipsToReduce />} />
           <Route
             exact
             path="/confirmation"
             element={<OrderConfirmation tier={tier} />}
           />
+          <Route exact path="/tips" element={<TipsToReduce />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>

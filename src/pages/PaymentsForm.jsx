@@ -28,32 +28,32 @@ const PaymentsForm = () => {
 
   return (
     <Fragment>
-      <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center mt-10">
+      <h1 className="mt-10 mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
         Want to&nbsp;
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
           save the planet?
         </span>
       </h1>
       <div onSubmit={handleSubmit}>
-        <div className="flex justify-center items-center  ">
-          <div className="h-auto w-80 bg-white p-3 rounded-lg">
+        <div className="flex items-center justify-center ">
+          <div className="h-auto p-3 bg-white rounded-lg w-80">
             <p className="text-xl font-semibold">Payment Details</p>
-            <div className="input_text mt-6 relative">
+            <div className="relative mt-6 input_text">
               <span className="absolute left-0 text-sm -top-4">
                 Cardholder Name
               </span>
               <input
                 type="text"
-                className="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b rounded-lg"
+                className="w-full h-12 px-2 transition-all border-b rounded-lg outline-none pl-7 focus:border-blue-900"
                 placeholder="Name on card"
                 onChange={(e) => setName(e.target.value)}
               />
-              <i className="absolute left-2 top-4 text-gray-400 fa fa-user"></i>
+              <i className="absolute text-gray-400 left-2 top-4 fa fa-user"></i>
             </div>
-            <div className="input_text mt-8 relative">
+            <div className="relative mt-8 input_text">
               <input
                 type="text"
-                className="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b rounded-lg"
+                className="w-full h-12 px-2 transition-all border-b rounded-lg outline-none pl-7 focus:border-blue-900"
                 placeholder="0000 0000 0000 0000"
                 data-slots="0"
                 data-accept="\d"
@@ -65,22 +65,22 @@ const PaymentsForm = () => {
               </span>
               <i className="absolute left-2 top-[14px] text-gray-400 text-sm fa fa-credit-card"></i>
             </div>
-            <div className="mt-8 flex gap-5 ">
-              <div className="input_text relative w-full">
+            <div className="flex gap-5 mt-8 ">
+              <div className="relative w-full input_text">
                 <input
                   type="text"
-                  className="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b  rounded-lg"
+                  className="w-full h-12 px-2 transition-all border-b rounded-lg outline-none pl-7 focus:border-blue-900"
                   placeholder="mm/yyyy"
                   data-slots="my"
                   onChange={(e) => setExpiry(e.target.value)}
                 />
                 <span className="absolute left-0 text-sm -top-4">Expiry</span>
-                <i className="absolute left-2 top-4 text-gray-400 fa fa-calendar-o"></i>
+                <i className="absolute text-gray-400 left-2 top-4 fa fa-calendar-o"></i>
               </div>
-              <div className="input_text relative w-full">
+              <div className="relative w-full input_text">
                 <input
                   type="text"
-                  className="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b  rounded-lg"
+                  className="w-full h-12 px-2 transition-all border-b rounded-lg outline-none pl-7 focus:border-blue-900"
                   placeholder="000"
                   data-slots="0"
                   data-accept="\d"
@@ -88,15 +88,16 @@ const PaymentsForm = () => {
                   onChange={(e) => setCvv(e.target.value)}
                 />
                 <span className="absolute left-0 text-sm -top-4">CVV</span>
-                <i className="absolute left-2 top-4 text-gray-400 fa fa-lock"></i>
+                <i className="absolute text-gray-400 left-2 top-4 fa fa-lock"></i>
               </div>
             </div>
-            <p className="text-lg text-center mt-4 text-gray-600 font-semibold">
-              Payment amount: ¥{(storedPayment * storedTime).toLocaleString('ja-JP')}
+            <p className="mt-4 text-lg font-semibold text-center text-gray-600">
+              Payment amount: ¥
+              {(storedPayment * storedTime).toLocaleString("ja-JP")}
             </p>
             <div className="flex justify-center mt-4">
               <button
-                className="outline-none pay h-12 bg-blue-600 text-white mb-3 mr-1 hover:bg-blue-700 rounded-lg w-1/2 cursor-pointer transition-all"
+                className="w-1/2 h-12 mb-3 mr-1 text-white transition-all bg-blue-600 rounded-lg outline-none cursor-pointer pay hover:bg-blue-700"
                 onClick={() => {
                   navigateTo("/tiers");
                 }}
@@ -105,7 +106,7 @@ const PaymentsForm = () => {
               </button>
               <br />
               <button
-                className="outline-none pay h-12 bg-blue-600 text-white mb-3 hover:bg-blue-700 rounded-lg w-1/2 cursor-pointer transition-all"
+                className="w-1/2 h-12 mb-3 text-white transition-all bg-blue-600 rounded-lg outline-none cursor-pointer pay hover:bg-blue-700"
                 onClick={() => {
                   navigateTo("/confirmation");
                 }}

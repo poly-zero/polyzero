@@ -9,9 +9,9 @@ const Resources = () => {
         <div>
           <LandingNavBar />
 
-          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+          <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
             Re
-            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 ">
               sources
             </span>
           </h1>
@@ -22,7 +22,7 @@ const Resources = () => {
         </div>
 
         <br />
-        <div className="flex flex-row space-x-4 text-center justify-center  px-3">
+        <div className="flex flex-row justify-center px-3 space-x-4 text-center">
           <Button
             onClick={() => window.scrollTo({ top: 900, behavior: "smooth" })}
           >
@@ -40,8 +40,8 @@ const Resources = () => {
           </Button>
         </div>
 
-        <div className="flex col justify-center  text-center p-11 ">
-          <div className=" flex  px-11  border justify-center w-3/5 ">
+        <div className="flex justify-center text-center col p-11 ">
+          <div className="flex justify-center w-3/5 border px-11">
             <div className="justify-center">
               <h4 className="underline underline-offset-1">Plastic and CO2</h4>
               <p>
@@ -49,7 +49,7 @@ const Resources = () => {
                   Center for International Environmental Law (CIEL){" "}
                 </strong>
                 <a
-                  className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                  className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                   href="https://www.ciel.org/"
                 >
                   <br />
@@ -62,7 +62,7 @@ const Resources = () => {
                 Climate: The Hidden Costs of a Plastic Planet”{" "}
               </p>
               <a
-                className="text-blue-600 hover:text-blue-800 font-light underline "
+                className="font-light text-blue-600 underline hover:text-blue-800 "
                 href="https://www.ciel.org/project-update/plastic-climate-the-hidden-costs-of-a-plastic-planet/"
               >
                 Learn more
@@ -119,8 +119,8 @@ const Resources = () => {
           </div>
         </div>
         {/* 2nd col */}
-        <div className="flex col justify-center  text-center p-11  ">
-          <div className=" flex  px-11  border justify-center w-3/5 ">
+        <div className="flex justify-center text-center col p-11 ">
+          <div className="flex justify-center w-3/5 border px-11">
             <div className="justify-center ">
               <h4 className="underline underline-offset-1">
                 Single-Use Plastic Production
@@ -131,7 +131,7 @@ const Resources = () => {
                   Single-Use Plastic
                 </strong>
                 <a
-                  className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                  className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                   href="https://www.nytimes.com/2021/05/18/climate/single-use-plastic.html
                     "
                 >
@@ -147,7 +147,7 @@ const Resources = () => {
                 </strong>
               </p>
               <a
-                className="text-blue-600 hover:text-blue-800 font-light underline "
+                className="font-light text-blue-600 underline hover:text-blue-800 "
                 href="https://insideclimatenews.org/news/25022019/plastics-hub-appalachian-fracking-ethane-cracker-climate-change-health-ohio-river/"
               >
                 Learn more
@@ -180,7 +180,7 @@ const Resources = () => {
                   {" "}
                   <strong>The Source of Plastic Waste</strong>
                   <a
-                    className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                    className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                     href="https://sourceofplasticwaste.org/
                     "
                   >
@@ -197,7 +197,7 @@ const Resources = () => {
                 <p>
                   <br /> <strong>Minderoo - Plastic Waste Makers Index</strong>
                   <a
-                    className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                    className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                     href="https://www.minderoo.org/plastic-waste-makers-index/findings/executive-summary/
                     "
                   >
@@ -211,17 +211,16 @@ const Resources = () => {
           </div>
         </div>
         {/* 3rd col */}
-        <div className="flex col justify-center  text-center p-11  ">
-          <div className=" flex  px-11  border justify-center w-3/5 ">
-            <div className="justify-center  ">
+        <div className="flex justify-center text-center col p-11 ">
+          <div className="flex justify-center w-3/5 border px-11">
+            <div className="justify-center ">
               <h4 className="underline underline-offset-1">
                 Impacts of Plastic on Human Health
               </h4>
               <p>
                 <div id="impacts">
                   <img
-                    className="mx-auto
-                    p-2"
+                    className="p-2 mx-auto"
                     src="https://imgs.search.brave.com/SICOoi6_lQxHvcoOY-Rd3MmyOfDp8za4BI96kZsppok/rs:fit:600:315:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuYWR3ZWVrLmNv/bS9hZHdlZWsuY29t/LXByb2Qvd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDYvZWF0/LWNyZWRpdC1jYXJk/LVBBR0UtMjAxOS02/MDB4MzE1LmpwZw"
                     alt="How much plastic is consumed in one week, a credit card or bank card"
                     width="300"
@@ -233,7 +232,7 @@ const Resources = () => {
                   Plastic Ingestion from Nature to People
                 </strong>
                 <a
-                  className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                  className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                   href="https://wwfint.awsassets.panda.org/downloads/plastic_ingestion_web_spreads.pdf
 
                     "
@@ -264,7 +263,7 @@ const Resources = () => {
                 <p>
                   {" "}
                   <a
-                    className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                    className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                     href="https://www.minderoo.org/plastics-and-human-health/
                     "
                   >
@@ -308,8 +307,8 @@ const Resources = () => {
             </div>
           </div>
         </div>
-        <div className="flex col justify-center  text-center p-11  ">
-          <div className=" flex  px-11  border justify-center w-3/5 ">
+        <div className="flex justify-center text-center col p-11 ">
+          <div className="flex justify-center w-3/5 border px-11">
             <div className="justify-center ">
               <h4 className="underline underline-offset-1">Region-specific</h4>
               <p>
@@ -318,7 +317,7 @@ const Resources = () => {
                   synthetic polymers 2021
                 </strong>
                 <a
-                  className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                  className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                   href="https://hk.boell.org/sites/default/files/2021-04/042921-Plastic%20Atlas%20Asia%202021%20-%20web.pdf
 
                     "
@@ -339,7 +338,7 @@ const Resources = () => {
                 <p>
                   {" "}
                   <a
-                    className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                    className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                     href="https://hk.boell.org/en/2022/05/30/plastic-atlas-japan-special-edition-closer-look-japans-plastic-waste-management
                     "
                   >
@@ -352,7 +351,7 @@ const Resources = () => {
                     What You (Probably) Didn’t Know About Plastic in Japan
                   </strong>
                   <a
-                    className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                    className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                     href="https://www.tsunagulocal.com/en/47587/
 
                     "
@@ -365,7 +364,7 @@ const Resources = () => {
                 <p>
                   <strong>WWF: Single-Use Plastics in Singapore</strong>
                   <a
-                    className="text-blue-600 hover:text-blue-800 text-center font-light underline "
+                    className="font-light text-center text-blue-600 underline hover:text-blue-800 "
                     href="https://www.wwf.sg/plastics/
 
                     "

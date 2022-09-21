@@ -2,11 +2,6 @@ import { useEffect } from "react";
 import FootprintCard from "../components/footprint/FootprintCard";
 import Results from "./Results";
 import footprintData from "../data/tier.json";
-// import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
-// import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
-// import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
-// import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const Footprint = ({ result, setResult, useWizard }) => {
   const storedResult = localStorage.getItem("result");
@@ -23,7 +18,7 @@ const Footprint = ({ result, setResult, useWizard }) => {
     <>
       {!result ? (
         <div className="flex flex-col items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+          <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
             Estimate your <span> </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
               plastic footprint
@@ -31,7 +26,7 @@ const Footprint = ({ result, setResult, useWizard }) => {
           </h1>
           Select the lifestyle below that comes closest to describing your
           consumption habits.
-          <div className="flex flex-wrap gap-8 w-10/12 justify-center items-center md:flex-row md:gap-9 md:w-10/12">
+          <div className="flex flex-wrap items-center justify-center w-10/12 gap-8 md:flex-row md:gap-9 md:w-10/12">
             {footprintData.map((card) => {
               return (
                 <FootprintCard
@@ -49,7 +44,7 @@ const Footprint = ({ result, setResult, useWizard }) => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-grow bg-slate-100 gap-6 justify-center items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+        <div className="flex items-center justify-center flex-grow gap-6 bg-slate-100 md:justify-center md:mt-0 md:gap-10 md:py-8">
           <Results setResult={setResult} storedResult={storedResult} />
         </div>
       )}

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TierCard from "../components/tiers/TierCard";
-// import tierData from "../data/tier.json";
 import tierCardData from "../data/tierCards.json";
 
 const Tiers = ({ setTier }) => {
@@ -14,7 +13,7 @@ const Tiers = ({ setTier }) => {
   }, []);
 
   return (
-    <div className="flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-6">
+    <div className="bg-slate-200 flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-6">
       <header className="w-1/2 flex flex-col justify-center items-center gap-4">
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
           Offset your{" "}

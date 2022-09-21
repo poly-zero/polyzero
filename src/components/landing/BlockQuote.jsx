@@ -1,4 +1,3 @@
-import { Button } from "flowbite-react";
 import { ReactComponent as Quote } from "../../assets/quotation.svg";
 
 const BlockQuote = ({ quote, article, author, sourceLink }) => {
@@ -13,7 +12,12 @@ const BlockQuote = ({ quote, article, author, sourceLink }) => {
       <figcaption className="flex justify-center items-center my-6 space-x-3 md:text-base">
         <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
           <cite className="pr-3 font-medium text-xs md:text-base text-gray-900 dark:text-white">
-            <a className="underline text-gray-600 dark:text-gray-500" href={sourceLink} rel="noreferrer" target="_blank">
+            <a
+              className="underline text-gray-600 dark:text-gray-500"
+              href={sourceLink}
+              rel="noreferrer"
+              target="_blank"
+            >
               {article}
             </a>
           </cite>

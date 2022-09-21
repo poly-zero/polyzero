@@ -1,21 +1,22 @@
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@material-tailwind/react";
+import Header from "../Header";
+import countries from "../../data/countries.json";
+import FootprintWizardButtons from "./FootprintWizardButtons";
 import { Combobox, Transition } from "@headlessui/react";
-import countries from "../data/countries.json";
 import {
   CheckCircleIcon,
   ChevronDoubleDownIcon,
-  ChevronRightIcon,
 } from "@heroicons/react/24/solid";
-import Header from "../components/Header";
 
-const Country = ({ setResult }) => {
-  const [selectedCountry, setSelectedCountry] = useState(countries[44]);
+const Country = ({ result, setResult, useWizard }) => {
+  const [selectedCountry, setSelectedCountry] = useState(
+    result && result.country ? result.country : countries[44]
+  );
   const [query, setQuery] = useState("");
 
   const storeCountry = () => {
     setResult({
+      ...result,
       country: selectedCountry,
     });
   };
@@ -40,7 +41,7 @@ const Country = ({ setResult }) => {
         }
       />
 
-      <div className="flex flex-row w-3/4 z-50 md:w-1/4 gap-2 justify-center items-center">
+      <div className="flex flex-col w-3/4 z-40 md:w-1/4 gap-2 justify-center items-center">
         <Combobox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative w-full">
             <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md sm:text-sm">
@@ -108,13 +109,14 @@ const Country = ({ setResult }) => {
             </Transition>
           </div>
         </Combobox>
-        <Link to={"/groceries"}>
-          <div className="w-full shadow-lg">
-            <Button className="flex justify-center z-0" onClick={storeCountry}>
-              <ChevronRightIcon className="h-5 w-5 text-white" />
-            </Button>
-          </div>
-        </Link>
+        {selectedCountry ? (
+          <FootprintWizardButtons
+            useWizard={useWizard}
+            storeFunction={storeCountry}
+          />
+        ) : (
+          <p>Please, select a Country</p>
+        )}
       </div>
     </div>
   );

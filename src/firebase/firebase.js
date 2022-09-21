@@ -116,6 +116,22 @@ const logout = () => {
   signOut(auth);
 };
 
+const saveFootprintData = async (data) => {
+  try {
+    await addDoc(collection(db, "footprint_data"), data);
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
+const saveTierData = async (data) => {
+  try {
+    await addDoc(collection(db, "tier_data"), data);
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
 export {
   auth,
   db,
@@ -125,4 +141,6 @@ export {
   getUserInfo,
   sendPasswordReset,
   logout,
+  saveFootprintData,
+  saveTierData,
 };

@@ -1,35 +1,55 @@
 import { NavLink } from "react-router-dom";
-import { Navbar, Button } from "flowbite-react";
+import { NavHashLink } from "react-router-hash-link";
+import { Navbar } from "flowbite-react";
+import { useEffect, useState } from "react";
+import { Button } from "@material-tailwind/react";
+import { ReactComponent as Footprint } from "../../assets/navIcons/carbon-footprint.svg";
 
 const LandingNavBar = () => {
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 500) setMobile(true);
+  }, []);
   return (
-    <nav className="">
+    <nav>
       <Navbar fluid={true} rounded={true} border={true}>
+        <Navbar.Toggle />
         <Navbar.Brand href="/">
-          <div className="flex mt-2">
+          <div className="flex my-2">
             <img
               src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mt-1 ml-2 mr-3 h-14"
+              className="mt-1 ml-2 mr-3 h-8 md:h-14"
               alt="PolyZero Logo"
             />
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            <span className="self-center whitespace-nowrap text-xl md:text-2xl font-semibold dark:text-white">
               PolyZero
             </span>
           </div>
         </Navbar.Brand>
         <div className="flex md:order-2 gap-2">
-          <Button>
-            <NavLink to={"/footprint"} exact={"true"}>
-              Estimate my plastic footprint
+          <Button className="capitalize text-base  hover:bg-gradient-to-r to-emerald-600 from-sky-400 hover:animate-pulse ">
+            <NavLink to={"/wizard"} exact={"true"}>
+              {mobile ? <Footprint /> : "Estimate my plastic footprint"}
             </NavLink>
           </Button>
-          <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link href="#about">About</Navbar.Link>
-          <Navbar.Link href="/tips">Reduce Plastic</Navbar.Link>
-          <Navbar.Link href="/resources">Further Reading</Navbar.Link>
-          <Navbar.Link href="#contact">Contact</Navbar.Link>
+          <NavHashLink to="/#about">
+            <p className="text-base">About</p>
+          </NavHashLink>
+          <NavHashLink to="/tips">
+            <p className="text-base">Reduce Plastic</p>
+          </NavHashLink>
+          <NavHashLink to="/resources">
+            <p className="text-base">Further Reading</p>
+          </NavHashLink>
+          <NavHashLink to="/#team">
+            <p className="text-base">Team</p>
+          </NavHashLink>
+          <NavHashLink to="/#contact">
+            <p className="text-base">Contact</p>
+          </NavHashLink>
         </Navbar.Collapse>
       </Navbar>
     </nav>

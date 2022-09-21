@@ -3,7 +3,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { Card } from "flowbite-react";
-import messagesTwitter from "../data/variable.json";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  LineShareButton,
+} from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -11,10 +16,12 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const OrderConfirmation = ({ tier }) => {
-  const storedPayment = localStorage.getItem("payment");
-  const storedTonnes = localStorage.getItem("tonnes");
-  const storedTitle = localStorage.getItem("title");
-  const storedTime = localStorage.getItem("time");
+  // localStorage.clear();
+  const storedTitle = localStorage.title;
+  const storedPayment = localStorage.payment;
+  const storedTime = localStorage.time;
+  const storedTonnes = localStorage.tonnes;
+
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
@@ -27,8 +34,6 @@ const OrderConfirmation = ({ tier }) => {
     if (!user) navigate("/login");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
-
-  let secondMessage = storedTitle;
 
   return (
     <div className="flex flex-grow items-center justify-center">
@@ -59,22 +64,39 @@ const OrderConfirmation = ({ tier }) => {
               world.
             </h2>
             <div className="flex gap-4">
-              <FaceBook />
+              <FacebookShareButton
+                url={"https://www.polyzero.earth"}
+                hashtag={"#polyzero"}
+              >
+                <FaceBook />
+              </FacebookShareButton>
               <Instagram />
-              <a
-                href={`https://twitter.com/intent/tweet?text=${messagesTwitter[0].Q7} ${secondMessage} ${messagesTwitter[0].Q8}`}
-                rel="noreferrer"
-                target="_blank"
+              <TwitterShareButton
+                url={"https://www.polyzero.earth"}
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
+                  storedTime <= 10
+                    ? `${storedTime} years of my plastic consumption!`
+                    : "a life time of my annual plastic consumption!"
+                } `}
+                hashtags={["PolyZeroApp"]}
               >
                 <Twitter />
-              </a>
-              <LinkedIn />
-              <Line />
+              </TwitterShareButton>
+              <LinkedinShareButton url={"https://www.polyzero.earth"}>
+                <LinkedIn />
+              </LinkedinShareButton>
+              <LineShareButton
+                title={
+                  "I just became a PolyZeroApp Climate Champion by off-setting the CO2e footprint of my annual plastic consumption! https://www.polyzero.earth"
+                }
+              >
+                <Line />
+              </LineShareButton>
             </div>
           </div>
         </div>
         <div className="max-w-xs">
-          <Card imgSrc={tier.image}>
+          <Card imgSrc={tier && tier.image}>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {storedTitle}
             </h5>
@@ -84,7 +106,7 @@ const OrderConfirmation = ({ tier }) => {
               or <b>{storedTime} year(s)</b> worth of plastic
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{storedPayment * storedTime}
+              ￥{(storedTime * storedPayment).toLocaleString("ja-JP")}
             </h5>
           </Card>
         </div>

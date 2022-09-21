@@ -61,11 +61,7 @@ function App() {
           <Route
             exact
             path="/confirmation"
-            element={
-              <ConditionalRedirect isSet={tier}>
-                <OrderConfirmation tier={tier} />
-              </ConditionalRedirect>
-            }
+            element={<OrderConfirmation tier={tier} />}
           />
           <Route exact path="/tips" element={<TipsToReduce />} />
           <Route exact path="/dashboard" element={<Dashboard />} />

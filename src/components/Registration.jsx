@@ -152,15 +152,6 @@ function Registration() {
                   aria-required
                   required
                 />
-                <label
-                  className="mt-1 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700"
-                  htmlFor="terms"
-                >
-                  I agree the
-                  <Link to="/" className="font-bold text-slate-700">
-                    Terms and Conditions
-                  </Link>
-                </label>
               </div>
               <div className="text-center">
                 <button

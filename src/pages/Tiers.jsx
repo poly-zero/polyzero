@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import TierCard from "../components/tiers/TierCard";
 import tierCardData from "../data/tierCards.json";
+import Header from "../components/Header";
 
 const Tiers = ({ setTier }) => {
   const offsetCost = 5000;
@@ -14,7 +14,7 @@ const Tiers = ({ setTier }) => {
   }, []);
 
   return (
-    <div className="bg-slate-100 flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-6">
+    <div className="flex flex-col items-center flex-grow gap-6 mt-8 bg-slate-100 md:items-center md:justify-center md:mt-0 md:gap-6">
       <Header
         text="Offset your"
         highlightedText="CO2 emissions"
@@ -25,12 +25,12 @@ const Tiers = ({ setTier }) => {
       <Link to={"/contribution"}>
         <p className="underline underline-offset-4">Where your money goes</p>
       </Link>
-      <section className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-8 md:w-9/12">
+      <section className="flex flex-col items-center justify-center w-3/4 gap-8 md:flex-row md:gap-8 md:w-9/12">
         {data &&
-          tierCardData.map((tier, index) => {
+          tierCardData.map((tier) => {
             return (
               <TierCard
-                key={index}
+                key={tier.title}
                 title={tier.title}
                 time={tier.time}
                 tonnes={data.carbon / 1000}

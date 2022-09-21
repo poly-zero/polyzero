@@ -16,7 +16,11 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const OrderConfirmation = ({ tier }) => {
-  localStorage.clear();
+  // localStorage.clear();
+  const storedTitle = localStorage.title;
+  const storedPayment = localStorage.payment;
+  const storedTime = localStorage.time;
+  const storedTonnes = localStorage.tonnes;
 
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
@@ -69,11 +73,9 @@ const OrderConfirmation = ({ tier }) => {
               <Instagram />
               <TwitterShareButton
                 url={"https://www.polyzero.earth"}
-                title={`I just became a @PolyZeroApp Climate ${
-                  tier.title
-                } by off-setting the CO2e footprint of ${
-                  tier.time <= 10
-                    ? `${tier.time} years of my plastic consumption!`
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
+                  storedTime <= 10
+                    ? `${storedTime} years of my plastic consumption!`
                     : "a life time of my annual plastic consumption!"
                 } `}
                 hashtags={["PolyZeroApp"]}
@@ -94,17 +96,17 @@ const OrderConfirmation = ({ tier }) => {
           </div>
         </div>
         <div className="max-w-xs">
-          <Card imgSrc={tier.image}>
+          <Card imgSrc={tier && tier.image}>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {tier.title}
+              {storedTitle}
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              You offset <b>{tier.tonnes.toFixed(2)} tonnes</b> of CO2e
+              You offset <b>{storedTonnes} tonnes</b> of CO2e
               <br />
-              or <b>{tier.time} year(s)</b> worth of plastic
+              or <b>{storedTime} year(s)</b> worth of plastic
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{(tier.time * tier.cost).toLocaleString("ja-JP")}
+              ￥{(storedTime * storedPayment).toLocaleString("ja-JP")}
             </h5>
           </Card>
         </div>

@@ -14,7 +14,7 @@ const Tiers = ({ setTier }) => {
   }, []);
 
   return (
-    <div className="bg-slate-200 flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-6">
+    <div className="bg-slate-100 flex flex-col flex-grow mt-8 items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-6">
       <Header
         text="Offset your"
         highlightedText="CO2 emissions"

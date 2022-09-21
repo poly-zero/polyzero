@@ -19,16 +19,16 @@ const LandingNavBar = () => {
           <div className="flex my-2">
             <img
               src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mt-1 ml-2 mr-3 h-8 md:h-14"
+              className="h-8 mt-1 ml-2 mr-3 md:h-14"
               alt="PolyZero Logo"
             />
-            <span className="self-center whitespace-nowrap text-xl md:text-2xl font-semibold dark:text-white">
+            <span className="self-center text-xl font-semibold whitespace-nowrap md:text-2xl dark:text-white">
               PolyZero
             </span>
           </div>
         </Navbar.Brand>
-        <div className="flex md:order-2 gap-2">
-          <Button className="capitalize text-base">
+        <div className="flex gap-2 md:order-2">
+          <Button className="text-base capitalize">
             <NavLink to={"/wizard"} exact={"true"}>
               {mobile ? <Footprint /> : "Estimate my plastic footprint"}
             </NavLink>

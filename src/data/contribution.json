@@ -1,6 +1,22 @@
 [
   {
-    "title": "Forest",
-    "text": "Save the trees"
+    "title": "What happens when you offset your emissions through PolyZero?",
+    "text": 
+    "PolyZero works with a local company called Creattura to source high-quality carbon credits from the J-Credit Registry in Japan."
+  },
+  {
+    "title": "What types of projects does PolyZero support?",
+    "text": 
+    "In general, we aim for Carbon Removal credits which means your money will go to sponsor nature-based projects such as planting new forests to actively remove CO2 from the atmosphere."
+  },
+  {
+    "title": "CO2 accounting",
+    "text": 
+    "Carbon credits are sold by the metric tonne of CO2. While the market price for a tonne fluctuates, we guarantee that your purchase will retire the equivalent amount of CO2 or more, to what is shown on the checkout screen. We anticipate that in many cases we may be able to off-set a higher volume than what is promised. As we purchase credits we will share the details on this page transparently so you can see specifically which projects are being supported."
+  },
+   {
+    "title": "A note about our costs",
+    "text": 
+    "This web-site is built and maintained by volunteers. No one on the team is being paid for their labor on the site. Further, to date all hosting costs have been borne out of pocket by project team members. As the project grows, we may opt to pay for the hosting costs from extra support funds (after carbon credits are purchased) if there are any left over. If this is the case, we commit to tracking these costs transparently here."
   }
 ]

@@ -7,6 +7,7 @@ import Groceries from "../components/footprint/Groceries";
 import { Wizard, useWizard } from "react-use-wizard";
 import { useNavigate } from "react-router-dom";
 import { saveFootprintData } from "../firebase/firebase";
+import ProgressBar from "../components/footprint/ProgressBar";
 
 const FootprintWizard = ({ result, setResult }) => {
   const navigateTo = useNavigate();
@@ -44,27 +45,37 @@ const FootprintWizard = ({ result, setResult }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-grow">
-      <Wizard>
-        <Country result={result} setResult={setResult} useWizard={useWizard} />
-        <Groceries
-          result={result}
-          setResult={setResult}
-          useWizard={useWizard}
-        />
-        <OnlineShopping
-          result={result}
-          setResult={setResult}
-          useWizard={useWizard}
-        />
-        <PetBottles
-          result={result}
-          setResult={setResult}
-          useWizard={useWizard}
-        />
-        <TakeOut result={result} setResult={setResult} useWizard={useWizard} />
-      </Wizard>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
+        <Wizard header={<ProgressBar />}>
+          <Country
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <Groceries
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <OnlineShopping
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <PetBottles
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <TakeOut
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+        </Wizard>
+      </form>
+    </>
   );
 };
 

@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import {
   auth,
   registerWithEmailAndPassword,
-  registerWithGoogle,
+  registerWithGoogle
 } from "../firebase/firebase";
 import { ReactComponent as Google } from "../assets/loginIcons/google.svg";
 
@@ -142,25 +142,6 @@ function Registration() {
                   value={confirmationPassword}
                   onChange={(e) => setConfirmationPassword(e.target.value)}
                 />
-              </div>
-              <div className="min-h-6 pl-7 mb-0.5 flex justify-center items-center gap-1">
-                <input
-                  id="terms"
-                  className="w-5 h-5 ease-soft -ml-7 rounded-1.4 duration-250 mt-1 cursor-pointer border border-solid border-slate-200 bg-white transition-all "
-                  type="checkbox"
-                  value=""
-                  aria-required
-                  required
-                />
-                <label
-                  className="mt-1 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700"
-                  htmlFor="terms"
-                >
-                  I agree the
-                  <Link to="/" className="font-bold text-slate-700">
-                    Terms and Conditions
-                  </Link>
-                </label>
               </div>
               <div className="text-center">
                 <button

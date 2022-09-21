@@ -7,7 +7,7 @@ const Header = ({ text, highlightedText, caption }) => {
           {highlightedText}
         </span>
       </h1>
-      <p className="w-3/4 text-md mb-4 md:text-center md:text-base md:mb-0 text-gray-600">
+      <p className="w-3/4 text-md mb-4 md:text-center md:text-base md:mb-0 text-gray-500">
         {caption}
       </p>
     </header>

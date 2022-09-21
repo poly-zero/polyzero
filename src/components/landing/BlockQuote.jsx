@@ -6,7 +6,7 @@ const BlockQuote = ({ quote, article, author, sourceLink }) => {
     <figure className="flex flex-col items-center max-w-screen-md text-center px-2 mb-4">
       <Quote className="h-5 md:h-14" />
       <blockquote>
-        <p className="text-sm md:text-2xl italic font-medium text-gray-900 dark:text-white">
+        <p className="px-8 text-sm md:text-xl italic font-medium text-gray-900 dark:text-white">
           "{quote}"
         </p>
       </blockquote>

@@ -158,7 +158,10 @@ const Landing = () => {
             >
               <Coffee />
             </a>
-            <p className="text-center">Buy us a coffee</p>
+            <p className="text-center">
+              Buy us a coffee
+              <p>(in a reusable mug)</p>
+            </p>
           </div>
         </div>
       </div>

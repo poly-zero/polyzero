@@ -3,33 +3,6 @@ import LandingNavBar from "../components/landing/LandingNavBar";
 import { Button } from "flowbite-react";
 
 const Resources = () => {
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-
-  const scrollMiddle = () => {
-    window.scrollTo({
-      top: 1100,
-      behavior: "smooth"
-    });
-  };
-
-  const scrollBottom = () => {
-    window.scrollTo({
-      top: 1900,
-      behavior: "smooth"
-    });
-  };
-
-  const scrollEndPage = () => {
-    window.scrollTo({
-      top: 2500,
-      behavior: "smooth"
-    });
-  };
   return (
     <Fragment>
       <div className="h-screen md:-ml-64 ">
@@ -50,14 +23,21 @@ const Resources = () => {
 
         <br />
         <div className="flex flex-row space-x-4 text-center justify-center  px-3">
-          <Button onClick={scrollTop}>Plastic and Co2</Button>
-          <Button onClick={scrollMiddle} id="single">
+          <Button
+            onClick={() => window.scrollTo({ top: 900, behavior: "smooth" })}
+          >
             Single-Use Plastic Production
           </Button>
-          <Button onClick={scrollBottom}>
+          <Button
+            onClick={() => window.scrollTo({ top: 1600, behavior: "smooth" })}
+          >
             Impacts of Plastic on Human Health
           </Button>
-          <Button onClick={scrollEndPage}>Region-specific Data</Button>
+          <Button
+            onClick={() => window.scrollTo({ top: 2500, behavior: "smooth" })}
+          >
+            Region-specific Data
+          </Button>
         </div>
 
         <div className="flex col justify-center  text-center p-11 ">
@@ -92,7 +72,6 @@ const Resources = () => {
                   The plastic pollution crisis overwhelming our oceans is also a
                   significant and growing threat to the Earth’s climate.
                 </p>
-                <br />
                 <p>
                   Nearly every piece of plastic begins as a fossil fuel, and
                   greenhouse gasses are emitted at each stage of the plastic
@@ -234,12 +213,12 @@ const Resources = () => {
         {/* 3rd col */}
         <div className="flex col justify-center  text-center p-11  ">
           <div className=" flex  px-11  border justify-center w-3/5 ">
-            <div className="justify-center ">
+            <div className="justify-center  ">
               <h4 className="underline underline-offset-1">
                 Impacts of Plastic on Human Health
               </h4>
               <p>
-                <div>
+                <div id="impacts">
                   <img
                     className="mx-auto
                     p-2"
@@ -266,7 +245,6 @@ const Resources = () => {
               <br />
 
               <div>
-                <br />
                 <p>
                   A new study finds on average people could be ingesting
                   approximately 5 grams of plastic every week, which is the
@@ -299,7 +277,6 @@ const Resources = () => {
                   of some plastic chemicals and plastic particles on human
                   health.
                 </p>
-                <br />
                 <p>
                   Scientists have established links between everyday exposure to
                   chemical additives that leach from plastics and reproductive
@@ -359,7 +336,6 @@ const Resources = () => {
                     Japan's Plastic Waste Management
                   </strong>
                 </p>
-
                 <p>
                   {" "}
                   <a

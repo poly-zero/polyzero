@@ -16,10 +16,7 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 
 const OrderConfirmation = ({ tier }) => {
-  const storedPayment = localStorage.getItem("payment");
-  const storedTonnes = localStorage.getItem("tonnes");
-  const storedTitle = localStorage.getItem("title");
-  const storedTime = localStorage.getItem("time");
+  localStorage.clear();
 
   const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
@@ -33,8 +30,6 @@ const OrderConfirmation = ({ tier }) => {
     if (!user) navigate("/login");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
-
-  // let secondMessage = storedTitle;
 
   return (
     <div className="flex flex-grow items-center justify-center">
@@ -74,9 +69,11 @@ const OrderConfirmation = ({ tier }) => {
               <Instagram />
               <TwitterShareButton
                 url={"https://www.polyzero.earth"}
-                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
-                  storedTime <= 10
-                    ? `${storedTime} years of my plastic consumption!`
+                title={`I just became a @PolyZeroApp Climate ${
+                  tier.title
+                } by off-setting the CO2e footprint of ${
+                  tier.time <= 10
+                    ? `${tier.time} years of my plastic consumption!`
                     : "a life time of my annual plastic consumption!"
                 } `}
                 hashtags={["PolyZeroApp"]}
@@ -99,15 +96,15 @@ const OrderConfirmation = ({ tier }) => {
         <div className="max-w-xs">
           <Card imgSrc={tier.image}>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {storedTitle}
+              {tier.title}
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              You offset <b>{storedTonnes} tonnes</b> of CO2e
+              You offset <b>{tier.tonnes.toFixed(2)} tonnes</b> of CO2e
               <br />
-              or <b>{storedTime} year(s)</b> worth of plastic
+              or <b>{tier.time} year(s)</b> worth of plastic
             </p>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{(storedPayment * storedTime).toLocaleString("ja-JP")}
+              ￥{(tier.time * tier.cost).toLocaleString("ja-JP")}
             </h5>
           </Card>
         </div>

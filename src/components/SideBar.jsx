@@ -21,11 +21,9 @@ const SideBar = ({ result }) => {
             !result
               ? 0
               : pathName === "/wizard"
-              ? 20
-              : pathName === "/results"
-              ? 45
+              ? 25
               : pathName === "/tiers"
-              ? 60
+              ? 50
               : pathName === "/payment"
               ? 75
               : pathName === "/confirmation"

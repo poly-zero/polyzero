@@ -85,7 +85,7 @@ const Results = ({ result, setResult }) => {
 
   return (
     <div className="flex flex-col flex-grow gap-4 justify-center items-center w-full bg-slate-100">
-      <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+      <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl text-center">
         My
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
           {" "}
@@ -96,7 +96,7 @@ const Results = ({ result, setResult }) => {
         <div className="flex flex-col md:flex-row gap-4">
           <Card className="md:w-3/4">
             <CardBody>
-              <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+              <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl">
                 <small className="text-base md:text-xl font-normal text-gray-500">
                   Plastic consumption
                 </small>
@@ -115,7 +115,7 @@ const Results = ({ result, setResult }) => {
           </Card>
           <Card>
             <CardBody>
-              <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl ">
+              <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl">
                 <small className="text-base md:text-xl font-normal text-gray-500">
                   National average
                 </small>
@@ -131,46 +131,45 @@ const Results = ({ result, setResult }) => {
             </CardBody>
           </Card>
         </div>
-        <Card>
-          <CardBody>
-            <div className="flex flex-col gap-2">
-              <small className="text-base md:text-xl font-normal text-gray-500">
-                This amount of plastic will generate at least
-              </small>
-              <h1 className="mb-4 font-extrabold text-gray-900 dark:text-white text-4xl md:text-6xl">
-                {useCounter(footprint.carbon)}
+        <div className="flex flex-col md:flex-row gap-4">
+          <Card className="md:w-1/2">
+            <CardBody>
+              <div className="flex flex-col gap-2">
+                <small className="text-base md:text-xl font-normal text-gray-500">
+                  This amount of plastic will generate at least
+                </small>
+                <h1 className="mb-4 font-extrabold text-gray-900 dark:text-white text-4xl md:text-6xl">
+                  {useCounter(footprint.carbon)}
 
-                <span className="text-xl md:text-4xl">
-                  kg CO
-                  <span className="text-xl">2</span>e
-                </span>
-              </h1>
-              <p className="text-xs md:text-base font-normal text-gray-700 dark:text-gray-400">
-                emissions over the course of its life (production to
-                end-of-life).
-              </p>
-            </div>
-          </CardBody>
-        </Card>
-      </div>
-      <div className="w-3/4 md:w-1/2">
-        <Card>
-          <CardBody>
-            <div className="flex flex-col items-center gap-2">
-              <small className="text-base md:text-xl font-normal text-gray-500">
-                Share your results and help raise awareness!
-              </small>
-            </div>
-            <div className="flex justify-center gap-4 -my-2">
-              {/*  */}
-              <FacebookShareButton
-                url={"https://www.polyzero.earth"}
-                hashtag={"#polyzero"}
-              >
-                <FaceBook />
-              </FacebookShareButton>
-              <Instagram />
-              {/* <a
+                  <span className="text-xl md:text-4xl">
+                    kg CO
+                    <span className="text-xl">2</span>e
+                  </span>
+                </h1>
+                <p className="text-xs md:text-base font-normal text-gray-700 dark:text-gray-400">
+                  emissions over the course of its life (production to
+                  end-of-life).
+                </p>
+              </div>
+            </CardBody>
+          </Card>
+          <Card>
+            <CardBody className="flex flex-col justify-between gap-4">
+              <div className="flex flex-col items-center gap-2">
+                <small className="text-base md:text-xl font-normal text-gray-500">
+                  Share your results and help raise awareness!
+                </small>
+              </div>
+              <div className="flex gap-4 -my-2">
+                {/*  */}
+                <FacebookShareButton
+                  url={"https://www.polyzero.earth"}
+                  hashtag={"#polyzero"}
+                >
+                  <FaceBook />
+                </FacebookShareButton>
+                <Instagram />
+                {/* <a
               href={
                 `https://twitter.com/intent/tweet?text=${
                   messagesTwitter[0].Q1
@@ -186,30 +185,43 @@ const Results = ({ result, setResult }) => {
               className=""
             > 
              </a> */}
-              <TwitterShareButton
-                url={"https://www.polyzero.earth"}
-                title={`I use approx ${footprint.plastic}kg of disposable plastic/year, corresponding to ${footprint.carbon}kg of CO2e. %0aHow much plastic do you use? Estimated with`}
-                hashtags={["PolyZeroApp"]}
-              >
-                <Twitter />
-              </TwitterShareButton>
-              <LinkedinShareButton url={"https://www.polyzero.earth"}>
-                <LinkedIn />
-              </LinkedinShareButton>
-            </div>
-            <div className="flex flex-wrap gap-2 justify-center">
-              <Button size={"xl"} onClick={() => navigateTo("/resources")}>
-                Shrink your plastic habit
-              </Button>
-              <Button size={"xl"} onClick={() => navigateTo("/tiers")}>
-                Off-set your CO2 emissions
-              </Button>
-              <Button size={"xl"} onClick={resetFootprint}>
-                Re-do Footprint Estimate
-              </Button>
-            </div>
-          </CardBody>
-        </Card>
+                <TwitterShareButton
+                  url={"https://www.polyzero.earth"}
+                  title={`I use approx ${footprint.plastic}kg of disposable plastic/year, corresponding to ${footprint.carbon}kg of CO2e. %0aHow much plastic do you use? Estimated with`}
+                  hashtags={["PolyZeroApp"]}
+                >
+                  <Twitter />
+                </TwitterShareButton>
+                <LinkedinShareButton url={"https://www.polyzero.earth"}>
+                  <LinkedIn />
+                </LinkedinShareButton>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </div>
+      <div className="flex flex-wrap w-3/4 md:w-1/2 gap-4 justify-center ">
+        <Button
+          className="capitalize text-base"
+          size={"xl"}
+          onClick={() => navigateTo("/resources")}
+        >
+          Shrink your plastic habit
+        </Button>
+        <Button
+          className="capitalize text-base"
+          size={"xl"}
+          onClick={() => navigateTo("/tiers")}
+        >
+          Off-set your CO2 emissions
+        </Button>
+        <Button
+          className="capitalize text-base"
+          size={"xl"}
+          onClick={resetFootprint}
+        >
+          Re-do Footprint Estimate
+        </Button>
       </div>
     </div>
   );

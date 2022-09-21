@@ -26,7 +26,7 @@ function Login() {
     if (loading) {
       return;
     }
-    if (user && storedPayment) navigate("/payment");
+    if (user && storedPayment) navigate("/tiers");
     else if (user) navigate("/wizard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
@@ -106,9 +106,9 @@ function Login() {
                 </button>
               </div>
               <p className="mt-4 mb-0 leading-normal text-sm text-center">
-                Don't have an count yet?{" "}
+                Don't have an account yet?{" "}
                 <Link to="/registration" className="font-bold text-slate-700">
-                  Register
+                  Register here
                 </Link>
               </p>
             </form>

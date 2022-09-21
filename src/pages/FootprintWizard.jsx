@@ -35,7 +35,7 @@ const FootprintWizard = ({ result, setResult }) => {
     const final = calculateResults(result);
     const finalResult = {
       ...result,
-      footprintResult: final,
+      footprintResult: final
     };
     localStorage.setItem("footprint", JSON.stringify(finalResult));
     saveFootprintData(finalResult);

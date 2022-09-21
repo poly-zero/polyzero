@@ -7,7 +7,7 @@ import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-  LineShareButton,
+  LineShareButton
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
@@ -36,8 +36,8 @@ const OrderConfirmation = ({ tier }) => {
   }, [user, loading]);
 
   return (
-    <div className="flex flex-grow items-center justify-center">
-      <div className="flex flex-col md:flex-row items-center justify-center rounded-lg shadow-xl bg-slate-200 py-16 gap-14">
+    <div className="flex items-center justify-center flex-grow">
+      <div className="flex flex-col items-center justify-center py-16 rounded-lg shadow-xl md:flex-row bg-slate-200 gap-14">
         <div className="flex flex-col w-3/4 md:w-1/2">
           <div className="flex flex-col">
             <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -48,7 +48,7 @@ const OrderConfirmation = ({ tier }) => {
               !
             </h1>
             <div className="w-3/4">
-              <p className="my-8 md:text-xl font-normal text-gray-500 dark:text-gray-400">
+              <p className="my-8 font-normal text-gray-500 md:text-xl dark:text-gray-400">
                 You took the time to learn about your plastic footprint and its
                 effect on the environment.
                 <br />
@@ -59,7 +59,7 @@ const OrderConfirmation = ({ tier }) => {
             </div>
           </div>
           <div className="flex flex-col ">
-            <h2 className="mb-4 text-2xl font-extrabold  text-gray-900 dark:text-white">
+            <h2 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white">
               Now help us raise awareness by sharing your good deed with the
               world.
             </h2>

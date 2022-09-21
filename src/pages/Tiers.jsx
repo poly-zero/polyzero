@@ -33,12 +33,12 @@ const Tiers = ({ setTier }) => {
         <p className="underline underline-offset-4">Where your money goes</p>
       </Link>
       </header>
-      <div className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-14 md:w-11/12">
+      <section className="flex flex-col gap-8 w-3/4 justify-center items-center md:flex-row md:gap-8 md:w-9/12">
         {data &&
-          tierCardData.map((tier) => {
+          tierCardData.map((tier, index) => {
             return (
               <TierCard
-                key={tier.title}
+                key={index}
                 title={tier.title}
                 time={tier.time}
                 tonnes={data.carbon / 1000}
@@ -48,7 +48,7 @@ const Tiers = ({ setTier }) => {
               />
             );
           })}
-      </div>
+      </section>
     </div>
   );
 };

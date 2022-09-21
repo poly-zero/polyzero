@@ -1,11 +1,13 @@
 import LandingNavBar from "../components/landing/LandingNavBar";
 import BlockQuote from "../components/landing/BlockQuote";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Mail } from "../assets/images/mail.svg";
 import { ReactComponent as Coffee } from "../assets/images/coffee.svg";
-import { Avatar, Carousel } from "flowbite-react";
-import { Card } from "@material-tailwind/react";
+import { Carousel } from "flowbite-react";
+import { Card, Avatar } from "@material-tailwind/react";
 import quotes from "../data/quotes.json";
+import teamMembers from "../data/team.json";
 import Header from "../components/Header";
 
 const Landing = () => {
@@ -54,7 +56,7 @@ const Landing = () => {
 
       <section
         id="about"
-        className="flex flex-col items-center justify-center bg-white p-14 h-3/4 snap-center"
+        className="flex flex-col items-center justify-center bg-white p-14 h-5/6 snap-center"
       >
         <article className="flex flex-col w-full gap-4 md:w-2/5">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl text">
@@ -78,75 +80,62 @@ const Landing = () => {
       </section>
       <section
         id="team"
-        className="flex flex-col items-center justify-center bg-slate-200 p-14 h-3/4 snap-center"
+        className="flex flex-col justify-center h-full lg:items-center bg-slate-200 p-14 lg:h-5/6 snap-center"
       >
-        <article className="flex flex-col justify-center w-full gap-4 md:w-2/5">
-          <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl">
-            The Team
+        <article className="flex flex-col w-full gap-4 md:w-5/6">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-800 lg:text-center dark:text-white md:text-5xl lg:text-6xl">
+            Meet the Team
           </h1>
-          <div className="flex flex-wrap gap-2 place-content-evenly">
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/62789620?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Kim Ly</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  kim@polyzero.org
+          <div className="flex flex-wrap gap-4 lg:gap-8 lg:place-content-evenly">
+            {teamMembers.map((member, index) => {
+              return (
+                <div className="flex items-center gap-4">
+                  <Avatar
+                    key={index}
+                    src={member.avatar}
+                    variant="circular"
+                    className="w-20 h-20 shadow-xl lg:w-32 lg:h-32"
+                  ></Avatar>
+                  <div className="flex flex-col gap-1 lg:gap-3">
+                    <div className="space-y-1 text-xs font-medium lg:text-sm dark:text-white">
+                      <h3>{member.name}</h3>
+                      <h3 className="text-gray-500 dark:text-gray-400">
+                        {member.email}
+                      </h3>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <a href={member.github} target="_blank" rel="noreferrer">
+                        <img
+                          className="w-5"
+                          src="https://cdn.onlinewebfonts.com/svg/img_44605.png"
+                          alt="Github logo link"
+                        />
+                      </a>
+                      {member.linkedIn && (
+                        <a
+                          href={member.linkedIn}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <LinkedIn className="w-7 h-7" />
+                        </a>
+                      )}
+                      {member.twitter && (
+                        <a
+                          href={member.twitter}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Twitter className="w-7 h-7" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/101638795?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Daiki Uema</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  daiki@polyzero.org
-                </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/73273137?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Joshua Haley</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  josh@polyzero.org
-                </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/73625660?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Felipe Machado</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  felipe@polyzero.org
-                </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/4993321?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Zach Brown</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  zach@polyzero.org
-                </div>
-              </div>
-            </Avatar>
+              );
+            })}
           </div>
-          <div className="flex gap-4 p-5 m-5 place-content-center">
+          <div className="flex gap-4 mt-12 -mb-8 ml-7 lg:place-content-center">
             <a
               href="https://www.buymeacoffee.com/polyzeroteam"
               target="_blank"
@@ -169,7 +158,7 @@ const Landing = () => {
           <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl">
             Contact Us
           </h1>
-          <p className="text-gray-500">
+          <p className="text-sm text-gray-500 md:text-base">
             We are volunteer-run and are actively looking for sponsors,
             collaborators, and open-source contributors. Please reach out!
           </p>

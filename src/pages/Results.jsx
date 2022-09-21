@@ -168,7 +168,6 @@ const Results = ({ result, setResult }) => {
                 >
                   <FaceBook />
                 </FacebookShareButton>
-                <Instagram />
                 {/* <a
               href={
                 `https://twitter.com/intent/tweet?text=${

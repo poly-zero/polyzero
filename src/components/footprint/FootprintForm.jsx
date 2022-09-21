@@ -7,7 +7,9 @@ const FootprintForm = ({
   storeFunction,
   setFunction,
   footprintResult,
+  selectedValue,
 }) => {
+  console.log(selectedValue);
   return (
     <div className="flex flex-col">
       {answers.map((element) => {
@@ -19,6 +21,7 @@ const FootprintForm = ({
             label={element.answer}
             value={element.value}
             onChange={(event) => setFunction(Number(event.target.value))}
+            defaultChecked={selectedValue === element.value ? true : false}
           />
         );
       })}

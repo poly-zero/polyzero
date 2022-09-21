@@ -5,7 +5,9 @@ import Header from "../Header";
 import FootprintForm from "./FootprintForm";
 
 const Groceries = ({ useWizard, result, setResult }) => {
-  const [groceryHabit, setGroceryHabit] = useState(null);
+  const [groceryHabit, setGroceryHabit] = useState(
+    result && result.grocery ? result.grocery : null
+  );
   const groceryData = footprintQuestions.find(
     (element) => element.category === "Groceries"
   );
@@ -32,6 +34,7 @@ const Groceries = ({ useWizard, result, setResult }) => {
             result={result.grocery}
             storeFunction={storeGroceryHabit}
             setFunction={setGroceryHabit}
+            selectedValue={result && result.grocery ? result.grocery : null}
           />
         </CardBody>
       </Card>

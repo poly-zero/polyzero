@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Card, CardHeader, CardBody, Button } from "@material-tailwind/react";
+import { Card, CardBody, Button } from "@material-tailwind/react";
 // import tierData from "../data/tier.json";
 // import messagesTwitter from "../data/variable.json";
 import {
@@ -8,7 +8,6 @@ import {
   TwitterShareButton,
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { useCountUp } from "use-count-up";

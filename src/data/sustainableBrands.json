@@ -50,5 +50,13 @@
     {
         "brandName": "prose",
         "website": "https://prose.com/"
+    },
+    {
+        "brandName": "Dropps",
+        "website": "https://www.dropps.com/"
+    },
+    {
+        "brandName": "Earth Hero",
+        "website": "earthhero.com"
     }
 ]

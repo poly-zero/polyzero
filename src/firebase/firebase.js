@@ -133,14 +133,12 @@ const saveTierData = async (data) => {
     console.error(err.message);
   }
 };
+
 const getStripeApi = async (data) => {
   try {
     const stripeCheckout = httpsCallable(getFunctions(app), "stripeCheckout");
     const STRIPE_PUBLIC_KEY = "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE"
     const stripe = await loadStripe(STRIPE_PUBLIC_KEY);
-    
-    console.log(data)
-    console.log(stripe)
     stripeCheckout(data)
       .then((result) => {
         stripe
@@ -152,7 +150,6 @@ const getStripeApi = async (data) => {
   } catch (error) {
       console.log(error)
   }
-
 }
 
 export {

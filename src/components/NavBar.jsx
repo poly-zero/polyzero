@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
 import { logout, getUserInfo } from "../firebase/firebase";
 import { Link } from "react-router-dom";
+import { ReactComponent as Menu } from "../assets/navIcons/menu.svg";
 
 const NavBar = ({
   setShowSidebar,
@@ -11,7 +12,6 @@ const NavBar = ({
   user,
   loading,
 }) => {
-  
   useEffect(() => {
     if (loading) return;
     if (user && !userInfo)
@@ -22,9 +22,9 @@ const NavBar = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
   return (
-    <nav className="py-6 px-3">
+    <nav className="py-2 px-3">
       <div className="container max-w-full mx-auto items-center justify-between md:px-8">
-        <Navbar rounded={true} border={true}>
+        <Navbar rounded={true} border={false}>
           {/* Navigation list container */}
           <Navbar.Collapse>
             <Navbar.Link href="/navbars">
@@ -38,7 +38,7 @@ const NavBar = ({
             type="button"
             onClick={() => setShowSidebar("left-0")}
           >
-            Menu
+            <Menu />
           </button>
 
           <div className="flex items-center gap-4">

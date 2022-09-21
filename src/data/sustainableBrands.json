@@ -1,6 +1,54 @@
 [
     {
-        "brandName": "",
-        "website": ""
+        "brandName": "LastObject",
+        "website": "https://lastobject.com/"
+    },
+    {
+        "brandName": "ethique",
+        "website": "https://ethique.com/"
+    },
+    {
+        "brandName": "Cariuma",
+        "website": "https://cariuma.com/"
+    },
+    {
+        "brandName": "Toms",
+        "website": "https://www.toms.com/"
+    },
+    {
+        "brandName": "Stasher",
+        "website": "https://www.stasherbag.com/"
+    },
+    {
+        "brandName": "Patagonia",
+        "website": "www.patagonia.com/"
+    },
+    {
+        "brandName": "All Birds",
+        "website": "https://www.allbirds.com/"
+    },
+    {
+        "brandName": "Aesop",
+        "website": "www.aesop.com/"
+    },
+    {
+        "brandName": "Bombas",
+        "website": "https://bombas.com/"
+    },
+    {
+        "brandName": "Eileen Fisher",
+        "website": "https://www.eileenfisher.com/"
+    },
+    {
+        "brandName": "ecostore",
+        "website": "https://ecostore.com/"
+    },
+    {
+        "brandName": "United by Blue",
+        "website": "https://unitedbyblue.com/"
+    },
+    {
+        "brandName": "prose",
+        "website": "https://prose.com/"
     }
 ]

@@ -1,5 +1,5 @@
 import { Label, TextInput } from "flowbite-react";
-import { Card, CardBody } from "@material-tailwind/react";
+import { Button, Card, CardBody, Input } from "@material-tailwind/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveTierData } from "../../firebase/firebase";
@@ -32,13 +32,19 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
       <Card className="transition ease-out duration-300 hover:-translate-y-1 hover:scale-105">
         <img className="w-full rounded-t-xl" src={image} alt="" />
         <CardBody className="flex flex-col gap-2">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-800 dark:text-white">
             {title}
           </h2>
-          <p className="text-lg font-normal text-gray-700 dark:text-gray-400">
-            {title === "Champion"
-              ? "Offset for a lifetime"
-              : `Offset for ${time} year(s)`}
+          <p className="text-base font-normal text-gray-700 dark:text-gray-400 whitespace-pre-wrap">
+            {title === "Champion" ? (
+              <span>
+                Offset for a <strong>lifetime</strong>
+              </span>
+            ) : (
+              <span>
+                Off set for <strong>{time} year(s)</strong>
+              </span>
+            )}
           </p>
           {title === "Champion" && (
             <div>
@@ -57,22 +63,25 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
           )}
           {age >= time ? (
             <>
-              <p className="text-lg font-bold text-gray-700 dark:text-gray-400">
-                {`Total CO2: ${(tonnes * age).toFixed(2)} tonnes`}
+              <p className="text-base text-gray-700 dark:text-gray-400">
+                Total CO2:{" "}
+                <span className="font-bold">{` ${(tonnes * age).toFixed(
+                  2
+                )} tonnes`}</span>
               </p>
-              <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold tracking-tight text-gray-800 dark:text-white">
                 {`￥${(cost * age).toLocaleString("ja-JP")}`}
               </h3>
-              <button
-                className="inline-flex items-center py-2 px-3 text-sm font-medium justify-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              <Button
+                className="capitalize text-base hover:bg-blue-600 focus:ring-4 dark:bg-blue-600 dark:hover:bg-blue-700"
                 onClick={assignTier}
               >
                 Select
-              </button>
+              </Button>
             </>
           ) : (
             <>
-              <p className="text-lg font-bold text-gray-700 dark:text-gray-400">
+              <p className="text-base font-bold text-red-500 dark:text-gray-400">
                 Please enter a number of year equal or above 15.
               </p>
             </>

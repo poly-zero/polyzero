@@ -13,6 +13,11 @@ module.exports = {
         '85': "21rem",
         '90': "22rem"
       },
+      screens: {
+        'lg': '1280px',
+        'xl': '1920px',
+        '2xl': '2520px'
+      }
     },
   },
   plugins: [require("flowbite/plugin")],

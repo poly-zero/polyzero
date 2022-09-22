@@ -1,7 +1,8 @@
 [
   {
     "category": "Groceries",
-    "prompt": "Items from the grocery store can be excessively packaged in plastics. \nPlease select the statement below that most closely describes your Grocery Shopping habits:",
+    "prompt": "Items from the grocery store can be excessively packaged in plastics.",
+    "prompt2": "Please select the statement below that most closely describes your Grocery Shopping habits:",
     "answers": [
       {
         "answerID": 1,
@@ -28,7 +29,8 @@
 
   {
     "category": "Online shopping",
-    "prompt": "Packing materials often include polystyrene and other plastics (ex. shrink-wrap, bubble-wrap) \nPlease select the statement below that most closely describes your Online Shopping habits.",
+    "prompt": "Packing materials often include polystyrene and other plastics (ex. shrink-wrap, bubble-wrap).",
+    "prompt2": "Please select the statement below that most closely describes your Online Shopping habits.",
     "answers": [
       {
         "answerID": 1,
@@ -55,7 +57,8 @@
 
   {
     "category": "PET bottles",
-    "prompt": "Even when they're recycled, PET bottles have a huge CO2 footprint. \nPlease select the statement below that most closely describes your use of PET bottles.",
+    "prompt": "Even when they're recycled, PET bottles have a huge CO2 footprint.",
+    "prompt2": "Please select the statement below that most closely describes your use of PET bottles.",
     "answers": [
       {
         "answerID": 1,
@@ -82,7 +85,8 @@
 
   {
     "category": "Take-out",
-    "prompt": "More than half of trash comes from single-use plastic packaging such as disposable food containers. \nPlease select the statement below that most closely describes your use of Plastic Food Containers & Utensils.",
+    "prompt": "More than half of trash comes from single-use plastic packaging such as disposable food containers.",
+    "prompt2": "Please select the statement below that most closely describes your use of Plastic Food Containers & Utensils.",
     "answers": [
       {
         "answerID": 1,

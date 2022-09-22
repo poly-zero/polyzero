@@ -1,4 +1,4 @@
-const Header = ({ text, highlightedText, afterHighlighted, caption }) => {
+const Header = ({ text, highlightedText, afterHighlighted, caption, caption2 }) => {
   return (
     <header className="flex flex-col items-center gap-6">
       <h1 className="flex flex-wrap justify-center my-6 text-4xl font-bold text-center text-gray-800 md:my-6 lg:my-8 dark:text-white md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-8xl">
@@ -9,8 +9,13 @@ const Header = ({ text, highlightedText, afterHighlighted, caption }) => {
         {afterHighlighted}
       </h1>
       {caption && (
-        <p className="w-3/4 mb-4 text-gray-600 text-md md:text-center md:text-base md:mb-0 xl:text-xl 2xl:text-2xl ">
+        <p className="mb-4 text-gray-600 text-md md:text-center md:text-base md:mb-0 xl:text-xl 2xl:text-2xl">
           {caption}
+        </p>
+      )}
+      {caption2 && (
+        <p className="mb-4 text-gray-600 text-md md:text-center md:text-base md:mb-0 xl:text-xl 2xl:text-2xl">
+          {caption2}
         </p>
       )}
     </header>

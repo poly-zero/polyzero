@@ -1,6 +1,5 @@
 import { useState } from "react";
 import footprintQuestions from "../../data/footprintQuestions.json";
-import { Card, CardBody } from "@material-tailwind/react";
 import Header from "../Header";
 import FootprintForm from "./FootprintForm";
 
@@ -19,27 +18,22 @@ const OnlineShopping = ({ useWizard, result, setResult }) => {
     });
   };
   return (
-    <div className="bg-slate-100 flex flex-col flex-grow items-center gap-6 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+    <div className="flex flex-col items-center flex-grow gap-6 bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
       <Header
         text={""}
         highlightedText={onlineShoppingData.category}
         caption={onlineShoppingData.prompt}
+        caption2={onlineShoppingData.prompt2}
       />
-      <Card className="w-1/2">
-        <CardBody>
-          <FootprintForm
-            answers={onlineShoppingData.answers}
-            setResult={setResult}
-            useWizard={useWizard}
-            result={result.onlineShopping}
-            storeFunction={storeOnlineShoppingHabit}
-            setFunction={setOnlineShoppingHabit}
-            selectedValue={
-              result && result.onlineShopping ? result.onlineShopping : null
-            }
-          />
-        </CardBody>
-      </Card>
+      <FootprintForm
+        answers={onlineShoppingData.answers}
+        setResult={setResult}
+        useWizard={useWizard}
+        result={result.onlineShopping}
+        storeFunction={storeOnlineShoppingHabit}
+        setFunction={setOnlineShoppingHabit}
+        selectedValue={onlineShoppingHabit}
+      />
     </div>
   );
 };

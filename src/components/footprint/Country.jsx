@@ -32,7 +32,7 @@ const Country = ({ result, setResult, useWizard }) => {
         );
 
   return (
-    <div className="flex flex-col items-center justify-center flex-grow gap-6 bg-slate-100 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+    <div className="flex flex-col items-center justify-center flex-grow gap-6 bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
       <Header
         text={"Confirm your"}
         highlightedText={"country of residence"}

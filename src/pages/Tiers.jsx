@@ -25,7 +25,7 @@ const Tiers = ({ setTier }) => {
       <Link to={"/contribution"}>
         <p className="underline underline-offset-4">Where your money goes</p>
       </Link>
-      <section className="flex flex-col items-center justify-center w-3/4 gap-8 md:flex-row md:gap-8 md:w-9/12">
+      <section className="flex flex-col items-center justify-center w-3/4 gap-8 md:flex-row md:gap-8 md:w-10/12">
         {data &&
           tierCardData.map((tier) => {
             return (

@@ -1,13 +1,11 @@
-import { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/firebase";
-import { useNavigate } from "react-router-dom";
 import { Card } from "flowbite-react";
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-  LineShareButton
+  LineShareButton,
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
@@ -22,18 +20,8 @@ const OrderConfirmation = ({ tier }) => {
   const storedTime = localStorage.time;
   const storedTonnes = localStorage.tonnes;
 
-  const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
-
-  useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
-    }
-    if (!user) navigate("/login");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, loading]);
 
   return (
     <div className="flex items-center justify-center flex-grow">

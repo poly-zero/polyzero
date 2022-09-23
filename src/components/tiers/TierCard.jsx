@@ -1,5 +1,5 @@
 import { Label, TextInput } from "flowbite-react";
-import { Button, Card, CardBody, Input } from "@material-tailwind/react";
+import { Button, Card, CardBody } from "@material-tailwind/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveTierData } from "../../firebase/firebase";
@@ -23,6 +23,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     localStorage.setItem("title", title);
     localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
     localStorage.setItem("time", age);
+    localStorage.setItem("image", image);
 
     navigateTo("/payment");
   }

@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import LandingNavBar from "../components/landing/LandingNavBar";
 import { Button } from "flowbite-react";
 import { Card } from "flowbite-react";

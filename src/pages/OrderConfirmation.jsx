@@ -38,7 +38,7 @@ const OrderConfirmation = ({ tier }) => {
   if (localStorage.fromPayment && user) {
     savePaymentData({
       title: storedTitle,
-      amount: storedPayment,
+      amount: storedPayment * storedTime,
       time: storedTime,
       tonnes: storedTonnes,
       created_at: new Date(),

@@ -52,10 +52,10 @@ const Dashboard = () => {
               </Table.Head>
               <Table.Body>
                 {userHistory &&
-                  userHistory.map((data) => {
+                  userHistory.map((data, i) => {
                     let date = new Date(data.created_at);
                     return (
-                      <Table.Row>
+                      <Table.Row key={i}>
                         <Table.Cell>{data.title}</Table.Cell>
                         <Table.Cell>{data.time}</Table.Cell>
                         <Table.Cell>{data.tonnes}</Table.Cell>

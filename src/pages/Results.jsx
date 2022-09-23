@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Card, CardHeader, CardBody, Button } from "@material-tailwind/react";
+import { Card, CardBody, Button } from "@material-tailwind/react";
 
 import {
   FacebookShareButton,
@@ -12,7 +12,11 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { useCountUp } from "use-count-up";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import { AcademicCapIcon, BackwardIcon, ForwardIcon } from "@heroicons/react/24/solid";
+import {
+  AcademicCapIcon,
+  BackwardIcon,
+  ForwardIcon,
+} from "@heroicons/react/24/solid";
 
 const Results = ({ result, setResult }) => {
   const navigateTo = useNavigate();
@@ -175,7 +179,10 @@ const Results = ({ result, setResult }) => {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-4 my-8">
-          <Button className="flex items-center gap-4 text-base capitalize bg-red-500 md:justify-center text-slate-100 basis-3/4 basis-full md:basis-1/3 hover:bg-red-600" onClick={resetFootprint}>
+          <Button
+            className="flex items-center gap-4 text-base capitalize bg-red-500 md:justify-center text-slate-100 basis-3/4 basis-full md:basis-1/3 hover:bg-red-600"
+            onClick={resetFootprint}
+          >
             <BackwardIcon className="w-8 h-8 text-slate-100" />
             Re-estimate footprint
           </Button>

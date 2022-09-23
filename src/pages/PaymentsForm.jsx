@@ -24,10 +24,9 @@ const PaymentsForm = () => {
 
   const handleStripe = () => {
     getStripeApi({
-      cost: storedPayment,
+      cost: storedPayment * storedTime,
       title: storedTittle,
       image: storedImage,
-      time: storedTime,
     });
   };
 

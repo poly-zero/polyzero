@@ -10,6 +10,7 @@ module.exports = {
   ],
   rules: {
     "quotes": ["error", "double"],
+    "linebreak-style": 0,
   },
   parserOptions: {
     "ecmaVersion": 2017,

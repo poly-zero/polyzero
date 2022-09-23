@@ -14,7 +14,6 @@ import {
 
 const SideBar = ({ result }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
-  const [userInfo, setUserInfo] = useState(null);
   const [user, loading, error] = useAuthState(auth);
   const [isMobileView, setIsMobileView] = useState(false);
   const pathName = useLocation().pathname;
@@ -27,7 +26,7 @@ const SideBar = ({ result }) => {
     <>
       <div className="">
         <Progress
-        color="green"
+          color="green"
           progress={
             !result
               ? 0
@@ -50,8 +49,6 @@ const SideBar = ({ result }) => {
         <NavBar
           showSidebar={showSidebar}
           setShowSidebar={setShowSidebar}
-          userInfo={userInfo}
-          setUserInfo={setUserInfo}
           user={user}
           loading={loading}
           error={error}
@@ -144,7 +141,9 @@ const SideBar = ({ result }) => {
                             {user.email}
                           </span>
                         </Dropdown.Header>
-                        <Dropdown.Item>Dashboard</Dropdown.Item>
+                        <Dropdown.Item>
+                          <Link to="/dashboard">DashBoard</Link>
+                        </Dropdown.Item>
                         <Dropdown.Item>Settings</Dropdown.Item>
                         <Dropdown.Item onClick={() => logout()}>
                           Log out

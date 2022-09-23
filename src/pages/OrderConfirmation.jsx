@@ -41,7 +41,7 @@ const OrderConfirmation = ({ tier }) => {
       amount: storedPayment,
       time: storedTime,
       tonnes: storedTonnes,
-      created_ate: new Date(),
+      created_at: new Date(),
       uid: user.uid,
     });
     localStorage.removeItem("fromPayment");

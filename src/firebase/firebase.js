@@ -93,9 +93,9 @@ const logInWithEmailAndPassword = async (email, password) => {
   }
 };
 
-const getUserInfo = async (userId) => {
+const getUserHistory = async (userId) => {
   try {
-    const q = query(collection(db, "users"), where("uid", "==", userId));
+    const q = query(collection(db, "payment"), where("uid", "==", userId));
     const docs = await getDocs(q);
     return docs;
   } catch (err) {
@@ -166,7 +166,7 @@ export {
   registerWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
-  getUserInfo,
+  getUserHistory,
   sendPasswordReset,
   logout,
   saveFootprintData,

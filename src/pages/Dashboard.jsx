@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { auth, getUserInfo } from "../firebase/firebase";
+import { auth, getUserHistory } from "../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Card } from "flowbite-react";
+import { Avatar, Table } from "flowbite-react";
 import { useNavigate } from "react-router";
 
 const Dashboard = () => {
-  const [userInfo, setUserInfo] = useState(null);
+  const [userHistory, setUserHistory] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
@@ -13,29 +13,62 @@ const Dashboard = () => {
   useEffect(() => {
     if (loading) return;
     if (!user) navigate("/");
-    if (user && !userInfo)
-      getUserInfo(user.uid).then((res) =>
-        res.forEach((doc) => setUserInfo(doc.data()))
-      );
-    else if (!user) setUserInfo(null);
+    if (user && !userHistory)
+      getUserHistory(user.uid).then((snapshot) => {
+        const data = [];
+        snapshot.forEach((doc) => {
+          data.push({
+            amount: doc.data().amount,
+            created_at: doc.data().created_at.toDate(),
+            time: doc.data().time,
+            title: doc.data().title,
+            tonnes: doc.data().tonnes,
+          });
+        });
+        setUserHistory(data);
+      });
+    else if (!user) setUserHistory(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
   return (
     <>
-      {userInfo && (
-        <div className="max-w-sm">
-          <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {userInfo.email}
-            </h5>
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {userInfo.name}
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              Footprint: {userInfo.footprint} CO2e
-            </p>
-          </Card>
+      {user && (
+        <div className="px-3 py-2 grid grid-flow-col auto-cols-max">
+          <div className="container items-center justify-between max-w-full mx-auto md:px-8">
+            <Avatar img={user.photoURL ? user.photoURL : false} size="xl" />
+            <h1>{user.displayName}</h1>
+            <h1>Email: {user.email}</h1>
+          </div>
+          <div>
+            <h1>User History</h1>
+            <Table>
+              <Table.Head>
+                <Table.HeadCell>Title</Table.HeadCell>
+                <Table.HeadCell>Time</Table.HeadCell>
+                <Table.HeadCell>Tonnes</Table.HeadCell>
+                <Table.HeadCell>Amount</Table.HeadCell>
+                <Table.HeadCell>Date</Table.HeadCell>
+              </Table.Head>
+              <Table.Body>
+                {userHistory &&
+                  userHistory.map((data) => {
+                    let date = new Date(data.created_at);
+                    return (
+                      <Table.Row>
+                        <Table.Cell>{data.title}</Table.Cell>
+                        <Table.Cell>{data.time}</Table.Cell>
+                        <Table.Cell>{data.tonnes}</Table.Cell>
+                        <Table.Cell>{data.amount}</Table.Cell>
+                        <Table.Cell>
+                          {date.toLocaleDateString("ja-JP")}
+                        </Table.Cell>
+                      </Table.Row>
+                    );
+                  })}
+              </Table.Body>
+            </Table>
+          </div>
         </div>
       )}
     </>

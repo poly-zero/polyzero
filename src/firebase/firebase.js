@@ -20,7 +20,7 @@ import {
 } from "firebase/firestore";
 import { loginTracking } from "../analytics/tracking";
 import { loadStripe } from "@stripe/stripe-js";
-import { getFunctions, httpsCallable } from 'firebase/functions'
+import { getFunctions, httpsCallable } from "firebase/functions";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -137,20 +137,20 @@ const saveTierData = async (data) => {
 const getStripeApi = async (data) => {
   try {
     const stripeCheckout = httpsCallable(getFunctions(app), "stripeCheckout");
-    const STRIPE_PUBLIC_KEY = "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE"
+    const STRIPE_PUBLIC_KEY =
+      "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE";
     const stripe = await loadStripe(STRIPE_PUBLIC_KEY);
-    stripeCheckout(data)
-      .then((result) => {
-        stripe
-          .redirectToCheckout({sessionId: result.data.id})
-          .then((result) => {
-            console.log(result);
-          });
-      })
+    stripeCheckout(data).then((result) => {
+      stripe
+        .redirectToCheckout({ sessionId: result.data.id })
+        .then((result) => {
+          console.log(result);
+        });
+    });
   } catch (error) {
-      console.log(error)
+    console.log(error);
   }
-}
+};
 
 export {
   auth,

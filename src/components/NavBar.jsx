@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
-import { logout, getUserInfo } from "../firebase/firebase";
+import { logout, getUserHistory } from "../firebase/firebase";
 import { Link } from "react-router-dom";
 import { ArrowLeftOnRectangleIcon, Bars3Icon, UserPlusIcon } from "@heroicons/react/24/solid";
 
@@ -15,7 +15,7 @@ const NavBar = ({
   useEffect(() => {
     if (loading) return;
     if (user && !userInfo)
-      getUserInfo(user.uid).then((res) =>
+      getUserHistory(user.uid).then((res) =>
         res.forEach((doc) => setUserInfo(doc.data()))
       );
     else if (!user) setUserInfo(null);

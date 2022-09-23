@@ -1,8 +1,26 @@
 import { Button } from "flowbite-react";
+import { auth } from "../firebase/firebase";
 import { Fragment } from "react";
 import { getStripeApi } from "../firebase/firebase";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const PaymentsForm = () => {
+  const navigate = useNavigate();
+
+  // eslint-disable-next-line no-unused-vars
+  const [user, loading, error] = useAuthState(auth);
+
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (!user) navigate("/login");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, loading]);
+
   const storedPayment = localStorage.getItem("payment");
   const storedTime = localStorage.getItem("time");
   const storedTittle = localStorage.getItem("title");

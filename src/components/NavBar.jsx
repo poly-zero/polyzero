@@ -1,26 +1,13 @@
-import { useEffect } from "react";
 import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
-import { logout, getUserHistory } from "../firebase/firebase";
+import { logout } from "../firebase/firebase";
 import { Link } from "react-router-dom";
-import { ArrowLeftOnRectangleIcon, Bars3Icon, UserPlusIcon } from "@heroicons/react/24/solid";
+import {
+  ArrowLeftOnRectangleIcon,
+  Bars3Icon,
+  UserPlusIcon,
+} from "@heroicons/react/24/solid";
 
-const NavBar = ({
-  setShowSidebar,
-  pathName,
-  userInfo,
-  setUserInfo,
-  user,
-  loading,
-}) => {
-  useEffect(() => {
-    if (loading) return;
-    if (user && !userInfo)
-      getUserHistory(user.uid).then((res) =>
-        res.forEach((doc) => setUserInfo(doc.data()))
-      );
-    else if (!user) setUserInfo(null);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, loading]);
+const NavBar = ({ setShowSidebar, pathName, user }) => {
   return (
     <nav className="px-3 py-2">
       <div className="container items-center justify-between max-w-full mx-auto md:px-8">
@@ -63,7 +50,9 @@ const NavBar = ({
                         {user.email}
                       </span>
                     </Dropdown.Header>
-                    <Dropdown.Item>Dashboard</Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/dashboard">DashBoard</Link>
+                    </Dropdown.Item>
                     <Dropdown.Item>Settings</Dropdown.Item>
                     <Dropdown.Item onClick={() => logout()}>
                       Log out
@@ -75,10 +64,14 @@ const NavBar = ({
               <>
                 <Button.Group>
                   <Button color="gray">
-                    <Link to="/login"><ArrowLeftOnRectangleIcon className="w-6 text-gray-700"/></Link>
+                    <Link to="/login">
+                      <ArrowLeftOnRectangleIcon className="w-6 text-gray-700" />
+                    </Link>
                   </Button>
                   <Button color="gray">
-                    <Link to="/registration"><UserPlusIcon className="w-6 text-gray-700"/></Link>
+                    <Link to="/registration">
+                      <UserPlusIcon className="w-6 text-gray-700" />
+                    </Link>
                   </Button>
                 </Button.Group>
               </>

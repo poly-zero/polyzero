@@ -134,6 +134,14 @@ const saveTierData = async (data) => {
   }
 };
 
+const savePaymentData = async (data) => {
+  try {
+    await addDoc(collection(db, "payment"), data);
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
 const getStripeApi = async (data) => {
   try {
     const stripeCheckout = httpsCallable(getFunctions(app), "stripeCheckout");
@@ -163,5 +171,6 @@ export {
   logout,
   saveFootprintData,
   saveTierData,
+  savePaymentData,
   getStripeApi,
 };

@@ -1,5 +1,5 @@
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase/firebase";
+import { auth, savePaymentData } from "../firebase/firebase";
 import { Card } from "flowbite-react";
 import {
   FacebookShareButton,
@@ -12,6 +12,8 @@ import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-i
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const OrderConfirmation = ({ tier }) => {
   // localStorage.clear();
@@ -19,9 +21,31 @@ const OrderConfirmation = ({ tier }) => {
   const storedPayment = localStorage.payment;
   const storedTime = localStorage.time;
   const storedTonnes = localStorage.tonnes;
-
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (!user) navigate("/login");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, loading]);
+
+  if (localStorage.fromPayment && user) {
+    savePaymentData({
+      title: storedTitle,
+      amount: storedPayment,
+      time: storedTime,
+      tonnes: storedTonnes,
+      created_ate: new Date(),
+      uid: user.uid,
+    });
+    localStorage.removeItem("fromPayment");
+  }
 
   return (
     <div className="flex items-center justify-center flex-grow">

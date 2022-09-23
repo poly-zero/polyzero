@@ -11,7 +11,7 @@ const PaymentsForm = () => {
 
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
-
+  
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -26,21 +26,8 @@ const PaymentsForm = () => {
   const storedTittle = localStorage.getItem("title");
   const storedImage = localStorage.getItem("image");
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await fetch("/", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(body),
-  //     });
-  //     window.location = "/";
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const handleStripe = () => {
+    localStorage.setItem("fromPayment", "yes");
     getStripeApi({
       cost: storedPayment * storedTime,
       title: storedTittle,

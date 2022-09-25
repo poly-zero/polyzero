@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 const Country = ({ result, setResult, useWizard }) => {
+  // Japan selected by default
   const [selectedCountry, setSelectedCountry] = useState(
     result && result.country ? result.country : countries[44]
   );
@@ -32,23 +33,28 @@ const Country = ({ result, setResult, useWizard }) => {
         );
 
   return (
-    <div className="flex flex-col items-center justify-center flex-grow gap-6 bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-      <Header
-        text={"Confirm your"}
-        highlightedText={"country of residence"}
-        caption={
-          "This information will be used to determine the national per capita average of plastic consumption (kg) in your country"
-        }
-      />
+    <div className="flex flex-col items-center justify-center flex-grow gap-6 lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+      <div className="lg:basis-1/2">
+        <Header
+          highlightedText="Country of Residence"
+          caption="Please confirm your country of residence. This information will be
+          used to determine the national per capita average of plastic
+          consumption (kg) in your country."
+        />
+      </div>
 
-      <div className="z-40 flex flex-col items-center justify-center w-3/4 gap-2 md:w-1/4">
-        <Combobox value={selectedCountry} onChange={setSelectedCountry}>
+      <div className="z-40 flex flex-col items-center justify-center w-3/4 gap-2 md:w-1/2 lg:w-1/4">
+        <Combobox
+          value={selectedCountry}
+          onChange={setSelectedCountry}
+          className="relative lg:mt-8"
+        >
           <div className="relative w-full">
             <div className="relative w-full overflow-hidden text-left bg-white rounded-lg shadow-md cursor-default sm:text-sm">
               <Combobox.Input
                 className="w-full border-none py-2.5 pl-3 pr-10 text-xl leading-5 text-gray-700 focus:ring-0"
                 // What is displayed in input box after selection
-                displayValue={(country) => (!country ? "" : country.name)}
+                displayValue={(country) => (!country ? "" : country.flag + " " + country.name)}
                 onChange={(event) => setQuery(event.target.value)}
                 onClick={() => setSelectedCountry("")}
               />
@@ -69,7 +75,7 @@ const Country = ({ result, setResult, useWizard }) => {
               <Combobox.Options className="absolute z-50 w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                 {filteredCountries.length === 0 && query !== "" ? (
                   <div className="relative px-4 py-2 text-gray-700 cursor-default select-none">
-                    Nothing found.
+                    Country not found.
                   </div>
                 ) : (
                   filteredCountries.map((country) => (
@@ -89,15 +95,19 @@ const Country = ({ result, setResult, useWizard }) => {
                               selectedCountry ? "font-medium" : "font-normal"
                             }`}
                           >
-                            {country.name}
+                            {country.flag}&nbsp;&nbsp;{country.name}
                           </span>
+                          {/* BUG, not displaying properly */}
                           {selectedCountry ? (
                             <span
                               className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
                                 active ? "text-white" : "text-teal-600"
                               }`}
                             >
-                              <CheckCircleIcon className="w-5 h-5 text-emerald-500" />
+                              <CheckCircleIcon
+                                className="w-5 h-5 text-emerald-500"
+                                aria-hidden={true}
+                              />
                             </span>
                           ) : null}
                         </>

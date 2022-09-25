@@ -1,7 +1,4 @@
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-} from "@heroicons/react/24/solid";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Button } from "@material-tailwind/react";
 
 const FootprintWizardButtons = ({
@@ -37,7 +34,9 @@ const FootprintWizardButtons = ({
             <ArrowLeftIcon className="w-5 h-5 text-white" />
           </Button>
           <Button
-            className="flex justify-center basis-1/2 md:basis:1/4 rounded-xl"
+            className={`flex justify-center basis-1/2 md:basis:1/4 rounded-xl ${
+              !selected && "cursor-not-allowed"
+            }`}
             onClick={() => {
               nextStep();
               storeFunction();
@@ -58,7 +57,9 @@ const FootprintWizardButtons = ({
             <ArrowLeftIcon className="flex items-center justify-center w-5 h-5 text-white" />
           </Button>
           <Button
-            className="flex items-center justify-center p-0 text-sm capitalize basis-1/2 lg:text-base xl:text-lg bg-emerald-500"
+            className={`flex items-center justify-center p-0 text-sm capitalize basis-1/2 lg:text-base xl:text-lg bg-emerald-500 ${
+              !selected && "cursor-not-allowed"
+            }`}
             type="submit"
             value={footprintResult}
             onClick={() => {

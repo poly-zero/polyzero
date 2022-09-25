@@ -19,7 +19,7 @@ const FootprintForm = ({
   };
 
   return (
-    <div className="flex flex-col w-2/3">
+    <div className="flex flex-col px-4 md:px-4 lg:px-0 basis-3/4 md:basis-2/3 lg:basis-1/3 xl:basis-1/3">
       <RadioGroup
         value={selectedValue}
         onChange={handleRadioSelect}
@@ -33,22 +33,24 @@ const FootprintForm = ({
                 <Card
                   className={`hover:cursor-pointer ${
                     active
-                      ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300 transition-all ease-in duration-100"
+                      ? "ring-2 ring-opacity-60 ring-emerald-500 transition-all ease-in duration-100"
                       : ""
                   }
-                ${
-                  checked ? "bg-blue-500 text-slate-50" : "bg-slate-50 text-slate-700"
-                } transition-all ease-in duration-100`}
+                transition-all ease-in duration-100`}
                 >
-                  <CardBody className="flex items-center gap-2">
+                  <CardBody className="flex items-center gap-4">
                     <div
                       className={`${
-                        checked ? "text-blue-500" : "text-slate-50"
-                      } bg-slate-50 opacity-40 shrink-0 rounded-2xl lg:p-1`}
+                        checked
+                          ? "text-slate-50 bg-emerald-500"
+                          : "text-slate-50 bg-slate-50"
+                      } border-2 border-slate-200 shrink-0 rounded-2xl lg:p-0 transition-all ease-in duration-200`}
                     >
-                      <CheckIcon className={`w-6 h-6 p-1`} />
+                      <CheckIcon className={`w-6 h-6 p-1 font-bold`} />
                     </div>
-                    <p className="text-md lg:text-base xl:text-lg">{element.answer}</p>
+                    <p className="text-sm lg:text-base xl:text-lg">
+                      {element.answer}
+                    </p>
                   </CardBody>
                 </Card>
               )}
@@ -56,16 +58,14 @@ const FootprintForm = ({
           );
         })}
       </RadioGroup>
-      
+
       {/* Buttons */}
-      <div className="flex justify-center">
-        <FootprintWizardButtons
-          useWizard={useWizard}
-          storeFunction={storeFunction}
-          footprintResult={footprintResult}
-          selected={selected}
-        />
-      </div>
+      <FootprintWizardButtons
+        useWizard={useWizard}
+        storeFunction={storeFunction}
+        footprintResult={footprintResult}
+        selected={selected}
+      />
     </div>
   );
 };

@@ -18,13 +18,15 @@ const PetBottles = ({ useWizard, result, setResult }) => {
     });
   };
   return (
-    <div className="flex flex-col items-center flex-grow gap-6 bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-      <Header
-        text={""}
-        highlightedText={petBottlesData.category}
-        caption={petBottlesData.prompt}
-        caption2={petBottlesData.prompt2}
-      />
+    <div className="flex flex-col items-center flex-grow gap-6 lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
+      <div className="basis-1/2">
+        <Header
+          text={""}
+          highlightedText={petBottlesData.category}
+          caption={petBottlesData.prompt}
+          caption2={petBottlesData.prompt2}
+        />
+      </div>
       <FootprintForm
         answers={petBottlesData.answers}
         setResult={setResult}

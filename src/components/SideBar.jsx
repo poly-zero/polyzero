@@ -25,7 +25,7 @@ const SideBar = ({ result }) => {
 
   return (
     <>
-      <div className="">
+      <div className="z-50">
         <Progress
           color="green"
           progress={

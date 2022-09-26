@@ -4,7 +4,7 @@ import Header from "../Header";
 import FootprintForm from "./FootprintForm";
 import supermarket from "../../assets/supermarket2.mp4";
 
-const Groceries = ({ useWizard, result, setResult, isMobile }) => {
+const Groceries = ({ useWizard, result, setResult, windowWidth }) => {
   const [groceryHabit, setGroceryHabit] = useState(
     result && result.grocery ? result.grocery : null
   );
@@ -21,7 +21,7 @@ const Groceries = ({ useWizard, result, setResult, isMobile }) => {
   return (
     <div className="relative flex flex-col items-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
       <video
-        autoPlay={!isMobile}
+        autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
         class="absolute z-0 w-auto min-w-full min-h-full max-w-none"

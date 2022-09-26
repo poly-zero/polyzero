@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Country from "../components/footprint/Country";
 import OnlineShopping from "../components/footprint/OnlineShopping";
 import PetBottles from "../components/footprint/PetBottles";
@@ -10,7 +10,6 @@ import { saveFootprintData } from "../firebase/firebase";
 
 const FootprintWizard = ({ result, setResult, useWindowSize }) => {
   const [width] = useWindowSize();
-  const [isMobile, setIsMobile] = useState(width < 500 ? true : false);
   const navigateTo = useNavigate();
   const storedFootprint = JSON.parse(localStorage.getItem("footprint"));
 
@@ -53,31 +52,31 @@ const FootprintWizard = ({ result, setResult, useWindowSize }) => {
             result={result}
             setResult={setResult}
             useWizard={useWizard}
-            isMobile={isMobile}
+            windowWidth={width}
           />
           <Groceries
             result={result}
             setResult={setResult}
             useWizard={useWizard}
-            isMobile={isMobile}
+            windowWidth={width}
           />
           <OnlineShopping
             result={result}
             setResult={setResult}
             useWizard={useWizard}
-            isMobile={isMobile}
+            windowWidth={width}
           />
           <PetBottles
             result={result}
             setResult={setResult}
             useWizard={useWizard}
-            isMobile={isMobile}
+            windowWidth={width}
           />
           <TakeOut
             result={result}
             setResult={setResult}
             useWizard={useWizard}
-            isMobile={isMobile}
+            windowWidth={width}
           />
         </Wizard>
       </form>

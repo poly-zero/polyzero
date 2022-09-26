@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/solid";
 import globe from "../../assets/globe.mp4";
 
-const Country = ({ result, setResult, useWizard, isMobile }) => {
+const Country = ({ result, setResult, useWizard, windowWidth }) => {
   // Japan selected by default
   const [selectedCountry, setSelectedCountry] = useState(
     result && result.country ? result.country : countries[44]
@@ -22,7 +22,7 @@ const Country = ({ result, setResult, useWizard, isMobile }) => {
       country: selectedCountry,
     });
   };
-
+  
   const filteredCountries =
     query === ""
       ? countries
@@ -36,7 +36,7 @@ const Country = ({ result, setResult, useWizard, isMobile }) => {
   return (
     <div className="relative flex flex-col items-center justify-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
       <video
-        autoPlay={!isMobile}
+        autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
         class="absolute z-0 w-auto min-w-full min-h-full max-w-none"

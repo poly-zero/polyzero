@@ -4,7 +4,7 @@ import Header from "../Header";
 import FootprintForm from "./FootprintForm";
 import shoppingCart from "../../assets/shoppingCart.mp4";
 
-const OnlineShopping = ({ useWizard, result, setResult, isMobile }) => {
+const OnlineShopping = ({ useWizard, result, setResult, windowWidth }) => {
   const [onlineShoppingHabit, setOnlineShoppingHabit] = useState(
     result && result.onlineShopping ? result.grocery : null
   );
@@ -21,7 +21,7 @@ const OnlineShopping = ({ useWizard, result, setResult, isMobile }) => {
   return (
     <div className="relative flex flex-col items-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
       <video
-        autoPlay={!isMobile}
+        autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
         class="absolute z-10 w-auto min-w-full min-h-full max-w-none"

@@ -86,11 +86,13 @@ const Results = ({ result, setResult }) => {
       <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
 
       <div className="container z-40 w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2">
-        <Header
-          text="My"
-          highlightedText="Plastic Footprint"
-          darkBackground={true}
-        />
+        <div className="z-40 md:basis-1/4 lg:basis-1/2">
+          <Header
+            text="My"
+            highlightedText="Plastic Footprint"
+            darkBackground={true}
+          />
+        </div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4 md:flex-row">
             <Card className="bg-gray-400 border-none rounded-xl basis-3/5 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
@@ -173,17 +175,17 @@ const Results = ({ result, setResult }) => {
                     title={`I use approx ${footprint.plastic}kg of disposable plastic/year, corresponding to ${footprint.carbon}kg of CO2e. %0aHow much plastic do you use? Estimated with`}
                     hashtags={["PolyZeroApp"]}
                   >
-                    <Twitter className="w-12 h-12"/>
+                    <Twitter className="w-12 h-12" />
                   </TwitterShareButton>
                   <LinkedinShareButton url={"https://www.polyzero.earth"}>
-                    <LinkedIn className="w-12 h-12"/>
+                    <LinkedIn className="w-12 h-12" />
                   </LinkedinShareButton>
                 </div>
               </CardBody>
             </Card>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-4 my-8">
+        <div className="flex flex-col flex-wrap justify-center gap-4 my-8 md:flex-row">
           <Button
             className="flex items-center gap-4 text-base capitalize transition-all duration-300 ease-in-out bg-sky-500 md:justify-center text-slate-100 basis-full lg:basis-1/3 hover:bg-red-500"
             onClick={resetFootprint}

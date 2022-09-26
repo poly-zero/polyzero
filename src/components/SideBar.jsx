@@ -111,7 +111,7 @@ const SideBar = ({ result }) => {
                   >
                     {/* <Icon name="dashboard" size="2xl" /> */}
                     <Tiers />
-                    Tiers
+                    Support Tiers
                   </NavLink>
                 </li>
               )}

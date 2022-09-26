@@ -12,7 +12,7 @@ const FootprintForm = ({
   footprintResult,
   selectedValue,
 }) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(selectedValue ? true : false);
   const handleRadioSelect = (value) => {
     setFunction(Number(value));
     setSelected(true);
@@ -58,7 +58,7 @@ const FootprintForm = ({
           );
         })}
       </RadioGroup>
-
+      {console.log(selectedValue)}
       {/* Buttons */}
       <FootprintWizardButtons
         useWizard={useWizard}

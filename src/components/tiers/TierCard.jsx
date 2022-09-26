@@ -19,7 +19,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     const storedTier = localStorage.getItem("tiers");
     saveTierData(JSON.parse(storedTier));
 
-    localStorage.setItem("payment", cost);
+    localStorage.setItem("payment", Math.floor(cost));
     localStorage.setItem("title", title);
     localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
     localStorage.setItem("time", age);

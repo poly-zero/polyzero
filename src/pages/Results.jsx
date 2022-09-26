@@ -13,7 +13,7 @@ import { useCountUp } from "use-count-up";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import {
-  AcademicCapIcon,
+  // AcademicCapIcon,
   BackwardIcon,
   ForwardIcon,
 } from "@heroicons/react/24/solid";
@@ -67,8 +67,7 @@ const Results = ({ result, setResult }) => {
 
   function resetFootprint() {
     setResult(null);
-    localStorage.removeItem("tiers");
-    localStorage.removeItem("footprint");
+    localStorage.clear();
     navigateTo("/wizard");
   }
 

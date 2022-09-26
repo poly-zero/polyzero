@@ -67,8 +67,7 @@ const Results = ({ result, setResult }) => {
 
   function resetFootprint() {
     setResult(null);
-    localStorage.removeItem("tiers");
-    localStorage.removeItem("footprint");
+    localStorage.clear();
     navigateTo("/wizard");
   }
 

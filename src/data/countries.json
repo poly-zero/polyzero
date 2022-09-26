@@ -3,707 +3,707 @@
     "rank": 74,
     "name": "Algeria",
     "avgKg": 9,
-    "label": "Algeria",
+    "flag": "🇩🇿",
     "value": 9
   },
   {
     "rank": 57,
     "name": "Argentina",
     "avgKg": 15,
-    "label": "Argentina",
+    "flag": "🇦🇷",
     "value": 15
   },
   {
     "rank": 2,
     "name": "Australia",
     "avgKg": 59,
-    "label": "Australia",
+    "flag": "🇦🇺",
     "value": 59
   },
   {
     "rank": 27,
     "name": "Austria",
     "avgKg": 32,
-    "label": "Austria",
+    "flag": "🇦🇹",
     "value": 32
   },
   {
     "rank": 87,
     "name": "Azerbaijan",
     "avgKg": 5,
-    "label": "Azerbaijan",
+    "flag": "🇦🇿",
     "value": 5
   },
   {
     "rank": 63,
     "name": "Bahrain",
     "avgKg": 12,
-    "label": "Bahrain",
+    "flag": "🇧🇭",
     "value": 12
   },
   {
     "rank": 47,
     "name": "Belarus",
     "avgKg": 17,
-    "label": "Belarus",
+    "flag": "🇧🇾",
     "value": 17
   },
   {
     "rank": 5,
     "name": "Belgium",
     "avgKg": 55,
-    "label": "Belgium",
+    "flag": "🇧🇪",
     "value": 55
   },
   {
     "rank": 82,
     "name": "Bosnia and Herzegovina",
     "avgKg": 8,
-    "label": "Bosnia and Herzegovina",
+    "flag": "🇧🇦",
     "value": 8
   },
   {
     "rank": 58,
     "name": "Brazil",
     "avgKg": 13,
-    "label": "Brazil",
+    "flag": "🇧🇷",
     "value": 13
   },
   {
     "rank": 64,
     "name": "Bulgaria",
     "avgKg": 12,
-    "label": "Bulgaria",
+    "flag": "🇧🇬",
     "value": 12
   },
   {
     "rank": 90,
     "name": "Cambodia",
     "avgKg": 5,
-    "label": "Cambodia",
+    "flag": "🇰🇭",
     "value": 5
   },
   {
     "rank": 24,
     "name": "Canada",
     "avgKg": 34,
-    "label": "Canada",
+    "flag": "🇨🇦",
     "value": 34
   },
   {
     "rank": 11,
     "name": "Chile",
     "avgKg": 51,
-    "label": "Chile",
+    "flag": "🇨🇱",
     "value": 51
   },
   {
     "rank": 45,
-    "name": "CHina",
+    "name": "China",
     "avgKg": 18,
-    "label": "CHina",
+    "flag": "🇨🇳",
     "value": 18
   },
   {
     "rank": 95,
-    "name": "Code d'Ivoire",
+    "name": "Côte D'Ivoire",
     "avgKg": 4,
-    "label": "Code d'Ivoire",
+    "flag": "🇨🇮",
     "value": 4
   },
   {
     "rank": 68,
     "name": "Colombia",
     "avgKg": 11,
-    "label": "Colombia",
+    "flag": "🇨🇴",
     "value": 11
   },
   {
     "rank": 34,
     "name": "Costa Rica",
     "avgKg": 23,
-    "label": "Costa Rica",
+    "flag": "🇨🇷",
     "value": 23
   },
   {
     "rank": 37,
     "name": "Croatia",
     "avgKg": 21,
-    "label": "Croatia",
+    "flag": "🇭🇷",
     "value": 21
   },
   {
     "rank": 67,
     "name": "Cyprus",
     "avgKg": 11,
-    "label": "Cyprus",
+    "flag": "🇨🇾",
     "value": 11
   },
   {
     "rank": 22,
     "name": "Czech Republic",
     "avgKg": 35,
-    "label": "Czech Republic",
+    "flag": "🇨🇿",
     "value": 35
   },
   {
     "rank": 25,
     "name": "Denmark",
     "avgKg": 33,
-    "label": "Denmark",
+    "flag": "🇩🇰",
     "value": 33
   },
   {
     "rank": 69,
     "name": "Dominican Republic",
     "avgKg": 10,
-    "label": "Dominican Republic",
+    "flag": "🇩🇴",
     "value": 10
   },
   {
     "rank": 78,
     "name": "Ecuador",
     "avgKg": 9,
-    "label": "Ecuador",
+    "flag": "🇪🇨",
     "value": 9
   },
   {
     "rank": 76,
     "name": "Egypt",
     "avgKg": 9,
-    "label": "Egypt",
+    "flag": "🇪🇬",
     "value": 9
   },
   {
     "rank": 43,
     "name": "El Salvador",
     "avgKg": 19,
-    "label": "El Salvador",
+    "flag": "🇸🇻",
     "value": 19
   },
   {
     "rank": 71,
     "name": "Estonia",
     "avgKg": 10,
-    "label": "Estonia",
+    "flag": "🇪🇪",
     "value": 10
   },
   {
     "rank": 17,
     "name": "Finland",
     "avgKg": 38,
-    "label": "Finland",
+    "flag": "🇫🇮",
     "value": 38
   },
   {
     "rank": 19,
     "name": "France",
     "avgKg": 36,
-    "label": "France",
+    "flag": "🇫🇷",
     "value": 36
   },
   {
     "rank": 61,
     "name": "Georgia",
     "avgKg": 12,
-    "label": "Georgia",
+    "flag": "🇬🇪",
     "value": 12
   },
   {
     "rank": 35,
     "name": "Germany",
     "avgKg": 22,
-    "label": "Germany",
+    "flag": "🇩🇪",
     "value": 22
   },
   {
     "rank": 84,
     "name": "Ghana",
     "avgKg": 7,
-    "label": "Ghana",
+    "flag": "🇬🇭",
     "value": 7
   },
   {
     "rank": 33,
     "name": "Greece",
     "avgKg": 23,
-    "label": "Greece",
+    "flag": "🇬🇷",
     "value": 23
   },
   {
     "rank": 80,
     "name": "Guatemala",
     "avgKg": 8,
-    "label": "Guatemala",
+    "flag": "🇬🇹",
     "value": 8
   },
   {
     "rank": 88,
     "name": "Honduras",
     "avgKg": 5,
-    "label": "Honduras",
+    "flag": "🇭🇳",
     "value": 5
   },
   {
     "rank": 7,
     "name": "Hong Kong",
     "avgKg": 55,
-    "label": "Hong Kong",
+    "flag": "🇭🇰",
     "value": 55
   },
   {
     "rank": 40,
     "name": "Hungary",
     "avgKg": 20,
-    "label": "Hungary",
+    "flag": "🇭🇺",
     "value": 20
   },
   {
     "rank": 94,
     "name": "India",
     "avgKg": 4,
-    "label": "India",
+    "flag": "🇮🇳",
     "value": 4
   },
   {
     "rank": 79,
     "name": "Indonesia",
     "avgKg": 9,
-    "label": "Indonesia",
+    "flag": "🇮🇩",
     "value": 9
   },
   {
     "rank": 60,
     "name": "Iran",
     "avgKg": 13,
-    "label": "Iran",
+    "flag": "🇮🇷",
     "value": 13
   },
   {
     "rank": 83,
     "name": "Iraq",
     "avgKg": 7,
-    "label": "Iraq",
+    "flag": "🇮🇶",
     "value": 7
   },
   {
     "rank": 16,
-    "name": "Ireland ",
+    "name": "Ireland",
     "avgKg": 39,
-    "label": "Ireland ",
+    "flag": "🇮🇪",
     "value": 39
   },
   {
     "rank": 6,
     "name": "Israel",
     "avgKg": 55,
-    "label": "Israel",
+    "flag": "🇮🇱",
     "value": 55
   },
   {
     "rank": 31,
     "name": "Italy",
     "avgKg": 23,
-    "label": "Italy",
+    "flag": "🇮🇹",
     "value": 23
   },
   {
     "rank": 18,
     "name": "Japan",
     "avgKg": 37,
-    "label": "Japan",
+    "flag": "🇯🇵",
     "value": 37
   },
   {
     "rank": 85,
     "name": "Jordan",
     "avgKg": 7,
-    "label": "Jordan",
+    "flag": "🇯🇴",
     "value": 7
   },
   {
     "rank": 77,
     "name": "Kazakhstan",
     "avgKg": 9,
-    "label": "Kazakhstan",
+    "flag": "🇰🇿",
     "value": 9
   },
   {
     "rank": 91,
     "name": "Kenya",
     "avgKg": 5,
-    "label": "Kenya",
+    "flag": "🇰🇪",
     "value": 5
   },
   {
     "rank": 14,
     "name": "Kuwait",
     "avgKg": 40,
-    "label": "Kuwait",
+    "flag": "🇰🇼",
     "value": 40
   },
   {
     "rank": 100,
-    "name": "Kyrgystan",
+    "name": "Kyrgyzstan",
     "avgKg": 3,
-    "label": "Kyrgystan",
+    "flag": "🇰🇬",
     "value": 3
   },
   {
     "rank": 36,
     "name": "Latvia",
     "avgKg": 22,
-    "label": "Latvia",
+    "flag": "🇱🇻",
     "value": 22
   },
   {
     "rank": 46,
     "name": "Lebanon",
     "avgKg": 17,
-    "label": "Lebanon",
+    "flag": "🇱🇧",
     "value": 17
   },
   {
     "rank": 86,
     "name": "Libya",
     "avgKg": 6,
-    "label": "Libya",
+    "flag": "🇱🇾",
     "value": 6
   },
   {
     "rank": 39,
     "name": "Lithuania",
     "avgKg": 21,
-    "label": "Lithuania",
+    "flag": "🇱🇹",
     "value": 21
   },
   {
     "rank": 51,
     "name": "Malaysia",
     "avgKg": 16,
-    "label": "Malaysia",
+    "flag": "🇲🇾",
     "value": 16
   },
   {
     "rank": 70,
     "name": "Mauritius",
     "avgKg": 10,
-    "label": "Mauritius",
+    "flag": "🇲🇺",
     "value": 10
   },
   {
     "rank": 48,
     "name": "Mexico",
     "avgKg": 17,
-    "label": "Mexico",
+    "flag": "🇲🇽",
     "value": 17
   },
   {
     "rank": 93,
     "name": "Mongolia",
     "avgKg": 4,
-    "label": "Mongolia",
+    "flag": "🇲🇳",
     "value": 4
   },
   {
     "rank": 66,
     "name": "Morocco",
     "avgKg": 11,
-    "label": "Morocco",
+    "flag": "🇲🇦",
     "value": 11
   },
   {
     "rank": 89,
     "name": "Myanmar",
     "avgKg": 5,
-    "label": "Myanmar",
+    "flag": "🇲🇲",
     "value": 5
   },
   {
     "rank": 4,
     "name": "Netherlands",
     "avgKg": 55,
-    "label": "Netherlands",
+    "flag": "🇳🇱",
     "value": 55
   },
   {
     "rank": 15,
     "name": "New Zealand",
     "avgKg": 39,
-    "label": "New Zealand",
+    "flag": "🇳🇿",
     "value": 39
   },
   {
     "rank": 98,
     "name": "Nigeria",
     "avgKg": 4,
-    "label": "Nigeria",
+    "flag": "🇳🇬",
     "value": 4
   },
   {
     "rank": 28,
     "name": "Norway",
     "avgKg": 27,
-    "label": "Norway",
+    "flag": "🇳🇴",
     "value": 27
   },
   {
     "rank": 3,
     "name": "Oman",
     "avgKg": 56,
-    "label": "Oman",
+    "flag": "🇴🇲",
     "value": 56
   },
   {
     "rank": 97,
     "name": "Pakistan",
     "avgKg": 4,
-    "label": "Pakistan",
+    "flag": "🇵🇰",
     "value": 4
   },
   {
     "rank": 56,
     "name": "Panama",
     "avgKg": 15,
-    "label": "Panama",
+    "flag": "🇵🇦",
     "value": 15
   },
   {
     "rank": 62,
     "name": "Paraguay",
     "avgKg": 12,
-    "label": "Paraguay",
+    "flag": "🇵🇾",
     "value": 12
   },
   {
     "rank": 54,
     "name": "Peru",
     "avgKg": 15,
-    "label": "Peru",
+    "flag": "🇵🇪",
     "value": 15
   },
   {
     "rank": 73,
     "name": "Philippines",
     "avgKg": 9,
-    "label": "Philippines",
+    "flag": "🇵🇭",
     "value": 9
   },
   {
     "rank": 32,
     "name": "Poland",
     "avgKg": 23,
-    "label": "Poland",
+    "flag": "🇵🇱",
     "value": 23
   },
   {
     "rank": 30,
     "name": "Portugal",
     "avgKg": 25,
-    "label": "Portugal",
+    "flag": "🇵🇹",
     "value": 25
   },
   {
     "rank": 41,
     "name": "Qatar",
     "avgKg": 20,
-    "label": "Qatar",
+    "flag": "🇶🇦",
     "value": 20
   },
   {
     "rank": 55,
     "name": "Romania",
     "avgKg": 15,
-    "label": "Romania",
+    "flag": "🇷🇴",
     "value": 15
   },
   {
     "rank": 50,
     "name": "Russian Federation",
     "avgKg": 16,
-    "label": "Russian Federation",
+    "flag": "🇷🇺",
     "value": 16
   },
   {
     "rank": 21,
     "name": "Saudi Arabia",
     "avgKg": 35,
-    "label": "Saudi Arabia",
+    "flag": "🇸🇦",
     "value": 35
   },
   {
     "rank": 65,
     "name": "Serbia",
     "avgKg": 12,
-    "label": "Serbia",
+    "flag": "🇷🇸",
     "value": 12
   },
   {
     "rank": 1,
     "name": "Singapore",
     "avgKg": 76,
-    "label": "Singapore",
+    "flag": "🇸🇬",
     "value": 76
   },
   {
     "rank": 38,
     "name": "Slovakia",
     "avgKg": 21,
-    "label": "Slovakia",
+    "flag": "🇸🇰",
     "value": 21
   },
   {
     "rank": 20,
     "name": "Slovenia",
     "avgKg": 35,
-    "label": "Slovenia",
+    "flag": "🇸🇮",
     "value": 35
   },
   {
     "rank": 59,
     "name": "South Africa",
     "avgKg": 13,
-    "label": "South Africa",
+    "flag": "🇿🇦",
     "value": 13
   },
   {
     "rank": 12,
     "name": "South Korea",
     "avgKg": 44,
-    "label": "South Korea",
+    "flag": "🇰🇷",
     "value": 44
   },
   {
     "rank": 23,
     "name": "Spain",
     "avgKg": 34,
-    "label": "Spain",
+    "flag": "🇪🇸",
     "value": 34
   },
   {
     "rank": 96,
     "name": "Sri Lanka",
     "avgKg": 4,
-    "label": "Sri Lanka",
+    "flag": "🇱🇰",
     "value": 4
   },
   {
     "rank": 26,
     "name": "Sweden",
     "avgKg": 32,
-    "label": "Sweden",
+    "flag": "🇸🇪",
     "value": 32
   },
   {
     "rank": 8,
     "name": "Switzerland",
     "avgKg": 53,
-    "label": "Switzerland",
+    "flag": "🇨🇭",
     "value": 53
   },
   {
     "rank": 49,
     "name": "Taiwan",
     "avgKg": 17,
-    "label": "Taiwan",
+    "flag": "🇹🇼",
     "value": 17
   },
   {
     "rank": 44,
     "name": "Thailand",
     "avgKg": 18,
-    "label": "Thailand",
+    "flag": "🇹🇭",
     "value": 18
   },
   {
     "rank": 101,
     "name": "Togo",
     "avgKg": 3,
-    "label": "Togo",
+    "flag": "🇹🇬",
     "value": 3
   },
   {
     "rank": 52,
     "name": "Trinidad and Tobago",
     "avgKg": 15,
-    "label": "Trinidad and Tobago",
+    "flag": "🇹🇹",
     "value": 15
   },
   {
     "rank": 75,
     "name": "Tunisia",
     "avgKg": 9,
-    "label": "Tunisia",
+    "flag": "🇹🇳",
     "value": 9
   },
   {
     "rank": 53,
     "name": "Turkey",
     "avgKg": 15,
-    "label": "Turkey",
+    "flag": "🇹🇷",
     "value": 15
   },
   {
     "rank": 81,
     "name": "Turkmenistan",
     "avgKg": 8,
-    "label": "Turkmenistan",
+    "flag": "🇹🇲",
     "value": 8
   },
   {
     "rank": 72,
     "name": "Ukraine",
     "avgKg": 10,
-    "label": "Ukraine",
+    "flag": "🇺🇦",
     "value": 10
   },
   {
     "rank": 10,
     "name": "United Arab Emirates",
     "avgKg": 52,
-    "label": "United Arab Emirates",
+    "flag": "🇦🇪",
     "value": 52
   },
   {
     "rank": 13,
     "name": "United Kingdom",
     "avgKg": 44,
-    "label": "United Kingdom",
+    "flag": "🇬🇧",
     "value": 44
   },
   {
     "rank": 9,
     "name": "United States",
     "avgKg": 53,
-    "label": "United States",
+    "flag": "🇺🇸",
     "value": 53
   },
   {
     "rank": 29,
     "name": "Uruguay",
     "avgKg": 25,
-    "label": "Uruguay",
+    "flag": "🇺🇾",
     "value": 25
   },
   {
     "rank": 92,
     "name": "Uzbekistan",
     "avgKg": 5,
-    "label": "Uzbekistan",
+    "flag": "🇺🇿",
     "value": 5
   },
   {
     "rank": 99,
     "name": "Venezuela",
     "avgKg": 3,
-    "label": "Venezuela",
+    "flag": "🇻🇪",
     "value": 3
   },
   {
     "rank": 42,
     "name": "Vietnam",
     "avgKg": 20,
-    "label": "Vietnam",
+    "flag": "🇻🇳",
     "value": 20
   }
- ]
+]

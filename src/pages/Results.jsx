@@ -13,7 +13,7 @@ import { useCountUp } from "use-count-up";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import {
-  // AcademicCapIcon,
+  AcademicCapIcon,
   BackwardIcon,
   ForwardIcon,
 } from "@heroicons/react/24/solid";

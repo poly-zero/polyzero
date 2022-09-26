@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Country from "../components/footprint/Country";
 import OnlineShopping from "../components/footprint/OnlineShopping";
 import PetBottles from "../components/footprint/PetBottles";
@@ -7,9 +7,10 @@ import Groceries from "../components/footprint/Groceries";
 import { Wizard, useWizard } from "react-use-wizard";
 import { useNavigate } from "react-router-dom";
 import { saveFootprintData } from "../firebase/firebase";
-import ProgressBar from "../components/footprint/ProgressBar";
 
-const FootprintWizard = ({ result, setResult }) => {
+const FootprintWizard = ({ result, setResult, useWindowSize }) => {
+  const [width] = useWindowSize();
+  const [isMobile, setIsMobile] = useState(width < 500 ? true : false);
   const navigateTo = useNavigate();
   const storedFootprint = JSON.parse(localStorage.getItem("footprint"));
 
@@ -36,7 +37,7 @@ const FootprintWizard = ({ result, setResult }) => {
     const final = calculateResults(result);
     const finalResult = {
       ...result,
-      footprintResult: final
+      footprintResult: final,
     };
     localStorage.setItem("footprint", JSON.stringify(finalResult));
     saveFootprintData(finalResult);
@@ -47,31 +48,36 @@ const FootprintWizard = ({ result, setResult }) => {
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-        <Wizard >
+        <Wizard>
           <Country
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            isMobile={isMobile}
           />
           <Groceries
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            isMobile={isMobile}
           />
           <OnlineShopping
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            isMobile={isMobile}
           />
           <PetBottles
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            isMobile={isMobile}
           />
           <TakeOut
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            isMobile={isMobile}
           />
         </Wizard>
       </form>

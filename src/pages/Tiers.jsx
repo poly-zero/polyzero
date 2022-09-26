@@ -4,20 +4,14 @@ import TierCard from "../components/tiers/TierCard";
 import tierCardData from "../data/tierCards.json";
 import Header from "../components/Header";
 
-const Tiers = ({ setTier }) => {
+const Tiers = ({ setTier, isMobile }) => {
   const offsetCost = 5000;
   const [data, setData] = useState(null);
-  const currentWidth = window.innerWidth;
-  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     const storedResult = JSON.parse(localStorage.getItem("tiers"));
     setData(storedResult);
   }, []);
-
-  useEffect(() => {
-    currentWidth < 500 ? setMobile(true) : setMobile(false);
-  }, [currentWidth]);
 
   return (
     <div className="relative flex flex-col flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 lg:items-center md:justify-center md:mt-0 lg:gap-0">
@@ -38,20 +32,20 @@ const Tiers = ({ setTier }) => {
         </Link>
       </div>
       <section className="z-40 flex flex-col items-center h-screen gap-8 overflow-y-scroll snap-y md:px-16 lg:p-14 xl:p-32 basis-full md:gap-8 md:basis-full lg:basis-1/2">
-          {data &&
-            tierCardData.map((tier) => {
-              return (
-                <TierCard
-                  key={tier.title}
-                  title={tier.title}
-                  time={tier.time}
-                  tonnes={data.carbon / 1000}
-                  cost={(data.carbon / 1000) * offsetCost}
-                  image={tier.image}
-                  setTier={setTier}
-                />
-              );
-            })}
+        {data &&
+          tierCardData.map((tier) => {
+            return (
+              <TierCard
+                key={tier.title}
+                title={tier.title}
+                time={tier.time}
+                tonnes={data.carbon / 1000}
+                cost={(data.carbon / 1000) * offsetCost}
+                image={tier.image}
+                setTier={setTier}
+              />
+            );
+          })}
       </section>
     </div>
   );

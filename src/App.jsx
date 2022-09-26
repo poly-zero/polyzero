@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import Landing from "./pages/Landing";
 import Tiers from "./pages/Tiers";
 import Dashboard from "./pages/Dashboard";
@@ -28,13 +28,29 @@ function App() {
       localStorage.clear();
   }, [location]);
 
+  function useWindowSize() {
+    const [size, setSize] = useState([0, 0]);
+
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener("resize", updateSize);
+      updateSize();
+
+      return () => window.removeEventListener("resize", updateSize);
+    }, []);
+
+    return size;
+  }
+
   return (
     <>
       <div className="flex flex-col h-screen md:ml-64">
         {location.pathname === "/" ||
         location.pathname === "/resources" ||
         location.pathname === "/tips" ? null : (
-          <SideBar result={result} />
+          <SideBar result={result} useWindowSize={useWindowSize} />
         )}
         <Top />
         <Routes>
@@ -45,19 +61,33 @@ function App() {
           <Route
             exact
             path="/wizard"
-            element={<FootprintWizard result={result} setResult={setResult} />}
+            element={
+              <FootprintWizard
+                result={result}
+                setResult={setResult}
+                useWindowSize={useWindowSize}
+              />
+            }
           />
           <Route
             exact
             path="/results"
             element={
               <ConditionalRedirect isSet={result}>
-                <Results result={result} setResult={setResult} />
+                <Results
+                  result={result}
+                  setResult={setResult}
+                  useWindowSize={useWindowSize}
+                />
               </ConditionalRedirect>
             }
           />
 
-          <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
+          <Route
+            exact
+            path="/tiers"
+            element={<Tiers setTier={setTier} useWindowSize={useWindowSize} />}
+          />
           <Route exact path="/contribution" element={<Contribution />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
           <Route

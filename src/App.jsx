@@ -24,6 +24,8 @@ function App() {
 
   useEffect(() => {
     pageTracking(location);
+    if (localStorage.fromConfirmation && location.pathname !== "/confirmation")
+      localStorage.clear();
   }, [location]);
 
   return (

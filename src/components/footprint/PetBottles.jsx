@@ -2,7 +2,7 @@ import { useState } from "react";
 import footprintQuestions from "../../data/footprintQuestions.json";
 import Header from "../Header";
 import FootprintForm from "./FootprintForm";
-import petBottles from "../../assets/petBottles2.mp4";
+import petBottles from "../../assets/videos/petBottles2.mp4";
 
 const PetBottles = ({ useWizard, result, setResult, windowWidth }) => {
   const [petBottlesHabit, setPetBottlesHabit] = useState(

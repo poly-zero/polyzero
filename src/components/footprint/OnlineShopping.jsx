@@ -2,7 +2,7 @@ import { useState } from "react";
 import footprintQuestions from "../../data/footprintQuestions.json";
 import Header from "../Header";
 import FootprintForm from "./FootprintForm";
-import shoppingCart from "../../assets/shoppingCart.mp4";
+import shoppingCart from "../../assets/videos/shoppingCart.mp4";
 
 const OnlineShopping = ({ useWizard, result, setResult, windowWidth }) => {
   const [onlineShoppingHabit, setOnlineShoppingHabit] = useState(

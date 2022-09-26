@@ -7,7 +7,7 @@ import {
   CheckCircleIcon,
   ChevronDoubleDownIcon,
 } from "@heroicons/react/24/solid";
-import globe from "../../assets/globe.mp4";
+import globe from "../../assets/videos/globe.mp4";
 
 const Country = ({ result, setResult, useWizard, windowWidth }) => {
   // Japan selected by default

@@ -7,6 +7,7 @@ import {
   CheckCircleIcon,
   ChevronDoubleDownIcon,
 } from "@heroicons/react/24/solid";
+import globe from "../../assets/globe.mp4"
 
 const Country = ({ result, setResult, useWizard }) => {
   // Japan selected by default
@@ -33,13 +34,28 @@ const Country = ({ result, setResult, useWizard }) => {
         );
 
   return (
-    <div className="flex flex-col items-center justify-center flex-grow gap-6 lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-      <div className="lg:basis-1/2">
+    <div className="relative flex flex-col items-center justify-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
+       <video
+        autoPlay
+        loop
+        muted
+        class="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+      >
+        <source
+          src={globe}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div className="absolute z-0 w-full h-full bg-slate-800 opacity-80"></div>
+      
+      <div className="z-40 lg:basis-1/2">
         <Header
           highlightedText="Country of Residence"
           caption="Please confirm your country of residence. This information will be
           used to determine the national per capita average of plastic
           consumption (kg) in your country."
+          darkBackground={true}
         />
       </div>
 

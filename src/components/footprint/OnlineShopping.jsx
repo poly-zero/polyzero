@@ -2,6 +2,7 @@ import { useState } from "react";
 import footprintQuestions from "../../data/footprintQuestions.json";
 import Header from "../Header";
 import FootprintForm from "./FootprintForm";
+import shoppingCart from "../../assets/shoppingCart.mp4"
 
 const OnlineShopping = ({ useWizard, result, setResult }) => {
   const [onlineShoppingHabit, setOnlineShoppingHabit] = useState(
@@ -18,13 +19,27 @@ const OnlineShopping = ({ useWizard, result, setResult }) => {
     });
   };
   return (
-    <div className="flex flex-col items-center flex-grow gap-6 lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
-      <div className="basis-1/2">
+    <div className="relative flex flex-col items-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
+      <video
+        autoPlay
+        loop
+        muted
+        class="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+      >
+        <source
+          src={shoppingCart}
+          type="video/mp4"
+        />
+      </video>
+      <div className="absolute z-20 w-full h-full bg-slate-800 opacity-90"></div>
+
+      <div className="z-40 basis-1/2">
         <Header
           text={""}
           highlightedText={onlineShoppingData.category}
           caption={onlineShoppingData.prompt}
           caption2={onlineShoppingData.prompt2}
+          darkBackground={true}
         />
       </div>
       <FootprintForm

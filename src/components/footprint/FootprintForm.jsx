@@ -19,7 +19,7 @@ const FootprintForm = ({
   };
 
   return (
-    <div className="flex flex-col px-4 md:px-4 lg:px-0 basis-3/4 md:basis-2/3 lg:basis-1/3 xl:basis-1/3">
+    <div className="z-30 flex flex-col px-4 md:px-4 lg:px-0 basis-3/4 md:basis-2/3 lg:basis-1/3 xl:basis-1/3">
       <RadioGroup
         value={selectedValue}
         onChange={handleRadioSelect}
@@ -33,7 +33,7 @@ const FootprintForm = ({
                 <Card
                   className={`hover:cursor-pointer ${
                     active
-                      ? "ring-2 ring-opacity-60 ring-emerald-500 transition-all ease-in duration-100"
+                      ? "ring-4  ring-emerald-500 transition-all ease-in duration-100"
                       : ""
                   }
                 transition-all ease-in duration-100`}
@@ -44,7 +44,7 @@ const FootprintForm = ({
                         checked
                           ? "text-slate-50 bg-emerald-500"
                           : "text-slate-50 bg-slate-50"
-                      } border-2 border-slate-200 shrink-0 rounded-2xl lg:p-0 transition-all ease-in duration-200`}
+                      } border-2 border-slate-300 shrink-0 rounded-2xl lg:p-0 transition-all ease-in duration-200`}
                     >
                       <CheckIcon className={`w-6 h-6 p-1 font-bold`} />
                     </div>

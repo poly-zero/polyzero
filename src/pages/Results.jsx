@@ -188,7 +188,7 @@ const Results = ({ result, setResult }) => {
           </Button>
           <Button
             className="flex items-center gap-4 text-base capitalize bg-purple-600 md:justify-center basis-3/4 basis-full md:basis-1/3 hover:bg-purple-700"
-            onClick={() => navigateTo("/resources")}
+            onClick={() => navigateTo("/tips")}
           >
             <AcademicCapIcon className="w-8 h-8" />
             Shrink your plastic habit

@@ -11,6 +11,7 @@ import {
   UserPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+import logo from "../assets/images/polyzero-logo1.png"
 
 const SideBar = ({ result }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
@@ -71,13 +72,11 @@ const SideBar = ({ result }) => {
           {/* Logo */}
           <NavLink to="/" exact="true" className="flex mt-2">
             <img
-              src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mr-3 h-14"
+              src={logo}
+              className="h-20 mr-3"
               alt="PolyZero Logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              PolyZero
-            </span>
+          
           </NavLink>
 
           <div className="flex flex-col">

@@ -201,10 +201,10 @@ const Results = ({ result, setResult }) => {
           </Button>
           <Button
             className="flex items-center gap-4 text-base capitalize md:justify-center basis-full lg:basis-1/3 bg-gradient-to-r to-emerald-600 from-sky-500"
-            onClick={() => navigateTo("/resources")}
+            onClick={() => navigateTo("/tips")}
           >
-            Off-set your CO2 emissions
-            <ForwardIcon className="w-8 h-8 text-slate-100" />
+            <AcademicCapIcon className="w-8 h-8" />
+            Shrink your plastic habit
           </Button>
         </div>
       </div>

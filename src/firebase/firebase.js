@@ -17,6 +17,7 @@ import {
   collection,
   where,
   addDoc,
+  orderBy,
 } from "firebase/firestore";
 import { loginTracking } from "../analytics/tracking";
 import { loadStripe } from "@stripe/stripe-js";
@@ -95,7 +96,11 @@ const logInWithEmailAndPassword = async (email, password) => {
 
 const getUserHistory = async (userId) => {
   try {
-    const q = query(collection(db, "payment"), where("uid", "==", userId));
+    const q = query(
+      collection(db, "payment"),
+      where("uid", "==", userId),
+      orderBy("created_at", "desc")
+    );
     const docs = await getDocs(q);
     return docs;
   } catch (err) {
@@ -144,7 +149,10 @@ const savePaymentData = async (data) => {
 
 const getStripeApi = async (data) => {
   try {
-    const stripeCheckout = httpsCallable(getFunctions(app), "stripeCheckout");
+    const stripeCheckout = httpsCallable(
+      getFunctions(app),
+      "stripeCheckoutDev"
+    );
     const STRIPE_PUBLIC_KEY =
       "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE";
     const stripe = await loadStripe(STRIPE_PUBLIC_KEY);

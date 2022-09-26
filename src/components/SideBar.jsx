@@ -11,7 +11,7 @@ import {
   UserPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
-import logo from "../assets/images/polyzero-logo3.png"
+import logo from "../assets/images/polyzero-logo3.png";
 
 const SideBar = ({ result }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
@@ -71,12 +71,7 @@ const SideBar = ({ result }) => {
           </button>
           {/* Logo */}
           <NavLink to="/" exact="true" className="flex mt-2">
-            <img
-              src={logo}
-              className="mr-3 h-18"
-              alt="PolyZero Logo"
-            />
-          
+            <img src={logo} className="mr-3 h-18" alt="PolyZero Logo" />
           </NavLink>
 
           <div className="flex flex-col">
@@ -87,14 +82,22 @@ const SideBar = ({ result }) => {
                 <NavLink
                   to="/wizard"
                   exact="true"
-                  className={
+                  className={`${
                     pathName === "/wizard" || pathName === "/results"
-                      ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
-                      : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
-                  }
+                      ? "bg-gradient-to-r to-emerald-600 from-sky-400 shadow-md text-white"
+                      : "text-gray-700"
+                  } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                 >
                   {/* <Icon name="dashboard" size="2xl" /> */}
-                  <Footprint />
+                  <Footprint
+                    fill={`${
+                      pathName === "/wizard" || pathName === "/results"
+                        ? "white"
+                        : "gray"
+                    }`}
+                    width="32"
+                    height="32"
+                  />
                   Footprint Estimator
                 </NavLink>
               </li>
@@ -103,20 +106,24 @@ const SideBar = ({ result }) => {
                   <NavLink
                     to="/tiers"
                     exact="true"
-                    className={
+                    className={`${
                       pathName === "/tiers"
-                        ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
-                        : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
-                    }
+                        ? "bg-gradient-to-r to-emerald-600 from-sky-400 shadow-md text-white"
+                        : "text-gray-700"
+                    } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                   >
                     {/* <Icon name="dashboard" size="2xl" /> */}
-                    <Tiers />
+                    <Tiers className="w-8 " />
                     Support Tiers
                   </NavLink>
                 </li>
               )}
             </ul>
-            <ul className="absolute bottom-0 flex flex-col items-center min-w-full list-none">
+            <ul
+              className={`absolute bottom-0 flex flex-col ${
+                user ? "items-start" : "items-center"
+              } min-w-full list-none`}
+            >
               {user ? (
                 <>
                   <div className="flex items-center gap-2">
@@ -158,16 +165,16 @@ const SideBar = ({ result }) => {
                     <Button color="gray">
                       <Link to="/login">
                         <div className="flex flex-col items-center">
-                          <ArrowLeftOnRectangleIcon className="w-6 text-gray-700" />
-                          <span>Log in</span>
+                          <ArrowLeftOnRectangleIcon className="w-6 text-slate-600" />
+                          <span className="text-slate-600">Log in</span>
                         </div>
                       </Link>
                     </Button>
                     <Button color="gray">
                       <Link to="/registration">
                         <div className="flex flex-col items-center">
-                          <UserPlusIcon className="w-6 text-gray-700" />
-                          <span>Register</span>
+                          <UserPlusIcon className="w-6 text-slate-600" />
+                          <span className="text-slate-600">Register</span>
                         </div>
                       </Link>
                     </Button>

@@ -55,8 +55,7 @@ const registerWithGoogle = async () => {
         name: user.displayName,
         authProvider: "google",
         email: user.email,
-        badge: [0],
-        footprint: 0,
+        created_at: new Date(),
       });
     }
   } catch (err) {
@@ -75,8 +74,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: "local",
       email,
-      badge: [0],
-      footprint: 0,
+      created_at: new Date(),
     });
   } catch (err) {
     console.error(err);
@@ -157,7 +155,7 @@ const getStripeApi = async (data) => {
       window.location.hostname === "localhost"
         ? "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE"
         : "pk_live_51LhqIFAAHnMRTgmRuENJXYhrcJKNprQWWzUbCqtGJ1Zwg6AGfzmoE5w0wCJV8GZ8k8rTF4HVzKHuBQw9yEzxOH4E00eCeL7tXl";
-      
+
     const stripe = await loadStripe(STRIPE_PUBLIC_KEY);
     stripeCheckout(data).then((result) => {
       stripe

@@ -1,6 +1,5 @@
 import { Card } from "flowbite-react";
 import tipsData from "../data/sustainabletips.json";
-
 import LandingNavBar from "../components/landing/LandingNavBar";
 
 const TipsToReduce = () => {
@@ -22,25 +21,24 @@ const TipsToReduce = () => {
         <article className="flex flex-col gap-7">
           {tipsData.map((reduceTip) => {
             return (
-              <li>
-                <Card
-                  key={reduceTip.tip}
-                  title={reduceTip.tip}
-                  text={reduceTip.source}
-                >
-                  {reduceTip.tip}
+              <Card
+                key={reduceTip.tip}
+                title={reduceTip.tip}
+                text={reduceTip.source}
+              >
+                <strong>{reduceTip.title}</strong>
+                {reduceTip.tip}
 
-                  <a
-                    className="font-light text-blue-600 underline hover:text-blue-800 "
-                    href={reduceTip.source}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {" "}
-                    {reduceTip.source}
-                  </a>
-                </Card>
-              </li>
+                <a
+                  className="font-light text-blue-600 underline hover:text-blue-800 "
+                  href={reduceTip.source}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  {reduceTip.source}
+                </a>
+              </Card>
             );
           })}
         </article>

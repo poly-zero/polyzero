@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, CardBody, Radio } from "@material-tailwind/react";
+import { Card, CardBody } from "@material-tailwind/react";
 import FootprintWizardButtons from "./FootprintWizardButtons";
 import { RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/solid";

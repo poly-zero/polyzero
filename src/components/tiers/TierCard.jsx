@@ -29,10 +29,10 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
   }
 
   return (
-    <article className="basis-2/2">
-      <Card className="my-4 transition duration-300 ease-out hover:-translate-y-1 hover:scale-105">
+    <article className="w-4/5 md:basis-full snap-center">
+      <Card className="transition duration-300 ease-out hover:-translate-y-1 hover:scale-105">
         <div className="flex">
-          <img className="w-2/4 rounded-l-xl" src={image} alt="" />
+          <img className="object-cover w-2/4 rounded-l-xl" src={image} alt="" />
           <CardBody className="flex flex-col w-3/4 gap-4">
             <h2 className="font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
               {title}

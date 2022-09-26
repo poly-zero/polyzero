@@ -9,11 +9,11 @@ const Header = ({
   return (
     <header className="z-50 flex flex-col items-center lg:items-start md:gap-6">
       <h1
-        className={`flex flex-wrap items-center my-6 text-4xl font-bold ${
+        className={`my-6 text-4xl font-bold ${
           darkBackground ? "text-slate-50" : "text-gray-800"
         } md:my-6 lg:my-4 dark:text-white md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-8xl`}
       >
-        {text}
+        {text && text}
         <span className="py-2 text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-500">
           {text && <span>&nbsp;</span>}
           {highlightedText && highlightedText}

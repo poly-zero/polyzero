@@ -59,7 +59,7 @@ const SideBar = ({ result }) => {
 
       {/* SideBar Container */}
       <div
-        className={`h-screen fixed top-0 z-50 md:left-0 ${showSidebar} flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 z-10 py-4 px-6 transition-all duration-300`}
+        className={`h-screen fixed top-0 z-50 md:left-0 ${showSidebar} flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 py-4 px-6 transition-all duration-300`}
       >
         <div className="relative flex-col items-stretch min-h-full px-0 flex-nowrap">
           {/* Close button for SideBar */}
@@ -109,7 +109,7 @@ const SideBar = ({ result }) => {
                     className={`${
                       pathName === "/tiers"
                         ? "bg-gradient-to-r to-emerald-600 from-sky-400 shadow-md text-white"
-                        : "text-gray-700"
+                        : "text-gray-500"
                     } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                   >
                     {/* <Icon name="dashboard" size="2xl" /> */}

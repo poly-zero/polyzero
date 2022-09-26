@@ -19,6 +19,7 @@
     "next-share": "^0.18.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-elastic-carousel": "^0.11.5",
     "react-firebase-hooks": "^5.0.3",
     "react-ga4": "^1.4.1",
     "react-router-dom": "^6.3.0",
@@ -27,6 +28,7 @@
     "react-scripts": "5.0.1",
     "react-use-wizard": "^2.2.1",
     "stripe": "^10.8.0",
+    "styled-components": "^5.3.5",
     "use-count-up": "^3.0.1",
     "web-vitals": "^2.1.4",
     "yarn": "^1.22.19"

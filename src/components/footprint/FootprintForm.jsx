@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, CardBody, Radio } from "@material-tailwind/react";
+import { Card, CardBody } from "@material-tailwind/react";
 import FootprintWizardButtons from "./FootprintWizardButtons";
 import { RadioGroup } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/solid";
@@ -19,7 +19,7 @@ const FootprintForm = ({
   };
 
   return (
-    <div className="z-30 flex flex-col px-4 md:px-4 lg:px-0 basis-3/4 md:basis-2/3 lg:basis-1/3 xl:basis-1/3">
+    <div className="z-30 flex flex-col w-full px-4 md:w-4/5 lg:w-full md md:px-4 lg:px-0 basis-3/4 md:basis-2/3 lg:basis-1/3 xl:basis-1/3">
       <RadioGroup
         value={selectedValue}
         onChange={handleRadioSelect}

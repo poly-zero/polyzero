@@ -19,13 +19,9 @@ const TipsToReduce = () => {
       </h2>
       <section className="p-12 text-sm text-gray-500 list-decimal md:text-base ">
         <article className="flex flex-col gap-7">
-          {tipsData.map((reduceTip) => {
+          {tipsData.map((reduceTip, i) => {
             return (
-              <Card
-                key={reduceTip.tip}
-                title={reduceTip.tip}
-                text={reduceTip.source}
-              >
+              <Card key={i} title={reduceTip.tip} text={reduceTip.source}>
                 <strong>{reduceTip.title}</strong>
                 {reduceTip.tip}
 

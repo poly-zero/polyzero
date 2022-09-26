@@ -95,9 +95,8 @@ const Landing = () => {
           <div className="flex flex-wrap gap-4 lg:gap-8 lg:place-content-evenly">
             {teamMembers.map((member, index) => {
               return (
-                <div className="flex items-center gap-4">
+                <div key={index} className="flex items-center gap-4">
                   <Avatar
-                    key={index}
                     src={member.avatar}
                     variant="circular"
                     className="w-20 h-20 shadow-xl lg:w-32 lg:h-32"
@@ -149,10 +148,7 @@ const Landing = () => {
             >
               <Coffee />
             </a>
-            <p className="text-center">
-              Buy us a coffee
-              <p>(in a reusable mug)</p>
-            </p>
+            <p className="text-center">Buy us a coffee (in a reusable mug)</p>
           </div>
         </article>
       </section>

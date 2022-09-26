@@ -11,6 +11,7 @@ import {
   UserPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+import logo from "../assets/images/polyzero-logo3.png"
 
 const SideBar = ({ result }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
@@ -24,7 +25,7 @@ const SideBar = ({ result }) => {
 
   return (
     <>
-      <div className="">
+      <div className="z-50">
         <Progress
           color="green"
           progress={
@@ -71,13 +72,11 @@ const SideBar = ({ result }) => {
           {/* Logo */}
           <NavLink to="/" exact="true" className="flex mt-2">
             <img
-              src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mr-3 h-14"
+              src={logo}
+              className="mr-3 h-18"
               alt="PolyZero Logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              PolyZero
-            </span>
+          
           </NavLink>
 
           <div className="flex flex-col">
@@ -112,7 +111,7 @@ const SideBar = ({ result }) => {
                   >
                     {/* <Icon name="dashboard" size="2xl" /> */}
                     <Tiers />
-                    Tiers
+                    Support Tiers
                   </NavLink>
                 </li>
               )}

@@ -33,14 +33,16 @@ const FootprintWizard = ({ result, setResult, windowWidth }) => {
   function handleSubmit(event) {
     event.preventDefault();
     const final = calculateResults(result);
-    const finalResult = {
-      ...result,
-      footprintResult: final,
-    };
-    localStorage.setItem("footprint", JSON.stringify(finalResult));
-    saveFootprintData(finalResult);
-    setResult(finalResult);
-    navigateTo("/results");
+    if (final > 0) {
+      const finalResult = {
+        ...result,
+        footprintResult: final,
+      };
+      localStorage.setItem("footprint", JSON.stringify(finalResult));
+      saveFootprintData(finalResult);
+      setResult(finalResult);
+      navigateTo("/results");
+    }
   }
 
   return (

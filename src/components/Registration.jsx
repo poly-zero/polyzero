@@ -30,7 +30,7 @@ function Registration() {
     }
     registerWithEmailAndPassword(name, email, password);
   };
-  console.log("error", error);
+  
   useEffect(() => {
     if (loading) return;
     if (user && storedPayment) navigate("/payment");

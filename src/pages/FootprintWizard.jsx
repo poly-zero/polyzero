@@ -7,6 +7,7 @@ import Groceries from "../components/footprint/Groceries";
 import { Wizard, useWizard } from "react-use-wizard";
 import { useNavigate } from "react-router-dom";
 import { saveFootprintData } from "../firebase/firebase";
+import ProgressBar from "../components/footprint/ProgressBar";
 
 const FootprintWizard = ({ result, setResult, windowWidth }) => {
   const navigateTo = useNavigate();
@@ -33,20 +34,22 @@ const FootprintWizard = ({ result, setResult, windowWidth }) => {
   function handleSubmit(event) {
     event.preventDefault();
     const final = calculateResults(result);
-    const finalResult = {
-      ...result,
-      footprintResult: final,
-    };
-    localStorage.setItem("footprint", JSON.stringify(finalResult));
-    saveFootprintData(finalResult);
-    setResult(finalResult);
-    navigateTo("/results");
+    if (final > 0) {
+      const finalResult = {
+        ...result,
+        footprintResult: final,
+      };
+      localStorage.setItem("footprint", JSON.stringify(finalResult));
+      saveFootprintData(finalResult);
+      setResult(finalResult);
+      navigateTo("/results");
+    }
   }
 
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-        <Wizard>
+        <Wizard header={<ProgressBar useWizard={useWizard} />}>
           <Country
             result={result}
             setResult={setResult}

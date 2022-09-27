@@ -21,7 +21,7 @@ const Header = ({
       </h1>
       {caption && (
         <p
-          className={`w-3/4 mb-4 ${
+          className={`w-3/4 mb-4 select-none ${
             darkBackground ? "text-slate-50" : "text-gray-600"
           } text-md md:text-base md:mb-0 xl:text-xl 2xl:text-2xl`}
         >
@@ -30,7 +30,7 @@ const Header = ({
       )}
       {caption2 && (
         <p
-          className={`w-3/4 mb-4 ${
+          className={`w-3/4 mb-4 select-none ${
             darkBackground ? "text-slate-50" : "text-gray-600"
           } text-md md:text-base md:mb-0 xl:text-xl 2xl:text-2xl`}
         >

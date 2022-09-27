@@ -15,8 +15,8 @@ const TipsToReduce = () => {
         </span>
       </h1>
       <h2 className="justify-center mb-5 text-center">
-        Here are some concrete actions you can take (starting today) to reduce
-        single-use plastics.
+        Here are some concrete actions you can take (starting today) to
+        reduce your single-use plastic and CO2 footprint.
       </h2>
       <section className="p-12 text-sm text-gray-500 list-decimal bg-gray-800 md:text-base bg ">
         <article className="flex flex-col gap-7">
@@ -38,8 +38,8 @@ const TipsToReduce = () => {
               </Card>
             );
           })}
-          <h1 className="text-center text-white underline">
-            Here are some companies that sell sustainable products
+          <h1 className="mb-4 text-3xl font-extrabold text-center text-white md:text-5xl lg:text-6xl">
+            Sustainable Brands and Products
           </h1>
           <div className="flex flex-wrap justify-center gap-8 text-center">
             {brandsData.map((brands) => {

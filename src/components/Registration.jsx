@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Card } from "flowbite-react";
+import {
+  Card,
+  Button,
+  CardBody,
+} from "@material-tailwind/react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, Link } from "react-router-dom";
 import {
@@ -30,7 +34,7 @@ function Registration() {
     }
     registerWithEmailAndPassword(name, email, password);
   };
-  console.log("error", error);
+  
   useEffect(() => {
     if (loading) return;
     if (user && storedPayment) navigate("/payment");
@@ -39,8 +43,9 @@ function Registration() {
   }, [user, loading]);
 
   return (
-    <div className="flex flex-grow items-center justify-center p-6">
+    <div className="flex items-center justify-center flex-grow overflow-hidden bg-gray-800 opacity-90">
       <Card>
+        <CardBody>
         <div className="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
           <div className="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
             <h5>Register with</h5>
@@ -48,13 +53,13 @@ function Registration() {
           <div className="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
             <button
               type="button"
-              className="inline-block px-3 py-3 mb-4 m-auto font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
+              className="inline-block px-3 py-3 m-auto mb-4 text-xs font-bold text-center text-gray-200 uppercase align-middle transition-all bg-transparent cursor-pointer hover:scale-102 leading-pro ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75"
               onClick={registerWithGoogle}
             >
               <Google />
             </button>
             <div className="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
-              <p className="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">
+              <p className="z-20 inline px-4 mb-2 text-sm font-semibold leading-normal bg-white text-slate-400">
                 or
               </p>
             </div>
@@ -64,7 +69,7 @@ function Registration() {
               <div className="mb-4">
                 <label
                   htmlFor="user1"
-                  className="ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Username
                 </label>
@@ -85,7 +90,7 @@ function Registration() {
               <div className="mb-4">
                 <label
                   htmlFor="email"
-                  className="ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Email
                 </label>
@@ -106,7 +111,7 @@ function Registration() {
               <div className="mb-4">
                 <label
                   htmlFor="password"
-                  className="ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password
                 </label>
@@ -127,7 +132,7 @@ function Registration() {
               <div className="mb-4">
                 <label
                   htmlFor="confirmationPassword"
-                  className="ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Confirm password
                 </label>
@@ -145,25 +150,15 @@ function Registration() {
                   onChange={(e) => setConfirmationPassword(e.target.value)}
                 />
               </div>
-              <div className="min-h-6 pl-7 mb-0.5 flex justify-center items-center gap-1">
-                <input
-                  id="terms"
-                  className="w-5 h-5 ease-soft -ml-7 rounded-1.4 duration-250 mt-1 cursor-pointer border border-solid border-slate-200 bg-white transition-all "
-                  type="checkbox"
-                  value=""
-                  aria-required
-                  required
-                />
-              </div>
               <div className="text-center">
-                <button
+                <Button
                   type="submit"
-                  className="w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white transition-all border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-xs text-sm ease-in shadow-md bg-blue-600 hover:border-blue-800 hover:bg-blue-800 hover:text-white"
+                  className="w-full px-6 py-3 mt-6 mb-2 text-sm font-bold text-center text-white transition-all ease-in bg-blue-600 border-0 rounded-lg shadow-md cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-xs hover:border-blue-800 hover:bg-blue-800 hover:text-white"
                 >
                   Register
-                </button>
+                </Button>
               </div>
-              <p className="mt-4 mb-0 leading-normal text-sm text-center">
+              <p className="mt-4 mb-0 text-sm leading-normal text-center">
                 Already have an account?{" "}
                 <Link to="/login" className="font-bold text-slate-700">
                   Log in
@@ -172,6 +167,7 @@ function Registration() {
             </form>
           </div>
         </div>
+        </CardBody>
       </Card>
     </div>
   );

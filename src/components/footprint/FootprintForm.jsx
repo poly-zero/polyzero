@@ -26,9 +26,9 @@ const FootprintForm = ({
         name="footprint"
         className="flex flex-col gap-4"
       >
-        {answers.map((element, i) => {
+        {answers.map((element, index) => {
           return (
-            <RadioGroup.Option value={element.value} key={i}>
+            <RadioGroup.Option value={element.value} key={index}>
               {({ active, checked }) => (
                 <Card
                   className={`hover:cursor-pointer ${

@@ -18,8 +18,8 @@ const TipsToReduce = () => {
         Here are some concrete actions you can take (starting today) to reduce
         single-use plastics.
       </h2>
-      <section className="p-12 text-sm text-gray-500 list-decimal bg-gray-800 md:text-base bg ">
-        <article className="flex flex-col gap-7">
+      <section className="p-12 text-sm text-gray-500 list-decimal bg-slate-200 md:text-base bg ">
+        <article className="flex flex-col gap-7 ">
           {tipsData.map((reduceTip, i) => {
             return (
               <Card key={i} title={reduceTip.tip} text={reduceTip.source}>
@@ -38,7 +38,7 @@ const TipsToReduce = () => {
               </Card>
             );
           })}
-          <h1 className="text-center text-white underline">
+          <h1 className="text-center text-black underline">
             Here are some companies that sell sustainable products
           </h1>
           <div className="flex flex-wrap justify-center gap-8 text-center">

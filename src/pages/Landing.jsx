@@ -47,6 +47,8 @@ const Landing = ({ windowWidth }) => {
           Photo by{" "}
           <a
             className="underline"
+            target="_blank"
+            rel="noreferrer"
             href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
           >
             FLY:D
@@ -55,6 +57,8 @@ const Landing = ({ windowWidth }) => {
           <a
             className="underline"
             href="https://unsplash.com/s/photos/plastic-straws?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            target="_blank"
+            rel="noreferrer"
           >
             Unsplash
           </a>

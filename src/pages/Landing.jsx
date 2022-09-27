@@ -5,19 +5,26 @@ import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-li
 import { ReactComponent as Mail } from "../assets/images/mail.svg";
 import { ReactComponent as Coffee } from "../assets/images/coffee.svg";
 import { Carousel } from "flowbite-react";
-import { Card, Avatar, Button } from "@material-tailwind/react";
+import { Card, Avatar, Button, IconButton } from "@material-tailwind/react";
 import quotes from "../data/quotes.json";
 import teamMembers from "../data/team.json";
 import Header from "../components/Header";
 import { NavLink } from "react-router-dom";
+import { ArrowDownIcon } from "@heroicons/react/24/solid";
 
-const Landing = () => {
+const Landing = ({ windowWidth }) => {
+
   return (
     <div className="relative h-screen md:-ml-64 snap-y snap-mandatory">
-      <LandingNavBar />
+      <LandingNavBar windowWidth={windowWidth} />
       <main className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-5/6 md:h-4/5 snap-end">
-        <Card className="z-10 flex flex-col items-center justify-center w-full gap-4 p-0 border border-gray-200 md:p-4 md:w-full lg:w-3/4 h-5/6 md:h-full lg:h-full bg-clip-padding bg-opacity-70">
-          <Header text={"Facts about"} highlightedText="Disposable Plastics" />
+        <Card className="z-10 flex flex-col items-center justify-center w-full gap-4 p-0 border-none bg-slate-300 md:p-4 md:w-full lg:w-3/4 h-5/6 md:h-full lg:h-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70">
+          <div className="-mb-8">
+            <Header
+              text={"Facts about"}
+              highlightedText="Disposable Plastics"
+            />
+          </div>
           <section className="w-full h-full">
             <Carousel slideInterval={5000}>
               {quotes.map((element, index) => {
@@ -56,6 +63,14 @@ const Landing = () => {
             Unsplash
           </a>
         </div>
+        <IconButton
+          className="absolute z-10 -mx-6 -bottom-8 left-1/2 animate-bounce rounded-3xl"
+          size="lg"
+          value={"none"}
+          disabled
+        >
+          <ArrowDownIcon className="w-6 h-6" />
+        </IconButton>
         <div className="absolute z-0 w-full h-full bg-black opacity-40"></div>
       </main>
 
@@ -67,18 +82,27 @@ const Landing = () => {
           <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl text">
             About
           </h1>
+
           <div className="flex flex-col gap-8">
-            <p className="text-sm text-gray-500 md:text-base">
+            <p className="text-sm md:text-base text-gray-500">
+              The statistics on humanity's rapidly increasing production, use, 
+              and disposal of single use plastics are shocking and depressing.
+              Beyond the global ecological disaster posed by plastics in our 
+              oceans, plastics emit greenhouse gasses at each stage of their 
+              lifecycle, exacerbating climate change.
+            </p>
+            <p className="text-sm md:text-base text-gray-500">
               PolyZero was created to raise awareness about the impact of the
-              single-use plastics we consume every day. Our Plastic Footprint
+              single-use plastics we consume every day. The Plastic Footprint
               Estimator approximates the volume of disposable plastics you use
               per year, based on country of residence and lifestyle.
             </p>
-            <p className="text-sm text-gray-500 md:text-base">
-              Reducing our plastic consumption is the most important step we can
-              take, but for those who wish to do more, the app also estimates
-              the CO2 emissions associated with your plastic footprint and
-              allows you to purchase CO2 off-sets to reduce your impact.
+            <p className="text-sm md:text-base text-gray-500">
+              Further, the estimator shows the CO2 emissions that result from the 
+              plastic you use. Reducing plastic consumption is the most important 
+              step we can take, but for those who wish to do more, PolyZero also
+              allows you to purchase CO2 off-sets, in order to reduce your net 
+              impact to the climate.
             </p>
             <NavLink to={"/wizard"} exact={"true"}>
               <Button className="text-base capitalize">

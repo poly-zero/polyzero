@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import TierCard from "../components/tiers/TierCard";
 import tierCardData from "../data/tierCards.json";
 import Header from "../components/Header";
-import Carousel from "react-elastic-carousel";
 
 const Tiers = ({ setTier }) => {
   const offsetCost = 5000;
@@ -15,9 +14,9 @@ const Tiers = ({ setTier }) => {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center flex-grow gap-6 md:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
+    <div className="relative flex flex-col flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 lg:items-center md:justify-center md:mt-0 lg:gap-0">
       <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
-      <div className="z-40 flex flex-col gap-4 md:mx-14 basis-1/3">
+      <div className="z-40 flex flex-col gap-4 my-8 text-center md:text-start md:my-16 lg:my-0 lg:ml-24 lg:-mr-24 basis-1/2">
         <Header
           text="Offset your"
           highlightedText="CO2 emissions"
@@ -27,34 +26,26 @@ const Tiers = ({ setTier }) => {
           darkBackground={true}
         />
         <Link to={"/contribution"}>
-          <p className="font-bold underline underline-offset-4 text-emerald-500">
+          <p className="font-bold underline underline-offset-4 md:text-center md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
             Where your money goes
           </p>
         </Link>
       </div>
-      <section className="z-40 flex flex-col items-center justify-center gap-8 basis-3/4 md:gap-4 md:basis-1/2">
-        <Carousel
-          itemPadding={[0, 0]}
-          itemsToShow={2}
-          outerSpacing={0}
-          verticalMode={true}
-          focusOnSelect={true}
-        >
-          {data &&
-            tierCardData.map((tier) => {
-              return (
-                <TierCard
-                  key={tier.title}
-                  title={tier.title}
-                  time={tier.time}
-                  tonnes={data.carbon / 1000}
-                  cost={(data.carbon / 1000) * offsetCost}
-                  image={tier.image}
-                  setTier={setTier}
-                />
-              );
-            })}
-        </Carousel>
+      <section className="z-40 flex flex-col items-center h-screen gap-8 overflow-y-scroll snap-y md:px-16 lg:p-14 xl:p-32 basis-full md:gap-8 md:basis-full lg:basis-1/2">
+        {data &&
+          tierCardData.map((tier) => {
+            return (
+              <TierCard
+                key={tier.title}
+                title={tier.title}
+                time={tier.time}
+                tonnes={data.carbon / 1000}
+                cost={(data.carbon / 1000) * offsetCost}
+                image={tier.image}
+                setTier={setTier}
+              />
+            );
+          })}
       </section>
     </div>
   );

@@ -7,6 +7,7 @@ import Groceries from "../components/footprint/Groceries";
 import { Wizard, useWizard } from "react-use-wizard";
 import { useNavigate } from "react-router-dom";
 import { saveFootprintData } from "../firebase/firebase";
+import ProgressBar from "../components/footprint/ProgressBar";
 
 const FootprintWizard = ({ result, setResult, windowWidth }) => {
   const navigateTo = useNavigate();
@@ -46,7 +47,7 @@ const FootprintWizard = ({ result, setResult, windowWidth }) => {
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-        <Wizard>
+        <Wizard header={<ProgressBar useWizard={useWizard} />}>
           <Country
             result={result}
             setResult={setResult}

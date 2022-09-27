@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Card, CardBody, Button } from "@material-tailwind/react";
+import { Progress } from "@material-tailwind/react";
 
 import {
   FacebookShareButton,
@@ -83,6 +84,12 @@ const Results = ({ result, setResult }) => {
 
   return (
     <div className="relative flex flex-col items-center justify-center flex-grow w-full gap-4 bg-slate-100">
+      <Progress
+        value={100}
+        label="Completed"
+        className="absolute top-0 z-40 rounded-none"
+        color="green"
+      />
       <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
 
       <div className="container z-40 w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2">

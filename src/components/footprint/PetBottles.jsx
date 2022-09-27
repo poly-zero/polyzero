@@ -2,9 +2,9 @@ import { useState } from "react";
 import footprintQuestions from "../../data/footprintQuestions.json";
 import Header from "../Header";
 import FootprintForm from "./FootprintForm";
-import petBottles from "../../assets/petBottles2.mp4"
+import petBottles from "../../assets/videos/petBottles2.mp4";
 
-const PetBottles = ({ useWizard, result, setResult }) => {
+const PetBottles = ({ useWizard, result, setResult, windowWidth }) => {
   const [petBottlesHabit, setPetBottlesHabit] = useState(
     result && result.petBottles ? result.petBottles : null
   );
@@ -21,18 +21,15 @@ const PetBottles = ({ useWizard, result, setResult }) => {
   return (
     <div className="relative flex flex-col items-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
       <video
-        autoPlay
+        autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
         class="absolute z-0 w-auto min-w-full min-h-full max-w-none"
       >
-        <source
-          src={petBottles}
-          type="video/mp4"
-        />
+        <source src={petBottles} type="video/mp4" />
       </video>
       <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
-      
+
       <div className="relative z-30 basis-1/2">
         <Header
           text={""}

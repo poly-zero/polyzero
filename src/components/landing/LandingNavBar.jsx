@@ -1,17 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import { Navbar } from "flowbite-react";
-import { useEffect, useState } from "react";
 import { Button } from "@material-tailwind/react";
 import { ReactComponent as Footprint } from "../../assets/navIcons/carbon-footprint.svg";
-import logo from "../../assets/images/polyzero-logo3.png"
+import logo from "../../assets/images/polyzero-logo3.png";
 
-const LandingNavBar = () => {
-  const [mobile, setMobile] = useState(false);
+const LandingNavBar = ({ windowWidth }) => {
 
-  useEffect(() => {
-    if (window.innerWidth < 500) setMobile(true);
-  }, []);
   return (
     <nav>
       <Navbar fluid={true} rounded={true} border={true}>
@@ -23,13 +18,12 @@ const LandingNavBar = () => {
               className="ml-2 mr-3 h-14 md:h-16"
               alt="PolyZero Logo"
             />
-            
           </div>
         </Navbar.Brand>
         <div className="flex gap-2 md:order-2">
           <Button className="text-base capitalize hover:animate-pulse">
             <NavLink to={"/wizard"} exact={"true"}>
-              {mobile ? <Footprint /> : "Estimate my plastic footprint"}
+              {windowWidth < 1100 ? <Footprint /> : "Estimate my plastic footprint"}
             </NavLink>
           </Button>
         </div>

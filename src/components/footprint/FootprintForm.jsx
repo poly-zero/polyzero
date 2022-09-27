@@ -58,7 +58,6 @@ const FootprintForm = ({
           );
         })}
       </RadioGroup>
-      {console.log(selectedValue)}
       {/* Buttons */}
       <FootprintWizardButtons
         useWizard={useWizard}

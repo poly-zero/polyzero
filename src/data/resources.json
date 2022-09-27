@@ -37,6 +37,16 @@
           "A small number of institutional asset managers and global banks　are providing billions of dollars to companies that produce　polymers from fossil fuels, and only a fraction to companies　trying to shift to a circular plastic economy. This asymmetry　urgently needs to be reversed.",
         "url": "https://sourceofplasticwaste.org/"
       }
+    ],
+    "linkPage": [
+      {
+        "title": "Minderoo - Plastic Waste Makers Index",
+        "url": "https://www.minderoo.org/plastic-waste-makers-index/findings/executive-summary/"
+      },
+      {
+        "title": "New York Times - Here Is Who’s Behind the Global Surge in Single-Use Plastic",
+        "url": "https://www.nytimes.com/2021/05/18/climate/single-use-plastic.html"
+      }
     ]
   },
   {
@@ -58,11 +68,25 @@
   },
   {
     "main_title": "Region-specific",
-    "link_titles": [
-      "Plastic Atlas Asia: Facts and figures about the world of synthetic polymers 2021",
-      "Plastic Atlas Japan Special Edition: A Closer Look at Japan's Plastic Waste Management",
-      "What You (Probably) Didn’t Know About Plastic in Japan",
-      "WWF: Single-Use Plastics in Singapore"
+    "linkPage": [
+      {
+        "title": "Plastic Atlas Asia: Facts and figures about the world of synthetic polymers 2021",
+        "url": "https://hk.boell.org/sites/default/files/2021-04/042921-Plastic%20Atlas%20Asia%202021%20-%20web.pdf"
+      },
+      {
+        "title": "Plastic Atlas Japan Special Edition: A Closer Look at Japan's Plastic Waste Management",
+        "url": "https://hk.boell.org/en/2022/05/30/plastic-atlas-japan-special-edition-closer-look-japans-plastic-waste-management"
+      },
+      {
+        "title": "What You (Probably) Didn’t Know About Plastic in Japan",
+        "url": "https://www.tsunagulocal.com/en/47587/"
+      },
+      {
+        "title": "WWF: Single-Use Plastics in Singapore",
+        "url": "https://www.wwf.sg/plastics/"
+      }
+
+
     ]
   }
 ]

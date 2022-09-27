@@ -4,7 +4,7 @@ import { Card } from "flowbite-react";
 import { ReadMoreButton } from "./ReadMoreButton";
 import resourcesArticles from "../data/resources.json";
 
-const [plasticAndCO2, singleUsePlasticProduction, humanHealth, region] = resourcesArticles;
+const [plasticAndCO2, singleUsePlasticProduction, humanHealth, regions] = resourcesArticles;
 
 const Resources = () => {
   return (
@@ -24,7 +24,7 @@ const Resources = () => {
       <div className="flex flex-row justify-center px-3 space-x-4 py-3 text-center">
         <Button href="#single-use">{singleUsePlasticProduction.main_title}</Button>
         <Button href="#humanHealth">{humanHealth.title}</Button>
-        <Button href="#region">{region.main_title}</Button>
+        <Button href="#region">{regions.main_title}</Button>
       </div>
       <br />
 
@@ -93,20 +93,21 @@ const Resources = () => {
                 {singleUsePlasticProduction.contents[1].text_content}
               </p>
               <ReadMoreButton>LinkPage={singleUsePlasticProduction.contents[1].url}</ReadMoreButton>
-              <a
-                className="underline decoration-dashed"
-                href="https://www.minderoo.org/plastic-waste-makers-index/findings/executive-summary/"
-              >
-                Minderoo - Plastic Waste Makers Index{" "}
-              </a>
-              <br />
-              <a
-                className="underline decoration-dashed"
-                href="https://www.minderoo.org/plastic-waste-makers-index/findings/executive-summary/"
-              >
-                New York Times - Here Is Who’s Behind the Global Surge in
-                Single-Use Plastic
-              </a>
+              {
+                singleUsePlasticProduction.linkPage.map((link) => {
+                  return (
+                    <>
+                      <a
+                        className="underline decoration-dashed"
+                        href={link.url}
+                      >
+                        {link.title}
+                      </a>
+                      <br />
+                    </>
+                  )
+                })
+              }
             </article>
           </section>
         </Card>
@@ -155,39 +156,20 @@ const Resources = () => {
                   id="region"
                   className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
                 >
-                  {region.main_title}
+                  {regions.main_title}
                 </h5>
-                <a
-                  className="underline decoration-dashed"
-                  href="https://hk.boell.org/sites/default/files/2021-04/042921-Plastic%20Atlas%20Asia%202021%20-%20web.pdf"
-                >
-                  Plastic Atlas Asia: Facts and figures about the world of
-                  synthetic polymers 2021
-                </a>
-                <br />
-                <a
-                  className="underline decoration-dashed"
-                  href="https://hk.boell.org/en/2022/05/30/plastic-atlas-japan-special-edition-closer-look-japans-plastic-waste-management"
-                >
-                  Plastic Atlas Japan Special Edition: A Closer Look at Japan's
-                  Plastic Waste Management
-                </a>
-                <br />
-                <a
-                  className="underline decoration-dashed"
-                  href="https://www.tsunagulocal.com/en/47587/"
-                >
-                  What You (Probably) Didn’t Know About Plastic in Japan
-                </a>
-                <br />
-                <p>
-                <a
-                  className="underline decoration-dashed"
-                  href="https://www.wwf.sg/plastics/"
-                >
-                  WWF: Single-Use Plastics in Singapore
-                </a>
-                </p>
+                {
+                  regions.linkPage.map((link) => {
+                    return (
+                      <>
+                        <a className="underline decoration-dashed" href={link.url}>
+                          {link.title}
+                        </a>
+                        <br />
+                      </>
+                    )
+                  })
+                }
               </div>
             </article>
           </section>

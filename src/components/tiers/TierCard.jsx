@@ -46,7 +46,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
         <div className="flex">
           <img className="object-cover w-2/4 rounded-l-xl" src={image} alt="" />
           <CardBody className="flex flex-col w-3/4 gap-4">
-            <h2 className="font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
+            <h2 className="text-xl font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
               {title}
             </h2>
             <p className="font-normal text-gray-700 whitespace-pre-wrap text-md dark:text-gray-400">

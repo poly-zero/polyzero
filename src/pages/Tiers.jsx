@@ -16,14 +16,16 @@ const Tiers = ({ setTier }) => {
   return (
     <div className="relative flex flex-col flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-700 opacity-90 lg:items-center md:justify-center md:mt-0 lg:gap-0">
       <div className="z-40 flex flex-col gap-4 my-8 text-center md:text-start md:my-16 lg:my-0 lg:ml-24 lg:-mr-24 basis-1/2">
-        <Header
-          text="Offset your"
-          highlightedText="CO2 emissions"
-          caption={
-            "The most important step you can take is to reduce your plastic footprint. For those who wish to do more, you can offset the CO2 emissions originating from the plastic you use."
-          }
-          darkBackground={true}
-        />
+        <div className="mx-2">
+          <Header
+            text="Offset your"
+            highlightedText="CO2 emissions"
+            caption={
+              "The most important step you can take is to reduce your plastic footprint. For those who wish to do more, you can offset the CO2 emissions originating from the plastic you use."
+            }
+            darkBackground={true}
+          />
+        </div>
         <Link to={"/contribution"}>
           <p className="font-bold underline underline-offset-4 md:text-center md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
             Where your money goes

@@ -1,4 +1,4 @@
-![PolyZero](/public/images/polyzero-logo.png)
+![PolyZero Logo](/src/assets/images/polyzero-logo3.png)
 
 # About the PolyZero Project
 

@@ -16,18 +16,13 @@ const Country = ({ result, setResult, useWizard, windowWidth }) => {
   );
   const [query, setQuery] = useState("");
 
-  const handleQuery = (event) => {
-    event.preventDefault();
-    setQuery(event.target.value);
-  };
-
   const storeCountry = () => {
     setResult({
       ...result,
       country: selectedCountry,
     });
   };
-  
+
   const filteredCountries =
     query === ""
       ? countries
@@ -75,7 +70,7 @@ const Country = ({ result, setResult, useWizard, windowWidth }) => {
                 displayValue={(country) =>
                   !country ? "" : country.flag + " " + country.name
                 }
-                onChange={handleQuery}
+                onChange={(event) => setQuery(event.target.value)}
                 onClick={() => setSelectedCountry("")}
               />
               <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">

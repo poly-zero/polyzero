@@ -1,4 +1,5 @@
 import { Progress } from "@material-tailwind/react";
+import { useCountUp } from "use-count-up";
 
 const ProgressBar = ({ useWizard }) => {
   const { isLastStep, isFirstStep, activeStep } = useWizard();

@@ -35,7 +35,7 @@ const FootprintWizard = ({ result, setResult }) => {
     const final = calculateResults(result);
     const finalResult = {
       ...result,
-      footprintResult: final,
+      footprintResult: final
     };
     localStorage.setItem("footprint", JSON.stringify(finalResult));
     saveFootprintData(finalResult);
@@ -44,27 +44,37 @@ const FootprintWizard = ({ result, setResult }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-grow">
-      <Wizard>
-        <Country result={result} setResult={setResult} useWizard={useWizard} />
-        <Groceries
-          result={result}
-          setResult={setResult}
-          useWizard={useWizard}
-        />
-        <OnlineShopping
-          result={result}
-          setResult={setResult}
-          useWizard={useWizard}
-        />
-        <PetBottles
-          result={result}
-          setResult={setResult}
-          useWizard={useWizard}
-        />
-        <TakeOut result={result} setResult={setResult} useWizard={useWizard} />
-      </Wizard>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
+        <Wizard >
+          <Country
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <Groceries
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <OnlineShopping
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <PetBottles
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+          <TakeOut
+            result={result}
+            setResult={setResult}
+            useWizard={useWizard}
+          />
+        </Wizard>
+      </form>
+    </>
   );
 };
 

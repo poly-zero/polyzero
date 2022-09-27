@@ -1,29 +1,28 @@
 import LandingNavBar from "../components/landing/LandingNavBar";
 import BlockQuote from "../components/landing/BlockQuote";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
+import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Mail } from "../assets/images/mail.svg";
 import { ReactComponent as Coffee } from "../assets/images/coffee.svg";
-import { Avatar, Carousel } from "flowbite-react";
-import { Card } from "@material-tailwind/react";
+import { Carousel } from "flowbite-react";
+import { Card, Avatar, Button } from "@material-tailwind/react";
 import quotes from "../data/quotes.json";
+import teamMembers from "../data/team.json";
+import Header from "../components/Header";
+import { NavLink } from "react-router-dom";
 
 const Landing = () => {
   return (
     <div className="relative h-screen md:-ml-64 snap-y snap-mandatory">
       <LandingNavBar />
-      <div className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-4/6 md:h-4/5 snap-end">
-        <Card className="z-10 flex flex-col justify-center items-center md:w-3/4 h-3/4 md:h-full bg-clip-padding bg-opacity-70 border border-gray-200">
-          <h1 className="mt-8 text-2xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl text-center">
-            Facts about&nbsp;
-            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-              Disposable Plastics
-            </span>
-          </h1>
-          <div className="w-full md:w-3/4 md: p-4 h-full md:h-3/4">
+      <main className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-5/6 md:h-4/5 snap-end">
+        <Card className="z-10 flex flex-col items-center justify-center w-full gap-4 p-0 border border-gray-200 md:p-4 md:w-full lg:w-3/4 h-5/6 md:h-full lg:h-full bg-clip-padding bg-opacity-70">
+          <Header text={"Facts about"} highlightedText="Disposable Plastics" />
+          <section className="w-full h-full">
             <Carousel slideInterval={5000}>
               {quotes.map((element, index) => {
                 return (
-                  <div className="flex justify-center" key={index}>
+                  <article className="flex justify-center" key={index}>
                     <BlockQuote
                       quote={element.quote}
                       article={element.article}
@@ -31,16 +30,18 @@ const Landing = () => {
                       sourceLink={element.sourceLink}
                       buttonText={element.buttonText}
                     />
-                  </div>
+                  </article>
                 );
               })}
             </Carousel>
-          </div>
+          </section>
         </Card>
-        <div className="absolute z-10 text-slate-200 text-xs md:text-base rounded-xl p-1 bottom-0 left-0 mb-2 ml-2">
+        <div className="absolute bottom-0 left-0 z-10 p-1 mb-2 ml-2 text-xs text-slate-200 md:text-base rounded-xl">
           Photo by{" "}
           <a
             className="underline"
+            target="_blank"
+            rel="noreferrer"
             href="https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
           >
             FLY:D
@@ -49,18 +50,20 @@ const Landing = () => {
           <a
             className="underline"
             href="https://unsplash.com/s/photos/plastic-straws?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+            target="_blank"
+            rel="noreferrer"
           >
             Unsplash
           </a>
         </div>
-        <div className="absolute w-full z-0 h-full bg-black opacity-40"></div>
-      </div>
+        <div className="absolute z-0 w-full h-full bg-black opacity-40"></div>
+      </main>
 
-      <div
+      <section
         id="about"
-        className="flex flex-col bg-white justify-center items-center p-14 h-3/4 snap-center"
+        className="flex flex-col items-center justify-center bg-white p-14 h-5/6 snap-center"
       >
-        <div className="flex flex-col gap-4 w-full md:w-2/5">
+        <article className="flex flex-col w-full gap-4 md:w-2/5">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl text">
             About
           </h1>
@@ -86,80 +89,71 @@ const Landing = () => {
               allows you to purchase CO2 off-sets, in order to reduce your net 
               impact to the climate.
             </p>
+            <NavLink to={"/wizard"} exact={"true"}>
+              <Button className="text-base capitalize">
+                Estimate my plastic footprint
+              </Button>
+            </NavLink>
           </div>
-        </div>
-      </div>
-      <div
+        </article>
+      </section>
+      <section
         id="team"
-        className="bg-slate-200 flex flex-col justify-center items-center p-14 h-3/4 snap-center"
+        className="flex flex-col justify-center h-full lg:items-center bg-slate-200 p-14 lg:h-5/6 snap-center"
       >
-        <div className="flex flex-col justify-center gap-4 w-full md:w-2/5">
-          <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl">
-            The Team
+        <article className="flex flex-col w-full gap-4 md:w-5/6">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-800 lg:text-center dark:text-white md:text-5xl lg:text-6xl">
+            Meet the Team
           </h1>
-          <div className="flex flex-wrap place-content-evenly gap-2">
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/62789620?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Kim Ly</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  kim@polyzero.org
+          <div className="flex flex-wrap gap-4 lg:gap-8 lg:place-content-evenly">
+            {teamMembers.map((member, index) => {
+              return (
+                <div key={index} className="flex items-center gap-4">
+                  <Avatar
+                    src={member.avatar}
+                    variant="circular"
+                    className="w-20 h-20 shadow-xl lg:w-32 lg:h-32"
+                  ></Avatar>
+                  <div className="flex flex-col gap-1 lg:gap-3">
+                    <div className="space-y-1 text-xs font-medium lg:text-sm dark:text-white">
+                      <h3>{member.name}</h3>
+                      <h3 className="text-gray-500 dark:text-gray-400">
+                        {member.email}
+                      </h3>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <a href={member.github} target="_blank" rel="noreferrer">
+                        <img
+                          className="w-5"
+                          src="https://cdn.onlinewebfonts.com/svg/img_44605.png"
+                          alt="Github logo link"
+                        />
+                      </a>
+                      {member.linkedIn && (
+                        <a
+                          href={member.linkedIn}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <LinkedIn className="w-7 h-7" />
+                        </a>
+                      )}
+                      {member.twitter && (
+                        <a
+                          href={member.twitter}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Twitter className="w-7 h-7" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/101638795?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Daiki Uema</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  daiki@polyzero.org
-                </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/73273137?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Joshua Haley</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  josh@polyzero.org
-                </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/73625660?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Felipe Machado</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  felipe@polyzero.org
-                </div>
-              </div>
-            </Avatar>
-            <Avatar
-              img="https://avatars.githubusercontent.com/u/4993321?v=4"
-              rounded={true}
-              size="lg"
-            >
-              <div className="space-y-1 font-medium dark:text-white">
-                <div>Zach Brown</div>
-                <div className="text-sm text-gray-500 dark:text-gray-400">
-                  zach@polyzero.org
-                </div>
-              </div>
-            </Avatar>
+              );
+            })}
           </div>
-          <div className="flex place-content-center gap-4 p-5 m-5">
+          <div className="flex gap-4 mt-12 -mb-8 ml-7 lg:place-content-center">
             <a
               href="https://www.buymeacoffee.com/polyzeroteam"
               target="_blank"
@@ -167,23 +161,23 @@ const Landing = () => {
             >
               <Coffee />
             </a>
-            <p className="text-center">Buy us a coffee</p>
+            <p className="text-center">Buy us a coffee (in a reusable mug)</p>
           </div>
-        </div>
-      </div>
-      <div
+        </article>
+      </section>
+      <section
         id="contact"
-        className="flex flex-col bg-white justify-center items-center p-14 h-3/4 snap-center"
+        className="flex flex-col items-center justify-center bg-white p-14 h-3/4 snap-center"
       >
-        <div className="flex flex-col justify-center  gap-4 w-full md:w-1/3">
+        <article className="flex flex-col justify-center w-full gap-4 md:w-1/3">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl">
             Contact Us
           </h1>
-          <p className="text-gray-500">
+          <p className="text-sm text-gray-500 md:text-base">
             We are volunteer-run and are actively looking for sponsors,
             collaborators, and open-source contributors. Please reach out!
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://twitter.com/PolyZeroApp"
               target="_blank"
@@ -202,13 +196,13 @@ const Landing = () => {
                 alt="Github logo link"
               />
             </a>
-            <div className="m-auto flex gap-4">
+            <div className="flex gap-4 lg:m-auto">
               <Mail />
               contact@polyzero.org
             </div>
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   );
 };

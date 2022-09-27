@@ -39,7 +39,7 @@ function Registration() {
   }, [user, loading]);
 
   return (
-    <div className="flex items-center justify-center p-6">
+    <div className="flex flex-grow items-center justify-center p-6">
       <Card>
         <div className="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
           <div className="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
@@ -152,15 +152,6 @@ function Registration() {
                   aria-required
                   required
                 />
-                <label
-                  className="mt-1 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700"
-                  htmlFor="terms"
-                >
-                  I agree the
-                  <Link to="/" className="font-bold text-slate-700">
-                    Terms and Conditions
-                  </Link>
-                </label>
               </div>
               <div className="text-center">
                 <button

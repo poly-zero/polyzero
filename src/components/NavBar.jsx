@@ -1,30 +1,17 @@
-import { useEffect } from "react";
 import { Navbar, Avatar, Dropdown, Button } from "flowbite-react";
-import { logout, getUserInfo } from "../firebase/firebase";
+import { logout } from "../firebase/firebase";
 import { Link } from "react-router-dom";
+import {
+  ArrowLeftOnRectangleIcon,
+  Bars3Icon,
+  UserPlusIcon,
+} from "@heroicons/react/24/solid";
 
-const NavBar = ({
-  setShowSidebar,
-  pathName,
-  userInfo,
-  setUserInfo,
-  user,
-  loading,
-}) => {
-  
-  useEffect(() => {
-    if (loading) return;
-    if (user && !userInfo)
-      getUserInfo(user.uid).then((res) =>
-        res.forEach((doc) => setUserInfo(doc.data()))
-      );
-    else if (!user) setUserInfo(null);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, loading]);
+const NavBar = ({ setShowSidebar, pathName, user }) => {
   return (
-    <nav className="py-6 px-3">
-      <div className="container max-w-full mx-auto items-center justify-between md:px-8">
-        <Navbar rounded={true} border={true}>
+    <nav className="px-3 py-2">
+      <div className="container items-center justify-between max-w-full mx-auto md:px-8">
+        <Navbar rounded={true} border={false}>
           {/* Navigation list container */}
           <Navbar.Collapse>
             <Navbar.Link href="/navbars">
@@ -34,11 +21,11 @@ const NavBar = ({
             </Navbar.Link>
           </Navbar.Collapse>
           <button
-            className="cursor-pointer text-sm px-3 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            className="block px-3 text-sm bg-transparent border border-transparent border-solid rounded outline-none cursor-pointer lg:hidden focus:outline-none"
             type="button"
             onClick={() => setShowSidebar("left-0")}
           >
-            Menu
+            <Bars3Icon className="w-6 text-gray-700" />
           </button>
 
           <div className="flex items-center gap-4">
@@ -63,7 +50,9 @@ const NavBar = ({
                         {user.email}
                       </span>
                     </Dropdown.Header>
-                    <Dropdown.Item>Dashboard</Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/dashboard">DashBoard</Link>
+                    </Dropdown.Item>
                     <Dropdown.Item>Settings</Dropdown.Item>
                     <Dropdown.Item onClick={() => logout()}>
                       Log out
@@ -75,10 +64,14 @@ const NavBar = ({
               <>
                 <Button.Group>
                   <Button color="gray">
-                    <Link to="/login">Log in</Link>
+                    <Link to="/login">
+                      <ArrowLeftOnRectangleIcon className="w-6 text-gray-700" />
+                    </Link>
                   </Button>
                   <Button color="gray">
-                    <Link to="/registration">Register</Link>
+                    <Link to="/registration">
+                      <UserPlusIcon className="w-6 text-gray-700" />
+                    </Link>
                   </Button>
                 </Button.Group>
               </>

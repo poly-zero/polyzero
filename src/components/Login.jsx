@@ -32,7 +32,7 @@ function Login() {
   }, [user, loading]);
 
   return (
-    <div className="flex items-center justify-center p-6">
+    <div className="flex flex-grow items-center justify-center p-6">
       <Card>
         <div className="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
           <div className="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
@@ -106,9 +106,9 @@ function Login() {
                 </button>
               </div>
               <p className="mt-4 mb-0 leading-normal text-sm text-center">
-                Don't have an count yet?{" "}
+                Don't have an account yet?{" "}
                 <Link to="/registration" className="font-bold text-slate-700">
-                  Register
+                  Register here
                 </Link>
               </p>
             </form>

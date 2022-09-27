@@ -4,6 +4,7 @@ import { Navbar } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { Button } from "@material-tailwind/react";
 import { ReactComponent as Footprint } from "../../assets/navIcons/carbon-footprint.svg";
+import logo from "../../assets/images/polyzero-logo3.png"
 
 const LandingNavBar = () => {
   const [mobile, setMobile] = useState(false);
@@ -18,17 +19,15 @@ const LandingNavBar = () => {
         <Navbar.Brand href="/">
           <div className="flex my-2">
             <img
-              src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mt-1 ml-2 mr-3 h-8 md:h-14"
+              src={logo}
+              className="ml-2 mr-3 h-14 md:h-16"
               alt="PolyZero Logo"
             />
-            <span className="self-center whitespace-nowrap text-xl md:text-2xl font-semibold dark:text-white">
-              PolyZero
-            </span>
+            
           </div>
         </Navbar.Brand>
-        <div className="flex md:order-2 gap-2">
-          <Button className="capitalize text-base">
+        <div className="flex gap-2 md:order-2">
+          <Button className="text-base capitalize hover:animate-pulse">
             <NavLink to={"/wizard"} exact={"true"}>
               {mobile ? <Footprint /> : "Estimate my plastic footprint"}
             </NavLink>

@@ -24,6 +24,8 @@ function App() {
 
   useEffect(() => {
     pageTracking(location);
+    if (localStorage.fromConfirmation && location.pathname !== "/confirmation")
+      localStorage.clear();
   }, [location]);
 
   return (
@@ -61,11 +63,7 @@ function App() {
           <Route
             exact
             path="/confirmation"
-            element={
-              <ConditionalRedirect isSet={tier}>
-                <OrderConfirmation tier={tier} />
-              </ConditionalRedirect>
-            }
+            element={<OrderConfirmation tier={tier} />}
           />
           <Route exact path="/tips" element={<TipsToReduce />} />
           <Route exact path="/dashboard" element={<Dashboard />} />

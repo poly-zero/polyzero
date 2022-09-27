@@ -5,13 +5,13 @@ import contributionArticles from "../data/contribution.json";
 
 const Contribution = () => {
   return (
-    <div className="flex flex-col flex-grow items-center bg-slate-200 gap-4">
+    <div className="flex flex-col items-center flex-grow gap-4 bg-slate-200">
       <Header
         text={"Where your"}
         highlightedText={"money goes"}
-        caption={"Some description here"}
+        caption={"FAQs about our carbon credit fullfillment process"}
       />
-      <section className="flex flex-col gap-8 w-1/2">
+      <section className="flex flex-col w-1/2 gap-8">
         {contributionArticles.map((article) => {
           return <Article title={article.title} text={article.text} />;
         })}

@@ -17,8 +17,11 @@ import {
   collection,
   where,
   addDoc,
+  orderBy,
 } from "firebase/firestore";
 import { loginTracking } from "../analytics/tracking";
+import { loadStripe } from "@stripe/stripe-js";
+import { getFunctions, httpsCallable } from "firebase/functions";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -52,8 +55,7 @@ const registerWithGoogle = async () => {
         name: user.displayName,
         authProvider: "google",
         email: user.email,
-        badge: [0],
-        footprint: 0,
+        created_at: new Date(),
       });
     }
   } catch (err) {
@@ -72,8 +74,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: "local",
       email,
-      badge: [0],
-      footprint: 0,
+      created_at: new Date(),
     });
   } catch (err) {
     console.error(err);
@@ -91,9 +92,13 @@ const logInWithEmailAndPassword = async (email, password) => {
   }
 };
 
-const getUserInfo = async (userId) => {
+const getUserHistory = async (userId) => {
   try {
-    const q = query(collection(db, "users"), where("uid", "==", userId));
+    const q = query(
+      collection(db, "payment"),
+      where("uid", "==", userId),
+      orderBy("created_at", "desc")
+    );
     const docs = await getDocs(q);
     return docs;
   } catch (err) {
@@ -132,15 +137,49 @@ const saveTierData = async (data) => {
   }
 };
 
+const savePaymentData = async (data) => {
+  try {
+    await addDoc(collection(db, "payment"), data);
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+const getStripeApi = async (data) => {
+  try {
+    const stripeCheckout =
+      window.location.hostname === "localhost"
+        ? httpsCallable(getFunctions(app), "stripeCheckoutDev")
+        : httpsCallable(getFunctions(app), "stripeCheckoutProd");
+
+    const STRIPE_PUBLIC_KEY =
+      window.location.hostname === "localhost"
+        ? "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE"
+        : "pk_live_51LhqIFAAHnMRTgmRuENJXYhrcJKNprQWWzUbCqtGJ1Zwg6AGfzmoE5w0wCJV8GZ8k8rTF4HVzKHuBQw9yEzxOH4E00eCeL7tXl";
+
+    const stripe = await loadStripe(STRIPE_PUBLIC_KEY);
+    stripeCheckout(data).then((result) => {
+      stripe
+        .redirectToCheckout({ sessionId: result.data.id })
+        .then((result) => {
+          console.log(result);
+        });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export {
   auth,
   db,
   registerWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
-  getUserInfo,
+  getUserHistory,
   sendPasswordReset,
   logout,
   saveFootprintData,
   saveTierData,
+  savePaymentData,
+  getStripeApi,
 };

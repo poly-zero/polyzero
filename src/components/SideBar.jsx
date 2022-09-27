@@ -1,36 +1,42 @@
-import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
 import { logout, auth } from "../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-// import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
-// import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
-// import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
-// import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 import { ReactComponent as Footprint } from "../assets/navIcons/carbon-footprint.svg";
 import { ReactComponent as Tiers } from "../assets/navIcons/tiers.svg";
-import { ReactComponent as Dashboard } from "../assets/navIcons/dashboard.svg";
-import { ReactComponent as Logout } from "../assets/navIcons/logout.svg";
-import { Progress } from "flowbite-react";
+import { Progress, Dropdown, Avatar, Button } from "flowbite-react";
+import {
+  ArrowLeftOnRectangleIcon,
+  UserPlusIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/solid";
+import logo from "../assets/images/polyzero-logo3.png"
 
 const SideBar = ({ result }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
-  const [userInfo, setUserInfo] = useState(null);
   const [user, loading, error] = useAuthState(auth);
+  const [isMobileView, setIsMobileView] = useState(false);
   const pathName = useLocation().pathname;
+
+  useEffect(() => {
+    if (window.innerWidth < 500) setIsMobileView(true);
+  }, []);
 
   return (
     <>
-      <div className="">
+      <div className="z-50">
         <Progress
+          color="green"
           progress={
             !result
               ? 0
-              : pathName === "/footprint"
+              : pathName === "/wizard"
               ? 25
+              : pathName === "/results"
+              ? 45
               : pathName === "/tiers"
-              ? 50
+              ? 60
               : pathName === "/payment"
               ? 75
               : pathName === "/confirmation"
@@ -40,47 +46,44 @@ const SideBar = ({ result }) => {
           size="sm"
         />
       </div>
-      <NavBar
-        showSidebar={showSidebar}
-        setShowSidebar={setShowSidebar}
-        userInfo={userInfo}
-        setUserInfo={setUserInfo}
-        user={user}
-        loading={loading}
-        error={error}
-        pathName={pathName}
-      />
+      {isMobileView && (
+        <NavBar
+          showSidebar={showSidebar}
+          setShowSidebar={setShowSidebar}
+          user={user}
+          loading={loading}
+          error={error}
+          pathName={pathName}
+        />
+      )}
 
       {/* SideBar Container */}
       <div
-        className={`h-screen fixed top-0 md:left-0 ${showSidebar} flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 z-10 py-4 px-6 transition-all duration-300`}
+        className={`h-screen fixed top-0 z-50 md:left-0 ${showSidebar} flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 z-10 py-4 px-6 transition-all duration-300`}
       >
-        <div className="flex-col items-stretch min-h-full flex-nowrap px-0 relative">
+        <div className="relative flex-col items-stretch min-h-full px-0 flex-nowrap">
           {/* Close button for SideBar */}
           <button
-            className=" float-right md:hidden"
+            className="float-right md:hidden"
             onClick={() => setShowSidebar("-left-64")}
           >
-            X
+            <XMarkIcon className="w-6" />
           </button>
           {/* Logo */}
           <NavLink to="/" exact="true" className="flex mt-2">
             <img
-              src="https://raw.githubusercontent.com/poly-zero/polyzero/main/public/images/favicon64.ico"
-              className="mr-3 h-14"
+              src={logo}
+              className="mr-3 h-18"
               alt="PolyZero Logo"
             />
-            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-              PolyZero
-            </span>
+          
           </NavLink>
 
           <div className="flex flex-col">
-            <hr className="my-4 min-w-full" />
-
+            <hr className="min-w-full my-4" />
             {/* Beginning of nav list */}
-            <ul className="flex-col min-w-full flex list-none">
-              <li className="rounded-lg mb-4">
+            <ul className="flex flex-col min-w-full list-none">
+              <li className="mb-4 rounded-lg">
                 <NavLink
                   to="/wizard"
                   exact="true"
@@ -96,7 +99,7 @@ const SideBar = ({ result }) => {
                 </NavLink>
               </li>
               {result && (
-                <li className="rounded-lg mb-4">
+                <li className="mb-4 rounded-lg">
                   <NavLink
                     to="/tiers"
                     exact="true"
@@ -108,64 +111,69 @@ const SideBar = ({ result }) => {
                   >
                     {/* <Icon name="dashboard" size="2xl" /> */}
                     <Tiers />
-                    Tiers
+                    Support Tiers
                   </NavLink>
                 </li>
               )}
-              {user && (
+            </ul>
+            <ul className="absolute bottom-0 flex flex-col items-center min-w-full list-none">
+              {user ? (
                 <>
-                  <li className="rounded-lg mb-4">
-                    <NavLink
-                      to="/dashboard"
-                      exact="true"
-                      className={
-                        pathName === "/dashboard"
-                          ? "flex items-center gap-4 text-sm font-semibold px-4 py-3 rounded-lg bg-gradient-to-r to-emerald-600 from-sky-400 text-white shadow-md"
-                          : "flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
+                  <div className="flex items-center gap-2">
+                    <Dropdown
+                      arrowIcon={false}
+                      inline={true}
+                      label={
+                        <Avatar
+                          img={user.photoURL ? user.photoURL : false}
+                          rounded={true}
+                          alt="Your profile pic"
+                        />
                       }
                     >
-                      {/* <Icon name="dashboard" size="2xl" /> */}
-                      <Dashboard />
-                      Dashboard
-                    </NavLink>
-                  </li>
-                  <li className="rounded-lg mb-4">
-                    <button
-                      className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg "
-                      onClick={logout}
-                    >
-                      <Logout />
-                      Log out
-                    </button>
-                  </li>
+                      <div>
+                        <Dropdown.Header>
+                          <span className="block text-sm">
+                            {user.displayName}
+                          </span>
+                          <span className="block text-sm font-medium truncate">
+                            {user.email}
+                          </span>
+                        </Dropdown.Header>
+                        <Dropdown.Item>
+                          <Link to="/dashboard">DashBoard</Link>
+                        </Dropdown.Item>
+                        <Dropdown.Item>Settings</Dropdown.Item>
+                        <Dropdown.Item onClick={() => logout()}>
+                          Log out
+                        </Dropdown.Item>
+                      </div>
+                    </Dropdown>
+                    <p className="text-sm">{user.displayName}</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Button.Group>
+                    <Button color="gray">
+                      <Link to="/login">
+                        <div className="flex flex-col items-center">
+                          <ArrowLeftOnRectangleIcon className="w-6 text-gray-700" />
+                          <span>Log in</span>
+                        </div>
+                      </Link>
+                    </Button>
+                    <Button color="gray">
+                      <Link to="/registration">
+                        <div className="flex flex-col items-center">
+                          <UserPlusIcon className="w-6 text-gray-700" />
+                          <span>Register</span>
+                        </div>
+                      </Link>
+                    </Button>
+                  </Button.Group>
                 </>
               )}
-            </ul>
-
-            <ul className="flex-col min-w-full flex list-none absolute bottom-0">
-              {/* <li className="bg-gradient-to-tr from-purple-500 to-purple-700 px-4 rounded-lg text-white">
-                <a
-                  href="/"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-4 text-sm font-light py-3"
-                >
-                  Share
-                </a>
-              </li> */}
-              {/* <li>
-                <div className="grid grid-cols-3">
-                  <FaceBook />
-                  <Instagram />
-                  <a
-                    href="https://twitter.com/intent/tweet?text=Checkout PolyZero!"
-                    data-show-count="false"
-                  >
-                    <Twitter />
-                  </a>
-                  <LinkedIn />
-                  <Line />
-                </div>
-              </li> */}
             </ul>
           </div>
         </div>

@@ -26,9 +26,9 @@ const FootprintForm = ({
         name="footprint"
         className="flex flex-col gap-4"
       >
-        {answers.map((element) => {
+        {answers.map((element, i) => {
           return (
-            <RadioGroup.Option value={element.value}>
+            <RadioGroup.Option value={element.value} key={i}>
               {({ active, checked }) => (
                 <Card
                   className={`hover:cursor-pointer ${
@@ -58,7 +58,6 @@ const FootprintForm = ({
           );
         })}
       </RadioGroup>
-      {console.log(selectedValue)}
       {/* Buttons */}
       <FootprintWizardButtons
         useWizard={useWizard}

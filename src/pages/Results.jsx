@@ -13,7 +13,7 @@ import { useCountUp } from "use-count-up";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import {
-  // AcademicCapIcon,
+  AcademicCapIcon,
   BackwardIcon,
   ForwardIcon,
 } from "@heroicons/react/24/solid";
@@ -86,11 +86,13 @@ const Results = ({ result, setResult }) => {
       <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
 
       <div className="container z-40 w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2">
-        <Header
-          text="My"
-          highlightedText="Plastic Footprint"
-          darkBackground={true}
-        />
+        <div className="z-40 md:basis-1/4 lg:basis-1/2">
+          <Header
+            text="My"
+            highlightedText="Plastic Footprint"
+            darkBackground={true}
+          />
+        </div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4 md:flex-row">
             <Card className="bg-gray-400 border-none rounded-xl basis-3/5 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
@@ -106,7 +108,7 @@ const Results = ({ result, setResult }) => {
                     </span>
                   </div>
                 </h1>
-                <p className="text-xs font-normal text-slate-100 md:text-base dark:text-slate-100">
+                <p className="text-xs font-normal leading-5 text-slate-100 md:text-md dark:text-slate-100">
                   At the <strong>{footprint.title}</strong> level, we estimate
                   you consume around{" "}
                   <strong>{useCounter(footprint.plastic)}kg</strong> of
@@ -117,7 +119,7 @@ const Results = ({ result, setResult }) => {
             <Card className="bg-gray-400 border-none rounded-xl basis-2/5 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
               <CardBody>
                 <h1 className="flex flex-col gap-2 mb-4 text-3xl font-extrabold text-slate-100 dark:text-white md:text-5xl">
-                  <small className="text-base font-normal text-slate-100 md:text-base lg:text-xl">
+                  <small className="text-base font-normal leading-5 text-slate-100 md:text-md lg:text-xl">
                     National average
                   </small>
                   <div className="text-4xl md:text-5xl lg:text-5xl 2xl:text-8xl">
@@ -127,7 +129,7 @@ const Results = ({ result, setResult }) => {
                     </span>
                   </div>
                 </h1>
-                <p className="text-xs font-normal text-slate-100 md:text-base dark:text-slate-100">
+                <p className="text-xs font-normal leading-5 text-slate-100 md:text-md dark:text-slate-100">
                   per capita average annual plastic consumption in
                   <strong>&nbsp;{country}</strong>.
                 </p>
@@ -148,7 +150,7 @@ const Results = ({ result, setResult }) => {
                       <small className="text-xl">2</small>e
                     </span>
                   </h1>
-                  <p className="text-xs font-normal text-slate-100 md:text-base dark:text-slate-100">
+                  <p className="text-xs font-normal leading-5 text-slate-100 md:text-md dark:text-slate-100">
                     emissions over the course of its life (production to
                     end-of-life).
                   </p>
@@ -156,34 +158,34 @@ const Results = ({ result, setResult }) => {
               </CardBody>
             </Card>
             <Card className="bg-gray-400 border-none rounded-xl basis-1/5 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
-              <CardBody className="flex flex-col items-center justify-between gap-4">
-                <small className="text-base font-normal text-center text-slate-100 md:text-xl">
+              <CardBody className="flex flex-col items-center justify-between gap-6">
+                <small className="text-base font-normal text-center text-slate-100 md:text-base">
                   Share your results and help raise awareness!
                 </small>
-                <div className="flex gap-4 -my-2">
+                <div className="flex gap-4">
                   {/*  */}
                   <FacebookShareButton
                     url={"https://www.polyzero.earth"}
                     hashtag={"#polyzero"}
                   >
-                    <FaceBook />
+                    <FaceBook className="w-12 h-12" />
                   </FacebookShareButton>
                   <TwitterShareButton
                     url={"https://www.polyzero.earth"}
                     title={`I use approx ${footprint.plastic}kg of disposable plastic/year, corresponding to ${footprint.carbon}kg of CO2e. %0aHow much plastic do you use? Estimated with`}
                     hashtags={["PolyZeroApp"]}
                   >
-                    <Twitter />
+                    <Twitter className="w-12 h-12" />
                   </TwitterShareButton>
                   <LinkedinShareButton url={"https://www.polyzero.earth"}>
-                    <LinkedIn />
+                    <LinkedIn className="w-12 h-12" />
                   </LinkedinShareButton>
                 </div>
               </CardBody>
             </Card>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-4 my-8">
+        <div className="flex flex-col flex-wrap justify-center gap-4 my-8 md:flex-row">
           <Button
             className="flex items-center gap-4 text-base capitalize transition-all duration-300 ease-in-out bg-sky-500 md:justify-center text-slate-100 basis-full lg:basis-1/3 hover:bg-red-500"
             onClick={resetFootprint}
@@ -200,10 +202,10 @@ const Results = ({ result, setResult }) => {
           </Button>
           <Button
             className="flex items-center gap-4 text-base capitalize md:justify-center basis-full lg:basis-1/3 bg-gradient-to-r to-emerald-600 from-sky-500"
-            onClick={() => navigateTo("/resources")}
+            onClick={() => navigateTo("/tips")}
           >
-            Off-set your CO2 emissions
-            <ForwardIcon className="w-8 h-8 text-slate-100" />
+            <AcademicCapIcon className="w-8 h-8" />
+            Shrink your plastic habit
           </Button>
         </div>
       </div>

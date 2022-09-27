@@ -7,9 +7,9 @@ import {
   CheckCircleIcon,
   ChevronDoubleDownIcon,
 } from "@heroicons/react/24/solid";
-import globe from "../../assets/globe.mp4"
+import globe from "../../assets/videos/globe.mp4";
 
-const Country = ({ result, setResult, useWizard }) => {
+const Country = ({ result, setResult, useWizard, windowWidth }) => {
   // Japan selected by default
   const [selectedCountry, setSelectedCountry] = useState(
     result && result.country ? result.country : countries[44]
@@ -22,7 +22,7 @@ const Country = ({ result, setResult, useWizard }) => {
       country: selectedCountry,
     });
   };
-
+  
   const filteredCountries =
     query === ""
       ? countries
@@ -35,20 +35,17 @@ const Country = ({ result, setResult, useWizard }) => {
 
   return (
     <div className="relative flex flex-col items-center justify-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 md:gap-10 md:py-8">
-       <video
-        autoPlay
+      <video
+        autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
         class="absolute z-0 w-auto min-w-full min-h-full max-w-none"
       >
-        <source
-          src={globe}
-          type="video/mp4"
-        />
+        <source src={globe} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute z-0 w-full h-full bg-slate-800 opacity-80"></div>
-      
+
       <div className="z-40 lg:basis-1/2">
         <Header
           highlightedText="Country of Residence"
@@ -70,7 +67,9 @@ const Country = ({ result, setResult, useWizard }) => {
               <Combobox.Input
                 className="w-full border-none py-2.5 pl-3 pr-10 text-xl leading-5 text-gray-700 focus:ring-0"
                 // What is displayed in input box after selection
-                displayValue={(country) => (!country ? "" : country.flag + " " + country.name)}
+                displayValue={(country) =>
+                  !country ? "" : country.flag + " " + country.name
+                }
                 onChange={(event) => setQuery(event.target.value)}
                 onClick={() => setSelectedCountry("")}
               />

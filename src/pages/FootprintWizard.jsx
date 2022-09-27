@@ -8,7 +8,7 @@ import { Wizard, useWizard } from "react-use-wizard";
 import { useNavigate } from "react-router-dom";
 import { saveFootprintData } from "../firebase/firebase";
 
-const FootprintWizard = ({ result, setResult }) => {
+const FootprintWizard = ({ result, setResult, windowWidth }) => {
   const navigateTo = useNavigate();
   const storedFootprint = JSON.parse(localStorage.getItem("footprint"));
 
@@ -35,7 +35,7 @@ const FootprintWizard = ({ result, setResult }) => {
     const final = calculateResults(result);
     const finalResult = {
       ...result,
-      footprintResult: final
+      footprintResult: final,
     };
     localStorage.setItem("footprint", JSON.stringify(finalResult));
     saveFootprintData(finalResult);
@@ -46,31 +46,36 @@ const FootprintWizard = ({ result, setResult }) => {
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-        <Wizard >
+        <Wizard>
           <Country
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            windowWidth={windowWidth}
           />
           <Groceries
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            windowWidth={windowWidth}
           />
           <OnlineShopping
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            windowWidth={windowWidth}
           />
           <PetBottles
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            windowWidth={windowWidth}
           />
           <TakeOut
             result={result}
             setResult={setResult}
             useWizard={useWizard}
+            windowWidth={windowWidth}
           />
         </Wizard>
       </form>

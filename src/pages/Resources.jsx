@@ -103,7 +103,7 @@ const Resources = () => {
       {/* 2nd col */}
       <Card>
         <section>
-          <article classname="m-10">
+          <article className="m-10">
             <h4 className="text-center underline underline-offset-1">
               Single-Use Plastic Production
             </h4>

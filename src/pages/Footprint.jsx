@@ -5,7 +5,6 @@ import footprintData from "../data/tier.json";
 
 const Footprint = ({ result, setResult, useWizard }) => {
   const storedResult = localStorage.getItem("result");
-  const { handleStep, previousStep, nextStep } = useWizard();
 
   useEffect(() => {
     if (storedResult) {

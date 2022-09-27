@@ -1,34 +1,60 @@
-[
+     [   
+       {
+        "title":"1. At home",
+        "tip":"Instead of plastic cling wrap, or plastic zipper bags, use  microwave-safe silicone lids and reusable food storage containers.",
+        "source": ""   
+    }, 
     {
-        "tip": "Save vegetable scraps to make vegetable broth!",
+        "title":"2. Conscious shopping",
+        "tip":"Purchasing in bulk avoiding individually-wrapped single servings and other excess plastic packaging asking for a glass or mug instead of a disposable cup at a cafe, these are all ways to reduce  your plastic footprint. Apps such as GoodBye Waste (from GreenPeace) can help find shops and grocery stores that sell in bulk and/or allow you to bring your own containers. ",
+        "source": " https://goodbyewaste.jp/"   
+    }, 
+    {
+        "title":"3. Download the myMizu app",
+        "tip": " Download the myMizu app, This app includes a map of free hot/cold water refill points nearby.",
+        "source": "https://www.mymizu.co/"   
+    },  
+    {
+        "title":"4. Raise awareness",
+         "tip": "Raising awareness is an important first step. We have made it easy to share your plastic, and other facts on social media",
+         "source": ""   
+    },
+    {
+        "title":"5. Reusable Items",
+        "tip": "Pack a reusable grocery bag water bottle or mug, reusable straw and utensils in your everyday bag, so you always have them with you. When you decline plastic straws or cutlery make sure to do it at the time you place your order. This blog post has some more specific suggestions",
+        "source": "https://www.wwf.org.au/news/blogs/10-worst-single-use-plastics-and-eco-friendly-alternatives"   
+    },
+    {
+        
+        "title": "6. Save vegetable scraps to make vegetable broth!",
         "source": "https://homesteadandchill.com/homemade-vegetable-broth-kitchen-scraps/"
     },
     {
-        "tip": "Grow your own vegetables and herbs!",
+        "title": "7. Grow your own vegetables and herbs!",
         "source": "https://www.bhg.com/gardening/yard/lawn-care/10-tips-for-sustainable-gardening/"
     },
     {
-        "tip": "Cook and eat sustainable fish!",
+        "title": "8. Cook and eat sustainable fish!",
         "source": "https://www.seafoodwatch.org/recommendations"
     },
     {
-        "tip": "Shop locally and buy produce in season! Find your local farmer's market!",
+        "title": "9. Shop locally and buy produce in season! Find your local farmer's market!",
         "source": ""
     },
     {
-        "tip": "Start your own compost bin or find a local site to compost!",
+        "title": "10. Start your own compost bin or find a local site to compost!",
         "source": "https://learn.eartheasy.com/guides/composting/"
     },
     {
-        "tip": "Unplug electronics you're not using when you're not at home!",
+        "title": " 11. Unplug electronics you're not using when you're not at home!",
         "source": "https://native.eco/2017/11/phantom-load-how-unplugging-can-save-you-100-or-more/"
     },
     {
-        "tip": "Adjust your thermostat in the summer and winter!",
+        "title": "12. Adjust your thermostat in the summer and winter!",
         "source": "https://native.eco/for-individuals/sustainability-tips/"
     },
     {
-        "tip": "Make thoughtful choices when shopping for clothes and items! See our list of sustainable brands!",
+        "title": "13. Make thoughtful choices when shopping for clothes and items! See below for a list of sustainable brands!",
         "source": "https://www.oxfam.org.uk/oxfam-in-action/oxfam-blog/guide-to-sustainable-shopping/#:~:text=Sustainable%20shopping%20means%20shopping%20in,materials%20that%20can%20last%20long."
     }
 ]

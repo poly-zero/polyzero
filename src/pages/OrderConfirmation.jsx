@@ -16,11 +16,11 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const OrderConfirmation = ({ tier }) => {
-  // localStorage.clear();
   const storedTitle = localStorage.title;
   const storedPayment = localStorage.payment;
   const storedTime = localStorage.time;
   const storedTonnes = localStorage.tonnes;
+  const storedImage = localStorage.image;
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
 
@@ -31,7 +31,8 @@ const OrderConfirmation = ({ tier }) => {
       // maybe trigger a loading screen
       return;
     }
-    if (!user) navigate("/login");
+    if (!user || (!localStorage.fromPayment && !localStorage.fromConfirmation))
+      navigate("/wizard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 
@@ -45,6 +46,7 @@ const OrderConfirmation = ({ tier }) => {
       uid: user.uid,
     });
     localStorage.removeItem("fromPayment");
+    localStorage.setItem("fromConfirmation", "yes");
   }
 
   return (
@@ -108,7 +110,7 @@ const OrderConfirmation = ({ tier }) => {
           </div>
         </div>
         <div className="max-w-xs">
-          <Card imgSrc={tier && tier.image}>
+          <Card imgSrc={storedImage}>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {storedTitle}
             </h5>

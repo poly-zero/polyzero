@@ -30,7 +30,7 @@ function Registration() {
     }
     registerWithEmailAndPassword(name, email, password);
   };
-
+  
   useEffect(() => {
     if (loading) return;
     if (user && storedPayment) navigate("/payment");
@@ -119,6 +119,7 @@ function Registration() {
                   aria-describedby="password-addon"
                   aria-required
                   required
+                  minLength={6}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -139,6 +140,7 @@ function Registration() {
                   aria-describedby="password-addon"
                   aria-required
                   required
+                  minLength={6}
                   value={confirmationPassword}
                   onChange={(e) => setConfirmationPassword(e.target.value)}
                 />

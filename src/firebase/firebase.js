@@ -17,6 +17,7 @@ import {
   collection,
   where,
   addDoc,
+  orderBy,
 } from "firebase/firestore";
 import { loginTracking } from "../analytics/tracking";
 import { loadStripe } from "@stripe/stripe-js";
@@ -54,13 +55,12 @@ const registerWithGoogle = async () => {
         name: user.displayName,
         authProvider: "google",
         email: user.email,
-        badge: [0],
-        footprint: 0,
+        created_at: new Date(),
       });
     }
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    // console.error(err);
+    alert("An error has occurred.");
   }
 };
 
@@ -74,12 +74,12 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: "local",
       email,
-      badge: [0],
-      footprint: 0,
+      created_at: new Date(),
     });
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    // console.error(err);
+    if (err.message === "Firebase: Error (auth/email-already-in-use).")
+      alert("This email is already in use.");
   }
 };
 
@@ -88,19 +88,34 @@ const logInWithEmailAndPassword = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
     loginTracking("local");
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    // console.error(err);
+    if (
+      err.message === "Firebase: Error (auth/wrong-password)." ||
+      err.message === "Firebase: Error (auth/user-not-found)"
+    )
+      alert("Incorrect username or password.");
+    else if (
+      err.message ===
+      "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."
+    )
+      alert(
+        "Access to this account has been temporarily disabled due to many failed login attempts."
+      );
   }
 };
 
 const getUserHistory = async (userId) => {
   try {
-    const q = query(collection(db, "payment"), where("uid", "==", userId));
+    const q = query(
+      collection(db, "payment"),
+      where("uid", "==", userId),
+      orderBy("created_at", "desc")
+    );
     const docs = await getDocs(q);
     return docs;
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    // console.error(err);
+    alert("An error has occurred.");
   }
 };
 
@@ -109,8 +124,8 @@ const sendPasswordReset = async (email) => {
     await sendPasswordResetEmail(auth, email);
     alert("Password reset link sent!");
   } catch (err) {
-    console.error(err);
-    alert(err.message);
+    // console.error(err);
+    alert("An error has occurred.");
   }
 };
 
@@ -122,7 +137,8 @@ const saveFootprintData = async (data) => {
   try {
     await addDoc(collection(db, "footprint_data"), data);
   } catch (err) {
-    console.error(err.message);
+    // console.error(err.message);
+    alert("An error has occurred.");
   }
 };
 
@@ -130,7 +146,8 @@ const saveTierData = async (data) => {
   try {
     await addDoc(collection(db, "tier_data"), data);
   } catch (err) {
-    console.error(err.message);
+    // console.error(err.message);
+    alert("An error has occurred.");
   }
 };
 
@@ -138,15 +155,23 @@ const savePaymentData = async (data) => {
   try {
     await addDoc(collection(db, "payment"), data);
   } catch (err) {
-    console.error(err.message);
+    // console.error(err.message);
+    alert("An error has occurred.");
   }
 };
 
 const getStripeApi = async (data) => {
   try {
-    const stripeCheckout = httpsCallable(getFunctions(app), "stripeCheckout");
+    const stripeCheckout =
+      window.location.hostname === "localhost"
+        ? httpsCallable(getFunctions(app), "stripeCheckoutDev")
+        : httpsCallable(getFunctions(app), "stripeCheckoutProd");
+
     const STRIPE_PUBLIC_KEY =
-      "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE";
+      window.location.hostname === "localhost"
+        ? "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE"
+        : "pk_live_51LhqIFAAHnMRTgmRuENJXYhrcJKNprQWWzUbCqtGJ1Zwg6AGfzmoE5w0wCJV8GZ8k8rTF4HVzKHuBQw9yEzxOH4E00eCeL7tXl";
+
     const stripe = await loadStripe(STRIPE_PUBLIC_KEY);
     stripeCheckout(data).then((result) => {
       stripe
@@ -156,7 +181,8 @@ const getStripeApi = async (data) => {
         });
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    alert("An error has occurred initializing the checkout session.");
   }
 };
 

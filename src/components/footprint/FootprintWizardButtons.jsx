@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Button } from "@material-tailwind/react";
 
 const FootprintWizardButtons = ({
@@ -6,26 +6,23 @@ const FootprintWizardButtons = ({
   storeFunction,
   footprintResult,
   selected,
+  selectedCountry
 }) => {
-  const {
-    isLastStep,
-    isFirstStep,
-    previousStep,
-    nextStep,
-  } = useWizard();
+  const { isLastStep, isFirstStep, previousStep, nextStep } = useWizard();
 
   return (
-    <div className="w-1/4 flex justify-center gap-4 mt-4">
+    <div className="flex justify-center w-full gap-8 my-8">
       {isFirstStep && (
         <>
           <Button
-            className="w-full shadow-lg flex justify-center"
+            className="flex justify-center basis-1/2"
             onClick={() => {
               nextStep();
               storeFunction();
             }}
+            disabled={!selectedCountry}
           >
-            <ChevronRightIcon className="h-5 w-5 text-white" />
+            <ArrowRightIcon className="w-5 h-5 text-white" />
           </Button>
         </>
       )}
@@ -33,20 +30,22 @@ const FootprintWizardButtons = ({
       {!isFirstStep && !isLastStep && (
         <>
           <Button
-            className="w-1/2 shadow-lg flex justify-center"
+            className="flex justify-center basis-1/2 md:basis:1/4 rounded-xl"
             onClick={() => previousStep()}
           >
-            <ChevronLeftIcon className="h-5 w-5 text-white" />
+            <ArrowLeftIcon className="w-5 h-5 text-white" />
           </Button>
           <Button
-            className="w-1/2 shadow-lg flex justify-center"
+            className={`flex justify-center basis-1/2 md:basis:1/4 rounded-xl ${
+              !selected && "cursor-not-allowed"
+            }`}
             onClick={() => {
               nextStep();
               storeFunction();
             }}
             disabled={!selected}
           >
-            <ChevronRightIcon className="h-5 w-5 text-white" />
+            <ArrowRightIcon className="w-5 h-5 text-white" />
           </Button>
         </>
       )}
@@ -54,13 +53,15 @@ const FootprintWizardButtons = ({
       {isLastStep && (
         <>
           <Button
-            className="w-1/2 shadow-lg flex justify-center"
+            className="flex justify-center w-1/2"
             onClick={() => previousStep()}
           >
-            <ChevronLeftIcon className="h-5 w-5 text-white" />
+            <ArrowLeftIcon className="flex items-center justify-center w-5 h-5 text-white" />
           </Button>
           <Button
-            className="w-1/2 shadow-lg flex justify-center"
+            className={`flex items-center justify-center p-0 text-sm capitalize basis-1/2 lg:text-base xl:text-lg bg-emerald-500 ${
+              !selected && "cursor-not-allowed"
+            }`}
             type="submit"
             value={footprintResult}
             onClick={() => {

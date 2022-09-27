@@ -14,18 +14,24 @@ const Tiers = ({ setTier }) => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center flex-grow gap-6 mt-8 bg-slate-100 md:items-center md:justify-center md:mt-0 md:gap-6">
-      <Header
-        text="Offset your"
-        highlightedText="CO2 emissions"
-        caption={
-          "The most important step you can take is to reduce your plastic footprint. For those who wish to do more, you can offset the CO2 emissions originating from the plastic you use."
-        }
-      />
-      <Link to={"/contribution"}>
-        <p className="underline underline-offset-4">Where your money goes</p>
-      </Link>
-      <section className="flex flex-col items-center justify-center w-3/4 gap-8 md:flex-row md:gap-8 md:w-10/12">
+    <div className="relative flex flex-col flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 lg:items-center md:justify-center md:mt-0 lg:gap-0">
+      <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
+      <div className="z-40 flex flex-col gap-4 my-8 text-center md:text-start md:my-16 lg:my-0 lg:ml-24 lg:-mr-24 basis-1/2">
+        <Header
+          text="Offset your"
+          highlightedText="CO2 emissions"
+          caption={
+            "The most important step you can take is to reduce your plastic footprint. For those who wish to do more, you can offset the CO2 emissions originating from the plastic you use."
+          }
+          darkBackground={true}
+        />
+        <Link to={"/contribution"}>
+          <p className="font-bold underline underline-offset-4 md:text-center md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
+            Where your money goes
+          </p>
+        </Link>
+      </div>
+      <section className="z-40 flex flex-col items-center h-screen gap-8 overflow-y-scroll snap-y md:px-16 lg:p-14 xl:p-32 basis-full md:gap-8 md:basis-full lg:basis-1/2">
         {data &&
           tierCardData.map((tier) => {
             return (

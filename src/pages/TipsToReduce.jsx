@@ -5,7 +5,7 @@ import brandsData from "../data/sustainableBrands.json";
 
 const TipsToReduce = () => {
   return (
-    <div className="h-screen md:-ml-64">
+    <div className="h-screen md:-ml-64 ">
       <LandingNavBar />
 
       <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -18,7 +18,7 @@ const TipsToReduce = () => {
         Here are some concrete actions you can take (starting today) to reduce
         single-use plastics.
       </h2>
-      <section className="p-12 text-sm text-gray-500 list-decimal md:text-base ">
+      <section className="p-12 text-sm text-gray-500 list-decimal bg-gray-800 md:text-base bg ">
         <article className="flex flex-col gap-7">
           {tipsData.map((reduceTip, i) => {
             return (
@@ -38,7 +38,7 @@ const TipsToReduce = () => {
               </Card>
             );
           })}
-          <h1 className="text-center underline">
+          <h1 className="text-center text-white underline">
             Here are some companies that sell sustainable products
           </h1>
           <div className="flex flex-wrap justify-center gap-8 text-center">

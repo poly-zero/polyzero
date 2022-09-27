@@ -10,18 +10,18 @@ import {
   Avatar,
   Button,
   CardBody,
-  CardHeader,
+  // CardHeader,
   CardFooter,
 } from "@material-tailwind/react";
 import quotes from "../data/quotes.json";
 import teamMembers from "../data/team.json";
 import Header from "../components/Header";
 import { NavLink } from "react-router-dom";
-import {
-  ArrowTrendingUpIcon,
-  GlobeAsiaAustraliaIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/solid";
+// import {
+//   ArrowTrendingUpIcon,
+//   GlobeAsiaAustraliaIcon,
+//   UserGroupIcon,
+// } from "@heroicons/react/24/solid";
 
 const Landing = ({ windowWidth }) => {
   return (
@@ -88,12 +88,12 @@ const Landing = ({ windowWidth }) => {
             <div className="flex flex-col w-full h-full gap-8 md:flex-row">
               <article className="basis-1/3">
                 <Card className="h-full border-none bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70 bg-slate-200">
-                  <CardHeader
+                  {/* <CardHeader
                     className="flex items-center justify-center w-12 h-12 mx-auto -mt-4 bg-red-500 rounded-full"
                     floated={true}
                   >
                     <ArrowTrendingUpIcon className="w-6 h-6 text-slate-50" />
-                  </CardHeader>
+                  </CardHeader> */}
                   <CardBody className="h-2/3">
                     <p className="text-sm text-gray-600 md:text-base">
                       The statistics on humanity's rapidly increasing
@@ -104,9 +104,9 @@ const Landing = ({ windowWidth }) => {
                       exacerbating climate change.
                     </p>
                   </CardBody>
-                  <CardFooter>
+                  <CardFooter className="my-auto">
                     <NavLink to={"/resources"} exact={"true"}>
-                      <Button className="w-full mt-4 text-base capitalize">
+                      <Button className="w-full mt-4 text-base capitalize bg-red-500">
                         Learn More
                       </Button>
                     </NavLink>
@@ -115,12 +115,12 @@ const Landing = ({ windowWidth }) => {
               </article>
               <article className="basis-1/3">
                 <Card className="h-full border-none bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70 bg-slate-200">
-                  <CardHeader
+                  {/* <CardHeader
                     className="flex items-center justify-center w-12 h-12 mx-auto -mt-4 rounded-full bg-emerald-500"
                     floated={true}
                   >
                     <UserGroupIcon className="w-6 h-6 text-slate-50" />
-                  </CardHeader>
+                  </CardHeader> */}
                   <CardBody className="h-2/3">
                     <p className="text-sm text-gray-600 md:text-base">
                       PolyZero was created to raise awareness about the impact
@@ -132,7 +132,7 @@ const Landing = ({ windowWidth }) => {
                   </CardBody>
                   <CardFooter className="my-auto">
                     <NavLink to={"/tips"} exact={"true"}>
-                      <Button className="w-full mt-4 text-base capitalize">
+                      <Button className="w-full mt-4 text-base capitalize bg-emerald-500">
                         Reduce Plastic
                       </Button>
                     </NavLink>
@@ -141,12 +141,12 @@ const Landing = ({ windowWidth }) => {
               </article>
               <article className="basis-1/3">
                 <Card className="h-full border-none bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70 bg-slate-200">
-                  <CardHeader
+                  {/* <CardHeader
                     className="flex items-center justify-center w-12 h-12 mx-auto -mt-4 bg-yellow-300 rounded-full"
                     floated={true}
                   >
                     <GlobeAsiaAustraliaIcon className="w-6 h-6 text-slate-50" />
-                  </CardHeader>
+                  </CardHeader> */}
                   <CardBody className="h-2/3">
                     <p className="text-sm text-gray-600 md:text-base">
                       Further, the estimator shows the CO2 emissions that result
@@ -157,7 +157,7 @@ const Landing = ({ windowWidth }) => {
                       climate.
                     </p>
                   </CardBody>
-                  <CardFooter>
+                  <CardFooter className="my-auto">
                     <NavLink to={"/wizard"} exact={"true"}>
                       <Button className="w-full mt-4 text-base capitalize">
                         What's my footprint?

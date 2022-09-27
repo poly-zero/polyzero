@@ -174,8 +174,9 @@ const Landing = () => {
             Contact Us
           </h1>
           <p className="text-sm text-gray-500 md:text-base">
-            We are volunteer-run and are actively looking for sponsors,
-            collaborators, and open-source contributors. Please reach out!
+            This site is maintained and run by a small group of volunteers. 
+            If you're interested in saying hello, or would like to 
+            collaborate to make this site better, please reach out!
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a

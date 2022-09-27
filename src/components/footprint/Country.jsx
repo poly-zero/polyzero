@@ -49,7 +49,7 @@ const Country = ({ result, setResult, useWizard, windowWidth }) => {
         <source src={globe} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute z-0 w-full h-full bg-slate-800 opacity-80"></div>
+      <div className="absolute z-0 w-full h-full bg-slate-800 opacity-90"></div>
 
       <div className="z-40 lg:basis-1/2">
         <Header

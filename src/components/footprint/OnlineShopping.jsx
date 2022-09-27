@@ -24,7 +24,7 @@ const OnlineShopping = ({ useWizard, result, setResult, windowWidth }) => {
         autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
-        class="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+        className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
       >
         <source src={shoppingCart} type="video/mp4" />
       </video>

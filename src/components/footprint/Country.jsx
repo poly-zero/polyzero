@@ -44,7 +44,7 @@ const Country = ({ result, setResult, useWizard, windowWidth }) => {
         autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
-        class="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
       >
         <source src={globe} type="video/mp4" />
         Your browser does not support the video tag.

@@ -82,18 +82,27 @@ const Landing = ({ windowWidth }) => {
           <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl text">
             About
           </h1>
+
           <div className="flex flex-col gap-8">
-            <p className="text-sm text-gray-500 md:text-base">
+            <p className="text-sm md:text-base text-gray-500">
+              The statistics on humanity's rapidly increasing production, use, 
+              and disposal of single use plastics are shocking and depressing.
+              Beyond the global ecological disaster posed by plastics in our 
+              oceans, plastics emit greenhouse gasses at each stage of their 
+              lifecycle, exacerbating climate change.
+            </p>
+            <p className="text-sm md:text-base text-gray-500">
               PolyZero was created to raise awareness about the impact of the
-              single-use plastics we consume every day. Our Plastic Footprint
+              single-use plastics we consume every day. The Plastic Footprint
               Estimator approximates the volume of disposable plastics you use
               per year, based on country of residence and lifestyle.
             </p>
-            <p className="text-sm text-gray-500 md:text-base">
-              Reducing our plastic consumption is the most important step we can
-              take, but for those who wish to do more, the app also estimates
-              the CO2 emissions associated with your plastic footprint and
-              allows you to purchase CO2 off-sets to reduce your impact.
+            <p className="text-sm md:text-base text-gray-500">
+              Further, the estimator shows the CO2 emissions that result from the 
+              plastic you use. Reducing plastic consumption is the most important 
+              step we can take, but for those who wish to do more, PolyZero also
+              allows you to purchase CO2 off-sets, in order to reduce your net 
+              impact to the climate.
             </p>
             <NavLink to={"/wizard"} exact={"true"}>
               <Button className="text-base capitalize">

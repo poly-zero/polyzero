@@ -37,7 +37,7 @@ const PaymentsForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center flex-grow w-full gap-4 bg-slate-700 opacity-90">
+    <div className="flex flex-col items-center justify-center flex-grow w-full gap-4 lg:flex-row bg-slate-700 opacity-90">
       <div className="basis-1/4">
         <Header
           highlightedText={"Order Confirmation"}

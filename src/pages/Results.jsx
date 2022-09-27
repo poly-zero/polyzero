@@ -90,7 +90,7 @@ const Results = ({ result, setResult }) => {
         className="absolute top-0 z-40 rounded-none"
         color="green"
       />
-      <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
+      <div className="absolute z-0 w-full h-full bg-slate-800 opacity-90"></div>
 
       <div className="container z-40 w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2">
         <div className="z-40 md:basis-1/4 lg:basis-1/2">

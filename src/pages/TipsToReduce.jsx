@@ -1,6 +1,7 @@
 import { Card } from "flowbite-react";
 import tipsData from "../data/sustainabletips.json";
 import LandingNavBar from "../components/landing/LandingNavBar";
+import brandsData from "../data/sustainableBrands.json";
 
 const TipsToReduce = () => {
   return (
@@ -41,6 +42,29 @@ const TipsToReduce = () => {
               </Card>
             );
           })}
+          <h1 className="text-center underline">
+            Here are some companies that sell sustainable products
+          </h1>
+          <div className="flex flex-wrap justify-center gap-8 text-center">
+            {brandsData.map((brands) => {
+              return (
+                <div key={brands.brandName}>
+                  <Card>
+                    <strong>{brands.category}</strong>
+                    Company: {brands.brandName}{" "}
+                    <a
+                      className="font-light text-blue-600 underline hover:text-blue-800 "
+                      href={brands.website}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {brands.website}
+                    </a>
+                  </Card>
+                </div>
+              );
+            })}
+          </div>
         </article>
       </section>
     </div>

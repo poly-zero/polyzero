@@ -1,62 +1,66 @@
 [
-    {
+    {   "category": "Beauty products",
         "brandName": "LastObject",
         "website": "https://lastobject.com/"
     },
     {
+        "category": "Soap",
         "brandName": "ethique",
         "website": "https://ethique.com/"
     },
     {
-        "brandName": "Cariuma",
+        "category": "Recycled materials Shoes",
+        "brandName":"Cariuma",
         "website": "https://cariuma.com/"
     },
-    {
+    {   "category": "Shoes",
         "brandName": "Toms",
         "website": "https://www.toms.com/"
     },
-    {
+    {   "category": "Re-usable food bags ",
         "brandName": "Stasher",
         "website": "https://www.stasherbag.com/"
     },
     {
+        "category": "Sustainable clothes",
         "brandName": "Patagonia",
         "website": "www.patagonia.com/"
     },
-    {
+    {   "category": "Recycled materials Shoes",
         "brandName": "All Birds",
         "website": "https://www.allbirds.com/"
     },
-    {
+    {   "category": "Body care products",
         "brandName": "Aesop",
         "website": "www.aesop.com/"
     },
-    {
+    {   "category": "Recycled material clothes",
         "brandName": "Bombas",
         "website": "https://bombas.com/"
     },
     {
+        "category": "Recycled material clothes",
         "brandName": "Eileen Fisher",
         "website": "https://www.eileenfisher.com/"
     },
-    {
+    {   "category":"Care products",
         "brandName": "ecostore",
         "website": "https://ecostore.com/"
     },
-    {
+    {   "category": " Clothes",
         "brandName": "United by Blue",
         "website": "https://unitedbyblue.com/"
     },
-    {
+    { "category": " Hair products",
         "brandName": "prose",
         "website": "https://prose.com/"
     },
-    {
+    {    "category": "Household liquids",
         "brandName": "Dropps",
         "website": "https://www.dropps.com/"
     },
-    {
+    {   "category":"Eco-house products",
         "brandName": "Earth Hero",
-        "website": "earthhero.com"
+        "website": "www.earthhero.com"
     }
 ]

@@ -13,7 +13,7 @@ import {
 } from "@heroicons/react/24/solid";
 import logo from "../assets/images/polyzero-logo3.png";
 
-const SideBar = ({ result, windowWidth }) => {
+const SideBar = ({ result, storedTier, windowWidth }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
   const [user, loading, error] = useAuthState(auth);
   const pathName = useLocation().pathname;
@@ -75,7 +75,7 @@ const SideBar = ({ result, windowWidth }) => {
                   Footprint Estimator
                 </NavLink>
               </li>
-              {result && (
+              {storedTier && (
                 <li className="mb-4 rounded-lg">
                   <NavLink
                     to="/tiers"

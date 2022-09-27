@@ -2,9 +2,9 @@ import { useState } from "react";
 import footprintQuestions from "../../data/footprintQuestions.json";
 import Header from "../Header";
 import FootprintForm from "./FootprintForm";
-import foodDelivery from "../../assets/takeOut.mp4"
+import foodDelivery from "../../assets/videos/takeOut.mp4"
 
-const TakeOut = ({ useWizard, result, setResult }) => {
+const TakeOut = ({ useWizard, result, setResult, windowWidth }) => {
   const [takeOutHabit, setTakeOutHabit] = useState(
     result && result.takeOut ? result.takeOut : null
   );
@@ -19,9 +19,9 @@ const TakeOut = ({ useWizard, result, setResult }) => {
     });
   };
   return (
-    <div className="relative flex flex-col items-center flex-grow gap-6 lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
+    <div className="relative flex flex-col items-center flex-grow gap-6 overflow-hidden lg:flex-row bg-slate-200 md:items-center md:justify-center md:mt-0 lg:gap-0 md:py-8">
       <video
-        autoPlay
+        autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
         class="absolute z-0 w-auto min-w-full min-h-full max-w-none"

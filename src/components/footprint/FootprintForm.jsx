@@ -19,16 +19,16 @@ const FootprintForm = ({
   };
 
   return (
-    <div className="z-30 flex flex-col px-4 md:px-4 lg:px-0 basis-3/4 md:basis-2/3 lg:basis-1/3 xl:basis-1/3">
+    <div className="z-30 flex flex-col w-full px-4 md:w-4/5 lg:w-full md md:px-4 lg:px-0 basis-3/4 md:basis-2/3 lg:basis-1/3 xl:basis-1/3">
       <RadioGroup
         value={selectedValue}
         onChange={handleRadioSelect}
         name="footprint"
         className="flex flex-col gap-4"
       >
-        {answers.map((element) => {
+        {answers.map((element, i) => {
           return (
-            <RadioGroup.Option value={element.value}>
+            <RadioGroup.Option value={element.value} key={i}>
               {({ active, checked }) => (
                 <Card
                   className={`hover:cursor-pointer ${
@@ -58,7 +58,6 @@ const FootprintForm = ({
           );
         })}
       </RadioGroup>
-      {console.log(selectedValue)}
       {/* Buttons */}
       <FootprintWizardButtons
         useWizard={useWizard}

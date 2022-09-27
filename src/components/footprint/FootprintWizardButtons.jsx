@@ -6,6 +6,7 @@ const FootprintWizardButtons = ({
   storeFunction,
   footprintResult,
   selected,
+  selectedCountry
 }) => {
   const { isLastStep, isFirstStep, previousStep, nextStep } = useWizard();
 
@@ -19,6 +20,7 @@ const FootprintWizardButtons = ({
               nextStep();
               storeFunction();
             }}
+            disabled={!selectedCountry}
           >
             <ArrowRightIcon className="w-5 h-5 text-white" />
           </Button>

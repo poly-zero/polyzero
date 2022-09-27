@@ -31,7 +31,8 @@ const OrderConfirmation = ({ tier }) => {
       // maybe trigger a loading screen
       return;
     }
-    if (!user) navigate("/login");
+    if (!user || (!localStorage.fromPayment && !localStorage.fromConfirmation))
+      navigate("/wizard");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, loading]);
 

@@ -24,6 +24,7 @@ function App() {
   const [windowWidth] = useWindowSize();
   const location = useLocation();
   const storedTier = localStorage.getItem("tiers");
+  const storedPayment = localStorage.getItem("payment");
 
   useEffect(() => {
     pageTracking(location);
@@ -56,6 +57,7 @@ function App() {
           <SideBar
             result={result}
             storedTier={storedTier}
+            storedPayment={storedPayment}
             windowWidth={windowWidth}
           />
         )}

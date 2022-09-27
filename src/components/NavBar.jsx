@@ -9,7 +9,7 @@ import {
 
 const NavBar = ({ setShowSidebar, pathName, user }) => {
   return (
-    <nav className="px-3 py-2">
+    <nav className="px-3 py-2 z-50">
       <div className="container items-center justify-between max-w-full mx-auto md:px-8">
         <Navbar rounded={true} border={false}>
           {/* Navigation list container */}

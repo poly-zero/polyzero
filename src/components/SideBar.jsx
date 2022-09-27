@@ -5,7 +5,7 @@ import { logout, auth } from "../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { ReactComponent as Footprint } from "../assets/navIcons/carbon-footprint.svg";
 import { ReactComponent as Tiers } from "../assets/navIcons/tiers.svg";
-import { Progress, Dropdown, Avatar, Button } from "flowbite-react";
+import { Dropdown, Avatar, Button } from "flowbite-react";
 import {
   ArrowLeftOnRectangleIcon,
   UserPlusIcon,
@@ -20,27 +20,6 @@ const SideBar = ({ result, windowWidth }) => {
 
   return (
     <>
-      <div className="z-50">
-        <Progress
-          color="green"
-          progress={
-            !result
-              ? 0
-              : pathName === "/wizard"
-              ? 25
-              : pathName === "/results"
-              ? 45
-              : pathName === "/tiers"
-              ? 60
-              : pathName === "/payment"
-              ? 75
-              : pathName === "/confirmation"
-              ? 100
-              : 0
-          }
-          size="sm"
-        />
-      </div>
       {windowWidth < 768 && (
         <NavBar
           showSidebar={showSidebar}

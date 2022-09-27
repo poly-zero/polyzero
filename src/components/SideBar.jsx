@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import NavBar from "./NavBar";
 import { logout, auth } from "../firebase/firebase";
@@ -13,15 +13,10 @@ import {
 } from "@heroicons/react/24/solid";
 import logo from "../assets/images/polyzero-logo3.png";
 
-const SideBar = ({ result }) => {
+const SideBar = ({ result, windowWidth }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
   const [user, loading, error] = useAuthState(auth);
-  const [isMobileView, setIsMobileView] = useState(false);
   const pathName = useLocation().pathname;
-
-  useEffect(() => {
-    if (window.innerWidth < 500) setIsMobileView(true);
-  }, []);
 
   return (
     <>
@@ -46,7 +41,7 @@ const SideBar = ({ result }) => {
           size="sm"
         />
       </div>
-      {isMobileView && (
+      {windowWidth < 768 && (
         <NavBar
           showSidebar={showSidebar}
           setShowSidebar={setShowSidebar}

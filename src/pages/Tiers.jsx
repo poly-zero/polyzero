@@ -4,7 +4,7 @@ import TierCard from "../components/tiers/TierCard";
 import tierCardData from "../data/tierCards.json";
 import Header from "../components/Header";
 
-const Tiers = ({ setTier, isMobile }) => {
+const Tiers = ({ setTier }) => {
   const offsetCost = 5000;
   const [data, setData] = useState(null);
 

@@ -12,10 +12,11 @@ import Header from "../components/Header";
 import { NavLink } from "react-router-dom";
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
 
-const Landing = () => {
+const Landing = ({ windowWidth }) => {
+
   return (
     <div className="relative h-screen md:-ml-64 snap-y snap-mandatory">
-      <LandingNavBar />
+      <LandingNavBar windowWidth={windowWidth} />
       <main className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-5/6 md:h-4/5 snap-end">
         <Card className="z-10 flex flex-col items-center justify-center w-full gap-4 p-0 border-none bg-slate-300 md:p-4 md:w-full lg:w-3/4 h-5/6 md:h-full lg:h-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70">
           <div className="">

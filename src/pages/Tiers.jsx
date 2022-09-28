@@ -34,7 +34,7 @@ const Tiers = ({ setTier }) => {
       </div>
       <section className="z-40 flex flex-col items-center h-screen gap-8 overflow-y-scroll snap-y md:px-16 lg:p-14 xl:p-32 basis-full md:gap-8 md:basis-full lg:basis-1/2">
         {data &&
-          tierCardData.map((tier, index) => {
+          tierCardData.map((tier) => {
             return (
               <TierCard
                 key={tier.title}
@@ -42,7 +42,10 @@ const Tiers = ({ setTier }) => {
                 time={tier.time}
                 tonnes={data.carbon / 1000}
                 cost={(data.carbon / 1000) * offsetCost}
-                image={`http://localhost:3000/images/${tier.title.toLowerCase()}.jpg`}
+                image={
+                  `http://polyzero.earth/images/${tier.title.toLowerCase()}.jpg` ||
+                  tier.image
+                }
                 setTier={setTier}
               />
             );

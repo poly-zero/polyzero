@@ -1,8 +1,10 @@
 import LandingNavBar from "../components/landing/LandingNavBar";
-import { Button } from "flowbite-react";
-import { Card } from "flowbite-react";
 import { ReadMoreButton } from "./ReadMoreButton";
 import resourcesArticles from "../data/resources.json";
+import Header from "../components/Header";
+import { Button, Card, CardBody } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 const [plasticAndCO2, singleUsePlasticProduction, humanHealth, regions] =
   resourcesArticles;
@@ -12,182 +14,206 @@ const Resources = ({ windowWidth }) => {
     <div className="h-screen md:-ml-64">
       <LandingNavBar windowWidth={windowWidth} />
 
-      <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-        Re
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 ">
-          sources
-        </span>
-      </h1>
-      <h2 className="text-center">
-        Here are some additional resources to research plastics and their impact
-        on our environment, climate, and health.
-      </h2>
-
-      <div className="flex flex-row justify-center px-3 space-x-4 py-3 text-center">
-        <Button href="#single-use">
-          {singleUsePlasticProduction.main_title}
-        </Button>
-        <Button href="#humanHealth">{humanHealth.title}</Button>
-        <Button href="#region">{regions.main_title}</Button>
-      </div>
-      <br />
-
-      <div className="container px-8 mx-auto">
-        {/* 1st col */}
-        <Card>
-          <section>
-            <article>
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {plasticAndCO2.main_title}
-              </h5>
-              <a
-                className="underline decoration-sky-500"
-                href={plasticAndCO2.linkPage.url}
-              >
-                {plasticAndCO2.linkPage.title}
-              </a>
-              <br />
-              <br />
-              <strong>{plasticAndCO2.contents[0].text_title}</strong>
-              <br />
-              <div>
-                <p className="text-sm text-gray-500 md:text-base">
-                  {plasticAndCO2.contents[0].text_content[0]}
-                </p>
-                <ol className="py-3 ml-5 text-sm text-gray-500 list-decimal md:text-base ">
-                  <li>{plasticAndCO2.contents[0].text_content[1][0]}</li>
-                  <li>{plasticAndCO2.contents[0].text_content[1][1]}</li>
-                  <li>{plasticAndCO2.contents[0].text_content[1][2]}</li>
-                  <li>{plasticAndCO2.contents[0].text_content[1][3]}</li>
-                </ol>
-                <br />
-                <p className="text-sm text-gray-500 md:text-base">
-                  {plasticAndCO2.contents[0].text_content[2]}
-                </p>
-                <ReadMoreButton LinkPage={plasticAndCO2.contents[0].url} />
-              </div>
-            </article>
-          </section>
-        </Card>
-        <br />
-
-        {/* 2nd col */}
-        <Card>
-          <section>
-            <article classname="m-10">
-              <h5
-                id="single-use"
-                className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-              >
-                {singleUsePlasticProduction.main_title}
-              </h5>
-              <p>
-                <strong>
-                  {singleUsePlasticProduction.contents[0].text_title}
-                </strong>
-              </p>
-              <p className="text-sm text-gray-500 md:text-base">
-                {singleUsePlasticProduction.contents[0].text_content}
-              </p>
-              <ReadMoreButton
-                LinkPage={singleUsePlasticProduction.contents[0].url}
-              ></ReadMoreButton>
-              <strong>
-                {singleUsePlasticProduction.contents[1].text_title}
-              </strong>
-              <p className="text-sm text-gray-500 md:text-base">
-                {singleUsePlasticProduction.contents[1].text_content}
-              </p>
-              <ReadMoreButton
-                LinkPage={singleUsePlasticProduction.contents[1].url}
-              ></ReadMoreButton>
-              {
-                singleUsePlasticProduction.linkPage.map((link) => {
-                  return (
-                    <>
-                      <a
-                        className="underline decoration-sky-500"
-                        href={link.url}
-                      >
-                        {link.title}
-                      </a>
-                      <br />
-                    </>
-                  );
-                })
+      <div className="flex justify-center flex-grow bg-slate-200">
+        <div className="flex flex-col items-center justify-center w-4/5 gap-4 md:w-1/2">
+          <div className="flex flex-col justify-center gap-4">
+            <Header
+              highlightedText={"Resources"}
+              caption={
+                "Here are some additional resources to research plastics and their impact on our environment, climate, and health."
               }
-            </article>
-          </section>
-        </Card>
-        <br />
-
-        {/* 3rd col */}
-        <Card>
-          <section>
-            <article>
-              <h5
-                id="humanHealth"
-                className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-              >
-                {humanHealth.title}
-              </h5>
-              <img
-                className="p-2"
-                src="https://imgs.search.brave.com/SICOoi6_lQxHvcoOY-Rd3MmyOfDp8za4BI96kZsppok/rs:fit:600:315:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuYWR3ZWVrLmNv/bS9hZHdlZWsuY29t/LXByb2Qvd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDYvZWF0/LWNyZWRpdC1jYXJk/LVBBR0UtMjAxOS02/MDB4MzE1LmpwZw"
-                alt="How much plastic is consumed in one week, a credit card or bank card"
-                width="300"
-                height="600"
-              ></img>
-              <strong>{humanHealth.contents[0].text_title}</strong>
-              <p className="text-sm text-gray-500 md:text-base">
-                {humanHealth.contents[0].text_content}
-              </p>
-              <ReadMoreButton
-                LinkPage={humanHealth.contents[0].url}
-              ></ReadMoreButton>
-              <p>
-                <strong>{humanHealth.contents[1].text_title}</strong>
-              </p>
-              <p className="text-sm text-gray-500 md:text-base">
-                {humanHealth.contents[1].text_content}
-              </p>
-              <ReadMoreButton
-                LinkPage={humanHealth.contents[1].url}
-              ></ReadMoreButton>
-            </article>
-          </section>
-        </Card>
-        <br />
-
-        {/* 4th col */}
-        <Card>
-          <section>
-            <article>
-              <div>
-                <h5
-                  id="region"
-                  className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                >
+            />
+            <div className="flex flex-col gap-4 my-4 md:flex-row">
+              <NavHashLink to={"#single-use"} className="flex-grow">
+                <Button className="w-full capitalize text-md md:text-base">
+                  {singleUsePlasticProduction.main_title}
+                </Button>
+              </NavHashLink>
+              <NavHashLink to={"#humanHealth"} className="flex-grow">
+                <Button className="w-full capitalize text-md md:text-base">
+                  {humanHealth.title}
+                </Button>
+              </NavHashLink>
+              <NavHashLink to={"#region"} className="flex-grow">
+                <Button className="w-full capitalize text-md md:text-base">
                   {regions.main_title}
-                </h5>
-                {
-                  regions.linkPage.map((link) => {
-                    return (
-                      <>
-                        <a className="underline decoration-sky-500" href={link.url}>
-                          {link.title}
-                        </a>
-                        <br />
-                      </>
-                    );
-                  })
-                }
-              </div>
-            </article>
-          </section>
-        </Card>
+                </Button>
+              </NavHashLink>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-8 mb-8">
+            {/* 1st col */}
+            <Card>
+              <CardBody>
+                <section>
+                  <article>
+                    <h5 className="text-xl font-bold tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                      {plasticAndCO2.main_title}
+                    </h5>
+                    <a
+                      className="underline text-md md:text-base decoration-sky-500"
+                      href={plasticAndCO2.linkPage.url}
+                    >
+                      {plasticAndCO2.linkPage.title}
+                    </a>
+                    <br />
+                    <br />
+                    <strong className="leading-none text-md md:text-base">{plasticAndCO2.contents[0].text_title}</strong>
+                    <br />
+                    <div>
+                      <p className="text-sm text-gray-500 md:text-base">
+                        {plasticAndCO2.contents[0].text_content[0]}
+                      </p>
+                      <ol className="py-3 ml-5 text-sm text-gray-500 list-decimal md:text-base ">
+                        <li>{plasticAndCO2.contents[0].text_content[1][0]}</li>
+                        <li>{plasticAndCO2.contents[0].text_content[1][1]}</li>
+                        <li>{plasticAndCO2.contents[0].text_content[1][2]}</li>
+                        <li>{plasticAndCO2.contents[0].text_content[1][3]}</li>
+                      </ol>
+                      <br />
+                      <p className="text-sm text-gray-500 md:text-base">
+                        {plasticAndCO2.contents[0].text_content[2]}
+                      </p>
+                      <ReadMoreButton
+                        LinkPage={plasticAndCO2.contents[0].url}
+                      />
+                    </div>
+                  </article>
+                </section>
+              </CardBody>
+            </Card>
+
+            {/* 2nd col */}
+            <Card>
+              <CardBody>
+                <section>
+                  <article classname="m-10">
+                    <h5
+                      id="single-use"
+                      className="text-xl font-bold tracking-tight text-gray-900 md:text-2xl dark:text-white"
+                    >
+                      {singleUsePlasticProduction.main_title}
+                    </h5>
+                    <br />
+                    <p>
+                      <strong className="text-md md:text-base">
+                        {singleUsePlasticProduction.contents[0].text_title}
+                      </strong>
+                    </p>
+                    <p className="text-sm text-gray-500 md:text-base">
+                      {singleUsePlasticProduction.contents[0].text_content}
+                    </p>
+                    <ReadMoreButton
+                      LinkPage={singleUsePlasticProduction.contents[0].url}
+                    ></ReadMoreButton>
+                    <br />
+
+                    <strong className="text-md md:text-base">
+                      {singleUsePlasticProduction.contents[1].text_title}
+                    </strong>
+                    <p className="text-sm text-gray-500 md:text-base">
+                      {singleUsePlasticProduction.contents[1].text_content}
+                    </p>
+                    <ReadMoreButton
+                      LinkPage={singleUsePlasticProduction.contents[1].url}
+                    ></ReadMoreButton>
+                    <br />
+
+                    {singleUsePlasticProduction.linkPage.map((link) => {
+                      return (
+                        <>
+                          <a
+                            className="underline decoration-sky-500 text-md md:text-base"
+                            href={link.url}
+                          >
+                            {link.title}
+                          </a>
+                          <br />
+                        </>
+                      );
+                    })}
+                  </article>
+                </section>
+              </CardBody>
+            </Card>
+
+            {/* 3rd col */}
+            <Card>
+              <CardBody>
+                <section>
+                  <article>
+                    <h5
+                      id="humanHealth"
+                      className="text-xl font-bold tracking-tight text-gray-900 md:text-2xl dark:text-white"
+                    >
+                      {humanHealth.title}
+                    </h5>
+                    <img
+                      className="p-2"
+                      src="https://imgs.search.brave.com/SICOoi6_lQxHvcoOY-Rd3MmyOfDp8za4BI96kZsppok/rs:fit:600:315:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuYWR3ZWVrLmNv/bS9hZHdlZWsuY29t/LXByb2Qvd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDYvZWF0/LWNyZWRpdC1jYXJk/LVBBR0UtMjAxOS02/MDB4MzE1LmpwZw"
+                      alt="How much plastic is consumed in one week, a credit card or bank card"
+                      width="300"
+                      height="600"
+                    ></img>
+                    <br />
+                    <strong className="text-md md:text-base">{humanHealth.contents[0].text_title}</strong>
+                    <p className="text-sm text-gray-500 md:text-base">
+                      {humanHealth.contents[0].text_content}
+                    </p>
+                    <ReadMoreButton
+                      LinkPage={humanHealth.contents[0].url}
+                    ></ReadMoreButton>
+                    <br />
+                    <p>
+                      <strong>{humanHealth.contents[1].text_title}</strong>
+                    </p>
+                    <p className="text-sm text-gray-500 md:text-base">
+                      {humanHealth.contents[1].text_content}
+                    </p>
+                    <ReadMoreButton
+                      LinkPage={humanHealth.contents[1].url}
+                    ></ReadMoreButton>
+                  </article>
+                </section>
+              </CardBody>
+            </Card>
+
+            {/* 4th col */}
+            <Card>
+              <CardBody>
+                <section>
+                  <article>
+                    <div>
+                      <h5
+                        id="region"
+                        className="text-xl font-bold tracking-tight text-gray-900 md:text-2xl dark:text-white"
+                      >
+                        {regions.main_title}
+                      </h5>
+                      <br />
+
+                      {regions.linkPage.map((link) => {
+                        return (
+                          <>
+                            <a
+                              className="underline text-md md:text-base decoration-sky-500"
+                              href={link.url}
+                            >
+                              {link.title}
+                            </a>
+                            <br />
+                          </>
+                        );
+                      })}
+                    </div>
+                  </article>
+                </section>
+              </CardBody>
+            </Card>
+          </div>
+        </div>
       </div>
-      <br />
     </div>
   );
 };

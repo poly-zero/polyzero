@@ -139,7 +139,6 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                         <Dropdown.Item>
                           <Link to="/dashboard">DashBoard</Link>
                         </Dropdown.Item>
-                        <Dropdown.Item>Settings</Dropdown.Item>
                         <Dropdown.Item onClick={() => logout()}>
                           Log out
                         </Dropdown.Item>

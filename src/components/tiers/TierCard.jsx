@@ -84,7 +84,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
                 : cost * time
               ).toLocaleString("ja-JP")}`}
             </h3>
-                
+
             {inputValue >= 15 && inputValue <= 100 ? (
               <>
                 <Button

@@ -3,36 +3,10 @@ import { Link } from "react-router-dom";
 import TierCard from "../components/tiers/TierCard";
 import tierCardData from "../data/tierCards.json";
 import Header from "../components/Header";
-import supporter from "../assets/images/supporter.jpg";
-import ally from "../assets/images/ally.jpg";
-import defender from "../assets/images/defender.jpg";
-import champion from "../assets/images/champion.jpg";
 
 const Tiers = ({ setTier }) => {
   const offsetCost = 5000;
   const [data, setData] = useState(null);
-  const tiers = [
-    {
-      title: "Supporter",
-      time: 1,
-      image: supporter,
-    },
-    {
-      title: "Ally",
-      time: 5,
-      image: ally,
-    },
-    {
-      title: "Defender",
-      time: 10,
-      image: defender,
-    },
-    {
-      title: "Champion",
-      time: 15,
-      image: champion,
-    },
-  ];
 
   useEffect(() => {
     const storedResult = JSON.parse(localStorage.getItem("tiers"));
@@ -68,7 +42,7 @@ const Tiers = ({ setTier }) => {
                 time={tier.time}
                 tonnes={data.carbon / 1000}
                 cost={(data.carbon / 1000) * offsetCost}
-                image={tiers[index].image}
+                image={`http://localhost:3000/images/${tier.title.toLowerCase()}.jpg`}
                 setTier={setTier}
               />
             );

@@ -4,12 +4,14 @@ import { Card } from "flowbite-react";
 import { ReadMoreButton } from "./ReadMoreButton";
 import resourcesArticles from "../data/resources.json";
 
-const [plasticAndCO2, singleUsePlasticProduction, humanHealth, regions] = resourcesArticles;
+const [plasticAndCO2, singleUsePlasticProduction, humanHealth, regions] =
+  resourcesArticles;
 
-const Resources = () => {
+const Resources = ({ windowWidth }) => {
   return (
     <div className="h-screen md:-ml-64">
-      <LandingNavBar />
+      <LandingNavBar windowWidth={windowWidth} />
+
       <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
         Re
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 ">
@@ -22,13 +24,15 @@ const Resources = () => {
       </h2>
 
       <div className="flex flex-row justify-center px-3 space-x-4 py-3 text-center">
-        <Button href="#single-use">{singleUsePlasticProduction.main_title}</Button>
+        <Button href="#single-use">
+          {singleUsePlasticProduction.main_title}
+        </Button>
         <Button href="#humanHealth">{humanHealth.title}</Button>
         <Button href="#region">{regions.main_title}</Button>
       </div>
       <br />
 
-      <div className="container w-screen mx-auto">
+      <div className="container px-8 mx-auto">
         {/* 1st col */}
         <Card>
           <section>
@@ -37,14 +41,14 @@ const Resources = () => {
                 {plasticAndCO2.main_title}
               </h5>
               <a
-                className="underline decoration-dashed"
+                className="underline decoration-sky-500"
                 href={plasticAndCO2.linkPage.url}
               >
                 {plasticAndCO2.linkPage.title}
               </a>
               <br />
-              <strong>{plasticAndCO2.contents[0].text_title}</strong>
               <br />
+              <strong>{plasticAndCO2.contents[0].text_title}</strong>
               <br />
               <div>
                 <p className="text-sm text-gray-500 md:text-base">
@@ -60,7 +64,7 @@ const Resources = () => {
                 <p className="text-sm text-gray-500 md:text-base">
                   {plasticAndCO2.contents[0].text_content[2]}
                 </p>
-                <ReadMoreButton LinkPage={plasticAndCO2.contents[0].url}/>
+                <ReadMoreButton LinkPage={plasticAndCO2.contents[0].url} />
               </div>
             </article>
           </section>
@@ -85,27 +89,31 @@ const Resources = () => {
               <p className="text-sm text-gray-500 md:text-base">
                 {singleUsePlasticProduction.contents[0].text_content}
               </p>
-              <ReadMoreButton LinkPage={singleUsePlasticProduction.contents[0].url}></ReadMoreButton>
+              <ReadMoreButton
+                LinkPage={singleUsePlasticProduction.contents[0].url}
+              ></ReadMoreButton>
               <strong>
                 {singleUsePlasticProduction.contents[1].text_title}
               </strong>
               <p className="text-sm text-gray-500 md:text-base">
                 {singleUsePlasticProduction.contents[1].text_content}
               </p>
-              <ReadMoreButton>LinkPage={singleUsePlasticProduction.contents[1].url}</ReadMoreButton>
+              <ReadMoreButton
+                LinkPage={singleUsePlasticProduction.contents[1].url}
+              ></ReadMoreButton>
               {
                 singleUsePlasticProduction.linkPage.map((link) => {
                   return (
                     <>
                       <a
-                        className="underline decoration-dashed"
+                        className="underline decoration-sky-500"
                         href={link.url}
                       >
                         {link.title}
                       </a>
                       <br />
                     </>
-                  )
+                  );
                 })
               }
             </article>
@@ -134,14 +142,18 @@ const Resources = () => {
               <p className="text-sm text-gray-500 md:text-base">
                 {humanHealth.contents[0].text_content}
               </p>
-              <ReadMoreButton LinkPage={humanHealth.contents[0].url}></ReadMoreButton>
+              <ReadMoreButton
+                LinkPage={humanHealth.contents[0].url}
+              ></ReadMoreButton>
               <p>
                 <strong>{humanHealth.contents[1].text_title}</strong>
               </p>
               <p className="text-sm text-gray-500 md:text-base">
                 {humanHealth.contents[1].text_content}
               </p>
-              <ReadMoreButton LinkPage={humanHealth.contents[1].url}></ReadMoreButton>
+              <ReadMoreButton
+                LinkPage={humanHealth.contents[1].url}
+              ></ReadMoreButton>
             </article>
           </section>
         </Card>
@@ -162,12 +174,12 @@ const Resources = () => {
                   regions.linkPage.map((link) => {
                     return (
                       <>
-                        <a className="underline decoration-dashed" href={link.url}>
+                        <a className="underline decoration-sky-500" href={link.url}>
                           {link.title}
                         </a>
                         <br />
                       </>
-                    )
+                    );
                   })
                 }
               </div>

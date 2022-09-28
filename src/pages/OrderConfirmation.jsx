@@ -82,13 +82,13 @@ const OrderConfirmation = ({ tier }) => {
               </FacebookShareButton>
               {/* <Instagram /> */}
               <TwitterShareButton
+                title={`I just became a @PolyZeroApp Climate Ally by off-setting ${storedTonnes} tonnes of CO2, the footprint of ${
+                  storedTime === 1
+                    ? `${storedTime} year`
+                    : `${storedTime} years`
+                } of my plastic consumption!`}
                 url={"https://www.polyzero.earth"}
-                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
-                  storedTime <= 10
-                    ? `${storedTime} years of my plastic consumption!`
-                    : "a life time of my annual plastic consumption!"
-                } `}
-                hashtags={["PolyZeroApp"]}
+                hashtags={["plasticfree", "sustainability"]}
               >
                 <Twitter />
               </TwitterShareButton>
@@ -96,9 +96,7 @@ const OrderConfirmation = ({ tier }) => {
                 <LinkedIn />
               </LinkedinShareButton>
               <LineShareButton
-                title={
-                  "I just became a PolyZeroApp Climate Champion by off-setting the CO2e footprint of my annual plastic consumption! https://www.polyzero.earth"
-                }
+                title={`I just became a @PolyZeroApp Climate Ally by off-setting ${storedTonnes} tonnes of CO2 (the footprint of ${storedTime} years of my plastic consumption)!`}
               >
                 <Line />
               </LineShareButton>

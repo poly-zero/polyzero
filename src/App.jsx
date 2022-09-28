@@ -63,7 +63,11 @@ function App() {
         )}
         <Top />
         <Routes>
-          <Route exact path="/resources" element={<Resources />} />
+          <Route
+            exact
+            path="/resources"
+            element={<Resources windowWidth={windowWidth} />}
+          />
           <Route
             exact
             path="/"
@@ -93,14 +97,18 @@ function App() {
           />
 
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
-          <Route exact path="/contribution" element={<Contribution />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
           <Route
             exact
             path="/confirmation"
             element={<OrderConfirmation tier={tier} />}
           />
-          <Route exact path="/tips" element={<TipsToReduce />} />
+          <Route exact path="/contribution" element={<Contribution />} />
+          <Route
+            exact
+            path="/tips"
+            element={<TipsToReduce windowWidth={windowWidth} />}
+          />
           <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>

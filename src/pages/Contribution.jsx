@@ -5,7 +5,7 @@ import contributionArticles from "../data/contribution.json";
 
 const Contribution = () => {
   return (
-    <div className="flex flex-col items-center flex-grow gap-4 bg-slate-200">
+    <div className="flex flex-col z-0 items-center flex-grow gap-4 bg-slate-200">
       <Header
         text={"Where your"}
         highlightedText={"money goes"}

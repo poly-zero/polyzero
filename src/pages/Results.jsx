@@ -114,8 +114,7 @@ const Results = ({ result, setResult }) => {
                   </div>
                 </h1>
                 <p className="text-xs font-normal leading-5 text-gray-800 md:text-md dark:text-slate-100">
-                  At the <strong>{footprint.title}</strong> level, we estimate
-                  you consume around{" "}
+                  Based on your country of residence and lifestyle, we estimate you consume around{" "}
                   <strong>{useCounter(footprint.plastic)}kg</strong> of
                   disposable plastics per year.
                 </p>

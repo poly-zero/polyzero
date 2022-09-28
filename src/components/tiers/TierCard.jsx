@@ -3,13 +3,10 @@ import { Button, Card, CardBody } from "@material-tailwind/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveTierData } from "../../firebase/firebase";
-import { Link } from "react-router-dom";
-import { ArrowPathIcon } from "@heroicons/react/24/solid";
 
-const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
+const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
   const navigateTo = useNavigate();
   const [age, setAge] = useState(title === "Champion" ? 15 : time);
-  const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState(15);
 
   function assignTier() {
@@ -37,17 +34,12 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
     if (inputValue >= 15 && inputValue <= 100) setAge(Math.floor(inputValue));
   }
 
-  function handleStripe() {
-    stripe();
-    setIsLoading(true);
-  }
-
   return (
     <article className="w-4/5 md:basis-full snap-center">
       <Card
-        className={`transition duration-300 ease-out ${
-          !stripe && "hover:-translate-y-1 hover:scale-105"
-        }`}
+        className={
+          "transition duration-300 ease-out hover:-translate-y-1 hover:scale-105"
+        }
       >
         <div className="flex">
           <img className="object-cover w-2/4 rounded-l-xl" src={image} alt="" />
@@ -66,6 +58,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
                 </span>
               )}
             </p>
+            
             {title === "Champion" && (
               <div>
                 <Label htmlFor="age1" value="Enter number of years" />
@@ -89,40 +82,20 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
               {`￥${(cost * age).toLocaleString("ja-JP")}`}
             </h3>
 
-            {!stripe ? (
-              inputValue >= 15 && inputValue <= 100 ? (
-                <>
-                  <Button
-                    className="my-auto capitalize text-md hover:bg-blue-600 focus:ring-4 dark:bg-blue-600 dark:hover:bg-blue-700"
-                    onClick={assignTier}
-                  >
-                    Select
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <p className="font-bold text-red-500 text-md dark:text-gray-400">
-                    Please enter a number of year count between 15 and 100.
-                  </p>
-                </>
-              )
-            ) : (
+            {inputValue >= 15 && inputValue <= 100 ? (
               <>
                 <Button
-                  className="flex items-center justify-center normal-case"
-                  onClick={handleStripe}
+                  className="my-auto capitalize text-md hover:bg-blue-600 focus:ring-4 dark:bg-blue-600 dark:hover:bg-blue-700"
+                  onClick={assignTier}
                 >
-                  {!isLoading ? (
-                    "Pay via Stripe"
-                  ) : (
-                    <ArrowPathIcon
-                      className={`w-4 h-4 ${isLoading && "animate-spin"}`}
-                    />
-                  )}
+                  Select
                 </Button>
-                <Link to="/tiers">
-                  <Button className="w-full capitalize">Go Back</Button>
-                </Link>
+              </>
+            ) : (
+              <>
+                <p className="font-bold text-red-500 text-md dark:text-gray-400">
+                  Please enter a number of year count between 15 and 100.
+                </p>
               </>
             )}
           </CardBody>

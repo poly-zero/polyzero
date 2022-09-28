@@ -3,6 +3,7 @@ import { Button, Card, CardBody } from "@material-tailwind/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveTierData } from "../../firebase/firebase";
+import { useEffect } from "react";
 
 const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
   const navigateTo = useNavigate();
@@ -29,10 +30,9 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     navigateTo("/payment");
   }
 
-  function handleAge(event) {
-    setInputValue(event.target.value);
+  useEffect(() => {
     if (inputValue >= 15 && inputValue <= 100) setAge(Math.floor(inputValue));
-  }
+  }, [inputValue]);
 
   return (
     <article className="w-4/5 md:basis-full snap-center">
@@ -58,7 +58,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
                 </span>
               )}
             </p>
-            
+
             {title === "Champion" && (
               <div>
                 <Label htmlFor="age1" value="Enter number of years" />
@@ -67,7 +67,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
                   type="number"
                   placeholder="Number of years to offset"
                   value={inputValue}
-                  onChange={(e) => handleAge(e)}
+                  onChange={(e) => setInputValue(e.target.value)}
                   required={true}
                 />
               </div>

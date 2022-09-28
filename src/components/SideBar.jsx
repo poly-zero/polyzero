@@ -8,12 +8,13 @@ import { ReactComponent as Tiers } from "../assets/navIcons/tiers.svg";
 import { Dropdown, Avatar, Button } from "flowbite-react";
 import {
   ArrowLeftOnRectangleIcon,
+  ShoppingCartIcon,
   UserPlusIcon,
   XMarkIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/outline";
 import logo from "../assets/images/polyzero-logo3.png";
 
-const SideBar = ({ result, windowWidth }) => {
+const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
   const [showSidebar, setShowSidebar] = useState("-left-64");
   const [user, loading, error] = useAuthState(auth);
   const pathName = useLocation().pathname;
@@ -62,7 +63,6 @@ const SideBar = ({ result, windowWidth }) => {
                       : "text-gray-700"
                   } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                 >
-                  {/* <Icon name="dashboard" size="2xl" /> */}
                   <Footprint
                     fill={`${
                       pathName === "/wizard" || pathName === "/results"
@@ -75,7 +75,7 @@ const SideBar = ({ result, windowWidth }) => {
                   Footprint Estimator
                 </NavLink>
               </li>
-              {result && (
+              {storedTier && (
                 <li className="mb-4 rounded-lg">
                   <NavLink
                     to="/tiers"
@@ -86,9 +86,24 @@ const SideBar = ({ result, windowWidth }) => {
                         : "text-gray-500"
                     } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                   >
-                    {/* <Icon name="dashboard" size="2xl" /> */}
-                    <Tiers className="w-8 " />
+                    <Tiers className="w-8" />
                     Support Tiers
+                  </NavLink>
+                </li>
+              )}
+              {storedPayment && (
+                <li className="mb-4 rounded-lg">
+                  <NavLink
+                    to="/payment"
+                    exact="true"
+                    className={`${
+                      pathName === "/payment"
+                        ? "bg-gradient-to-r to-emerald-600 from-sky-400 shadow-md text-white"
+                        : "text-gray-500"
+                    } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
+                  >
+                    <ShoppingCartIcon className="w-8" />
+                    Order Confirmation
                   </NavLink>
                 </li>
               )}

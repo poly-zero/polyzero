@@ -23,6 +23,8 @@ function App() {
   const [result, setResult] = useState(null);
   const [windowWidth] = useWindowSize();
   const location = useLocation();
+  const storedTier = localStorage.getItem("tiers");
+  const storedPayment = localStorage.getItem("payment");
 
   useEffect(() => {
     pageTracking(location);
@@ -52,7 +54,12 @@ function App() {
         {location.pathname === "/" ||
         location.pathname === "/resources" ||
         location.pathname === "/tips" ? null : (
-          <SideBar result={result} windowWidth={windowWidth} />
+          <SideBar
+            result={result}
+            storedTier={storedTier}
+            storedPayment={storedPayment}
+            windowWidth={windowWidth}
+          />
         )}
         <Top />
         <Routes>

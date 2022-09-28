@@ -24,7 +24,7 @@ const Groceries = ({ useWizard, result, setResult, windowWidth }) => {
         autoPlay={windowWidth < 500 ? false : true}
         loop
         muted
-        class="absolute z-0 w-auto min-w-full min-h-full max-w-none"
+        className="absolute z-0 w-auto min-w-full min-h-full max-w-none"
       >
         <source src={supermarket} type="video/mp4" />
       </video>

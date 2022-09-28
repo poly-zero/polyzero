@@ -8,7 +8,7 @@ import {
   LineShareButton,
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
-import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
+// import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
@@ -50,11 +50,11 @@ const OrderConfirmation = ({ tier }) => {
   }
 
   return (
-    <div className="flex items-center justify-center flex-grow">
-      <div className="flex flex-col items-center justify-center py-16 rounded-lg shadow-xl md:flex-row bg-slate-200 gap-14">
+    <div className="relative flex flex-col items-center justify-center flex-grow w-full gap-4 bg-slate-700 opacity-90">
+      <div className="z-40 flex flex-col items-center justify-center py-16 rounded-lg shadow-xl md:flex-row bg-slate-200 gap-14">
         <div className="flex flex-col w-3/4 md:w-1/2">
           <div className="flex flex-col">
-            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
               Well done,&nbsp;
               <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
                 {user && user.displayName}
@@ -62,7 +62,7 @@ const OrderConfirmation = ({ tier }) => {
               !
             </h1>
             <div className="w-3/4">
-              <p className="my-8 font-normal text-gray-500 md:text-xl dark:text-gray-400">
+              <p className="my-8 font-normal text-gray-500 md:text-base dark:text-gray-400">
                 You took the time to learn about your plastic footprint and its
                 effect on the environment.
                 <br />
@@ -73,7 +73,7 @@ const OrderConfirmation = ({ tier }) => {
             </div>
           </div>
           <div className="flex flex-col ">
-            <h2 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white">
+            <h2 className="mb-4 text-xl font-extrabold text-gray-900 dark:text-white">
               Now help us raise awareness by sharing your good deed with the
               world.
             </h2>
@@ -84,7 +84,7 @@ const OrderConfirmation = ({ tier }) => {
               >
                 <FaceBook />
               </FacebookShareButton>
-              <Instagram />
+              {/* <Instagram /> */}
               <TwitterShareButton
                 url={"https://www.polyzero.earth"}
                 title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${

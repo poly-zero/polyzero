@@ -1,17 +1,17 @@
-import { Button } from "flowbite-react";
 import { auth } from "../firebase/firebase";
-import { Fragment } from "react";
-import { getStripeApi } from "../firebase/firebase";
 import { useEffect } from "react";
+import { getStripeApi } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import TierCard from "../components/tiers/TierCard";
+import Header from "../components/Header";
 
 const PaymentsForm = () => {
   const navigate = useNavigate();
 
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);
-  
+
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -23,30 +23,40 @@ const PaymentsForm = () => {
 
   const storedPayment = localStorage.getItem("payment");
   const storedTime = localStorage.getItem("time");
-  const storedTittle = localStorage.getItem("title");
+  const storedTitle = localStorage.getItem("title");
   const storedImage = localStorage.getItem("image");
+  const storedTonnes = localStorage.getItem("tonnes");
 
   const handleStripe = () => {
     localStorage.setItem("fromPayment", "yes");
     getStripeApi({
       cost: storedPayment * storedTime,
-      title: storedTittle,
+      title: storedTitle,
       image: storedImage,
     });
   };
 
   return (
-    <Fragment>
-      <h1 className="mt-10 mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-        Want to&nbsp;
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-          save the planet?
-        </span>
-      </h1>
-      <div className="flex justify-center items-center">
-        <Button onClick={handleStripe}>To Stripe</Button>
+    <div className="flex flex-col items-center justify-center flex-grow w-full gap-4 lg:flex-row bg-slate-700 opacity-90">
+      <div className="basis-1/4">
+        <Header
+          highlightedText={"Order Confirmation"}
+          caption={"Please confirm the details before proceeding to payment."}
+          darkBackground={true}
+        />
       </div>
-    </Fragment>
+      <div className="flex flex-col items-center justify-center basis-1/2">
+        <TierCard
+          key={storedTime}
+          title={storedTitle}
+          time={storedTime}
+          tonnes={storedTonnes}
+          cost={storedPayment}
+          image={storedImage}
+          stripe={handleStripe}
+        />
+      </div>
+    </div>
   );
 };
 

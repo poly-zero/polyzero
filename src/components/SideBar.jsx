@@ -60,14 +60,14 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                   className={`${
                     pathName === "/wizard" || pathName === "/results"
                       ? "bg-gradient-to-r to-emerald-600 from-sky-400 shadow-md text-white"
-                      : "text-gray-700"
+                      : "text-gray-600"
                   } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                 >
                   <Footprint
                     fill={`${
                       pathName === "/wizard" || pathName === "/results"
                         ? "white"
-                        : "gray"
+                        : "green"
                     }`}
                     width="32"
                     height="32"
@@ -83,10 +83,10 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                     className={`${
                       pathName === "/tiers"
                         ? "bg-gradient-to-r to-emerald-600 from-sky-400 shadow-md text-white"
-                        : "text-gray-500"
+                        : "text-gray-600"
                     } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                   >
-                    <Tiers className="w-8" />
+                    <Tiers className="w-8 text-green-600" />
                     Support Tiers
                   </NavLink>
                 </li>
@@ -99,10 +99,10 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                     className={`${
                       pathName === "/payment"
                         ? "bg-gradient-to-r to-emerald-600 from-sky-400 shadow-md text-white"
-                        : "text-gray-500"
+                        : "text-gray-600"
                     } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                   >
-                    <ShoppingCartIcon className="w-8" />
+                    <ShoppingCartIcon className="w-8 text-green-600" />
                     Order Confirmation
                   </NavLink>
                 </li>

@@ -27,7 +27,7 @@ const Tiers = ({ setTier }) => {
           />
         </div>
         <Link to={"/faq"}>
-          <p className="font-bold underline underline-offset-4 md:text-center md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
+          <p className="font-bold text-center underline underline-offset-4 md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
             Where your money goes
           </p>
         </Link>
@@ -42,7 +42,10 @@ const Tiers = ({ setTier }) => {
                 time={tier.time}
                 tonnes={data.carbon / 1000}
                 cost={(data.carbon / 1000) * offsetCost}
-                image={tier.image}
+                image={
+                  `http://polyzero.earth/images/${tier.title.toLowerCase()}.jpg` ||
+                  tier.image
+                }
                 setTier={setTier}
               />
             );

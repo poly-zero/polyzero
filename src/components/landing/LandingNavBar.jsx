@@ -14,7 +14,7 @@ const LandingNavBar = ({ windowWidth }) => {
           <div className="flex my-2">
             <img
               src={logo}
-              className="ml-2 mr-3 h-14 md:h-16"
+              className="h-10 ml-2 mr-3 md:h-16"
               alt="PolyZero Logo"
             />
           </div>
@@ -23,7 +23,7 @@ const LandingNavBar = ({ windowWidth }) => {
           <NavLink to={"/wizard"} exact={"true"}>
             <Button className="text-base capitalize hover:animate-pulse">
               {windowWidth < 1100 ? (
-                <Footprint />
+                <Footprint fill="white" width={"24"} height={"24"}/>
               ) : (
                 "Estimate my plastic footprint"
               )}

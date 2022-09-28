@@ -15,30 +15,31 @@ const Resources = ({ windowWidth }) => {
 
       <div className="flex justify-center flex-grow bg-slate-200">
         <div className="flex flex-col items-center justify-center w-4/5 gap-4 md:w-1/2">
-          <div className="flex flex-col justify-center gap-4">
+          <div className="flex flex-col justify-center gap-4 my-0 -mx-8 md:mt-8 md:mx-0">
             <Header
               highlightedText={"Resources"}
               caption={
                 "Here are some additional resources to research plastics and their impact on our environment, climate, and health."
               }
+              className="md:items-center "
             />
-            <div className="flex flex-col gap-4 my-4 md:flex-row">
-              <NavHashLink to={"#single-use"} className="flex-grow">
-                <Button className="w-full capitalize text-md md:text-base">
-                  {singleUsePlasticProduction.main_title}
-                </Button>
-              </NavHashLink>
-              <NavHashLink to={"#humanHealth"} className="flex-grow">
-                <Button className="w-full capitalize text-md md:text-base">
-                  {humanHealth.title}
-                </Button>
-              </NavHashLink>
-              <NavHashLink to={"#region"} className="flex-grow">
-                <Button className="w-full capitalize text-md md:text-base">
-                  {regions.main_title}
-                </Button>
-              </NavHashLink>
-            </div>
+          </div>
+          <div className="flex flex-col gap-4 my-4 md:flex-row">
+            <NavHashLink to={"#single-use"} className="flex-grow basis-1/3">
+              <Button className="w-full capitalize text-md md:text-base">
+                {singleUsePlasticProduction.main_title}
+              </Button>
+            </NavHashLink>
+            <NavHashLink to={"#humanHealth"} className="flex-grow basis-1/3">
+              <Button className="w-full capitalize text-md md:text-base">
+                {humanHealth.title}
+              </Button>
+            </NavHashLink>
+            <NavHashLink to={"#region"} className="flex-grow basis-1/3">
+              <Button className="w-full h-full capitalize text-md md:text-base">
+                {regions.main_title}
+              </Button>
+            </NavHashLink>
           </div>
 
           <div className="flex flex-col gap-8 mb-8">
@@ -58,7 +59,9 @@ const Resources = ({ windowWidth }) => {
                     </a>
                     <br />
                     <br />
-                    <strong className="leading-none text-md md:text-base">{plasticAndCO2.contents[0].text_title}</strong>
+                    <strong className="leading-none text-md md:text-base">
+                      {plasticAndCO2.contents[0].text_title}
+                    </strong>
                     <br />
                     <div>
                       <p className="text-sm text-gray-500 md:text-base">
@@ -156,7 +159,9 @@ const Resources = ({ windowWidth }) => {
                       height="600"
                     ></img>
                     <br />
-                    <strong className="text-md md:text-base">{humanHealth.contents[0].text_title}</strong>
+                    <strong className="text-md md:text-base">
+                      {humanHealth.contents[0].text_title}
+                    </strong>
                     <p className="text-sm text-gray-500 md:text-base">
                       {humanHealth.contents[0].text_content}
                     </p>

@@ -30,10 +30,11 @@ const Landing = ({ windowWidth }) => {
       <div className="w-full h-full">
         <main className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-5/6 md:h-4/5 snap-end">
           <Card className="z-10 flex flex-col items-center justify-center w-full gap-4 p-0 border-none bg-slate-300 md:p-4 md:w-full lg:w-3/4 h-5/6 md:h-full lg:h-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70">
-            <div className="-mb-8">
+            <div className="flex flex-col items-center justify-center mx-8 -mb-8 text-center">
               <Header
                 text={"Facts about"}
                 highlightedText="Disposable Plastics"
+                className={""}
               />
             </div>
             <section className="w-full h-full">

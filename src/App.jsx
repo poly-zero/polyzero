@@ -23,6 +23,8 @@ function App() {
   const [result, setResult] = useState(null);
   const [windowWidth] = useWindowSize();
   const location = useLocation();
+  const storedTier = localStorage.getItem("tiers");
+  const storedPayment = localStorage.getItem("payment");
 
   useEffect(() => {
     pageTracking(location);
@@ -52,11 +54,20 @@ function App() {
         {location.pathname === "/" ||
         location.pathname === "/resources" ||
         location.pathname === "/tips" ? null : (
-          <SideBar result={result} windowWidth={windowWidth} />
+          <SideBar
+            result={result}
+            storedTier={storedTier}
+            storedPayment={storedPayment}
+            windowWidth={windowWidth}
+          />
         )}
         <Top />
         <Routes>
-          <Route exact path="/resources" element={<Resources />} />
+          <Route
+            exact
+            path="/resources"
+            element={<Resources windowWidth={windowWidth} />}
+          />
           <Route
             exact
             path="/"
@@ -86,14 +97,18 @@ function App() {
           />
 
           <Route exact path="/tiers" element={<Tiers setTier={setTier} />} />
-          <Route exact path="/contribution" element={<Contribution />} />
           <Route exact path="/payment" element={<PaymentsForm />} />
           <Route
             exact
             path="/confirmation"
             element={<OrderConfirmation tier={tier} />}
           />
-          <Route exact path="/tips" element={<TipsToReduce />} />
+          <Route exact path="/contribution" element={<Contribution />} />
+          <Route
+            exact
+            path="/tips"
+            element={<TipsToReduce windowWidth={windowWidth} />}
+          />
           <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>

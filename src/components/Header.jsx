@@ -7,9 +7,9 @@ const Header = ({
   darkBackground,
 }) => {
   return (
-    <header className="z-50 flex flex-col items-center lg:items-start md:gap-6">
+    <header className="z-50 flex flex-col lg:items-start md:gap-6">
       <h1
-        className={`flex flex-wrap justify-center items-center md:items-center md:justify-start my-6 text-3xl font-bold ${
+        className={`flex flex-wrap items-center md:items-center md:justify-start my-6 text-3xl font-bold ${
           darkBackground ? "text-slate-50" : "text-gray-800"
         } md:my-6 lg:my-4 dark:text-white md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-8xl`}
       >

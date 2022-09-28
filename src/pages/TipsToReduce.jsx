@@ -3,10 +3,10 @@ import tipsData from "../data/sustainabletips.json";
 import LandingNavBar from "../components/landing/LandingNavBar";
 import brandsData from "../data/sustainableBrands.json";
 
-const TipsToReduce = () => {
+const TipsToReduce = ({ windowWidth }) => {
   return (
     <div className="h-screen md:-ml-64 ">
-      <LandingNavBar />
+      <LandingNavBar windowWidth={windowWidth} />
 
       <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
         Reducing your <span> </span>
@@ -15,8 +15,8 @@ const TipsToReduce = () => {
         </span>
       </h1>
       <h2 className="justify-center mb-5 text-center">
-        Here are some concrete actions you can take (starting today) to
-        reduce your single-use plastic and CO2 footprint.
+        Here are some concrete actions you can take (starting today) to reduce
+        your single-use plastic and CO2 footprint.
       </h2>
       <section className="p-12 text-sm text-gray-500 list-decimal bg-gray-800 md:text-base bg ">
         <article className="flex flex-col gap-7">

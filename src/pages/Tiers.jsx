@@ -26,7 +26,7 @@ const Tiers = ({ setTier }) => {
             darkBackground={true}
           />
         </div>
-        <Link to={"/contribution"}>
+        <Link to={"/faq"}>
           <p className="font-bold underline underline-offset-4 md:text-center md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
             Where your money goes
           </p>

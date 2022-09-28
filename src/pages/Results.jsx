@@ -199,14 +199,14 @@ const Results = ({ result, setResult }) => {
             Re-estimate footprint
           </Button>
           <Button
-            className="flex items-center gap-4 text-base capitalize bg-green-500 md:justify-center hover:bg-green-600 basis-full lg:basis-1/3 text-slate-100"
+            className="flex items-center gap-4 text-base capitalize bg-green-500 md:justify-center hover:bg-green-400 basis-full lg:basis-1/3 text-slate-100"
             onClick={() => navigateTo("/tiers")}
           >
             Off-set your CO2 emissions
             <ForwardIcon className="w-8 h-8 text-slate-100" />
           </Button>
           <Button
-            className="flex items-center gap-4 text-base capitalize md:justify-center basis-full lg:basis-1/3 bg-gradient-to-r to-emerald-600 from-sky-500"
+            className="flex items-center gap-4 text-base capitalize md:justify-center basis-full lg:basis-1/3 bg-gradient-to-r hover:animate-pulse to-emerald-600 from-sky-500"
             onClick={() => navigateTo("/tips")}
           >
             <AcademicCapIcon className="w-8 h-8" />

@@ -3,7 +3,6 @@ import { ReadMoreButton } from "./ReadMoreButton";
 import resourcesArticles from "../data/resources.json";
 import Header from "../components/Header";
 import { Button, Card, CardBody } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
 const [plasticAndCO2, singleUsePlasticProduction, humanHealth, regions] =

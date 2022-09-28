@@ -6,7 +6,6 @@ import { ReactComponent as Footprint } from "../../assets/navIcons/carbon-footpr
 import logo from "../../assets/images/polyzero-logo3.png";
 
 const LandingNavBar = ({ windowWidth }) => {
-
   return (
     <nav>
       <Navbar fluid={true} rounded={true} border={true}>
@@ -21,11 +20,15 @@ const LandingNavBar = ({ windowWidth }) => {
           </div>
         </Navbar.Brand>
         <div className="flex gap-2 md:order-2">
-          <Button className="text-base capitalize hover:animate-pulse">
-            <NavLink to={"/wizard"} exact={"true"}>
-              {windowWidth < 1100 ? <Footprint /> : "Estimate my plastic footprint"}
-            </NavLink>
-          </Button>
+          <NavLink to={"/wizard"} exact={"true"}>
+            <Button className="text-base capitalize hover:animate-pulse">
+              {windowWidth < 1100 ? (
+                <Footprint />
+              ) : (
+                "Estimate my plastic footprint"
+              )}
+            </Button>
+          </NavLink>
         </div>
         <Navbar.Collapse>
           <NavHashLink to="/#about">

@@ -1,66 +1,91 @@
 [
-    {   "category": "Beauty products",
-        "brandName": "LastObject",
-        "website": "https://lastobject.com/"
-    },
-    {
-        "category": "Soap",
-        "brandName": "ethique",
-        "website": "https://ethique.com/"
-    },
-    {
-        "category": "Recycled materials shoes",
-        "brandName":"Cariuma",
-        "website": "https://cariuma.com/"
-    },
-    {   "category": "Shoes",
-        "brandName": "Toms",
-        "website": "https://www.toms.com/"
-    },
-    {   "category": "Re-usable food bags ",
-        "brandName": "Stasher",
-        "website": "https://www.stasherbag.com/"
-    },
-    {
-        "category": "Sustainable clothes",
-        "brandName": "Patagonia",
-        "website": "www.patagonia.com/"
-    },
-    {   "category": "Recycled materials shoes",
-        "brandName": "All Birds",
-        "website": "https://www.allbirds.com/"
-    },
-    {   "category": "Body care products",
-        "brandName": "Aesop",
-        "website": "www.aesop.com/"
-    },
-    {   "category": "Recycled material clothes",
-        "brandName": "Bombas",
-        "website": "https://bombas.com/"
-    },
-    {
-        "category": "Recycled material clothes",
-        "brandName": "Eileen Fisher",
-        "website": "https://www.eileenfisher.com/"
-    },
-    {   "category":"Care products",
-        "brandName": "ecostore",
-        "website": "https://ecostore.com/"
-    },
-    {   "category": " Clothes",
-        "brandName": "United by Blue",
-        "website": "https://unitedbyblue.com/"
-    },
-    { "category": " Hair products",
-        "brandName": "prose",
-        "website": "https://prose.com/"
-    },
-    {    "category": "Household liquids",
-        "brandName": "Dropps",
-        "website": "https://www.dropps.com/"
-    },
-    {   "category":"Eco-house products",
-        "brandName": "Earth Hero",
-        "website": "www.earthhero.com"
-    }
+  {
+    "category": "Beauty products",
+    "url": "https://lastobject.com/",
+    "logo": "https://imgs.search.brave.com/ojC7-6do7IhQ1MRnBX-W9x4aLB6JENmCN6nYRK79iC8/rs:fit:1628:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5C/akg3Umw4M3laWmFP/d1lILU13UkJRSGFD/SyZwaWQ9QXBp"
+  },
+  {
+    "category": "Soap",
+    "brandName": "ethique",
+    "url": "https://ethique.com/",
+    "logo": "https://imgs.search.brave.com/zbTOKeDKoY6_jiTbHvgkTittZxW4Vp_MFbQBhmS6jXU/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Y/QUVFQnRmbzV3SWpk/bUJkVXA2X1B3SGFI/YSZwaWQ9QXBp"
+  },
+  {
+    "category": "Recycled materials shoes",
+    "brandName": "Cariuma",
+    "url": "https://cariuma.com/",
+    "logo": "https://imgs.search.brave.com/Ht537EDfEJUyt4kXhSP1PK2MvT3IO_hHxsS01FZ-le8/rs:fit:1146:225:1/g:ce/aHR0cHM6Ly90c2Uy/LmV4cGxpY2l0LmJp/bmcubmV0L3RoP2lk/PU9JUC5WNFI2SW1L/dTM0MktMd3lKRmpV/Yk13SGFERSZwaWQ9/QXBp"
+  },
+  {
+    "category": "Shoes",
+    "brandName": "Toms",
+    "url": "https://www.toms.com/",
+    "logo": "https://imgs.search.brave.com/-gjPqx7zQbynluw9Sx2GO1Skp0Gwr1yhAlHpRQc0ixI/rs:fit:895:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC40/STBDRHdZdWJ6Mko1/Q01lamRsaVF3SGFE/NyZwaWQ9QXBp"
+  },
+  {
+    "category": "Re-usable food bags ",
+    "brandName": "Stasher",
+    "url": "https://www.stasherbag.com/",
+    "logo": "https://imgs.search.brave.com/shqZ-6KNoHzCfJnIPrPLjzbcp2K75V25X7KZja7XRWE/rs:fit:1593:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC56/Y0d4WWQtcnpqRXEt/dVBzWE9RRlVnSGFD/TiZwaWQ9QXBp"
+  },
+  {
+    "category": "Sustainable clothes",
+    "brandName": "Patagonia",
+    "url": "https://www.patagonia.com/",
+    "logo": "https://imgs.search.brave.com/lGkD0gwyVW0zgMjQic3h4zF6AF_xJj6JsFfhUuy-lxM/rs:fit:972:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Y/Rnd5RkRNUzRtdTh4/MGx2Z3dpbHZBSGFE/biZwaWQ9QXBp"
+  },
+  {
+    "category": "Recycled materials shoes",
+    "brandName": "All Birds",
+    "url": "https://www.allbirds.com/",
+    "logo": "https://imgs.search.brave.com/qQmLJVreUlqqPvd4SqIDXbJDVFSsvFx_wDXrxGNmilc/rs:fit:1214:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5p/cFFWdTNtaWVJRE8z/TUZVVHpBR0dBSGFD/NSZwaWQ9QXBp"
+  },
+  {
+    "category": "Body care products",
+    "brandName": "Aesop",
+    "url": "https://www.aesop.com/",
+    "logo": "https://imgs.search.brave.com/7bn2oa8Cc1e8j3cLeeZr-Hyn0W4fBT3ert0WkhxEuqI/rs:fit:891:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NHpDb2xTdWZkbU5Y/UDNWVGt1S3d3SGFE/OCZwaWQ9QXBp"
+  },
+  {
+    "category": "Recycled material clothes",
+    "brandName": "Bombas",
+    "url": "https://bombas.com/",
+    "logo": "https://imgs.search.brave.com/G8lmNuGqDQ2z9bx2CheUrpRViaIDMeW7qF5V8NHnqFM/rs:fit:1069:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5r/eVUxLUhtWDNUTDZE/NmlOcTFMM053SGFE/UyZwaWQ9QXBp"
+  },
+  {
+    "category": "Recycled material clothes",
+    "brandName": "Eileen Fisher",
+    "url": "https://www.eileenfisher.com/",
+    "logo": "https://imgs.search.brave.com/57kn4h75eQdYL4QWzonYiz8MC81TF1o24ciXJf9HzcM/rs:fit:870:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/WF9SSWpzeDNzTGN6/LV83bkd0ZTFnSGFF/QyZwaWQ9QXBp"
+  },
+  {
+    "category": "Care products",
+    "brandName": "ecostore",
+    "url": "https://ecostore.com/",
+    "logo": "https://imgs.search.brave.com/hJF5PjLXJOY75_m2A8BUudVIgmexstQ4ttFVkCEZVi0/rs:fit:1497:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5t/YmJoQlZHdEVMN0NR/YzNkRzRqNTdnSGFD/VyZwaWQ9QXBp"
+  },
+  {
+    "category": " Clothes",
+    "brandName": "United by Blue",
+    "url": "https://unitedbyblue.com/",
+    "logo": "https://imgs.search.brave.com/aBaUgI3AFB3DzmXHTswvVgJ0NcQt7qzrT3ers0Z3Wio/rs:fit:2844:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Y/VXhBR2hlWS04TTBr/MmRvRnJIb2NBSGFC/UCZwaWQ9QXBp"
+  },
+  {
+    "category": " Hair products",
+    "brandName": "prose",
+    "url": "https://prose.com/",
+    "logo": "https://imgs.search.brave.com/BnTTHeqbSLnATHccP6WlB9ySpCXuSGkthXxOge8usNc/rs:fit:905:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC42/QTVXUjl0amltYlJp/UE4wOHNuZXlnSGFE/NCZwaWQ9QXBp"
+  },
+  {
+    "logo": "https://imgs.search.brave.com/QAXmUDdUsC2aV20zD64r7wIQxR4BF4BfHtqfn0R3xmE/rs:fit:1106:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC42/Vk10TTNtUFhpeVpC/eURSV3MycC1RSGFE/TCZwaWQ9QXBp",
+    "category": "Household liquids",
+    "brandName": "Dropps",
+    "url": "https://www.dropps.com/"
+  },
+  {
+    "category": "Eco-house products",
+    "brandName": "Earth Hero",
+    "url": "https://www.earthhero.com",
+    "logo": "https://cdn.shopify.com/s/files/1/0617/2878/4620/files/earthhero-logomark-and-wordmark-blue_6aabe4f7-73da-44ef-9ce0-c85262d37de1_420x.png?v=1660051458"
+  }
 ]

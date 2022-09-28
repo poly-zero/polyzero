@@ -2,13 +2,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, savePaymentData } from "../firebase/firebase";
 import {
   FacebookShareButton,
-  LinkedinShareButton,
+  // LinkedinShareButton,
   TwitterShareButton,
-  LineShareButton,
+  LineShareButton
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 // import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
-import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
+// import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
 import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twitter.svg";
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 import { useEffect } from "react";
@@ -44,7 +44,7 @@ const OrderConfirmation = ({ tier }) => {
       time: storedTime,
       tonnes: storedTonnes,
       created_at: new Date(),
-      uid: user.uid,
+      uid: user.uid
     });
     localStorage.removeItem("fromPayment");
     localStorage.setItem("fromConfirmation", "yes");
@@ -54,7 +54,7 @@ const OrderConfirmation = ({ tier }) => {
     <div className="relative flex flex-col items-center justify-center flex-grow w-full gap-4 bg-slate-700 opacity-90">
       <div className="z-40 flex flex-col items-center justify-center py-16 md:flex-row gap-14">
         <div className="flex flex-col w-3/4 md:w-1/2">
-          <div className="flex flex-col mb-6">
+          <div className="flex flex-col mb-6 -mx-12 md:mx-0">
             <Header
               text={"Well done,"}
               highlightedText={user && user.displayName}
@@ -68,35 +68,51 @@ const OrderConfirmation = ({ tier }) => {
               darkBackground={true}
             />
           </div>
-          <div className="flex flex-col ">
-            <h2 className="mb-4 text-xl font-extrabold text-slate-50 dark:text-white">
-              Now help us raise awareness by sharing your good deed with the
-              world.
+          <div className="flex flex-col">
+            <h2 className="mb-4 text-base font-bold md:text-xl text-slate-50 dark:text-white">
+              Help us raise awareness by sharing your good deed with the world.
             </h2>
-            <div className="flex gap-4">
+            <div className="flex justify-center gap-4 md:justify-start">
               <FacebookShareButton
                 url={"https://www.polyzero.earth"}
                 hashtag={"#polyzero"}
+                quote={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
+                  storedTime <= 10
+                    ? `${storedTime} years of my plastic consumption!`
+                    : "a life time of my annual plastic consumption!"
+                } `}
               >
                 <FaceBook />
               </FacebookShareButton>
               {/* <Instagram /> */}
               <TwitterShareButton
-                title={`I just became a @PolyZeroApp Climate Ally by off-setting ${storedTonnes} tonnes of CO2, the footprint of ${
-                  storedTime === 1
-                    ? `${storedTime} year`
-                    : `${storedTime} years`
-                } of my plastic consumption!`}
                 url={"https://www.polyzero.earth"}
-                hashtags={["plasticfree", "sustainability"]}
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
+                  storedTime <= 10
+                    ? `${storedTime} years of my plastic consumption!`
+                    : "a life time of my annual plastic consumption!"
+                } `}
+                hashtags={["PolyZeroApp"]}
               >
                 <Twitter />
               </TwitterShareButton>
-              <LinkedinShareButton url={"https://www.polyzero.earth"}>
+              {/* <LinkedinShareButton
+                url={"www.polyzero.earth"}
+                source={"www.polyzero.earth"}
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
+                  storedTime <= 10
+                    ? `${storedTime} years of my plastic consumption!`
+                    : "a life time of my annual plastic consumption!"
+                } `}
+              >
                 <LinkedIn />
-              </LinkedinShareButton>
+              </LinkedinShareButton> */}
               <LineShareButton
-                title={`I just became a @PolyZeroApp Climate Ally by off-setting ${storedTonnes} tonnes of CO2 (the footprint of ${storedTime} years of my plastic consumption)!`}
+                title={`I just became a Climate ${storedTitle} at https://www.polyzero.earth by off-setting the CO2e footprint of ${
+                  storedTime <= 10
+                    ? `${storedTime} years of my plastic consumption!`
+                    : "a life time of my annual plastic consumption!"
+                }`}
               >
                 <Line />
               </LineShareButton>

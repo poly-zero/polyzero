@@ -49,7 +49,11 @@ const FootprintWizard = ({ result, setResult, windowWidth }) => {
   return (
     <>
       <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-        <Wizard header={<ProgressBar useWizard={useWizard} />}>
+        <Wizard
+          header={
+            <ProgressBar useWizard={useWizard} windowWidth={windowWidth} />
+          }
+        >
           <Country
             result={result}
             setResult={setResult}

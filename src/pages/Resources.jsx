@@ -7,10 +7,11 @@ import resourcesArticles from "../data/resources.json";
 const [plasticAndCO2, singleUsePlasticProduction, humanHealth, regions] =
   resourcesArticles;
 
-const Resources = () => {
+const Resources = ({ windowWidth }) => {
   return (
     <div className="h-screen md:-ml-64">
-      <LandingNavBar />
+      <LandingNavBar windowWidth={windowWidth} />
+
       <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
         Re
         <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 ">
@@ -22,7 +23,11 @@ const Resources = () => {
         on our environment, climate, and health.
       </h2>
 
+<<<<<<< HEAD
       <div className="flex flex-row justify-center px-3 py-3 space-x-4 text-center">
+=======
+      <div className="flex flex-row justify-center px-3 space-x-4 py-3 text-center">
+>>>>>>> 7891d1987880cd56165c500ff97c4b3a97865e7d
         <Button href="#single-use">
           {singleUsePlasticProduction.main_title}
         </Button>

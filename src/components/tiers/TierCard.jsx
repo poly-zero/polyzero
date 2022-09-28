@@ -3,10 +3,13 @@ import { Button, Card, CardBody } from "@material-tailwind/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { saveTierData } from "../../firebase/firebase";
+import { Link } from "react-router-dom";
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 
-const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
+const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
   const navigateTo = useNavigate();
   const [age, setAge] = useState(title === "Champion" ? 15 : time);
+  const [isLoading, setIsLoading] = useState(false);
 
   function assignTier() {
     setTier({
@@ -28,9 +31,18 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     navigateTo("/payment");
   }
 
+  function handleStripe() {
+    stripe();
+    setIsLoading(true);
+  }
+
   return (
-    <article className="w-5/6 md:basis-full snap-center">
-      <Card className="transition duration-300 ease-out hover:-translate-y-1 hover:scale-105">
+    <article className="w-4/5 md:basis-full snap-center">
+      <Card
+        className={`transition duration-300 ease-out ${
+          !stripe && "hover:-translate-y-1 hover:scale-105"
+        }`}
+      >
         <div className="flex">
           <img className="object-cover w-2/4 rounded-l-xl" src={image} alt="" />
           <CardBody className="flex flex-col w-3/4 gap-4">
@@ -44,7 +56,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
                 </span>
               ) : (
                 <span>
-                  Off set for <strong>{time} year(s)</strong>
+                  Offset for <strong>{time} year(s)</strong>
                 </span>
               )}
             </p>
@@ -72,20 +84,41 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
             <h3 className="font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
               {`￥${(cost * age).toLocaleString("ja-JP")}`}
             </h3>
-            {age >= time ? (
-              <>
-                <Button
-                  className="my-auto capitalize text-md hover:bg-blue-600 focus:ring-4 dark:bg-blue-600 dark:hover:bg-blue-700"
-                  onClick={assignTier}
-                >
-                  Select
-                </Button>
-              </>
+
+            {!stripe ? (
+              age >= time ? (
+                <>
+                  <Button
+                    className="my-auto capitalize text-md hover:bg-blue-600 focus:ring-4 dark:bg-blue-600 dark:hover:bg-blue-700"
+                    onClick={assignTier}
+                  >
+                    Select
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <p className="font-bold text-red-500 text-md dark:text-gray-400">
+                    Please enter a number of year equal or above 15.
+                  </p>
+                </>
+              )
             ) : (
               <>
-                <p className="font-bold text-red-500 text-md dark:text-gray-400">
-                  Please enter a number of year equal or above 15.
-                </p>
+                <Button
+                  className="flex items-center justify-center normal-case"
+                  onClick={handleStripe}
+                >
+                  {!isLoading ? (
+                    "Pay via Stripe"
+                  ) : (
+                    <ArrowPathIcon
+                      className={`w-4 h-4 ${isLoading && "animate-spin"}`}
+                    />
+                  )}
+                </Button>
+                <Link to="/tiers">
+                  <Button className="w-full capitalize">Go Back</Button>
+                </Link>
               </>
             )}
           </CardBody>

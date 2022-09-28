@@ -3,10 +3,10 @@ import tipsData from "../data/sustainabletips.json";
 import LandingNavBar from "../components/landing/LandingNavBar";
 import brandsData from "../data/sustainableBrands.json";
 
-const TipsToReduce = () => {
+const TipsToReduce = ({ windowWidth }) => {
   return (
     <div className="h-screen md:-ml-64 ">
-      <LandingNavBar />
+      <LandingNavBar windowWidth={windowWidth} />
 
       <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
         Reducing your <span> </span>

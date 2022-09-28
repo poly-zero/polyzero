@@ -177,8 +177,8 @@ const Results = ({ result, setResult }) => {
                   </FacebookShareButton>
                   <TwitterShareButton
                     url={"https://www.polyzero.earth"}
-                    title={`I use approx ${footprint.plastic}kg of disposable plastic/year, corresponding to ${footprint.carbon}kg of CO2e. How much plastic do you use? Estimated with`}
-                    hashtags={["PolyZeroApp"]}
+                    title={`I use approx. ${footprint.plastic}kg of disposable plastic/year, generating ${footprint.carbon}kg of CO2 emissions. How much plastic do you use? \nEstimated with @polyzeroapp `}
+                    hashtags={["sustainability", "plasticfree"]}
                   >
                     <Twitter className="w-12 h-12" />
                   </TwitterShareButton>

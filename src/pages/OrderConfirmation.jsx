@@ -1,6 +1,5 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, savePaymentData } from "../firebase/firebase";
-import { Card } from "flowbite-react";
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -14,6 +13,8 @@ import { ReactComponent as Twitter } from "../assets/socialMediaIcons/icons8-twi
 import { ReactComponent as Line } from "../assets/socialMediaIcons/icons8-line.svg";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import { Card, CardBody } from "@material-tailwind/react";
 
 const OrderConfirmation = ({ tier }) => {
   const storedTitle = localStorage.title;
@@ -51,29 +52,24 @@ const OrderConfirmation = ({ tier }) => {
 
   return (
     <div className="relative flex flex-col items-center justify-center flex-grow w-full gap-4 bg-slate-700 opacity-90">
-      <div className="z-40 flex flex-col items-center justify-center py-16 rounded-lg shadow-xl md:flex-row bg-slate-200 gap-14">
+      <div className="z-40 flex flex-col items-center justify-center py-16 md:flex-row gap-14">
         <div className="flex flex-col w-3/4 md:w-1/2">
-          <div className="flex flex-col">
-            <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
-              Well done,&nbsp;
-              <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-                {user && user.displayName}
-              </span>
-              !
-            </h1>
-            <div className="w-3/4">
-              <p className="my-8 font-normal text-gray-500 md:text-base dark:text-gray-400">
-                You took the time to learn about your plastic footprint and its
-                effect on the environment.
-                <br />
-                <br />
-                Then you took it one step further and offset the CO2 emissions
-                from the plastic you consume.
-              </p>
-            </div>
+          <div className="flex flex-col mb-6">
+            <Header
+              text={"Well done,"}
+              highlightedText={user && user.displayName}
+              afterHighlighted={"!"}
+              caption={
+                "You took the time to learn about your plastic footprint and its effect on the environment."
+              }
+              caption2={
+                "Then you took it one step further and offset the CO2 emissions from the plastic you consume."
+              }
+              darkBackground={true}
+            />
           </div>
           <div className="flex flex-col ">
-            <h2 className="mb-4 text-xl font-extrabold text-gray-900 dark:text-white">
+            <h2 className="mb-4 text-xl font-extrabold text-slate-50 dark:text-white">
               Now help us raise awareness by sharing your good deed with the
               world.
             </h2>
@@ -108,18 +104,21 @@ const OrderConfirmation = ({ tier }) => {
           </div>
         </div>
         <div className="max-w-xs">
-          <Card imgSrc={storedImage}>
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {storedTitle}
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              You offset <b>{storedTonnes} tonnes</b> of CO2
-              <br />
-              or <b>{storedTime} year(s)</b> worth of plastic
-            </p>
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              ￥{(storedTime * storedPayment).toLocaleString("ja-JP")}
-            </h5>
+          <Card>
+            <img className="rounded-t-xl" src={storedImage} alt="" />
+            <CardBody className="flex flex-col gap-4">
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {storedTitle}
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                You offset <b>{storedTonnes} tonnes</b> of CO2e
+                <br />
+                or <b>{storedTime} year(s)</b> worth of plastic
+              </p>
+              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                ￥{(storedTime * storedPayment).toLocaleString("ja-JP")}
+              </h5>
+            </CardBody>
           </Card>
         </div>
       </div>

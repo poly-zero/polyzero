@@ -15,7 +15,7 @@ const Resources = ({ windowWidth }) => {
 
       <div className="flex justify-center flex-grow bg-slate-200">
         <div className="flex flex-col items-center justify-center w-4/5 gap-4 md:w-1/2">
-          <div className="flex flex-col justify-center gap-4 my-0 -mx-8 md:my-8 md:mx-0">
+          <div className="flex flex-col justify-center gap-4 my-0 -mx-8 md:mt-8 md:mx-0">
             <Header
               highlightedText={"Resources"}
               caption={

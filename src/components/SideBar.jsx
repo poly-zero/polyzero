@@ -75,7 +75,7 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                   Footprint Estimator
                 </NavLink>
               </li>
-              {storedTier && (
+              {storedTier && pathName !== "/confirmation" && (
                 <li className="mb-4 rounded-lg">
                   <NavLink
                     to="/tiers"
@@ -91,7 +91,7 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                   </NavLink>
                 </li>
               )}
-              {storedPayment && (
+              {storedPayment && pathName !== "/confirmation" && (
                 <li className="mb-4 rounded-lg">
                   <NavLink
                     to="/payment"

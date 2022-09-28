@@ -41,22 +41,13 @@ const TipsToReduce = ({ windowWidth }) => {
           <h1 className="mb-4 text-3xl font-extrabold text-center text-white md:text-5xl lg:text-6xl">
             Sustainable Brands and Products
           </h1>
-          <div className="flex flex-wrap justify-center gap-8 text-center">
+          <div className="flex flex-col items-center gap-8">
             {brandsData.map((brands) => {
               return (
-                <div key={brands.brandName}>
-                  <Card>
-                    <strong>{brands.category}</strong>
-                    Company: {brands.brandName}{" "}
-                    <a
-                      className="font-light text-blue-600 underline hover:text-blue-800 "
-                      href={brands.website}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {brands.website}
-                    </a>
-                  </Card>
+                <div className key={brands.brandName}>
+                  <a href={brands.url} target="_blank" rel="noreferrer">
+                    <img width="300" src={brands.logo}></img>
+                  </a>
                 </div>
               );
             })}

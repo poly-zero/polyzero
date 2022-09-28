@@ -24,7 +24,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
     localStorage.setItem("payment", Math.floor(cost));
     localStorage.setItem("title", title);
     localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
-    localStorage.setItem("time", age);
+    localStorage.setItem("time", title === "Champion" ? age : time);
     localStorage.setItem("image", image);
 
     navigateTo("/payment");
@@ -79,7 +79,10 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
               )} tonnes`}</span>
             </p>
             <h3 className="font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
-              {`￥${(cost * age).toLocaleString("ja-JP")}`}
+              {`￥${(title === "Champion"
+                ? cost * age
+                : cost * time
+              ).toLocaleString("ja-JP")}`}
             </h3>
 
             {inputValue >= 15 && inputValue <= 100 ? (

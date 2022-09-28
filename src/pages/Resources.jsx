@@ -32,7 +32,7 @@ const Resources = ({ windowWidth }) => {
       </div>
       <br />
 
-      <div className="container w-screen mx-auto">
+      <div className="container px-8 mx-auto">
         {/* 1st col */}
         <Card>
           <section>
@@ -41,14 +41,14 @@ const Resources = ({ windowWidth }) => {
                 {plasticAndCO2.main_title}
               </h5>
               <a
-                className="underline decoration-dashed"
+                className="underline decoration-sky-500"
                 href={plasticAndCO2.linkPage.url}
               >
                 {plasticAndCO2.linkPage.title}
               </a>
               <br />
-              <strong>{plasticAndCO2.contents[0].text_title}</strong>
               <br />
+              <strong>{plasticAndCO2.contents[0].text_title}</strong>
               <br />
               <div>
                 <p className="text-sm text-gray-500 md:text-base">
@@ -98,19 +98,24 @@ const Resources = ({ windowWidth }) => {
               <p className="text-sm text-gray-500 md:text-base">
                 {singleUsePlasticProduction.contents[1].text_content}
               </p>
-              <ReadMoreButton>
+              <ReadMoreButton
                 LinkPage={singleUsePlasticProduction.contents[1].url}
-              </ReadMoreButton>
-              {singleUsePlasticProduction.linkPage.map((link) => {
-                return (
-                  <>
-                    <a className="underline decoration-dashed" href={link.url}>
-                      {link.title}
-                    </a>
-                    <br />
-                  </>
-                );
-              })}
+              ></ReadMoreButton>
+              {
+                singleUsePlasticProduction.linkPage.map((link) => {
+                  return (
+                    <>
+                      <a
+                        className="underline decoration-sky-500"
+                        href={link.url}
+                      >
+                        {link.title}
+                      </a>
+                      <br />
+                    </>
+                  );
+                })
+              }
             </article>
           </section>
         </Card>
@@ -165,19 +170,18 @@ const Resources = ({ windowWidth }) => {
                 >
                   {regions.main_title}
                 </h5>
-                {regions.linkPage.map((link) => {
-                  return (
-                    <>
-                      <a
-                        className="underline decoration-dashed"
-                        href={link.url}
-                      >
-                        {link.title}
-                      </a>
-                      <br />
-                    </>
-                  );
-                })}
+                {
+                  regions.linkPage.map((link) => {
+                    return (
+                      <>
+                        <a className="underline decoration-sky-500" href={link.url}>
+                          {link.title}
+                        </a>
+                        <br />
+                      </>
+                    );
+                  })
+                }
               </div>
             </article>
           </section>

@@ -46,7 +46,7 @@ const TipsToReduce = ({ windowWidth }) => {
               return (
                 <div className key={brands.brandName}>
                   <a href={brands.url} target="_blank" rel="noreferrer">
-                    <img width="300" src={brands.logo}></img>
+                    <img width="300" src={brands.logo} alt="brand logo"></img>
                   </a>
                 </div>
               );

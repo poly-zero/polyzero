@@ -58,7 +58,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
                 </span>
               )}
             </p>
-            
+
             {title === "Champion" && (
               <div>
                 <Label htmlFor="age1" value="Enter number of years" />
@@ -81,7 +81,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
             <h3 className="font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
               {`￥${(cost * age).toLocaleString("ja-JP")}`}
             </h3>
-
+                
             {inputValue >= 15 && inputValue <= 100 ? (
               <>
                 <Button

@@ -10,6 +10,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
   const navigateTo = useNavigate();
   const [age, setAge] = useState(title === "Champion" ? 15 : time);
   const [isLoading, setIsLoading] = useState(false);
+  const [inputValue, setInputValue] = useState(15);
 
   function assignTier() {
     setTier({
@@ -29,6 +30,11 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
     localStorage.setItem("image", image);
 
     navigateTo("/payment");
+  }
+
+  function handleAge(event) {
+    setInputValue(event.target.value);
+    if (inputValue >= 15 && inputValue <= 100) setAge(Math.floor(inputValue));
   }
 
   function handleStripe() {
@@ -67,10 +73,8 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
                   id="age1"
                   type="number"
                   placeholder="Number of years to offset"
-                  min={15}
-                  max={100}
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
+                  value={inputValue}
+                  onChange={(e) => handleAge(e)}
                   required={true}
                 />
               </div>
@@ -86,7 +90,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
             </h3>
 
             {!stripe ? (
-              age >= time ? (
+              inputValue >= 15 && inputValue <= 100 ? (
                 <>
                   <Button
                     className="my-auto capitalize text-md hover:bg-blue-600 focus:ring-4 dark:bg-blue-600 dark:hover:bg-blue-700"
@@ -98,7 +102,7 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier, stripe }) => {
               ) : (
                 <>
                   <p className="font-bold text-red-500 text-md dark:text-gray-400">
-                    Please enter a number of year equal or above 15.
+                    Please enter a number of year count between 15 and 100.
                   </p>
                 </>
               )

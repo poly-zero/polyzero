@@ -5,7 +5,7 @@ import { Progress } from "@material-tailwind/react";
 import {
   FacebookShareButton,
   LinkedinShareButton,
-  TwitterShareButton,
+  TwitterShareButton
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 import { ReactComponent as LinkedIn } from "../assets/socialMediaIcons/icons8-linkedin.svg";
@@ -16,7 +16,7 @@ import Header from "../components/Header";
 import {
   AcademicCapIcon,
   BackwardIcon,
-  ForwardIcon,
+  ForwardIcon
 } from "@heroicons/react/24/solid";
 
 const Results = ({ result, setResult }) => {
@@ -38,25 +38,25 @@ const Results = ({ result, setResult }) => {
       setFootprint({
         title: "🛍 Urban Consumer",
         plastic: rounder(perCapitaAverage * 2),
-        carbon: rounder(perCapitaAverage * 2 * co2ePerPlasticKg),
+        carbon: rounder(perCapitaAverage * 2 * co2ePerPlasticKg)
       });
     else if (footprint.footprintResult >= 0 && footprint.footprintResult <= 4)
       setFootprint({
         title: "🛒 Conscientious Consumer",
         plastic: rounder(perCapitaAverage * 1.25),
-        carbon: rounder(perCapitaAverage * 1.25 * co2ePerPlasticKg),
+        carbon: rounder(perCapitaAverage * 1.25 * co2ePerPlasticKg)
       });
     else if (footprint.footprintResult >= -4 && footprint.footprintResult < 0)
       setFootprint({
         title: "🥬 Plastic Reducer",
         plastic: rounder(perCapitaAverage * 0.75),
-        carbon: rounder(perCapitaAverage * 0.75 * co2ePerPlasticKg),
+        carbon: rounder(perCapitaAverage * 0.75 * co2ePerPlasticKg)
       });
     else if (footprint.footprintResult < -4)
       setFootprint({
         title: "👩🏻‍🌾 Plastic Avoider",
         plastic: rounder(perCapitaAverage * 0.25),
-        carbon: rounder(perCapitaAverage * 0.25 * co2ePerPlasticKg),
+        carbon: rounder(perCapitaAverage * 0.25 * co2ePerPlasticKg)
       });
     else console.log("SOMETHING WENT WRONG");
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -76,7 +76,7 @@ const Results = ({ result, setResult }) => {
     const { value } = useCountUp({
       isCounting: true,
       end: data,
-      duration: 2,
+      duration: 2
     });
 
     return value;
@@ -154,7 +154,7 @@ const Results = ({ result, setResult }) => {
                     {useCounter(footprint.carbon)}
                     <span className="text-xl md:text-2xl lg:text-3xl">
                       kg CO
-                      <small className="text-xl">2</small>e
+                      <small className="text-xl">2</small>
                     </span>
                   </h1>
                   <p className="text-xs font-normal leading-5 text-slate-100 md:text-md dark:text-slate-100">

@@ -23,7 +23,7 @@ const Resources = ({ windowWidth }) => {
         on our environment, climate, and health.
       </h2>
 
-      <div className="flex flex-row justify-center px-3 space-x-4 py-3 text-center">
+      <div className="flex flex-row justify-center px-3 py-3 space-x-4 text-center">
         <Button href="#single-use">
           {singleUsePlasticProduction.main_title}
         </Button>

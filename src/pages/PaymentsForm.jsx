@@ -42,18 +42,20 @@ const PaymentsForm = () => {
   return (
     <div className="flex flex-col items-center justify-center flex-grow w-full gap-4 lg:flex-row bg-slate-700 opacity-90">
       <div className="flex flex-col gap-4 basis-1/4">
-        <Header
-          highlightedText={"Payment"}
-          caption={"Please confirm the details before proceeding to payment."}
-          darkBackground={true}
-        />
+        <div className="text-center md:text-start">
+          <Header
+            highlightedText={"Payment"}
+            caption={"Please confirm the details before proceeding to payment."}
+            darkBackground={true}
+          />
+        </div>
         <Link to={"/contribution"}>
-          <p className="font-bold text-center underline underline-offset-4 md:text-center md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
+          <p className="mb-4 font-bold text-center underline underline-offset-4 md:text-center md:mt-8 lg:mt-0 lg:text-start text-emerald-500">
             Where your money goes
           </p>
         </Link>
       </div>
-      <div className="flex flex-col items-center justify-center basis-1/3">
+      <div className="flex flex-col items-center justify-center w-4/5 basis-1/3">
         <Card>
           <div className="flex">
             <img

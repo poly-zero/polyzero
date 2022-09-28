@@ -32,7 +32,7 @@
     { 
         "category": "Sustainable clothes",
         "brandName": "Patagonia",
-        "url": "www.patagonia.com/",
+        "url": "https://www.patagonia.com/",
         "logo":"https://imgs.search.brave.com/lGkD0gwyVW0zgMjQic3h4zF6AF_xJj6JsFfhUuy-lxM/rs:fit:972:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Y/Rnd5RkRNUzRtdTh4/MGx2Z3dpbHZBSGFE/biZwaWQ9QXBp"
     },
     {   
@@ -44,7 +44,7 @@
     {  
         "category": "Body care products",
         "brandName": "Aesop",
-        "url": "www.aesop.com/",
+        "url": "https://www.aesop.com/",
         "logo":"https://imgs.search.brave.com/7bn2oa8Cc1e8j3cLeeZr-Hyn0W4fBT3ert0WkhxEuqI/rs:fit:891:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5j/NHpDb2xTdWZkbU5Y/UDNWVGt1S3d3SGFE/OCZwaWQ9QXBp"
     },
     {     
@@ -86,7 +86,7 @@
     {
         "category":"Eco-house products",
         "brandName": "Earth Hero",
-        "url": "www.earthhero.com",
+        "url": "https://www.earthhero.com",
         "logo":"https://cdn.shopify.com/s/files/1/0617/2878/4620/files/earthhero-logomark-and-wordmark-blue_6aabe4f7-73da-44ef-9ce0-c85262d37de1_420x.png?v=1660051458"
     }
 ]

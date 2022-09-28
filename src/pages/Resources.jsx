@@ -25,18 +25,18 @@ const Resources = ({ windowWidth }) => {
             />
           </div>
           <div className="flex flex-col gap-4 my-4 md:flex-row">
-            <NavHashLink to={"#single-use"} className="flex-grow">
+            <NavHashLink to={"#single-use"} className="flex-grow basis-1/3">
               <Button className="w-full capitalize text-md md:text-base">
                 {singleUsePlasticProduction.main_title}
               </Button>
             </NavHashLink>
-            <NavHashLink to={"#humanHealth"} className="flex-grow">
+            <NavHashLink to={"#humanHealth"} className="flex-grow basis-1/3">
               <Button className="w-full capitalize text-md md:text-base">
                 {humanHealth.title}
               </Button>
             </NavHashLink>
-            <NavHashLink to={"#region"} className="flex-grow">
-              <Button className="w-full capitalize text-md md:text-base">
+            <NavHashLink to={"#region"} className="flex-grow basis-1/3">
+              <Button className="w-full h-full capitalize text-md md:text-base">
                 {regions.main_title}
               </Button>
             </NavHashLink>

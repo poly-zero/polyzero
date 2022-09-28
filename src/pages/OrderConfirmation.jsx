@@ -4,7 +4,7 @@ import {
   FacebookShareButton,
   // LinkedinShareButton,
   TwitterShareButton,
-  LineShareButton,
+  LineShareButton
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 // import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
@@ -44,7 +44,7 @@ const OrderConfirmation = ({ tier }) => {
       time: storedTime,
       tonnes: storedTonnes,
       created_at: new Date(),
-      uid: user.uid,
+      uid: user.uid
     });
     localStorage.removeItem("fromPayment");
     localStorage.setItem("fromConfirmation", "yes");

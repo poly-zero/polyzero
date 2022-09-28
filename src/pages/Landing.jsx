@@ -30,7 +30,7 @@ const Landing = ({ windowWidth }) => {
       <div className="w-full h-full">
         <main className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-5/6 md:h-4/5 snap-end">
           <Card className="z-10 flex flex-col items-center justify-center w-full gap-4 p-0 border-none bg-slate-300 md:p-4 md:w-full lg:w-3/4 h-5/6 md:h-full lg:h-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70">
-            <div className="flex flex-col items-center justify-center mx-8 -mb-8 text-center">
+            <div className="flex flex-col items-center justify-center mx-8 -mb-16 text-center md:-mb-8">
               <Header
                 text={"Facts about"}
                 highlightedText="Disposable Plastics"
@@ -175,7 +175,7 @@ const Landing = ({ windowWidth }) => {
           className="flex flex-col lg:items-center bg-slate-200 p-14 snap-center"
         >
           <article className="flex flex-col w-full gap-8 my-8 md:w-3/4 xl:w-2/3">
-            <h1 className="mb-4 text-3xl font-extrabold text-gray-800 lg:text-center dark:text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-800 lg:text-center dark:text-white md:text-5xl lg:text-6xl">
               Meet the Team
             </h1>
             <div className="flex flex-wrap gap-4 lg:gap-14 lg:place-content-evenly">
@@ -244,10 +244,10 @@ const Landing = ({ windowWidth }) => {
         </section>
         <section
           id="contact"
-          className="flex flex-col items-center justify-center bg-white p-14 snap-center"
+          className="flex flex-col items-center justify-center bg-white p-14 h-3/4 snap-center"
         >
           <article className="flex flex-col justify-center w-full gap-4 md:w-1/3">
-            <h1 className="mb-4 text-3xl font-extrabold text-gray-800 dark:text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 text-3xl font-extrabold text-center text-gray-800 dark:text-white md:text-5xl lg:text-6xl">
               Contact Us
             </h1>
             <p className="text-sm text-gray-500 md:text-base">
@@ -255,7 +255,7 @@ const Landing = ({ windowWidth }) => {
               you're interested in saying hello, or would like to collaborate to
               make this site better, please reach out!
             </p>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <a
                 href="https://twitter.com/PolyZeroApp"
                 target="_blank"

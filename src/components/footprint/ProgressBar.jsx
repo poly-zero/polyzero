@@ -1,6 +1,6 @@
 import { Progress } from "@material-tailwind/react";
 
-const ProgressBar = ({ useWizard }) => {
+const ProgressBar = ({ useWizard, windowWidth }) => {
   const { isLastStep, isFirstStep, activeStep } = useWizard();
 
   const value = isFirstStep
@@ -21,7 +21,7 @@ const ProgressBar = ({ useWizard }) => {
     <>
       <Progress
         value={value}
-        label="Completed"
+        label={windowWidth < 500 ? " " : "Completed"}
         color="green"
         className="rounded-none"
       />

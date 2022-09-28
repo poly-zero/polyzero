@@ -22,8 +22,11 @@ const TipsToReduce = ({ windowWidth }) => {
             />
           </div>
 
-          <section className="text-sm text-gray-500 list-decimal bg-slate-200 md:text-base">
-            <article className="flex flex-col gap-7 ">
+          <section
+            id="tips"
+            className="text-sm text-gray-500 list-decimal bg-slate-200 md:text-base"
+          >
+            <div className="flex flex-col mb-8 gap-7">
               <Card>
                 <CardBody>
                   {tipsData.map((reduceTip, index) => {
@@ -31,9 +34,11 @@ const TipsToReduce = ({ windowWidth }) => {
                       <article className="flex flex-col mb-6" key={index}>
                         <div className="flex flex-col">
                           <strong>{reduceTip.title}</strong>
-                          {reduceTip.tip}
+                          <p className="mt-2 ml-4 text-xs md:text-md">
+                            {reduceTip.tip}
+                          </p>
                           <a
-                            className="text-blue-600 underline hover:text-blue-800"
+                            className="mt-2 ml-4 text-xs text-blue-600 underline md:text-md hover:text-blue-800"
                             href={reduceTip.source}
                             target="_blank"
                             rel="noreferrer"
@@ -47,25 +52,27 @@ const TipsToReduce = ({ windowWidth }) => {
                   })}
                 </CardBody>
               </Card>
-              <h1 className="mb-4 text-3xl font-extrabold text-center text-white md:text-5xl lg:text-6xl">
+              <h1 className="mb-4 text-3xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-500 md:text-5xl lg:text-5xl">
                 Sustainable Brands and Products
               </h1>
-              <div className="flex flex-col items-center gap-8">
-                {brandsData.map((brands) => {
-                  return (
-                    <div className key={brands.brandName}>
-                      <a href={brands.url} target="_blank" rel="noreferrer">
-                        <img
-                          width="300"
-                          src={brands.logo}
-                          alt="brand logo"
-                        ></img>
-                      </a>
-                    </div>
-                  );
-                })}
-              </div>
-            </article>
+              <Card>
+                <CardBody className="flex flex-wrap items-center justify-center gap-10 bg-white rounded-xl">
+                  {brandsData.map((brands) => {
+                    return (
+                      <div className key={brands.brandName}>
+                        <a href={brands.url} target="_blank" rel="noreferrer">
+                          <img
+                            width="150"
+                            src={brands.logo}
+                            alt="brand logo"
+                          ></img>
+                        </a>
+                      </div>
+                    );
+                  })}
+                </CardBody>
+              </Card>
+            </div>
           </section>
         </div>
       </div>

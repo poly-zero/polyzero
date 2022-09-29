@@ -209,7 +209,7 @@ const Results = ({ result, setResult }) => {
             className="flex items-center gap-4 text-base capitalize bg-green-500 md:justify-center hover:bg-green-400 basis-full lg:basis-1/3 text-slate-100"
             onClick={() => navigateTo("/tiers")}
           >
-            Off-set your CO2 emissions
+            Offset your CO2 emissions
             <ForwardIcon className="w-8 h-8 text-slate-100" />
           </Button>
           <Button

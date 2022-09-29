@@ -162,22 +162,15 @@ const savePaymentData = async (data) => {
 
 const getStripeApi = async (data) => {
   try {
-    // const stripeCheckout =
-    //   window.location.hostname === "localhost"
-    //     ? httpsCallable(getFunctions(app), "stripeCheckoutDev")
-    //     : httpsCallable(getFunctions(app), "stripeCheckoutProd");
+    const stripeCheckout =
+      window.location.hostname === "localhost"
+        ? httpsCallable(getFunctions(app), "stripeCheckoutDev")
+        : httpsCallable(getFunctions(app), "stripeCheckoutProd");
 
-    // const STRIPE_PUBLIC_KEY =
-    //   window.location.hostname === "localhost"
-    //     ? "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE"
-    //     : "pk_live_51LhqIFAAHnMRTgmRuENJXYhrcJKNprQWWzUbCqtGJ1Zwg6AGfzmoE5w0wCJV8GZ8k8rTF4HVzKHuBQw9yEzxOH4E00eCeL7tXl";
-
-    const stripeCheckout = httpsCallable(
-      getFunctions(app),
-      "stripeCheckoutDev"
-    );
     const STRIPE_PUBLIC_KEY =
-      "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE";
+      window.location.hostname === "localhost"
+        ? "pk_test_51LhqIFAAHnMRTgmRLjs2aLphobC5OiVB6OhS2bXVAcoFuZJggH3uocLpU7cbwHOWs89wx33paIvgHeDEjcqiQaAs00dZO5xDtE"
+        : "pk_live_51LhqIFAAHnMRTgmRuENJXYhrcJKNprQWWzUbCqtGJ1Zwg6AGfzmoE5w0wCJV8GZ8k8rTF4HVzKHuBQw9yEzxOH4E00eCeL7tXl";
 
     const stripe = await loadStripe(STRIPE_PUBLIC_KEY);
     stripeCheckout(data).then((result) => {

@@ -109,7 +109,7 @@ function App() {
             path="/tips"
             element={<TipsToReduce windowWidth={windowWidth} />}
           />
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          {/* <Route exact path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </div>
     </>

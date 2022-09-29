@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect, useLayoutEffect } from "react";
 import Landing from "./pages/Landing";
 import Tiers from "./pages/Tiers";
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 import Resources from "./pages/Resources";
 // import Footprint from "./pages/Footprint";
 import TipsToReduce from "./pages/TipsToReduce";
@@ -109,7 +109,7 @@ function App() {
             path="/tips"
             element={<TipsToReduce windowWidth={windowWidth} />}
           />
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          {/* <Route exact path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </div>
     </>

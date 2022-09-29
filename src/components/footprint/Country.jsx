@@ -46,7 +46,7 @@ const Country = ({ result, setResult, useWizard, windowWidth }) => {
       </video>
       <div className="absolute z-0 w-full h-full bg-slate-800 opacity-90"></div>
 
-      <div className="z-40 lg:basis-1/2">
+      <div className="z-40 w-full md:w-1/2 lg:w-full lg:basis-1/2">
         <Header
           highlightedText="Country of Residence"
           caption="Please confirm your country of residence. This information will be
@@ -134,11 +134,11 @@ const Country = ({ result, setResult, useWizard, windowWidth }) => {
             </Transition>
           </div>
         </Combobox>
-          <FootprintWizardButtons
-            useWizard={useWizard}
-            storeFunction={storeCountry}
-            selectedCountry={selectedCountry}
-          />
+        <FootprintWizardButtons
+          useWizard={useWizard}
+          storeFunction={storeCountry}
+          selectedCountry={selectedCountry}
+        />
       </div>
     </div>
   );

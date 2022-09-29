@@ -30,7 +30,7 @@ const OnlineShopping = ({ useWizard, result, setResult, windowWidth }) => {
       </video>
       <div className="absolute z-20 w-full h-full bg-slate-800 opacity-90"></div>
 
-      <div className="z-40 basis-1/2">
+      <div className="z-40 w-full md:w-3/4 lg:w-full lg:basis-1/2">
         <Header
           text={""}
           highlightedText={onlineShoppingData.category}

@@ -17,6 +17,8 @@ import quotes from "../data/quotes.json";
 import teamMembers from "../data/team.json";
 import Header from "../components/Header";
 import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
+
 // import {
 //   ArrowTrendingUpIcon,
 //   GlobeAsiaAustraliaIcon,
@@ -122,11 +124,11 @@ const Landing = ({ windowWidth }) => {
                     </p>
                   </CardBody>
                   <CardFooter className="my-auto">
-                    <NavLink to={"/resources"} exact={"true"}>
+                    <NavHashLink to={"/resources#"} exact={"true"}>
                       <Button className="w-full mt-4 text-base capitalize bg-red-500">
                         Learn More
                       </Button>
-                    </NavLink>
+                    </NavHashLink>
                   </CardFooter>
                 </Card>
               </article>
@@ -148,11 +150,11 @@ const Landing = ({ windowWidth }) => {
                     </p>
                   </CardBody>
                   <CardFooter className="my-auto">
-                    <NavLink to={"/tips"} exact={"true"}>
+                    <NavHashLink to={"/tips#"} exact={"true"}>
                       <Button className="w-full mt-4 text-base capitalize bg-emerald-500">
                         Reduce Plastic
                       </Button>
-                    </NavLink>
+                    </NavHashLink>
                   </CardFooter>
                 </Card>
               </article>

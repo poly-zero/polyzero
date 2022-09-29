@@ -4,7 +4,7 @@ import {
   FacebookShareButton,
   // LinkedinShareButton,
   TwitterShareButton,
-  LineShareButton
+  LineShareButton,
 } from "next-share";
 import { ReactComponent as FaceBook } from "../assets/socialMediaIcons/icons8-facebook.svg";
 // import { ReactComponent as Instagram } from "../assets/socialMediaIcons/icons8-instagram.svg";
@@ -44,7 +44,7 @@ const OrderConfirmation = ({ tier }) => {
       time: storedTime,
       tonnes: storedTonnes,
       created_at: new Date(),
-      uid: user.uid
+      uid: user.uid,
     });
     localStorage.removeItem("fromPayment");
     localStorage.setItem("fromConfirmation", "yes");
@@ -76,10 +76,10 @@ const OrderConfirmation = ({ tier }) => {
               <FacebookShareButton
                 url={"https://www.polyzero.earth"}
                 hashtag={"#polyzero"}
-                quote={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
+                quote={`I just became a @PolyZeroApp Climate ${storedTitle} by offsetting the CO2 footprint of ${
                   storedTime <= 10
                     ? `${storedTime} years of my plastic consumption!`
-                    : "a life time of my annual plastic consumption!"
+                    : "a lifetime of my annual plastic consumption!"
                 } `}
               >
                 <FaceBook />
@@ -87,12 +87,10 @@ const OrderConfirmation = ({ tier }) => {
               {/* <Instagram /> */}
               <TwitterShareButton
                 url={"https://www.polyzero.earth"}
-                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
-                  storedTime <= 10
-                    ? `${storedTime} years of my plastic consumption!`
-                    : "a life time of my annual plastic consumption!"
-                } `}
-                hashtags={["PolyZeroApp"]}
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by offsetting ${storedTonnes} tonnes of CO2, the footprint of ${storedTime} year${
+                  storedTime > 1 ? "s" : ""
+                } of my plastic consumption!`}
+                hashtags={["sustainability", "plasticfree"]}
               >
                 <Twitter />
               </TwitterShareButton>

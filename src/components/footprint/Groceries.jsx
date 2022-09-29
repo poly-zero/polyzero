@@ -30,7 +30,7 @@ const Groceries = ({ useWizard, result, setResult, windowWidth }) => {
       </video>
       <div className="absolute z-0 w-full h-full opacity-90 bg-slate-800"></div>
 
-      <div className="z-40 md:basis-1/4 lg:basis-1/2">
+      <div className="z-40 w-full md:w-3/4 lg:w-full lg:basis-1/2">
         <Header
           text={""}
           highlightedText={groceryData.category}

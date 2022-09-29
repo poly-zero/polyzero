@@ -27,7 +27,7 @@ const PaymentsForm = () => {
   const storedTime = localStorage.getItem("time");
   const storedTitle = localStorage.getItem("title");
   const storedImage = localStorage.getItem("image");
-  const storedTonnes = localStorage.getItem("tonnes");
+  const storedTonnes = Number(localStorage.getItem("tonnes")).toFixed(2);
 
   const handleStripe = () => {
     setIsLoading(true);
@@ -71,7 +71,7 @@ const PaymentsForm = () => {
                 Offset for <strong>{storedTime} year(s)</strong>
               </p>
               <p className="text-gray-700 text-md dark:text-gray-400">
-                Total CO2: <strong>{storedTonnes}</strong>
+                Total CO2: <strong>{storedTonnes} tonnes</strong>
               </p>
               <strong className="font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
                 ￥{(storedPayment * storedTime).toLocaleString("ja-JP")}

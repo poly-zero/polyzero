@@ -17,7 +17,8 @@ const Resources = ({ windowWidth }) => {
         <div className="flex flex-col items-center justify-center w-4/5 gap-4 md:w-1/2">
           <div className="flex flex-col justify-center gap-4 my-0 -mx-8 md:mt-8 md:mx-0">
             <Header
-              highlightedText={"Resources"}
+              text={"Further"}
+              highlightedText={"Reading"}
               caption={
                 "Here are some additional resources to research plastics and their impact on our environment, climate, and health."
               }

@@ -34,7 +34,7 @@ const FootprintWizard = ({ result, setResult, windowWidth }) => {
   function handleSubmit(event) {
     event.preventDefault();
     const final = calculateResults(result);
-    if (final || final === 0) {
+    if (final) {
       const finalResult = {
         ...result,
         footprintResult: final,

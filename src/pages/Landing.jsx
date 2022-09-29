@@ -31,11 +31,27 @@ const Landing = ({ windowWidth }) => {
         <main className="relative bg-[url('https://images.unsplash.com/photo-1615723093586-1ad38d59056b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] flex flex-col justify-center items-center p-6 md:p-20 md:px-32 h-5/6 md:h-4/5 snap-end">
           <Card className="z-10 flex flex-col items-center justify-center w-full gap-4 p-0 border-none bg-slate-300 md:p-4 md:w-full lg:w-3/4 h-5/6 md:h-full lg:h-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-70">
             <div className="flex flex-col items-center justify-center mx-8 -mb-16 text-center md:-mb-8">
-              <Header
-                text={"Facts about"}
-                highlightedText="Disposable Plastics"
-                className={""}
-              />
+              {windowWidth > 500 ? (
+                <Header
+                  text={"Facts about"}
+                  highlightedText="Disposable Plastics"
+                  className={""}
+                />
+              ) : (
+                <header
+                  className={`z-50 flex flex-col items-center md:items-start md:gap-6`}
+                >
+                  <h1
+                    className={` flex flex-col my-6 text-3xl font-bold text-gray-800
+                  md:my-6 lg:my-4 dark:text-white md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-8xl`}
+                  >
+                    Facts about &nbsp;
+                    <span className="py-2 text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-500">
+                      Disposable Plastics
+                    </span>
+                  </h1>
+                </header>
+              )}
             </div>
             <section className="w-full h-full">
               <Carousel slideInterval={5000}>

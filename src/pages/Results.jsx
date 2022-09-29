@@ -102,6 +102,7 @@ const Results = ({ result, setResult }) => {
             text="My"
             highlightedText="Plastic Footprint"
             darkBackground={true}
+            className="md:items-center"
           />
         </div>
         <div className="flex flex-col gap-4">

@@ -65,12 +65,14 @@ const TipsToReduce = ({ windowWidth }) => {
                   })}
                 </CardBody>
               </Card>
-              <h1
+              <Header
                 id="brands"
-                className="mb-4 text-3xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-500 md:text-5xl lg:text-5xl"
-              >
-                Sustainable Brands and Products
-              </h1>
+                highlightedText={"Sustainable Brands and Products"}
+                caption={
+                  "Below are a few of the team’s favorite sustainable brands and B-corps"
+                }
+                className={"md:items-center text-center"}
+              />
               <Card>
                 <CardBody className="flex flex-wrap items-center justify-center gap-10 bg-white rounded-xl">
                   {brandsData.map((brands) => {

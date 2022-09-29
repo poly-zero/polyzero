@@ -20,7 +20,7 @@ const OrderConfirmation = ({ tier }) => {
   const storedTitle = localStorage.title;
   const storedPayment = localStorage.payment;
   const storedTime = localStorage.time;
-  const storedTonnes = localStorage.tonnes;
+  const storedTonnes = Number(localStorage.tonnes).toFixed(2);
   const storedImage = localStorage.image;
   // eslint-disable-next-line no-unused-vars
   const [user, loading, error] = useAuthState(auth);

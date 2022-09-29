@@ -76,11 +76,9 @@ const OrderConfirmation = ({ tier }) => {
               <FacebookShareButton
                 url={"https://www.polyzero.earth"}
                 hashtag={"#polyzero"}
-                quote={`I just became a @PolyZeroApp Climate ${storedTitle} by offsetting the CO2 footprint of ${
-                  storedTime <= 10
-                    ? `${storedTime} years of my plastic consumption!`
-                    : "a lifetime of my annual plastic consumption!"
-                } `}
+                quote={`I just became a @PolyZeroApp Climate ${storedTitle} by offsetting ${storedTonnes} tonnes of CO2, the footprint of ${storedTime} year${
+                  storedTime > 1 ? "s" : ""
+                } of my plastic consumption!`}
               >
                 <FaceBook />
               </FacebookShareButton>
@@ -97,20 +95,16 @@ const OrderConfirmation = ({ tier }) => {
               {/* <LinkedinShareButton
                 url={"www.polyzero.earth"}
                 source={"www.polyzero.earth"}
-                title={`I just became a @PolyZeroApp Climate ${storedTitle} by off-setting the CO2e footprint of ${
-                  storedTime <= 10
-                    ? `${storedTime} years of my plastic consumption!`
-                    : "a life time of my annual plastic consumption!"
-                } `}
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by offsetting ${storedTonnes} tonnes of CO2, the footprint of ${storedTime} year${
+                  storedTime > 1 ? "s" : ""
+                } of my plastic consumption!`}
               >
                 <LinkedIn />
               </LinkedinShareButton> */}
               <LineShareButton
-                title={`I just became a Climate ${storedTitle} at https://www.polyzero.earth by off-setting the CO2e footprint of ${
-                  storedTime <= 10
-                    ? `${storedTime} years of my plastic consumption!`
-                    : "a life time of my annual plastic consumption!"
-                }`}
+                title={`I just became a @PolyZeroApp Climate ${storedTitle} by offsetting ${storedTonnes} tonnes of CO2, the footprint of ${storedTime} year${
+                  storedTime > 1 ? "s" : ""
+                } of my plastic consumption!`}
               >
                 <Line />
               </LineShareButton>

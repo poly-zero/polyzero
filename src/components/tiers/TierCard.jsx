@@ -23,13 +23,15 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
 
     localStorage.setItem("payment", Math.floor(cost));
     localStorage.setItem("title", title);
-    localStorage.setItem("tonnes", (tonnes * age).toFixed(2));
+    localStorage.setItem(
+      "tonnes",
+      (title === "Champion" ? tonnes * age : tonnes * time).toLocaleString("ja-JP")
+    );
     localStorage.setItem("time", title === "Champion" ? age : time);
     localStorage.setItem("image", image);
 
     navigateTo("/payment");
   }
-
   useEffect(() => {
     if (inputValue >= 15 && inputValue <= 100) setAge(Math.floor(inputValue));
   }, [inputValue]);
@@ -74,9 +76,10 @@ const TierCard = ({ title, time, tonnes, cost, image, setTier }) => {
             )}
             <p className="text-gray-700 text-md dark:text-gray-400">
               Total CO2:{" "}
-              <span className="font-bold">{` ${(tonnes * age).toFixed(
-                2
-              )} tonnes`}</span>
+              <span className="font-bold">{`${(title === "Champion"
+                ? tonnes * age
+                : tonnes * time
+              ).toFixed(2)} tonnes`}</span>
             </p>
             <h3 className="font-bold tracking-tight text-gray-800 lg:text-2xl dark:text-white">
               {`￥${(title === "Champion"

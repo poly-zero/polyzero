@@ -33,7 +33,7 @@ const TakeOut = ({ useWizard, result, setResult, windowWidth }) => {
       </video>
       <div className="absolute z-0 w-full h-full bg-gray-800 opacity-90"></div>
       
-      <div className="z-40 basis-1/2">
+      <div className="z-40 w-full md:w-3/4 lg:w-full lg:basis-1/2">
         <Header
           text={""}
           highlightedText={takeOutData.category}

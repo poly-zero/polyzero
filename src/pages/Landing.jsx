@@ -91,7 +91,7 @@ const Landing = ({ windowWidth }) => {
               Unsplash
             </a>
           </div>
-          <div className="absolute z-0 w-full h-full bg-black opacity-40"></div>
+          <div className="absolute z-0 w-full h-full bg-black opacity-10"></div>
         </main>
 
         <section

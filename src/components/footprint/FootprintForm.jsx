@@ -38,7 +38,7 @@ const FootprintForm = ({
                   }
                 transition-all ease-in duration-100`}
                 >
-                  <CardBody className="flex items-center gap-4">
+                  <CardBody className="flex items-center gap-4 p-4 md:p-6">
                     <div
                       className={`${
                         checked

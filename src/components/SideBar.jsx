@@ -86,7 +86,13 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                         : "text-gray-600"
                     } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                   >
-                    <Tiers className="w-8 text-green-600" />
+                    <Tiers
+                      className={`w-8 ${
+                        pathName === "/tiers"
+                          ? "text-slate-50"
+                          : "text-green-600"
+                      }`}
+                    />
                     Support Tiers
                   </NavLink>
                 </li>
@@ -102,7 +108,13 @@ const SideBar = ({ storedTier, storedPayment, windowWidth }) => {
                         : "text-gray-600"
                     } flex items-center gap-4 text-sm  px-4 py-3 rounded-lg`}
                   >
-                    <ShoppingCartIcon className="w-8 text-green-600" />
+                    <ShoppingCartIcon
+                      className={`w-8 ${
+                        pathName === "/payment"
+                          ? "text-slate-50"
+                          : "text-green-600"
+                      }`}
+                    />
                     Order Confirmation
                   </NavLink>
                 </li>

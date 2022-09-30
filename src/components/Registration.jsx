@@ -71,15 +71,15 @@ function Registration() {
                   htmlFor="user1"
                   className="block mb-2 ml-1 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Username
+                  Full Name
                 </label>
                 <input
                   id="user1"
                   type="text"
                   className="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-primary-600 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
-                  placeholder="Username"
-                  aria-label="username"
-                  name="username"
+                  placeholder="Full Name"
+                  aria-label="name"
+                  name="name"
                   aria-describedby="email-addon"
                   aria-required
                   required
@@ -153,7 +153,7 @@ function Registration() {
               <div className="text-center">
                 <Button
                   type="submit"
-                  className="w-full px-6 py-3 mt-6 mb-2 text-sm font-bold text-center text-white transition-all ease-in bg-blue-600 border-0 rounded-lg shadow-md cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-xs hover:border-blue-800 hover:bg-blue-800 hover:text-white"
+                  className="w-full px-6 py-3 mt-6 mb-2 text-sm font-bold text-center text-white capitalize transition-all ease-in bg-blue-600 border-0 rounded-lg shadow-md cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-xs hover:border-blue-800 hover:bg-blue-800 hover:text-white"
                 >
                   Register
                 </Button>

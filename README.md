@@ -25,7 +25,7 @@ Note: If you don't have `npm` installed, you'll need to do that first.
 
 ## Back end
 
-The polyzero backend was built uysing Google Firebase.
+The polyzero backend was built using Google Firebase.
 
 # OpenSource Contributions
 

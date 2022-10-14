@@ -28,7 +28,7 @@ const Results = ({ result, setResult }) => {
   const [footprint, setFootprint] = useState(result);
 
   function rounder(number) {
-    return Number(number.toFixed(2));
+    return Number(number.toFixed(0));
   }
 
   useEffect(() => {
